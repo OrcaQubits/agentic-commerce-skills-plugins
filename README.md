@@ -258,6 +258,14 @@ rm -rf ~/.claude/plugins/cache
 
 Then restart Claude Code and reinstall the plugin.
 
+## Topics
+
+`claude-code-plugin` `claude-code` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `agent-to-agent` `ucp` `universal-commerce-protocol` `acp` `agentic-commerce-protocol` `ap2` `agent-payments` `webmcp` `browser-agents` `magento2` `bigcommerce` `woocommerce` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-shopping` `openai-plugins` `stripe-payments` `shopify` `verifiable-credentials` `payment-gateway` `checkout-api` `product-feed` `agent-orchestration` `claude-plugins` `anthropic`
+
+## Maintainers
+
+Built and maintained by [OrcaQubits AI](https://orcaqubits-ai.com) — Rohit Bajaj and Julekha Khatun.
+
 ## License
 
 MIT — see [LICENSE](./LICENSE).
