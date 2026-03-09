@@ -1,0 +1,21 @@
+{
+  "name": "acp-agentic-commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for implementing the Agentic Commerce Protocol (ACP) — the open standard by OpenAI and Stripe for AI-agent-mediated commerce.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun"
+  },
+  "keywords": [
+    "acp",
+    "agentic-commerce",
+    "openai",
+    "stripe",
+    "checkout",
+    "commerce",
+    "payments",
+    "shared-payment-token",
+    "product-feed",
+    "delegated-payment"
+  ],
+  "license": "MIT"
+}

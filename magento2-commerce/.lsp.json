@@ -1,0 +1,32 @@
+{
+  "php": {
+    "command": "intelephense",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".php": "php",
+      ".phtml": "php"
+    },
+    "initializationOptions": {
+      "clearCache": false
+    },
+    "settings": {
+      "intelephense": {
+        "files": {
+          "maxSize": 5000000,
+          "associations": ["*.php", "*.phtml"]
+        },
+        "stubs": [
+          "apache", "bcmath", "calendar", "curl", "date", "dom",
+          "fileinfo", "filter", "gd", "hash", "iconv", "intl",
+          "json", "libxml", "mbstring", "mysql", "mysqli", "openssl",
+          "pcre", "pdo", "pdo_mysql", "readline", "redis", "session",
+          "soap", "sockets", "sodium", "spl", "standard", "xml",
+          "xmlreader", "xmlwriter", "zip", "zlib"
+        ]
+      }
+    },
+    "startupTimeout": 30000,
+    "restartOnCrash": true,
+    "maxRestarts": 3
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "agentic-commerce",
+  "owner": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "email": "",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "metadata": {
+    "description": "Agentic Commerce Claude Code Plugins — UCP, ACP, A2A, AP2, WebMCP, Magento 2, BigCommerce, and WooCommerce",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "ucp-agentic-commerce",
+      "description": "Universal Commerce Protocol (UCP) — Google/Shopify agentic commerce across REST, MCP, A2A, and Embedded bindings",
+      "version": "1.0.0",
+      "source": "./ucp-agentic-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "acp-agentic-commerce",
+      "description": "Agentic Commerce Protocol (ACP) — OpenAI/Stripe open standard for AI-agent-mediated commerce",
+      "version": "1.0.0",
+      "source": "./acp-agentic-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "a2a-multi-agent",
+      "description": "A2A (Agent-to-Agent) protocol — Google multi-agent communication with Agent Cards, tasks, and streaming",
+      "version": "1.0.0",
+      "source": "./a2a-multi-agent",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "ap2-agentic-payments",
+      "description": "AP2 (Agent Payments Protocol) — Google agentic payment mandates, VDCs, and cryptographic signing",
+      "version": "1.0.0",
+      "source": "./ap2-agentic-payments",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "magento2-commerce",
+      "description": "Magento 2 Open Source — module development, DI, plugins, EAV, APIs, checkout, catalog, and PHP 8.x",
+      "version": "1.0.0",
+      "source": "./magento2-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "webmcp-browser-agents",
+      "description": "WebMCP (Web Model Context Protocol) — browser-native API for agent-ready websites, structured tool registration, declarative forms, and human-in-the-loop commerce",
+      "version": "1.0.0",
+      "source": "./webmcp-browser-agents",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "bigcommerce-commerce",
+      "description": "BigCommerce — Stencil themes, REST/GraphQL APIs, single-click apps, checkout SDK, headless with Catalyst/Next.js, and Node.js patterns",
+      "version": "1.0.0",
+      "source": "./bigcommerce-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "woocommerce-commerce",
+      "description": "WooCommerce — plugin/extension architecture, hooks/filters, REST API, checkout blocks, payment gateways, HPOS, and PHP 8.x patterns",
+      "version": "1.0.0",
+      "source": "./woocommerce-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    }
+  ]
+}
