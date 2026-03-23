@@ -20,6 +20,7 @@ Learn more in the [official plugins documentation](https://code.claude.com/docs/
 | [webmcp-browser-agents](./webmcp-browser-agents) | Expert in **WebMCP (Web Model Context Protocol)** — the browser-native API for agent-ready websites. Covers `navigator.modelContext`, registerTool, declarative form annotations, tool schemas, human-in-the-loop interactions, tool annotations, commerce tools, session auth, security, provideContext, MCP-B polyfill, and backend MCP/UCP bridge integration. | **Agent:** `webmcp-expert` — full WebMCP protocol knowledge with live doc fetching<br>**Skills (14):** Setup, registerTool, declarative forms, schemas, user interaction, annotations, commerce tools, authentication, security, context provider, MCP bridge, polyfill, testing, dev patterns<br>**Hooks:** Async secret detection on code writes |
 | [bigcommerce-commerce](./bigcommerce-commerce) | Expert in **BigCommerce** development. Covers Stencil theme framework, REST/GraphQL APIs, single-click app development, checkout SDK, payment integrations, headless commerce with Catalyst/Next.js, multi-channel architecture, webhooks, widgets/Page Builder, and JavaScript/TypeScript/Node.js patterns. | **Agent:** `bigcommerce-expert` — full BigCommerce + JS/Node.js knowledge with live doc fetching<br>**Skills (20):** Setup, app dev, Stencil, REST/GraphQL APIs, webhooks, catalog, orders, checkout, payments, customers, headless, channels, widgets, testing, performance, security, JS modern, Next.js, Node.js backend<br>**Hooks:** Sync Stencil CLI protection (blocks destructive commands) + async secret detection |
 | [woocommerce-commerce](./woocommerce-commerce) | Expert in **WooCommerce** development and PHP 8.x. Covers plugin/extension architecture, hooks/filters, CRUD data stores, HPOS, REST API, checkout blocks, payment gateways, shipping methods, catalog, admin UI, Gutenberg blocks, testing, deployment, security, and modern PHP patterns. | **Agent:** `woocommerce-expert` — full WooCommerce + PHP knowledge with live doc fetching<br>**Skills (20):** Setup, plugin dev, hooks/filters, data stores, custom fields, API, blocks, checkout, payments, shipping, catalog, frontend, admin, testing, performance, deploy, security, PHP modern/patterns/testing<br>**Hooks:** Sync WP-CLI protection (blocks destructive commands) + async secret detection<br>**LSP:** PHP Intelephense configuration for `.php` files |
+| [stripe-mpp](./stripe-mpp) | Expert in the **Machine Payments Protocol (MPP)** — the open standard co-authored by Stripe and Tempo Labs for HTTP 402-based machine-to-machine payments. Covers HTTP 402 challenge-response, charge and session intents, Tempo blockchain USDC settlement, Stripe SPT integration, mppx SDK, server middleware, client-side transparent payments, payment proxies, and service discovery. | **Agent:** `mpp-expert` — full MPP protocol knowledge with live doc fetching<br>**Skills (12):** Setup, server middleware, client fetch, charge flow, session flow, Tempo method, Stripe method, service discovery, proxy, dev patterns, SPT lifecycle, conformance<br>**Hooks:** Async Stripe/crypto/MPP secret detection on code writes |
 
 ## Installation
 
@@ -58,6 +59,7 @@ If these plugins are published to a marketplace, install them with the Claude Co
    /ucp-agentic-commerce:ucp-setup
    /acp-agentic-commerce:acp-checkout-rest
    /ap2-agentic-payments:ap2-cart-mandate
+   /stripe-mpp:mpp-setup
    ```
 
 ### From a Local Directory
@@ -106,6 +108,10 @@ claude --plugin-dir "/path/to/agentic-commerce-claude-plugins/ucp-agentic-commer
     "woocommerce-commerce": {
       "type": "local",
       "path": "/path/to/agentic-commerce-claude-plugins/woocommerce-commerce"
+    },
+    "stripe-mpp": {
+      "type": "local",
+      "path": "/path/to/agentic-commerce-claude-plugins/stripe-mpp"
     }
   }
 }
@@ -184,13 +190,13 @@ These plugins cover the major open protocols enabling AI agents to shop, pay, an
  │ Agent Comms │ │ Tool/Data   │ │  (Backend)  │ │ Agent API│
  └──────┬──────┘ └─────────────┘ └──────┬──────┘ └──────────┘
         │                               │
-        │                    ┌──────────┼──────────┐
-        │                    │          │          │
-    ┌───▼────┐         ┌────▼───┐ ┌────▼───┐
-    │  AP2   │         │  UCP   │ │  ACP   │
-    │Payment │         │Google/ │ │OpenAI/ │
-    │Mandates│         │Shopify │ │Stripe  │
-    └────────┘         └────────┘ └────────┘
+        │              ┌────────────────┼────────────────┐
+        │              │          │          │            │
+    ┌───▼────┐   ┌─────▼──┐ ┌────▼───┐ ┌────▼───┐ ┌─────▼──┐
+    │  AP2   │   │  MPP   │ │  UCP   │ │  ACP   │ │  x402  │
+    │Payment │   │Stripe/ │ │Google/ │ │OpenAI/ │ │Coinbase│
+    │Mandates│   │Tempo   │ │Shopify │ │Stripe  │ │        │
+    └────────┘   └────────┘ └────────┘ └────────┘ └────────┘
 ```
 
 | Protocol | Maintainers | Focus | First Agent |
@@ -199,6 +205,7 @@ These plugins cover the major open protocols enabling AI agents to shop, pay, an
 | **ACP** | OpenAI, Stripe | Agent-mediated checkout execution | ChatGPT Instant Checkout |
 | **AP2** | Google | Secure, verifiable agentic payment mandates | Extends A2A |
 | **A2A** | Google, Linux Foundation | Inter-agent communication and delegation | Framework-agnostic |
+| **MPP** | Stripe, Tempo Labs | HTTP 402 machine-to-machine payments | mppx SDK, Cloudflare Workers |
 | **WebMCP** | Google, Microsoft, W3C | Browser-native agent tool API for web pages | Chrome 146+ Canary |
 
 The **Magento 2**, **BigCommerce**, and **WooCommerce** plugins are not protocols — they are commerce engine plugins that provide expert knowledge for building and customizing storefronts. These stores can implement UCP or ACP endpoints to participate in agentic commerce.
@@ -212,6 +219,8 @@ The **WebMCP** plugin covers the client-side browser API that complements backen
 | UCP Specification | https://ucp.dev |
 | ACP Specification | https://www.agenticcommerce.dev/ |
 | AP2 Specification | https://ap2-protocol.org |
+| MPP Specification (IETF) | https://paymentauth.org/ |
+| Stripe Machine Payments | https://docs.stripe.com/payments/machine |
 | A2A Specification | https://a2a-protocol.org |
 | WebMCP Specification (W3C) | https://webmachinelearning.github.io/webmcp/ |
 | WebMCP Chrome Blog | https://developer.chrome.com/blog/webmcp |
@@ -260,7 +269,7 @@ Then restart Claude Code and reinstall the plugin.
 
 ## Topics
 
-`claude-code-plugin` `claude-code` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `agent-to-agent` `ucp` `universal-commerce-protocol` `acp` `agentic-commerce-protocol` `ap2` `agent-payments` `webmcp` `browser-agents` `magento2` `bigcommerce` `woocommerce` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-shopping` `openai-plugins` `stripe-payments` `shopify` `verifiable-credentials` `payment-gateway` `checkout-api` `product-feed` `agent-orchestration` `claude-plugins` `anthropic`
+`claude-code-plugin` `claude-code` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `agent-to-agent` `ucp` `universal-commerce-protocol` `acp` `agentic-commerce-protocol` `ap2` `agent-payments` `mpp` `machine-payments` `http-402` `stripe-mpp` `tempo-blockchain` `micropayments` `pay-per-call` `webmcp` `browser-agents` `magento2` `bigcommerce` `woocommerce` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-shopping` `openai-plugins` `stripe-payments` `shopify` `verifiable-credentials` `payment-gateway` `checkout-api` `product-feed` `agent-orchestration` `claude-plugins` `anthropic`
 
 ## Maintainers
 
