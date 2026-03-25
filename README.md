@@ -1,12 +1,10 @@
-# Agentic Commerce Plugins for Claude Code
+# Agentic Commerce Skills & Plugins — Claude, Gemini, Codex, Cursor, Antigravity, OpenClaw
 
-This directory contains Claude Code plugins for **agentic commerce** — the emerging ecosystem where AI agents negotiate, purchase, and fulfill transactions on behalf of users. These plugins provide expert subagents, skills, and lifecycle hooks for the major protocols and platforms shaping this space.
+This repository contains agentic commerce plugins and skills for **AI coding assistants** — the emerging ecosystem where AI agents negotiate, purchase, and fulfill transactions on behalf of users. These plugins provide expert subagents, skills, and lifecycle hooks for the major protocols and platforms shaping this space.
 
-## What are Claude Code Plugins?
+Built natively for Claude Code, with cross-platform conversion support for Gemini CLI, OpenAI Codex CLI, Cursor, Antigravity/Windsurf, and OpenClaw. Each plugin provides deep conceptual knowledge of a commerce protocol or platform, while always fetching the latest specification and SDK documentation before writing implementation code.
 
-Claude Code plugins are extensions that enhance Claude Code with specialized agents, skills, hooks, and MCP servers. Each plugin in this collection provides deep conceptual knowledge of a commerce protocol or platform, while always fetching the latest specification and SDK documentation before writing implementation code.
-
-Learn more in the [official plugins documentation](https://code.claude.com/docs/en/plugins).
+Learn more about Claude Code plugins in the [official plugins documentation](https://code.claude.com/docs/en/plugins). For other platforms, see [Multi-Platform Support](#multi-platform-support).
 
 ## Plugins in This Directory
 
