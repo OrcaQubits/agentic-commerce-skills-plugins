@@ -25,3 +25,6 @@ __pycache__/
 # Dependencies
 node_modules/
 vendor/
+
+# Generated platform output
+dist/

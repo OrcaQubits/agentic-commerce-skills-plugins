@@ -5,7 +5,7 @@
     "url": "https://orcaqubits-ai.com"
   },
   "metadata": {
-    "description": "Agentic Commerce Claude Code Plugins — UCP, ACP, A2A, AP2, MPP, WebMCP, Magento 2, BigCommerce, and WooCommerce",
+    "description": "Agentic Commerce Claude Code Plugins — UCP, ACP, A2A, AP2, MPP, WebMCP, Magento 2, BigCommerce, Shopify, and WooCommerce",
     "version": "1.0.0"
   },
   "plugins": [
@@ -74,6 +74,16 @@
       "description": "BigCommerce — Stencil themes, REST/GraphQL APIs, single-click apps, checkout SDK, headless with Catalyst/Next.js, and Node.js patterns",
       "version": "1.0.0",
       "source": "./bigcommerce-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "shopify-commerce",
+      "description": "Shopify — GraphQL Admin/Storefront APIs, Liquid, Online Store 2.0 themes, Hydrogen/Remix, Shopify Functions, checkout extensions, Polaris, and JS/TS/React patterns",
+      "version": "1.0.0",
+      "source": "./shopify-commerce",
       "author": {
         "name": "Rohit Bajaj, Julekha Khatun",
         "url": "https://orcaqubits-ai.com"

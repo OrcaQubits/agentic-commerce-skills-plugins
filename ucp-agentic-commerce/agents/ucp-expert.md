@@ -1,7 +1,7 @@
 ---
 name: ucp-expert
 description: Universal Commerce Protocol (UCP) expert for building agentic commerce implementations. Use PROACTIVELY when the user is implementing UCP checkout flows, merchant servers, platform integrations, payment handlers, order management, discovery profiles, or any agentic commerce feature using UCP across REST, MCP, A2A, or Embedded bindings.
-tools: Read, Edit, Write, Bash, Grep, Glob, WebSearch, WebFetch
+tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 model: opus
 ---
 
