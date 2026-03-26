@@ -15,7 +15,7 @@ From the repo root, run the conversion script:
 python scripts/convert.py --platform gemini
 ```
 
-This generates `dist/gemini/<plugin-name>/` for each of the 10 plugins, containing:
+This generates `dist/gemini/<plugin-name>/` for each of the 11 plugins, containing:
 
 ```
 dist/gemini/<plugin-name>/
@@ -138,4 +138,4 @@ python scripts/validate.py
 
 ## Topics
 
-`gemini-cli` `gemini-extensions` `gemini-cli-plugin` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `ucp` `universal-commerce-protocol` `acp` `ap2` `stripe-mpp` `webmcp` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-gemini` `gemini-2` `multi-platform` `cross-platform-plugins` `ai-dev-tools`
+`gemini-cli` `gemini-extensions` `gemini-cli-plugin` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `ucp` `universal-commerce-protocol` `acp` `ap2` `stripe-mpp` `webmcp` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `salesforce-commerce` `sfcc` `commerce-cloud` `b2c-commerce` `b2b-commerce` `sfra` `scapi` `pwa-kit` `apex-commerce` `lwc-commerce` `einstein-ai` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-gemini` `gemini-2` `multi-platform` `cross-platform-plugins` `ai-dev-tools`

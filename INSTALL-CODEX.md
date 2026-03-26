@@ -19,8 +19,8 @@ This generates `dist/codex/` with the following structure:
 
 ```
 dist/codex/
-  AGENTS.md                              # Root summary of all 10 plugins
-  <plugin-name>/                         # Per-plugin directory (x10)
+  AGENTS.md                              # Root summary of all 11 plugins
+  <plugin-name>/                         # Per-plugin directory (x11)
     AGENTS.md                            # Agent expertise as context
     .codex/
       agents/<name>-expert.toml          # Subagent definition
@@ -153,4 +153,4 @@ python scripts/validate.py
 
 ## Topics
 
-`codex-cli` `openai-codex` `codex-agents` `codex-plugin` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `ucp` `universal-commerce-protocol` `acp` `ap2` `stripe-mpp` `webmcp` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `multi-platform` `cross-platform-plugins` `ai-dev-tools`
+`codex-cli` `openai-codex` `codex-agents` `codex-plugin` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `ucp` `universal-commerce-protocol` `acp` `ap2` `stripe-mpp` `webmcp` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `salesforce-commerce` `sfcc` `commerce-cloud` `b2c-commerce` `b2b-commerce` `sfra` `scapi` `pwa-kit` `apex-commerce` `lwc-commerce` `einstein-ai` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `multi-platform` `cross-platform-plugins` `ai-dev-tools`

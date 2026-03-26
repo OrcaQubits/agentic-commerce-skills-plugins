@@ -21,6 +21,7 @@ Learn more in the [official plugins documentation](https://code.claude.com/docs/
 | [bigcommerce-commerce](./bigcommerce-commerce) | Expert in **BigCommerce** development. Covers Stencil theme framework, REST/GraphQL APIs, single-click app development, checkout SDK, payment integrations, headless commerce with Catalyst/Next.js, multi-channel architecture, webhooks, widgets/Page Builder, and JavaScript/TypeScript/Node.js patterns. | **Agent:** `bigcommerce-expert` — full BigCommerce + JS/Node.js knowledge with live doc fetching<br>**Skills (20):** Setup, app dev, Stencil, REST/GraphQL APIs, webhooks, catalog, orders, checkout, payments, customers, headless, channels, widgets, testing, performance, security, JS modern, Next.js, Node.js backend<br>**Hooks:** Sync Stencil CLI protection (blocks destructive commands) + async secret detection |
 | [woocommerce-commerce](./woocommerce-commerce) | Expert in **WooCommerce** development and PHP 8.x. Covers plugin/extension architecture, hooks/filters, CRUD data stores, HPOS, REST API, checkout blocks, payment gateways, shipping methods, catalog, admin UI, Gutenberg blocks, testing, deployment, security, and modern PHP patterns. | **Agent:** `woocommerce-expert` — full WooCommerce + PHP knowledge with live doc fetching<br>**Skills (20):** Setup, plugin dev, hooks/filters, data stores, custom fields, API, blocks, checkout, payments, shipping, catalog, frontend, admin, testing, performance, deploy, security, PHP modern/patterns/testing<br>**Hooks:** Sync WP-CLI protection (blocks destructive commands) + async secret detection<br>**LSP:** PHP Intelephense configuration for `.php` files |
 | [shopify-commerce](./shopify-commerce) | Expert in **Shopify** development. Covers GraphQL Admin and Storefront APIs, Liquid templating, Online Store 2.0 themes, Hydrogen/Remix headless storefronts, Shopify Functions (Wasm), checkout UI extensions, Polaris components, app development with App Bridge, webhooks, metafields/metaobjects, and JavaScript/TypeScript/React patterns. | **Agent:** `shopify-expert` — full Shopify + JS/TS/React knowledge with live doc fetching<br>**Skills (21):** Setup, app dev, GraphQL/REST APIs, Liquid, themes, Hydrogen, Functions, checkout UI, catalog, orders, customers, payments, webhooks, Polaris, testing, performance, security, JS modern, React/Remix, Node.js backend<br>**Hooks:** Sync Shopify CLI protection (blocks destructive commands) + async secret detection |
+| [salesforce-commerce](./salesforce-commerce) | Expert in **Salesforce Commerce** development — both B2C Commerce Cloud (SFCC/Demandware) with SFRA cartridges, ISML templating, SCAPI/OCAPI APIs, PWA Kit headless storefronts, and B2B/D2C Commerce on Lightning with Apex hooks, LWC components, Experience Builder, Einstein AI, Salesforce Payments, and JavaScript/TypeScript/React patterns. | **Agent:** `salesforce-expert` — full Salesforce Commerce + JS/TS/React knowledge with live doc fetching<br>**Skills (24):** Setup, SFRA, cartridges, controllers, ISML, SCAPI, OCAPI (deprecated), PWA Kit, jobs, Apex hooks, LWC, Experience Builder, catalog, orders, customers, payments, Einstein, integrations, testing, performance, security, JS modern, React, Node.js backend<br>**Hooks:** Sync sfcc-ci/sf CLI protection (blocks destructive commands) + async secret detection |
 | [stripe-mpp](./stripe-mpp) | Expert in the **Machine Payments Protocol (MPP)** — the open standard co-authored by Stripe and Tempo Labs for HTTP 402-based machine-to-machine payments. Covers HTTP 402 challenge-response, charge and session intents, Tempo blockchain USDC settlement, Stripe SPT integration, mppx SDK, server middleware, client-side transparent payments, payment proxies, and service discovery. | **Agent:** `mpp-expert` — full MPP protocol knowledge with live doc fetching<br>**Skills (12):** Setup, server middleware, client fetch, charge flow, session flow, Tempo method, Stripe method, service discovery, proxy, dev patterns, SPT lifecycle, conformance<br>**Hooks:** Async Stripe/crypto/MPP secret detection on code writes |
 
 ## Installation
@@ -113,6 +114,10 @@ claude --plugin-dir "/path/to/agentic-commerce-claude-plugins/ucp-agentic-commer
     "woocommerce-commerce": {
       "type": "local",
       "path": "/path/to/agentic-commerce-claude-plugins/woocommerce-commerce"
+    },
+    "salesforce-commerce": {
+      "type": "local",
+      "path": "/path/to/agentic-commerce-claude-plugins/salesforce-commerce"
     },
     "stripe-mpp": {
       "type": "local",
@@ -213,7 +218,7 @@ These plugins cover the major open protocols enabling AI agents to shop, pay, an
 | **MPP** | Stripe, Tempo Labs | HTTP 402 machine-to-machine payments | mppx SDK, Cloudflare Workers |
 | **WebMCP** | Google, Microsoft, W3C | Browser-native agent tool API for web pages | Chrome 146+ Canary |
 
-The **Magento 2**, **BigCommerce**, **Shopify**, and **WooCommerce** plugins are not protocols — they are commerce engine plugins that provide expert knowledge for building and customizing storefronts. These stores can implement UCP or ACP endpoints to participate in agentic commerce.
+The **Magento 2**, **BigCommerce**, **Shopify**, **WooCommerce**, and **Salesforce Commerce** plugins are not protocols — they are commerce engine plugins that provide expert knowledge for building and customizing storefronts. These stores can implement UCP or ACP endpoints to participate in agentic commerce.
 
 The **WebMCP** plugin covers the client-side browser API that complements backend protocols — it lets websites expose structured tools to AI agents via `navigator.modelContext`, with human-in-the-loop approval flows.
 
@@ -261,6 +266,7 @@ The conversion script (`scripts/convert.py`) reads the canonical Claude Code sou
 | A2A Specification | https://a2a-protocol.org |
 | WebMCP Specification (W3C) | https://webmachinelearning.github.io/webmcp/ |
 | WebMCP Chrome Blog | https://developer.chrome.com/blog/webmcp |
+| Salesforce Commerce Dev Docs | https://developer.salesforce.com/docs/commerce/b2c-commerce/overview |
 | Magento Developer Docs | https://developer.adobe.com/commerce/docs/ |
 | Claude Code Plugins Docs | https://code.claude.com/docs/en/plugins |
 | Discover Plugins | https://code.claude.com/docs/en/discover-plugins |
@@ -306,7 +312,7 @@ Then restart Claude Code and reinstall the plugin.
 
 ## Topics
 
-`claude-code-plugin` `claude-code` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `agent-to-agent` `ucp` `universal-commerce-protocol` `acp` `agentic-commerce-protocol` `ap2` `agent-payments` `mpp` `machine-payments` `http-402` `stripe-mpp` `tempo-blockchain` `micropayments` `pay-per-call` `webmcp` `browser-agents` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `shopify-polaris` `shopify-app-development` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-shopping` `openai-plugins` `stripe-payments` `verifiable-credentials` `payment-gateway` `checkout-api` `product-feed` `agent-orchestration` `claude-plugins` `anthropic` `gemini-cli` `codex-cli` `cursor-ai` `cursor-rules` `antigravity` `windsurf` `openclaw` `clawhub` `multi-platform` `cross-platform-plugins` `ai-dev-tools` `remix`
+`claude-code-plugin` `claude-code` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `agent-to-agent` `ucp` `universal-commerce-protocol` `acp` `agentic-commerce-protocol` `ap2` `agent-payments` `mpp` `machine-payments` `http-402` `stripe-mpp` `tempo-blockchain` `micropayments` `pay-per-call` `webmcp` `browser-agents` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `shopify-polaris` `shopify-app-development` `salesforce-commerce` `sfcc` `commerce-cloud` `b2c-commerce` `b2b-commerce` `sfra` `scapi` `pwa-kit` `apex-commerce` `lwc-commerce` `einstein-ai` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `google-shopping` `openai-plugins` `stripe-payments` `verifiable-credentials` `payment-gateway` `checkout-api` `product-feed` `agent-orchestration` `claude-plugins` `anthropic` `gemini-cli` `codex-cli` `cursor-ai` `cursor-rules` `antigravity` `windsurf` `openclaw` `clawhub` `multi-platform` `cross-platform-plugins` `ai-dev-tools` `remix`
 
 ## Maintainers
 

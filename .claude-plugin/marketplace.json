@@ -5,7 +5,7 @@
     "url": "https://orcaqubits-ai.com"
   },
   "metadata": {
-    "description": "Agentic Commerce Claude Code Plugins — UCP, ACP, A2A, AP2, MPP, WebMCP, Magento 2, BigCommerce, Shopify, and WooCommerce",
+    "description": "Agentic Commerce Claude Code Plugins — UCP, ACP, A2A, AP2, MPP, WebMCP, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, and Saleor",
     "version": "1.0.0"
   },
   "plugins": [
@@ -100,10 +100,40 @@
       }
     },
     {
+      "name": "salesforce-commerce",
+      "description": "Salesforce Commerce — B2C Commerce Cloud (SFRA, ISML, SCAPI, PWA Kit) and B2B/D2C Commerce on Lightning (Apex, LWC, Experience Builder), Einstein AI, and JS/TS/React patterns",
+      "version": "1.0.0",
+      "source": "./salesforce-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
       "name": "stripe-mpp",
       "description": "Machine Payments Protocol (MPP) — Stripe/Tempo HTTP 402 machine-to-machine payments, charge and session intents, mppx SDK, Tempo blockchain, SPTs, and service discovery",
       "version": "1.0.0",
       "source": "./stripe-mpp",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "medusa-commerce",
+      "description": "Medusa v2 — open-source headless commerce with custom modules, DML data models, workflows, API routes, subscribers, admin extensions, Next.js storefronts, and TypeScript/Node.js patterns",
+      "version": "1.0.0",
+      "source": "./medusa-commerce",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "saleor-commerce",
+      "description": "Saleor — open-source GraphQL-first headless commerce with Python/Django backend, App extensions, webhooks, Dashboard with App Bridge, Next.js storefronts, channels, typed attributes, and GraphQL/Python/Next.js patterns",
+      "version": "1.0.0",
+      "source": "./saleor-commerce",
       "author": {
         "name": "Rohit Bajaj, Julekha Khatun",
         "url": "https://orcaqubits-ai.com"

@@ -19,8 +19,8 @@ This generates `dist/openclaw/` with the following structure:
 
 ```
 dist/openclaw/
-  AGENTS.md                              # Root summary of all 10 plugins
-  <plugin-name>/                         # Per-plugin directory (x10)
+  AGENTS.md                              # Root summary of all 11 plugins
+  <plugin-name>/                         # Per-plugin directory (x11)
     openclaw.plugin.json                 # Plugin manifest (id, configSchema, skills)
     AGENTS.md                            # Agent expertise as context
     skills/<skill>/SKILL.md              # Skills with Claude fields stripped
@@ -194,4 +194,4 @@ python scripts/validate.py
 
 ## Topics
 
-`openclaw` `clawhub` `openclaw-plugin` `openclaw-skills` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `ucp` `universal-commerce-protocol` `acp` `ap2` `stripe-mpp` `webmcp` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `multi-platform` `cross-platform-plugins` `ai-dev-tools`
+`openclaw` `clawhub` `openclaw-plugin` `openclaw-skills` `agentic-commerce` `ai-agents` `ai-shopping` `ai-checkout` `ai-payments` `mcp` `model-context-protocol` `a2a-protocol` `ucp` `universal-commerce-protocol` `acp` `ap2` `stripe-mpp` `webmcp` `magento2` `bigcommerce` `woocommerce` `shopify` `shopify-hydrogen` `shopify-liquid` `shopify-functions` `salesforce-commerce` `sfcc` `commerce-cloud` `b2c-commerce` `b2b-commerce` `sfra` `scapi` `pwa-kit` `apex-commerce` `lwc-commerce` `einstein-ai` `ecommerce` `headless-commerce` `multi-agent` `llm-tools` `ai-commerce` `multi-platform` `cross-platform-plugins` `ai-dev-tools`
