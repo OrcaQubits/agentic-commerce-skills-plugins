@@ -29,7 +29,12 @@ from converters.codex import convert_all_codex
 from converters.context import generate_gemini_md, generate_root_agents_md
 from converters.cursor import convert_all_cursor
 from converters.hooks import convert_all_hooks
-from converters.manifest import convert_plugin_json, write_gemini_manifest
+from converters.manifest import (
+    convert_plugin_json,
+    generate_antigravity_manifest,
+    write_antigravity_manifest,
+    write_gemini_manifest,
+)
 from converters.openclaw import convert_all_openclaw
 from converters.skills import convert_all_skills
 
@@ -76,7 +81,7 @@ def convert_plugin_gemini(
     # 1. gemini-extension.json
     plugin_json = plugin_dir / ".claude-plugin" / "plugin.json"
     if plugin_json.is_file():
-        manifest = convert_plugin_json(plugin_json)
+        manifest = convert_plugin_json(plugin_json, plugin_entry)
         path = out_dir / "gemini-extension.json"
         files.append(str(path.relative_to(output_root)))
         if not dry_run:
@@ -141,6 +146,13 @@ def convert_plugin_antigravity(
     name = plugin_entry["name"]
     out_dir = output_root / "antigravity" / name
     files: list[str] = []
+
+    # 0. package.json manifest
+    ag_manifest = generate_antigravity_manifest(plugin_dir, plugin_entry)
+    path = out_dir / "package.json"
+    files.append(str(path.relative_to(output_root)))
+    if not dry_run:
+        write_antigravity_manifest(ag_manifest, path)
 
     # 1. AGENTS.md + .agent/rules/<plugin>-rules.md
     if not dry_run:

@@ -1,0 +1,25 @@
+{
+  "name": "stripe-mpp",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for implementing the Machine Payments Protocol (MPP) — the open standard co-authored by Stripe and Tempo Labs for HTTP 402-based machine-to-machine payments, enabling AI agents to pay for API calls, data, and services autonomously.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "mpp",
+    "machine-payments",
+    "stripe",
+    "tempo",
+    "http-402",
+    "agent-payments",
+    "micropayments",
+    "mppx",
+    "shared-payment-token",
+    "service-discovery",
+    "pay-per-call",
+    "streaming-payments",
+    "agentic-commerce"
+  ],
+  "license": "MIT"
+}

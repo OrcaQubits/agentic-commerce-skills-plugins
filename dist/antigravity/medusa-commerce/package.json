@@ -1,0 +1,141 @@
+{
+  "name": "medusa-commerce",
+  "displayName": "Medusa Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Medusa v2 development — custom modules with DML data models, workflows with compensation, API routes, subscribers, admin dashboard extensions, Next.js storefronts, payment and fulfillment providers, and TypeScript/Node.js patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "headless-commerce",
+    "ecommerce",
+    "nodejs",
+    "typescript",
+    "postgresql",
+    "nextjs",
+    "mikroorm",
+    "rest-api",
+    "modules",
+    "workflows",
+    "open-source"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "medusa-admin",
+      "description": "Extend the Medusa v2 admin dashboard — widgets injected at zones, custom UI routes, Medusa UI components, and Admin API integration. Use when customizing the admin interface.",
+      "path": ".agent/skills/medusa-admin/SKILL.md"
+    },
+    {
+      "name": "medusa-api-routes",
+      "description": "Create custom Medusa v2 API routes — file-based routing, HTTP method exports, middleware configuration, Zod validators, authentication middleware, and additional-data pattern. Use when adding REST endpoints.",
+      "path": ".agent/skills/medusa-api-routes/SKILL.md"
+    },
+    {
+      "name": "medusa-cart-checkout",
+      "description": "Implement Medusa v2 cart and checkout — cart lifecycle, line items, shipping and payment selection, sales channels, and checkout completion flow. Use when building cart and checkout features.",
+      "path": ".agent/skills/medusa-cart-checkout/SKILL.md"
+    },
+    {
+      "name": "medusa-catalog",
+      "description": "Manage the Medusa v2 catalog — products, variants, options, collections, categories, tags, and product metadata. Use when working with Medusa product data.",
+      "path": ".agent/skills/medusa-catalog/SKILL.md"
+    },
+    {
+      "name": "medusa-customers",
+      "description": "Manage Medusa v2 customers — customer profiles, email and social authentication, customer groups, addresses, and account management. Use when working with customer data and auth.",
+      "path": ".agent/skills/medusa-customers/SKILL.md"
+    },
+    {
+      "name": "medusa-deploy",
+      "description": "Deploy Medusa v2 to production — build process, server vs worker mode, environment variables, hosting options, Redis caching, database configuration, and production checklist. Use when deploying Medusa applications.",
+      "path": ".agent/skills/medusa-deploy/SKILL.md"
+    },
+    {
+      "name": "medusa-fulfillment",
+      "description": "Implement Medusa v2 fulfillment — fulfillment module, provider interface, shipping options, fulfillment sets, shipping profiles, and multi-warehouse support. Use when adding fulfillment providers.",
+      "path": ".agent/skills/medusa-fulfillment/SKILL.md"
+    },
+    {
+      "name": "medusa-modules",
+      "description": "Build custom Medusa v2 modules — DML data models, services extending MedusaService, loaders, module links, and container registration. Use when creating custom modules.",
+      "path": ".agent/skills/medusa-modules/SKILL.md"
+    },
+    {
+      "name": "medusa-orders",
+      "description": "Manage Medusa v2 orders — order lifecycle and state machine, fulfillment workflows, returns, exchanges, claims, draft orders, and order editing. Use when working with order processing.",
+      "path": ".agent/skills/medusa-orders/SKILL.md"
+    },
+    {
+      "name": "medusa-payments",
+      "description": "Implement Medusa v2 payment processing — payment module, provider abstraction, payment sessions, authorization/capture/refund lifecycle, and Stripe/PayPal integration. Use when adding payment providers.",
+      "path": ".agent/skills/medusa-payments/SKILL.md"
+    },
+    {
+      "name": "medusa-plugins",
+      "description": "Develop and publish Medusa v2 plugins — plugin structure, plugin vs module comparison, npm packaging, and reusable plugin template. Use when building distributable Medusa extensions.",
+      "path": ".agent/skills/medusa-plugins/SKILL.md"
+    },
+    {
+      "name": "medusa-pricing",
+      "description": "Configure Medusa v2 pricing — pricing module, price lists with rules, currencies, tax calculation, regions, and promotion campaigns. Use when setting up pricing and discounts.",
+      "path": ".agent/skills/medusa-pricing/SKILL.md"
+    },
+    {
+      "name": "medusa-security",
+      "description": "Secure Medusa v2 applications — authentication strategies, API key types (publishable vs secret), CORS configuration, JWT and cookie secrets, admin vs store auth, and session management. Use when configuring security.",
+      "path": ".agent/skills/medusa-security/SKILL.md"
+    },
+    {
+      "name": "medusa-setup",
+      "description": "Set up a Medusa v2 development environment — CLI, PostgreSQL/Redis prerequisites, project creation, medusa-config.ts, directory structure, environment variables. Use when starting a new Medusa project.",
+      "path": ".agent/skills/medusa-setup/SKILL.md"
+    },
+    {
+      "name": "medusa-storefront",
+      "description": "Build Medusa v2 storefronts with Next.js 15 — App Router, JS SDK client setup, Tanstack Query, server components, product pages, cart, and checkout flow. Use when developing headless storefronts.",
+      "path": ".agent/skills/medusa-storefront/SKILL.md"
+    },
+    {
+      "name": "medusa-subscribers",
+      "description": "Implement Medusa v2 event subscribers — pub/sub event handling, subscriber handler functions, scheduled jobs with cron, and the event module (Redis or in-memory). Use when reacting to commerce events.",
+      "path": ".agent/skills/medusa-subscribers/SKILL.md"
+    },
+    {
+      "name": "medusa-testing",
+      "description": "Test Medusa v2 applications — Jest setup, module unit tests, workflow integration tests, API route tests, medusaIntegrationTestRunner, and mock patterns. Use when writing tests for Medusa projects.",
+      "path": ".agent/skills/medusa-testing/SKILL.md"
+    },
+    {
+      "name": "medusa-workflows",
+      "description": "Build Medusa v2 workflows — steps with createStep, compensation/rollback, parallel execution, hooks for extending built-in workflows, and when conditions. Use when orchestrating multi-step operations.",
+      "path": ".agent/skills/medusa-workflows/SKILL.md"
+    },
+    {
+      "name": "nextjs-patterns",
+      "description": "Build Next.js 15 storefronts for Medusa v2 — App Router conventions, server vs client components, Medusa JS SDK integration, data fetching, caching, and server actions. Use when building Medusa storefronts with Next.js.",
+      "path": ".agent/skills/nextjs-patterns/SKILL.md"
+    },
+    {
+      "name": "node-backend",
+      "description": "Build Node.js backends for Medusa v2 — Express middleware chain, MikroORM entity patterns, PostgreSQL connection pooling, async patterns, error handling, and logging. Use when working with Medusa's Node.js runtime.",
+      "path": ".agent/skills/node-backend/SKILL.md"
+    },
+    {
+      "name": "ts-modern",
+      "description": "Write modern TypeScript for Medusa v2 — DML type inference, service generics, container typing, strict mode constraints, utility types, and module interface patterns. Use when writing TypeScript in Medusa projects.",
+      "path": ".agent/skills/ts-modern/SKILL.md"
+    }
+  ]
+}

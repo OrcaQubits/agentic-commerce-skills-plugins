@@ -1,0 +1,14 @@
+{
+  "name": "salesforce-commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Salesforce Commerce development — B2C Commerce Cloud (SFCC/Demandware) with SFRA cartridges, ISML templating, SCAPI/OCAPI APIs, PWA Kit headless storefronts, and B2B/D2C Commerce on Lightning with Apex hooks, LWC components, Experience Builder, Einstein AI recommendations, Salesforce Payments, and JavaScript/TypeScript/React patterns.",
+  "contextFileName": "GEMINI.md",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "ucp-agentic-commerce",
+  "version": "1.0.0",
+  "description": "Universal Commerce Protocol (UCP) expert for building agentic commerce implementations. Covers the full protocol — discovery, checkout, orders, payments, fulfillment, discounts, identity linking, AP2 mandates — across REST, MCP, A2A, and Embedded bindings.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "ucp",
+    "universal-commerce-protocol",
+    "agentic-commerce",
+    "checkout",
+    "mcp",
+    "a2a",
+    "ap2",
+    "google",
+    "shopify",
+    "payments",
+    "ecommerce"
+  ],
+  "license": "MIT"
+}

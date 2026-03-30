@@ -1,0 +1,22 @@
+{
+  "name": "shopify-commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Shopify development — GraphQL Admin and Storefront APIs, Liquid templating, Online Store 2.0 themes, Hydrogen/Remix headless storefronts, Shopify Functions, checkout UI extensions, Polaris components, app development with App Bridge, webhooks, and JavaScript/TypeScript/React patterns.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "shopify",
+    "ecommerce",
+    "graphql",
+    "liquid",
+    "hydrogen",
+    "remix",
+    "polaris",
+    "shopify-functions",
+    "headless",
+    "checkout-extensions"
+  ],
+  "license": "MIT"
+}

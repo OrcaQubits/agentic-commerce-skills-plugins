@@ -1,0 +1,25 @@
+{
+  "id": "stripe-mpp",
+  "name": "Stripe Mpp",
+  "description": "Expert subagent and skills for implementing the Machine Payments Protocol (MPP) — the open standard co-authored by Stripe and Tempo Labs for HTTP 402-based machine-to-machine payments, enabling AI agents to pay for API calls, data, and services autonomously.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/mpp-charge-flow",
+    "skills/mpp-client-fetch",
+    "skills/mpp-conformance",
+    "skills/mpp-dev-patterns",
+    "skills/mpp-proxy",
+    "skills/mpp-server-middleware",
+    "skills/mpp-service-discovery",
+    "skills/mpp-session-flow",
+    "skills/mpp-setup",
+    "skills/mpp-spt-lifecycle",
+    "skills/mpp-stripe-method",
+    "skills/mpp-tempo-method"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

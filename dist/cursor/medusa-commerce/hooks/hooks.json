@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "matcher": "Bash",
+        "command": "python \"${CURSOR_PLUGIN_ROOT}/scripts/check_medusa_commands.py\"",
+        "type": "command",
+        "timeout": 10
+      }
+    ],
+    "postToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "python \"${CURSOR_PLUGIN_ROOT}/scripts/check_secrets.py\"",
+        "type": "command",
+        "timeout": 30
+      }
+    ]
+  }
+}

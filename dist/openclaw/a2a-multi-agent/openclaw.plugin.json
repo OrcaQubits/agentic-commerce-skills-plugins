@@ -1,0 +1,29 @@
+{
+  "id": "a2a-multi-agent",
+  "name": "A2A Multi Agent",
+  "description": "Expert A2A (Agent-to-Agent) protocol knowledge for building multi-agent systems — Agent Cards, task lifecycle, streaming, push notifications, authentication, and framework integrations.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/a2a-agent-card",
+    "skills/a2a-authentication",
+    "skills/a2a-client",
+    "skills/a2a-dev-patterns",
+    "skills/a2a-error-handling",
+    "skills/a2a-framework-integration",
+    "skills/a2a-jsonrpc-transport",
+    "skills/a2a-mcp-bridge",
+    "skills/a2a-messages-parts",
+    "skills/a2a-multi-turn",
+    "skills/a2a-push-notifications",
+    "skills/a2a-server",
+    "skills/a2a-setup",
+    "skills/a2a-streaming",
+    "skills/a2a-task-lifecycle",
+    "skills/a2a-testing"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

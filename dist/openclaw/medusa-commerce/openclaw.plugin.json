@@ -1,0 +1,34 @@
+{
+  "id": "medusa-commerce",
+  "name": "Medusa Commerce",
+  "description": "Expert subagent and skills for Medusa v2 development — custom modules with DML data models, workflows with compensation, API routes, subscribers, admin dashboard extensions, Next.js storefronts, payment and fulfillment providers, and TypeScript/Node.js patterns.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/medusa-admin",
+    "skills/medusa-api-routes",
+    "skills/medusa-cart-checkout",
+    "skills/medusa-catalog",
+    "skills/medusa-customers",
+    "skills/medusa-deploy",
+    "skills/medusa-fulfillment",
+    "skills/medusa-modules",
+    "skills/medusa-orders",
+    "skills/medusa-payments",
+    "skills/medusa-plugins",
+    "skills/medusa-pricing",
+    "skills/medusa-security",
+    "skills/medusa-setup",
+    "skills/medusa-storefront",
+    "skills/medusa-subscribers",
+    "skills/medusa-testing",
+    "skills/medusa-workflows",
+    "skills/nextjs-patterns",
+    "skills/node-backend",
+    "skills/ts-modern"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

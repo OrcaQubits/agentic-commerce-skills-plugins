@@ -1,0 +1,14 @@
+{
+  "name": "saleor-commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Saleor commerce development — GraphQL-only API with Graphene-Django, App development with Next.js SDK, webhooks (async/sync with subscription payloads), Dashboard extensions with App Bridge and MacawUI, Next.js storefronts, channels, catalog with typed attributes, transaction payment flow, and Python/Django/GraphQL/Next.js patterns.",
+  "contextFileName": "GEMINI.md",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  }
+}

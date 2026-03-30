@@ -1,0 +1,128 @@
+{
+  "name": "magento2-commerce",
+  "displayName": "Magento2 Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Magento 2 Open Source development — module creation, DI, plugins, EAV, APIs, checkout, catalog, admin UI, testing, deployment, and PHP 8.x patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "magento",
+    "magento2",
+    "adobe-commerce",
+    "ecommerce",
+    "php",
+    "module-development",
+    "eav",
+    "graphql",
+    "rest-api",
+    "checkout"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "magento-admin-ui",
+      "description": "Build Magento 2 admin interfaces — UI component grids, forms, system configuration, ACL, and admin controllers. Use when creating admin panels, data grids, edit forms, or system settings.",
+      "path": ".agent/skills/magento-admin-ui/SKILL.md"
+    },
+    {
+      "name": "magento-api",
+      "description": "Build Magento 2 REST and GraphQL APIs — webapi.xml, schema.graphqls, resolvers, authentication, and ACL. Use when creating custom API endpoints, extending the GraphQL schema, or integrating external systems.",
+      "path": ".agent/skills/magento-api/SKILL.md"
+    },
+    {
+      "name": "magento-catalog",
+      "description": "Work with Magento 2 catalog — product types, categories, attributes, indexing, and search integration. Use when building catalog features, customizing product types, or working with the catalog architecture.",
+      "path": ".agent/skills/magento-catalog/SKILL.md"
+    },
+    {
+      "name": "magento-checkout",
+      "description": "Customize Magento 2 checkout — payment methods, shipping carriers, totals collectors, and checkout UI. Use when building custom payment/shipping integrations or modifying the checkout flow.",
+      "path": ".agent/skills/magento-checkout/SKILL.md"
+    },
+    {
+      "name": "magento-deploy",
+      "description": "Deploy Magento 2 — deployment modes, static content deployment, DI compilation, CLI commands, zero-downtime strategies, and CI/CD pipeline setup. Use when preparing for production deployment or building deployment automation.",
+      "path": ".agent/skills/magento-deploy/SKILL.md"
+    },
+    {
+      "name": "magento-di",
+      "description": "Configure Magento 2 dependency injection — di.xml, types, virtual types, preferences, argument replacement, and Object Manager. Use when wiring dependencies, creating class variations, or configuring module integrations.",
+      "path": ".agent/skills/magento-di/SKILL.md"
+    },
+    {
+      "name": "magento-eav-attributes",
+      "description": "Work with Magento 2 EAV (Entity-Attribute-Value) system — create custom attributes, attribute sets, manage EAV tables, and understand the EAV data model. Use when adding product/category/customer attributes or working with the attribute system.",
+      "path": ".agent/skills/magento-eav-attributes/SKILL.md"
+    },
+    {
+      "name": "magento-events-cron",
+      "description": "Implement Magento 2 events, observers, cron jobs, and message queues. Use when building event-driven logic, scheduled tasks, or asynchronous processing.",
+      "path": ".agent/skills/magento-events-cron/SKILL.md"
+    },
+    {
+      "name": "magento-frontend",
+      "description": "Build Magento 2 frontend — layout XML, blocks, PHTML templates, ViewModels, themes, JavaScript (RequireJS/KnockoutJS), and LESS/CSS. Use when customizing the storefront, building themes, or working with frontend components.",
+      "path": ".agent/skills/magento-frontend/SKILL.md"
+    },
+    {
+      "name": "magento-module-dev",
+      "description": "Create Magento 2 custom modules — registration, directory structure, models, resource models, collections, declarative schema, and data/schema patches. Use when building new modules or understanding module architecture.",
+      "path": ".agent/skills/magento-module-dev/SKILL.md"
+    },
+    {
+      "name": "magento-performance",
+      "description": "Optimize Magento 2 performance — full page cache (Varnish), Redis, indexer tuning, JavaScript/CSS optimization, database optimization, and profiling. Use when diagnosing slow pages, optimizing load times, or configuring caching.",
+      "path": ".agent/skills/magento-performance/SKILL.md"
+    },
+    {
+      "name": "magento-plugins-interceptors",
+      "description": "Implement Magento 2 plugins (interceptors) — before, after, and around methods for modifying class behavior without inheritance. Use when extending core or third-party module functionality.",
+      "path": ".agent/skills/magento-plugins-interceptors/SKILL.md"
+    },
+    {
+      "name": "magento-security",
+      "description": "Implement Magento 2 security — CSP, 2FA, CSRF protection, ACL, admin security configuration, input validation, and security best practices. Use when hardening a Magento installation or reviewing security posture.",
+      "path": ".agent/skills/magento-security/SKILL.md"
+    },
+    {
+      "name": "magento-service-contracts",
+      "description": "Implement Magento 2 service contracts — repository interfaces, data interfaces, SearchCriteria, and the repository pattern. Use when building module APIs, data access layers, or integrating with Magento's Web API.",
+      "path": ".agent/skills/magento-service-contracts/SKILL.md"
+    },
+    {
+      "name": "magento-setup",
+      "description": "Set up a Magento 2 Open Source project — installation, Composer setup, system requirements verification, and initial configuration. Use when starting a new Magento project or setting up a development environment.",
+      "path": ".agent/skills/magento-setup/SKILL.md"
+    },
+    {
+      "name": "magento-testing",
+      "description": "Write tests for Magento 2 — PHPUnit unit tests, integration tests, MFTF functional tests, and API tests. Use when implementing test coverage for modules, debugging, or setting up CI/CD test pipelines.",
+      "path": ".agent/skills/magento-testing/SKILL.md"
+    },
+    {
+      "name": "php-modern",
+      "description": "Write modern PHP 8.x code — typed properties, enums, readonly classes, match expressions, named arguments, union/intersection types, fibers, attributes, and constructor promotion. Use when writing PHP for Magento or any PHP 8.x project.",
+      "path": ".agent/skills/php-modern/SKILL.md"
+    },
+    {
+      "name": "php-patterns",
+      "description": "Apply PHP design patterns — Repository, Factory, Strategy, Decorator, Observer, Singleton, Builder, and Dependency Injection patterns in PHP. Use when architecting PHP applications or understanding patterns used in Magento and other frameworks.",
+      "path": ".agent/skills/php-patterns/SKILL.md"
+    },
+    {
+      "name": "php-testing",
+      "description": "Write PHP tests with PHPUnit — unit tests, mocking, data providers, test doubles, assertions, and TDD practices. Use when writing tests for PHP code, whether in Magento or standalone PHP applications.",
+      "path": ".agent/skills/php-testing/SKILL.md"
+    }
+  ]
+}

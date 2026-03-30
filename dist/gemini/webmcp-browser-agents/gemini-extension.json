@@ -1,0 +1,14 @@
+{
+  "name": "webmcp-browser-agents",
+  "version": "1.0.0",
+  "description": "WebMCP (Web Model Context Protocol) — browser-native API for agent-ready websites, enabling structured tool registration, declarative forms, human-in-the-loop commerce, and MCP-B polyfill integration.",
+  "contextFileName": "GEMINI.md",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  }
+}

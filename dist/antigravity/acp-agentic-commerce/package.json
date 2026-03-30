@@ -1,0 +1,108 @@
+{
+  "name": "acp-agentic-commerce",
+  "displayName": "Acp Agentic Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for implementing the Agentic Commerce Protocol (ACP) — the open standard by OpenAI and Stripe for AI-agent-mediated commerce.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "acp",
+    "agentic-commerce",
+    "openai",
+    "stripe",
+    "checkout",
+    "commerce",
+    "payments",
+    "shared-payment-token",
+    "product-feed",
+    "delegated-payment"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "acp-affiliate-attribution",
+      "description": "Implement ACP affiliate attribution — privacy-preserving affiliate tracking without cookies using token-based first-touch and last-touch attribution. Use when building affiliate programs, referral tracking, or partnership attribution.",
+      "path": ".agent/skills/acp-affiliate-attribution/SKILL.md"
+    },
+    {
+      "name": "acp-capability-negotiation",
+      "description": "Implement ACP capability negotiation — dynamic discovery of mutually supported capabilities, extensions, payment handlers, and interventions. Use when building multi-feature merchant servers or agents that adapt to merchant capabilities.",
+      "path": ".agent/skills/acp-capability-negotiation/SKILL.md"
+    },
+    {
+      "name": "acp-checkout-mcp",
+      "description": "Implement ACP checkout as an MCP server, exposing checkout operations as MCP tools. Use when building an MCP-based commerce server for AI agents that use tool-calling to complete purchases.",
+      "path": ".agent/skills/acp-checkout-mcp/SKILL.md"
+    },
+    {
+      "name": "acp-checkout-rest",
+      "description": "Implement the ACP REST checkout API — create, update, retrieve, complete, and cancel checkout sessions. Use when building merchant-side checkout endpoints, handling the checkout session state machine, or integrating with AI agent checkout flows.",
+      "path": ".agent/skills/acp-checkout-rest/SKILL.md"
+    },
+    {
+      "name": "acp-conformance",
+      "description": "Validate an ACP implementation against the protocol specification — schema validation, flow testing, error handling, idempotency, security checks, and production readiness. Use when preparing for launch or certifying compliance.",
+      "path": ".agent/skills/acp-conformance/SKILL.md"
+    },
+    {
+      "name": "acp-delegated-payment",
+      "description": "Implement the ACP delegated payment flow and SharedPaymentToken (SPT) provisioning. Use when integrating with Stripe for payment tokenization, handling SPT lifecycle, or building the payment completion flow.",
+      "path": ".agent/skills/acp-delegated-payment/SKILL.md"
+    },
+    {
+      "name": "acp-dev-patterns",
+      "description": "Cross-cutting ACP development patterns — idempotency, error handling, 3D Secure flows, request signing, rate limiting, monitoring, and security best practices. Use when designing architecture or solving production concerns.",
+      "path": ".agent/skills/acp-dev-patterns/SKILL.md"
+    },
+    {
+      "name": "acp-discount-extension",
+      "description": "Implement the ACP discount extension — discount codes, applied discounts, rejected codes, and line-item allocations. Use when adding coupon/promo code support to checkout flows.",
+      "path": ".agent/skills/acp-discount-extension/SKILL.md"
+    },
+    {
+      "name": "acp-extensions-authoring",
+      "description": "Author custom ACP extensions — composable protocol add-ons with JSONPath targeting, schema composition, and independent versioning. Use when building proprietary or domain-specific extensions beyond the built-in ones.",
+      "path": ".agent/skills/acp-extensions-authoring/SKILL.md"
+    },
+    {
+      "name": "acp-fulfillment",
+      "description": "Implement ACP fulfillment options — shipping, digital delivery, in-store pickup, and local delivery. Use when building fulfillment selection, rate calculation, delivery window management, or tracking integration.",
+      "path": ".agent/skills/acp-fulfillment/SKILL.md"
+    },
+    {
+      "name": "acp-intent-traces",
+      "description": "Implement ACP intent traces — structured cart abandonment signals with reason codes for analytics and automated recovery workflows. Use when building abandonment tracking, recovery automation, or conversion optimization.",
+      "path": ".agent/skills/acp-intent-traces/SKILL.md"
+    },
+    {
+      "name": "acp-orders-webhooks",
+      "description": "Implement ACP order lifecycle management and webhook event delivery. Use when building order creation, status tracking, fulfillment updates, post-purchase adjustments, and HMAC-signed webhook emission.",
+      "path": ".agent/skills/acp-orders-webhooks/SKILL.md"
+    },
+    {
+      "name": "acp-payment-handlers",
+      "description": "Implement ACP payment handlers — pluggable payment method specifications including tokenized cards, seller-backed methods (gift cards, points, store credit), and handler negotiation. Use when adding payment methods or building custom payment handler support.",
+      "path": ".agent/skills/acp-payment-handlers/SKILL.md"
+    },
+    {
+      "name": "acp-product-feed",
+      "description": "Build product feed generation and submission for ACP. Use when implementing product catalog export, feed formatting (CSV/JSON/XML/TSV), feed validation, and push-based catalog sync to the agent platform.",
+      "path": ".agent/skills/acp-product-feed/SKILL.md"
+    },
+    {
+      "name": "acp-setup",
+      "description": "Scaffold an ACP merchant server project — install dependencies, import OpenAPI specs and JSON schemas, configure environment, and create initial endpoint stubs. Use when starting a new ACP implementation from scratch.",
+      "path": ".agent/skills/acp-setup/SKILL.md"
+    }
+  ]
+}

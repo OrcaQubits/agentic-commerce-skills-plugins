@@ -1,0 +1,162 @@
+{
+  "name": "salesforce-commerce",
+  "displayName": "Salesforce Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Salesforce Commerce development — B2C Commerce Cloud (SFCC/Demandware) with SFRA cartridges, ISML templating, SCAPI/OCAPI APIs, PWA Kit headless storefronts, and B2B/D2C Commerce on Lightning with Apex hooks, LWC components, Experience Builder, Einstein AI recommendations, Salesforce Payments, and JavaScript/TypeScript/React patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "salesforce",
+    "salesforce-commerce",
+    "sfcc",
+    "commerce-cloud",
+    "b2c-commerce",
+    "b2b-commerce",
+    "demandware",
+    "sfra",
+    "scapi",
+    "ocapi",
+    "pwa-kit",
+    "cartridges",
+    "isml",
+    "apex",
+    "lwc",
+    "einstein-ai",
+    "salesforce-payments",
+    "headless-commerce",
+    "ecommerce"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "js-modern",
+      "description": "Write modern JavaScript and TypeScript — ES6+ features, async/await, modules, destructuring, optional chaining, TypeScript types. Covers SFCC server-side JS (CommonJS, limited ES6), PWA Kit (full modern JS/TS), and LWC JavaScript (Lightning Locker constraints). Use when writing JavaScript for Salesforce Commerce.",
+      "path": ".agent/skills/js-modern/SKILL.md"
+    },
+    {
+      "name": "node-backend",
+      "description": "Build Node.js backends for Salesforce Commerce — SFCC server-side JavaScript (not actual Node.js runtime), PWA Kit backend (Express-like SSR server), Commerce SDK for server-side SCAPI access, and async patterns for external service integration. Use when building server-side commerce logic.",
+      "path": ".agent/skills/node-backend/SKILL.md"
+    },
+    {
+      "name": "react-patterns",
+      "description": "Build React applications for PWA Kit — hooks, composition, SSR, Commerce SDK integration, Chakra UI components, getProps data fetching, and client-side state management. PWA Kit uses React (NOT Remix/Next.js). Use when building PWA Kit storefronts.",
+      "path": ".agent/skills/react-patterns/SKILL.md"
+    },
+    {
+      "name": "sf-b2b-apex",
+      "description": "Build B2B Commerce Apex extensions using the CartExtension namespace — PricingCartCalculator, ShippingCartCalculator, TaxCartCalculator, InventoryCartCalculator implementations, governor limits, bulkification, test coverage (75% minimum), and checkout flow customization. Use when implementing server-side B2B commerce logic.",
+      "path": ".agent/skills/sf-b2b-apex/SKILL.md"
+    },
+    {
+      "name": "sf-b2b-experience",
+      "description": "Build B2B Commerce storefronts with Experience Builder — LWR templates, page types (Home, Product, Category, Cart, Checkout), standard and custom components, theme layouts, navigation, SEO configuration, and site publishing. Use when assembling B2B/D2C storefronts.",
+      "path": ".agent/skills/sf-b2b-experience/SKILL.md"
+    },
+    {
+      "name": "sf-b2b-lwc",
+      "description": "Build B2B Commerce LWC components — Lightning Web Components with @api/@track/@wire decorators, commerce-specific wire adapters, custom events, Lightning Web Security, Jest unit testing, and component lifecycle. Use when building B2B storefront UI components.",
+      "path": ".agent/skills/sf-b2b-lwc/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-cartridges",
+      "description": "Build B2C Commerce cartridges — cartridge directory structure (controllers/, models/, scripts/, templates/, static/), cartridge stacking, naming conventions (app_custom_*, plugin_*, int_*), cartridge path configuration, and certification requirements. Use when creating or modifying SFCC cartridges.",
+      "path": ".agent/skills/sf-b2c-cartridges/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-controllers",
+      "description": "Build SFRA controllers — server.get/post/use route handlers, middleware chain with server.append/prepend/replace, CSRF protection, form validation, response rendering, and route-level caching. Use when implementing request handling in B2C Commerce.",
+      "path": ".agent/skills/sf-b2c-controllers/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-isml",
+      "description": "\"Write ISML templates for B2C Commerce — <isprint>, <isif>, <isloop>, <isset>, <isinclude>, <isdecorate>, expression syntax ${pdict.*}, Resource.msg() localization, content slots, and template inheritance. Use when building B2C storefront templates.\"",
+      "path": ".agent/skills/sf-b2c-isml/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-jobs",
+      "description": "Build and manage B2C Commerce jobs — job framework, job steps (script modules, pipelines, custom), scheduling with cron expressions, job context and parameters, import/export jobs, reindex jobs, and Business Manager monitoring. Use when implementing background processing in B2C Commerce.",
+      "path": ".agent/skills/sf-b2c-jobs/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-ocapi",
+      "description": "\"MIGRATION SKILL: OCAPI (Open Commerce API) — Shop API and Data API endpoints, authentication, pagination, and OCAPI-to-SCAPI migration guide. OCAPI is in maintenance-only mode with no new features. Use this skill only for maintaining legacy integrations or planning migration to SCAPI.\"",
+      "path": ".agent/skills/sf-b2c-ocapi/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-pwa-kit",
+      "description": "Build headless B2C storefronts with PWA Kit — React-based framework (NOT Remix/Next.js), Managed Runtime deployment, Commerce SDK integration, server-side rendering, Chakra UI components, and extensible application shell. Use when building headless Salesforce Commerce storefronts.",
+      "path": ".agent/skills/sf-b2c-pwa-kit/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-scapi",
+      "description": "\"Build with Salesforce Commerce API (SCAPI) — Shopper APIs (Products, Search, Baskets, Orders, Customers), SLAS authentication, Commerce SDK for Node.js, rate limiting, pagination, and headless commerce patterns. This is the primary B2C API. Use when building headless storefronts or API integrations.\"",
+      "path": ".agent/skills/sf-b2c-scapi/SKILL.md"
+    },
+    {
+      "name": "sf-b2c-sfra",
+      "description": "Build B2C Commerce storefronts with SFRA (Storefront Reference Architecture) — cartridge overlay system, MVC pattern, app_storefront_base, module.superModule inheritance, middleware chain, and site-specific customizations. Use when developing SFRA-based storefronts.",
+      "path": ".agent/skills/sf-b2c-sfra/SKILL.md"
+    },
+    {
+      "name": "sf-catalog",
+      "description": "Manage Salesforce Commerce catalogs — B2C (Business Manager catalogs, categories, products, pricing books, promotions, search indexes) and B2B (Product2, Pricebook2, PricebookEntry, volume discounts, entitlements). Use when working with product data across either platform.",
+      "path": ".agent/skills/sf-catalog/SKILL.md"
+    },
+    {
+      "name": "sf-customers",
+      "description": "Manage Salesforce Commerce customers — B2C (customer objects, customer groups, segmentation, SLAS authentication, wishlists) and B2B (Account/Contact, buyer groups, buyer permissions, self-registration). Both platforms share Data Cloud for unified customer profiles and consent management.",
+      "path": ".agent/skills/sf-customers/SKILL.md"
+    },
+    {
+      "name": "sf-einstein",
+      "description": "Implement Einstein AI for Salesforce Commerce — Einstein Recommendations (product-to-product, user-to-product, trending), predictive sort, search ranking, Einstein Search Dictionaries, and Data Cloud personalization. Use when adding AI-powered features to commerce storefronts.",
+      "path": ".agent/skills/sf-einstein/SKILL.md"
+    },
+    {
+      "name": "sf-integrations",
+      "description": "Build Salesforce Commerce integrations — B2C (SCAPI hooks, webhooks, custom script callouts) and B2B (Platform Events, Change Data Capture, outbound messages). Both platforms use event-driven patterns, HMAC verification, idempotency, and retry handling for reliable integration.",
+      "path": ".agent/skills/sf-integrations/SKILL.md"
+    },
+    {
+      "name": "sf-orders",
+      "description": "Manage Salesforce Commerce orders — B2C (SCAPI order objects, status lifecycle, order confirmation, returns) and B2B (Order object, OrderItem, splits, approval workflows, fulfillment). Use when implementing order management across either platform.",
+      "path": ".agent/skills/sf-orders/SKILL.md"
+    },
+    {
+      "name": "sf-payments",
+      "description": "Implement Salesforce Commerce payments — Salesforce Payments (supports multiple processors including Stripe and Adyen), B2C payment adapters (JavaScript cartridge-based), B2B payment adapters (Apex-based), PCI compliance via tokenization, 3D Secure/SCA support, and payment method management. Use when implementing payment processing.",
+      "path": ".agent/skills/sf-payments/SKILL.md"
+    },
+    {
+      "name": "sf-performance",
+      "description": "Optimize Salesforce Commerce performance — B2C (cartridge caching, CDN configuration, ISML rendering optimization, lazy loading) and B2B (SOQL optimization, LWC lazy loading, Apex bulkification). Both platforms target Core Web Vitals and image optimization.",
+      "path": ".agent/skills/sf-performance/SKILL.md"
+    },
+    {
+      "name": "sf-security",
+      "description": "Implement Salesforce Commerce security — SLAS OAuth 2.1, session management, CSRF tokens, XSS prevention (isprint encoding in ISML), PCI compliance, RBAC in Business Manager, OWASP Top 10 protections, and Salesforce Shield for B2B. Use when implementing authentication or security controls.",
+      "path": ".agent/skills/sf-security/SKILL.md"
+    },
+    {
+      "name": "sf-setup",
+      "description": "Set up a Salesforce Commerce development environment — sfcc-ci CLI for B2C, sf CLI for B2B, Business Manager access, sandbox management, dw.json configuration, .sfdx project setup, and project structures for SFRA, PWA Kit, and Lightning. Use when starting a new Salesforce Commerce project.",
+      "path": ".agent/skills/sf-setup/SKILL.md"
+    },
+    {
+      "name": "sf-testing",
+      "description": "Test Salesforce Commerce code — B2C (Node.js unit testing, sfcc-ci CI/CD, sandbox management, linting) and B2B (Apex test classes with 75% coverage minimum, Jest for LWC, sf CLI deployment and validation). Use when writing tests or setting up CI/CD.",
+      "path": ".agent/skills/sf-testing/SKILL.md"
+    }
+  ]
+}

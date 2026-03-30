@@ -1,0 +1,109 @@
+{
+  "name": "ucp-agentic-commerce",
+  "displayName": "Ucp Agentic Commerce",
+  "version": "1.0.0",
+  "description": "Universal Commerce Protocol (UCP) expert for building agentic commerce implementations. Covers the full protocol — discovery, checkout, orders, payments, fulfillment, discounts, identity linking, AP2 mandates — across REST, MCP, A2A, and Embedded bindings.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "ucp",
+    "universal-commerce-protocol",
+    "agentic-commerce",
+    "checkout",
+    "mcp",
+    "a2a",
+    "ap2",
+    "google",
+    "shopify",
+    "payments",
+    "ecommerce"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "ucp-ap2-mandates",
+      "description": "Implement UCP AP2 Mandates extension — cryptographic payment mandates for fully autonomous agent commerce using SD-JWT credentials, merchant authorization signatures, and the Agent Payments Protocol. Use when building autonomous agent payment flows without human-in-the-loop.",
+      "path": ".agent/skills/ucp-ap2-mandates/SKILL.md"
+    },
+    {
+      "name": "ucp-buyer-consent",
+      "description": "Implement the UCP Buyer Consent extension — GDPR/CCPA consent collection, consent fields in checkout sessions, and privacy-compliant consent management. Use when adding consent flows, privacy compliance, or data processing agreements to UCP checkout.",
+      "path": ".agent/skills/ucp-buyer-consent/SKILL.md"
+    },
+    {
+      "name": "ucp-checkout-a2a",
+      "description": "Implement UCP Checkout over the A2A (Agent-to-Agent) binding — enable autonomous agent-to-agent commerce using Agent Cards and structured message parts. Use when building agent-to-agent commerce flows.",
+      "path": ".agent/skills/ucp-checkout-a2a/SKILL.md"
+    },
+    {
+      "name": "ucp-checkout-mcp",
+      "description": "Implement UCP Checkout over the MCP (Model Context Protocol) binding — expose checkout operations as MCP tools for AI agents. Use when building an MCP server that AI agents like Claude or Gemini can call for commerce, or when integrating with Shopify's MCP endpoint.",
+      "path": ".agent/skills/ucp-checkout-mcp/SKILL.md"
+    },
+    {
+      "name": "ucp-checkout-rest",
+      "description": "Implement UCP Checkout over the REST binding — create, get, update, complete, and cancel checkout sessions with proper headers, idempotency, status transitions, and error handling. Use when building REST-based UCP checkout endpoints or clients.",
+      "path": ".agent/skills/ucp-checkout-rest/SKILL.md"
+    },
+    {
+      "name": "ucp-conformance",
+      "description": "Run and write UCP conformance tests — validate a UCP implementation against the official test suite covering checkout lifecycle, orders, fulfillment, payments, idempotency, webhooks, and security. Use when testing or validating a UCP implementation.",
+      "path": ".agent/skills/ucp-conformance/SKILL.md"
+    },
+    {
+      "name": "ucp-dev-patterns",
+      "description": "UCP development patterns — capability negotiation algorithms, idempotency implementation, error resolution loops, multi-binding servers, and production architecture. Use when designing the internal architecture of a UCP implementation or solving cross-cutting concerns.",
+      "path": ".agent/skills/ucp-dev-patterns/SKILL.md"
+    },
+    {
+      "name": "ucp-discount",
+      "description": "Implement the UCP Discount extension — discount code application, validation, allocation tracking, and error handling. Use when adding promo code or discount logic to a UCP checkout.",
+      "path": ".agent/skills/ucp-discount/SKILL.md"
+    },
+    {
+      "name": "ucp-embedded-checkout",
+      "description": "Implement UCP Embedded Checkout Protocol — iframe/webview-based checkout UI for human escalation using JSON-RPC 2.0 over postMessage. Use when the checkout status is requires_escalation and the buyer needs a merchant-hosted UI.",
+      "path": ".agent/skills/ucp-embedded-checkout/SKILL.md"
+    },
+    {
+      "name": "ucp-fulfillment",
+      "description": "Implement the UCP Fulfillment extension — shipping and pickup methods, destinations, fulfillment groups, selectable options, and estimated delivery. Use when adding shipping/pickup logic to a UCP checkout.",
+      "path": ".agent/skills/ucp-fulfillment/SKILL.md"
+    },
+    {
+      "name": "ucp-identity-linking",
+      "description": "Implement UCP Identity Linking — OAuth 2.0 authorization code flow for linking buyer accounts between platforms and merchants, enabling personalized checkout experiences. Use when implementing account linking or SSO for UCP.",
+      "path": ".agent/skills/ucp-identity-linking/SKILL.md"
+    },
+    {
+      "name": "ucp-orders-webhooks",
+      "description": "Implement UCP Order capability and webhook delivery — post-purchase order management with fulfillment tracking, adjustments (refunds/returns), and cryptographically signed webhook notifications. Use when building order management or webhook infrastructure.",
+      "path": ".agent/skills/ucp-orders-webhooks/SKILL.md"
+    },
+    {
+      "name": "ucp-payment-handlers",
+      "description": "Implement UCP payment handlers — configure Google Pay, Shop Pay, or custom payment methods with tokenization, credential flow, and instrument schemas. Use when integrating payment processing into a UCP checkout.",
+      "path": ".agent/skills/ucp-payment-handlers/SKILL.md"
+    },
+    {
+      "name": "ucp-schema-authoring",
+      "description": "Author custom UCP schemas and extensions — create capability schemas, extension schemas, and type definitions using JSON Schema 2020-12 composition. Use when extending UCP with custom capabilities or building domain-specific extensions.",
+      "path": ".agent/skills/ucp-schema-authoring/SKILL.md"
+    },
+    {
+      "name": "ucp-setup",
+      "description": "Set up a UCP project — scaffold a merchant server or platform client with discovery profile, SDK installation, and project structure. Use when starting a new UCP implementation.",
+      "path": ".agent/skills/ucp-setup/SKILL.md"
+    }
+  ]
+}

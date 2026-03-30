@@ -1,0 +1,112 @@
+{
+  "name": "a2a-multi-agent",
+  "displayName": "A2A Multi Agent",
+  "version": "1.0.0",
+  "description": "Expert A2A (Agent-to-Agent) protocol knowledge for building multi-agent systems — Agent Cards, task lifecycle, streaming, push notifications, authentication, and framework integrations.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "a2a",
+    "agent-to-agent",
+    "multi-agent",
+    "google",
+    "json-rpc",
+    "agent-card",
+    "task-lifecycle",
+    "streaming",
+    "push-notifications"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "a2a-agent-card",
+      "description": "Create and configure A2A Agent Cards — the discovery document describing an agent's capabilities, skills, authentication, and endpoint. Use when defining what your agent exposes to other agents.",
+      "path": ".agent/skills/a2a-agent-card/SKILL.md"
+    },
+    {
+      "name": "a2a-authentication",
+      "description": "Implement A2A authentication — API keys, Bearer tokens, OAuth 2.0, OpenID Connect, and mutual TLS. Use when securing agent-to-agent communication and configuring Agent Card security schemes.",
+      "path": ".agent/skills/a2a-authentication/SKILL.md"
+    },
+    {
+      "name": "a2a-client",
+      "description": "Build an A2A client — the agent-side code that discovers other agents, sends tasks, handles responses, and manages multi-turn conversations. Use when implementing the client side that delegates work to A2A agents.",
+      "path": ".agent/skills/a2a-client/SKILL.md"
+    },
+    {
+      "name": "a2a-dev-patterns",
+      "description": "Apply A2A cross-cutting development patterns — orchestration topologies, idempotency, observability, agent registries, versioning, and production deployment. Use when architecting multi-agent systems or solving cross-cutting concerns.",
+      "path": ".agent/skills/a2a-dev-patterns/SKILL.md"
+    },
+    {
+      "name": "a2a-error-handling",
+      "description": "Implement A2A error handling — JSON-RPC errors, A2A-specific error codes, task failure states, retry strategies, and graceful degradation. Use when building robust error handling in A2A agents.",
+      "path": ".agent/skills/a2a-error-handling/SKILL.md"
+    },
+    {
+      "name": "a2a-framework-integration",
+      "description": "Integrate A2A with agent frameworks — Google ADK, LangGraph, CrewAI, AutoGen, and AWS Bedrock AgentCore. Use when connecting framework-built agents to the A2A protocol for inter-agent communication.",
+      "path": ".agent/skills/a2a-framework-integration/SKILL.md"
+    },
+    {
+      "name": "a2a-jsonrpc-transport",
+      "description": "Implement the A2A JSON-RPC 2.0 transport layer — request/response format, method routing, batch requests, and HTTP details. Use when building custom A2A transport handling or debugging protocol-level issues.",
+      "path": ".agent/skills/a2a-jsonrpc-transport/SKILL.md"
+    },
+    {
+      "name": "a2a-mcp-bridge",
+      "description": "Build bridges between A2A and MCP — wrap A2A agents as MCP tools, use MCP tools from A2A agents, and architect hybrid multi-agent systems. Use when integrating A2A agent-to-agent communication with MCP tool access.",
+      "path": ".agent/skills/a2a-mcp-bridge/SKILL.md"
+    },
+    {
+      "name": "a2a-messages-parts",
+      "description": "Implement A2A messages and parts — TextPart, FilePart, DataPart, message roles, metadata, and content negotiation. Use when building message construction, parsing, or content type handling in A2A agents.",
+      "path": ".agent/skills/a2a-messages-parts/SKILL.md"
+    },
+    {
+      "name": "a2a-multi-turn",
+      "description": "Implement A2A multi-turn conversations — input-required state handling, context preservation, iterative refinement, and human-in-the-loop patterns. Use when building agents that need back-and-forth interaction.",
+      "path": ".agent/skills/a2a-multi-turn/SKILL.md"
+    },
+    {
+      "name": "a2a-push-notifications",
+      "description": "Implement A2A push notifications — callback URL registration, notification delivery, and management methods. Use when building async notification delivery for long-running A2A tasks.",
+      "path": ".agent/skills/a2a-push-notifications/SKILL.md"
+    },
+    {
+      "name": "a2a-server",
+      "description": "Build an A2A server — the agent-side endpoint that receives JSON-RPC requests, processes tasks, manages state, and returns results. Use when implementing the server side of an A2A agent.",
+      "path": ".agent/skills/a2a-server/SKILL.md"
+    },
+    {
+      "name": "a2a-setup",
+      "description": "Scaffold a new A2A project — install the SDK, create directory structure, configure the Agent Card, and set up a basic server/client. Use when starting a new A2A multi-agent project from scratch.",
+      "path": ".agent/skills/a2a-setup/SKILL.md"
+    },
+    {
+      "name": "a2a-streaming",
+      "description": "Implement A2A SSE streaming — message/stream method, Server-Sent Events, TaskStatusUpdateEvent, TaskArtifactUpdateEvent, and re-subscription. Use when building real-time streaming responses in A2A agents.",
+      "path": ".agent/skills/a2a-streaming/SKILL.md"
+    },
+    {
+      "name": "a2a-task-lifecycle",
+      "description": "Implement A2A task lifecycle management — task creation, state transitions, terminal states, history, and artifacts. Use when building task state machines, handling state transitions, or managing task persistence.",
+      "path": ".agent/skills/a2a-task-lifecycle/SKILL.md"
+    },
+    {
+      "name": "a2a-testing",
+      "description": "Test A2A implementations — unit tests, integration tests, mock agents, protocol conformance, and end-to-end multi-agent testing. Use when building test suites for A2A servers, clients, or multi-agent systems.",
+      "path": ".agent/skills/a2a-testing/SKILL.md"
+    }
+  ]
+}

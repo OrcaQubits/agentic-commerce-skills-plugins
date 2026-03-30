@@ -1,0 +1,34 @@
+{
+  "id": "shopify-commerce",
+  "name": "Shopify Commerce",
+  "description": "Expert subagent and skills for Shopify development — GraphQL Admin and Storefront APIs, Liquid templating, Online Store 2.0 themes, Hydrogen/Remix headless storefronts, Shopify Functions, checkout UI extensions, Polaris components, app development with App Bridge, webhooks, and JavaScript/TypeScript/React patterns.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/js-modern",
+    "skills/node-backend",
+    "skills/react-patterns",
+    "skills/shopify-api-graphql",
+    "skills/shopify-api-rest",
+    "skills/shopify-app-dev",
+    "skills/shopify-catalog",
+    "skills/shopify-checkout-ui",
+    "skills/shopify-customers",
+    "skills/shopify-functions",
+    "skills/shopify-hydrogen",
+    "skills/shopify-liquid",
+    "skills/shopify-orders",
+    "skills/shopify-payments",
+    "skills/shopify-performance",
+    "skills/shopify-polaris",
+    "skills/shopify-security",
+    "skills/shopify-setup",
+    "skills/shopify-testing",
+    "skills/shopify-themes",
+    "skills/shopify-webhooks"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

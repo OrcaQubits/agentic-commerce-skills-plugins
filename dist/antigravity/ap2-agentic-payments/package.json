@@ -1,0 +1,122 @@
+{
+  "name": "ap2-agentic-payments",
+  "displayName": "Ap2 Agentic Payments",
+  "version": "1.0.0",
+  "description": "Expert AP2 (Agent Payments Protocol) knowledge for building agentic commerce payment modules — Verifiable Digital Credentials, mandates, cryptographic signing, transaction flows, and multi-agent payment orchestration.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "ap2",
+    "agent-payments",
+    "agentic-commerce",
+    "google",
+    "mandates",
+    "vdc",
+    "verifiable-credentials",
+    "payment",
+    "cryptographic-signing"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "ap2-a2a-extension",
+      "description": "Implement AP2 as an A2A extension — mandate DataParts in A2A messages, Agent Card AP2 capabilities, payment-specific task flows, and inter-agent payment communication. Use when integrating AP2 payment capabilities into A2A multi-agent systems.",
+      "path": ".agent/skills/ap2-a2a-extension/SKILL.md"
+    },
+    {
+      "name": "ap2-cart-mandate",
+      "description": "Implement the AP2 Cart Mandate — the human-present VDC that binds user authorization to a specific transaction with merchant-signed product offers and user-signed confirmation. Use when building cart creation, signing, and verification for human-present checkout flows.",
+      "path": ".agent/skills/ap2-cart-mandate/SKILL.md"
+    },
+    {
+      "name": "ap2-challenge-stepup",
+      "description": "Implement AP2 challenge and step-up flows — 3DS2, OTP verification, redirect challenges, and trusted surface interactions. Use when building additional authentication steps during agentic payment processing.",
+      "path": ".agent/skills/ap2-challenge-stepup/SKILL.md"
+    },
+    {
+      "name": "ap2-credentials-provider",
+      "description": "Build an AP2 Credentials Provider — the agent that manages payment credentials, provides payment methods to users, handles tokenization (DPAN), and facilitates secure payment between Shopping Agent and Payment Processor. Use when implementing the Credentials Provider role.",
+      "path": ".agent/skills/ap2-credentials-provider/SKILL.md"
+    },
+    {
+      "name": "ap2-cryptographic-signing",
+      "description": "Implement AP2 cryptographic signing — hardware-backed user signatures, merchant entity signatures, VDC integrity, key management, and attestation flows. Use when building the signing, verification, and key management components of AP2 mandates.",
+      "path": ".agent/skills/ap2-cryptographic-signing/SKILL.md"
+    },
+    {
+      "name": "ap2-dev-patterns",
+      "description": "Apply AP2 cross-cutting development patterns — multi-agent payment architecture, UCP integration, x402 crypto payments, testing with mock providers, and production deployment. Use when architecting agentic payment systems or solving cross-cutting payment concerns.",
+      "path": ".agent/skills/ap2-dev-patterns/SKILL.md"
+    },
+    {
+      "name": "ap2-dispute-accountability",
+      "description": "Implement AP2 dispute resolution and accountability — cryptographic evidence, liability allocation, chargeback handling, and audit trail construction. Use when building dispute handling, fraud investigation, or compliance systems for agentic payments.",
+      "path": ".agent/skills/ap2-dispute-accountability/SKILL.md"
+    },
+    {
+      "name": "ap2-human-not-present-flow",
+      "description": "Implement the AP2 human-not-present transaction flow — autonomous agent shopping with Intent Mandate authorization, constraint enforcement, and merchant escalation. Use when building autonomous agent purchasing that works after the user has left.",
+      "path": ".agent/skills/ap2-human-not-present-flow/SKILL.md"
+    },
+    {
+      "name": "ap2-human-present-flow",
+      "description": "Implement the AP2 human-present transaction flow — the checkout process where the user is actively present to confirm cart details and payment method selection. The primary VDC in this flow is the Cart Mandate. Use when building interactive agentic checkout with user in the loop.",
+      "path": ".agent/skills/ap2-human-present-flow/SKILL.md"
+    },
+    {
+      "name": "ap2-intent-mandate",
+      "description": "Implement the AP2 Intent Mandate — the human-not-present VDC that pre-authorizes agent purchases within defined constraints. Use when building autonomous agent shopping with user-signed intent, TTL, and constraint enforcement.",
+      "path": ".agent/skills/ap2-intent-mandate/SKILL.md"
+    },
+    {
+      "name": "ap2-mcp-server",
+      "description": "Implement AP2 MCP servers — payment tools exposed via Model Context Protocol for agent access to payment capabilities. Use when building MCP-based payment tool integrations for AP2.",
+      "path": ".agent/skills/ap2-mcp-server/SKILL.md"
+    },
+    {
+      "name": "ap2-merchant-agent",
+      "description": "Build an AP2 Merchant Agent — the seller-side agent that receives intent mandates, searches product catalogs, creates signed cart mandates, and represents the merchant in agentic transactions. Use when implementing the Merchant Endpoint role.",
+      "path": ".agent/skills/ap2-merchant-agent/SKILL.md"
+    },
+    {
+      "name": "ap2-payment-mandate",
+      "description": "Implement the AP2 Payment Mandate — the VDC shared with payment networks and issuers to signal AI involvement and user authorization. Use when building payment authorization flows, tokenization, and network integration.",
+      "path": ".agent/skills/ap2-payment-mandate/SKILL.md"
+    },
+    {
+      "name": "ap2-payment-processor",
+      "description": "Build an AP2 Merchant Payment Processor — the agent that constructs payment authorization messages, requests credentials from the Credentials Provider, processes payments, and returns receipts. Use when implementing the MPP role.",
+      "path": ".agent/skills/ap2-payment-processor/SKILL.md"
+    },
+    {
+      "name": "ap2-risk-signals",
+      "description": "Implement the AP2 risk signals framework — novel risk considerations for agentic payments, risk payload construction, trust establishment, and fraud assessment. Use when building risk evaluation, fraud detection, or trust scoring for AP2 transactions.",
+      "path": ".agent/skills/ap2-risk-signals/SKILL.md"
+    },
+    {
+      "name": "ap2-setup",
+      "description": "Scaffold a new AP2 project — install the SDK, set up agent roles, configure credentials, and create a basic multi-agent payment system. Use when starting a new AP2 agentic payments project from scratch.",
+      "path": ".agent/skills/ap2-setup/SKILL.md"
+    },
+    {
+      "name": "ap2-shopping-agent",
+      "description": "Build an AP2 Shopping Agent — the main orchestrator that handles user requests, creates mandates, coordinates with merchants and credentials providers, and manages the transaction flow. Use when implementing the Shopping Agent role.",
+      "path": ".agent/skills/ap2-shopping-agent/SKILL.md"
+    },
+    {
+      "name": "ap2-vdc-framework",
+      "description": "Implement the AP2 Verifiable Digital Credentials (VDC) framework — tamper-evident, cryptographically signed credentials that form the trust foundation for agentic payments. Use when working with the overall VDC architecture, credential issuance, verification, and holder binding.",
+      "path": ".agent/skills/ap2-vdc-framework/SKILL.md"
+    }
+  ]
+}

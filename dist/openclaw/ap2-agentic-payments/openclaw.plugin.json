@@ -1,0 +1,31 @@
+{
+  "id": "ap2-agentic-payments",
+  "name": "Ap2 Agentic Payments",
+  "description": "Expert AP2 (Agent Payments Protocol) knowledge for building agentic commerce payment modules — Verifiable Digital Credentials, mandates, cryptographic signing, transaction flows, and multi-agent payment orchestration.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/ap2-a2a-extension",
+    "skills/ap2-cart-mandate",
+    "skills/ap2-challenge-stepup",
+    "skills/ap2-credentials-provider",
+    "skills/ap2-cryptographic-signing",
+    "skills/ap2-dev-patterns",
+    "skills/ap2-dispute-accountability",
+    "skills/ap2-human-not-present-flow",
+    "skills/ap2-human-present-flow",
+    "skills/ap2-intent-mandate",
+    "skills/ap2-mcp-server",
+    "skills/ap2-merchant-agent",
+    "skills/ap2-payment-mandate",
+    "skills/ap2-payment-processor",
+    "skills/ap2-risk-signals",
+    "skills/ap2-setup",
+    "skills/ap2-shopping-agent",
+    "skills/ap2-vdc-framework"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

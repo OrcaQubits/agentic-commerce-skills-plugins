@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "run_shell_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"${extensionPath}${/}/scripts/check_bc_commands.py\"",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "AfterTool": [
+      {
+        "matcher": "write_file|edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"${extensionPath}${/}/scripts/check_secrets.py\"",
+            "timeout": 30000
+          }
+        ]
+      }
+    ]
+  }
+}

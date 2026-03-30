@@ -1,0 +1,133 @@
+{
+  "name": "bigcommerce-commerce",
+  "displayName": "Bigcommerce Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for BigCommerce development — Stencil themes, REST/GraphQL APIs, single-click apps, checkout SDK, payment integrations, headless with Catalyst/Next.js, multi-channel, webhooks, and Node.js/JavaScript patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "bigcommerce",
+    "ecommerce",
+    "stencil",
+    "catalyst",
+    "headless",
+    "rest-api",
+    "graphql",
+    "checkout-sdk",
+    "multi-channel",
+    "nextjs"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "bc-api-graphql",
+      "description": "Use the BigCommerce GraphQL Storefront API — queries, mutations, authentication tokens, customer impersonation, cart operations, and schema exploration. Use when building storefront features that need client-side data fetching.",
+      "path": ".agent/skills/bc-api-graphql/SKILL.md"
+    },
+    {
+      "name": "bc-api-rest",
+      "description": "Use BigCommerce REST APIs — V2 and V3 endpoints, authentication, rate limiting, pagination, filtering, batch operations, and error handling. Use when integrating with BigCommerce data via REST API.",
+      "path": ".agent/skills/bc-api-rest/SKILL.md"
+    },
+    {
+      "name": "bc-app-dev",
+      "description": "Build BigCommerce apps — single-click apps, OAuth flow, app callbacks, connector apps, control panel integration, and App Marketplace submission. Use when creating integrations that install via the BigCommerce App Marketplace.",
+      "path": ".agent/skills/bc-app-dev/SKILL.md"
+    },
+    {
+      "name": "bc-catalog",
+      "description": "Work with BigCommerce catalog — products, variants, options, modifiers, categories, brands, metafields, images, and bulk operations. Use when managing product data programmatically or building catalog integrations.",
+      "path": ".agent/skills/bc-catalog/SKILL.md"
+    },
+    {
+      "name": "bc-channels",
+      "description": "Work with BigCommerce multi-channel — channels, multi-storefront, channel-specific catalog, site routing, and channel management API. Use when building multi-storefront solutions or managing channel-specific content.",
+      "path": ".agent/skills/bc-channels/SKILL.md"
+    },
+    {
+      "name": "bc-checkout",
+      "description": "Customize BigCommerce checkout — Checkout SDK, embedded checkout, server-side checkout API, custom checkout UI, and checkout extensions. Use when modifying the checkout experience or building headless checkout flows.",
+      "path": ".agent/skills/bc-checkout/SKILL.md"
+    },
+    {
+      "name": "bc-customers",
+      "description": "Work with BigCommerce customers — Customer API, customer groups, addresses, stored instruments, attributes, Customer Login API (SSO), and customer segmentation. Use when building customer-facing features or integrating customer data.",
+      "path": ".agent/skills/bc-customers/SKILL.md"
+    },
+    {
+      "name": "bc-headless",
+      "description": "Build headless commerce with BigCommerce — Catalyst (Next.js reference storefront), GraphQL Storefront API, server-side APIs, embedded checkout, and headless architecture patterns. Use when building decoupled storefronts or integrating BigCommerce as a headless backend.",
+      "path": ".agent/skills/bc-headless/SKILL.md"
+    },
+    {
+      "name": "bc-orders",
+      "description": "Work with BigCommerce orders — order lifecycle, statuses, line items, shipments, refunds, order metafields, and fulfillment. Use when building order management integrations or processing orders programmatically.",
+      "path": ".agent/skills/bc-orders/SKILL.md"
+    },
+    {
+      "name": "bc-payments",
+      "description": "Integrate BigCommerce payments — Payment Processing API, stored payment instruments, payment methods, server-side payment processing for headless, and PCI considerations. Use when building custom payment flows or processing payments programmatically.",
+      "path": ".agent/skills/bc-payments/SKILL.md"
+    },
+    {
+      "name": "bc-performance",
+      "description": "Optimize BigCommerce storefront performance — CDN, image optimization, lazy loading, Stencil theme optimization, API response caching, GraphQL query efficiency, and Core Web Vitals. Use when improving store speed or diagnosing performance issues.",
+      "path": ".agent/skills/bc-performance/SKILL.md"
+    },
+    {
+      "name": "bc-security",
+      "description": "Implement BigCommerce security — OAuth token management, API authentication, webhook verification, CSP, input validation, PCI compliance, and app security best practices. Use when hardening integrations or reviewing security posture.",
+      "path": ".agent/skills/bc-security/SKILL.md"
+    },
+    {
+      "name": "bc-setup",
+      "description": "Set up a BigCommerce development environment — Stencil CLI, API credentials, sandbox stores, Catalyst, and developer tools. Use when starting a new BigCommerce project or configuring development tools.",
+      "path": ".agent/skills/bc-setup/SKILL.md"
+    },
+    {
+      "name": "bc-stencil",
+      "description": "Build BigCommerce Stencil themes — Handlebars templates, front matter, theme objects, SCSS, JavaScript modules, config.json, schema.json, and Stencil CLI. Use when creating or customizing BigCommerce storefront themes.",
+      "path": ".agent/skills/bc-stencil/SKILL.md"
+    },
+    {
+      "name": "bc-testing",
+      "description": "Test BigCommerce integrations — API testing, Stencil theme testing, Cypress/Playwright E2E tests, webhook testing, and sandbox stores. Use when writing tests for BigCommerce apps, themes, or integrations.",
+      "path": ".agent/skills/bc-testing/SKILL.md"
+    },
+    {
+      "name": "bc-webhooks",
+      "description": "Implement BigCommerce webhooks — event topics, webhook management, payload handling, verification, retry logic, and event-driven architecture. Use when building real-time integrations that react to store events.",
+      "path": ".agent/skills/bc-webhooks/SKILL.md"
+    },
+    {
+      "name": "bc-widgets",
+      "description": "Build BigCommerce widgets and use Script Manager — widget templates, widget placements, Page Builder integration, Script Manager API for injecting JavaScript/CSS, and storefront content customization. Use when adding custom content blocks or injecting scripts into the storefront.",
+      "path": ".agent/skills/bc-widgets/SKILL.md"
+    },
+    {
+      "name": "js-modern",
+      "description": "Write modern JavaScript and TypeScript — ES6+ features, async/await, modules, destructuring, optional chaining, TypeScript types, and modern tooling. Use when writing JavaScript/TypeScript for BigCommerce themes, apps, or headless storefronts.",
+      "path": ".agent/skills/js-modern/SKILL.md"
+    },
+    {
+      "name": "nextjs-patterns",
+      "description": "Build with Next.js for BigCommerce — App Router, Server/Client Components, data fetching, ISR, middleware, API routes, and Catalyst patterns. Use when building headless BigCommerce storefronts with Next.js.",
+      "path": ".agent/skills/nextjs-patterns/SKILL.md"
+    },
+    {
+      "name": "node-backend",
+      "description": "Build Node.js backends for BigCommerce apps — Express/Fastify servers, OAuth handling, JWT verification, API proxy, webhook processing, session management, and deployment. Use when building the server-side component of BigCommerce apps.",
+      "path": ".agent/skills/node-backend/SKILL.md"
+    }
+  ]
+}

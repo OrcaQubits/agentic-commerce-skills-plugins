@@ -93,8 +93,9 @@ def validate_gemini_manifest(path: Path, result: ValidationResult) -> None:
     else:
         result.ok()
 
-    # Should not have Claude-specific fields
-    for field in ("author", "keywords", "license"):
+    # Should not have Claude-specific fields (author and repository are now
+    # intentionally included for marketplace discoverability)
+    for field in ("keywords", "license"):
         if field in data:
             result.error(f"{path}: Claude-specific field '{field}' should be stripped")
 
@@ -273,6 +274,19 @@ def validate_antigravity(dist_dir: Path, result: ValidationResult) -> None:
     for plugin_dir in sorted(anti_dir.iterdir()):
         if not plugin_dir.is_dir():
             continue
+
+        # package.json manifest
+        pkg_json = plugin_dir / "package.json"
+        if pkg_json.is_file():
+            pkg_data = validate_json_file(pkg_json, result)
+            if pkg_data is not None:
+                for field in ("name", "displayName", "version", "description", "publisher"):
+                    if field in pkg_data:
+                        result.ok()
+                    else:
+                        result.error(f"{pkg_json}: missing required field '{field}'")
+        else:
+            result.error(f"{plugin_dir.name}: missing package.json")
 
         # AGENTS.md
         agents_md = plugin_dir / "AGENTS.md"

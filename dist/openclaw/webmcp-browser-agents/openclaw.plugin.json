@@ -1,0 +1,27 @@
+{
+  "id": "webmcp-browser-agents",
+  "name": "Webmcp Browser Agents",
+  "description": "WebMCP (Web Model Context Protocol) — browser-native API for agent-ready websites, enabling structured tool registration, declarative forms, human-in-the-loop commerce, and MCP-B polyfill integration.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/webmcp-authentication",
+    "skills/webmcp-commerce-tools",
+    "skills/webmcp-context-provider",
+    "skills/webmcp-declarative-forms",
+    "skills/webmcp-dev-patterns",
+    "skills/webmcp-mcp-bridge",
+    "skills/webmcp-polyfill",
+    "skills/webmcp-register-tool",
+    "skills/webmcp-security",
+    "skills/webmcp-setup",
+    "skills/webmcp-testing",
+    "skills/webmcp-tool-annotations",
+    "skills/webmcp-tool-schemas",
+    "skills/webmcp-user-interaction"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

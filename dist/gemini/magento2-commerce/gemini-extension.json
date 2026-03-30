@@ -1,0 +1,14 @@
+{
+  "name": "magento2-commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Magento 2 Open Source development — module creation, DI, plugins, EAV, APIs, checkout, catalog, admin UI, testing, deployment, and PHP 8.x patterns.",
+  "contextFileName": "GEMINI.md",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  }
+}

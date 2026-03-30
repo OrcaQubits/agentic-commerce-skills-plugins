@@ -1,0 +1,105 @@
+{
+  "name": "webmcp-browser-agents",
+  "displayName": "Webmcp Browser Agents",
+  "version": "1.0.0",
+  "description": "WebMCP (Web Model Context Protocol) — browser-native API for agent-ready websites, enabling structured tool registration, declarative forms, human-in-the-loop commerce, and MCP-B polyfill integration.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "webmcp",
+    "web-model-context-protocol",
+    "browser-agents",
+    "navigator-modelcontext",
+    "agentic-commerce",
+    "register-tool",
+    "declarative-forms",
+    "mcp-b",
+    "polyfill",
+    "human-in-the-loop",
+    "w3c",
+    "chrome"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "webmcp-authentication",
+      "description": "Implement WebMCP authentication patterns — browser session inheritance, cookie-based auth, role-gated tool registration, and conditional tool exposure. Use when managing which tools are available based on user authentication state.",
+      "path": ".agent/skills/webmcp-authentication/SKILL.md"
+    },
+    {
+      "name": "webmcp-commerce-tools",
+      "description": "Implement commerce-specific WebMCP tools — product search, cart management, checkout, returns, subscriptions, and support. Use when building agentic shopping experiences on e-commerce websites.",
+      "path": ".agent/skills/webmcp-commerce-tools/SKILL.md"
+    },
+    {
+      "name": "webmcp-context-provider",
+      "description": "Implement the WebMCP provideContext API — bulk tool registration, contextual metadata, page state sharing, and dynamic context updates. Use when providing rich context and multiple tools to agents simultaneously.",
+      "path": ".agent/skills/webmcp-context-provider/SKILL.md"
+    },
+    {
+      "name": "webmcp-declarative-forms",
+      "description": "Implement the WebMCP Declarative API — annotate HTML forms with toolname and tooldescription attributes for automatic tool extraction. Use when making existing forms agent-ready with minimal code changes.",
+      "path": ".agent/skills/webmcp-declarative-forms/SKILL.md"
+    },
+    {
+      "name": "webmcp-dev-patterns",
+      "description": "Apply WebMCP cross-cutting development patterns — SPA routing, error handling, performance optimization, multi-site agents, accessibility, SEO, and production deployment. Use when architecting WebMCP-enabled sites or solving cross-cutting concerns.",
+      "path": ".agent/skills/webmcp-dev-patterns/SKILL.md"
+    },
+    {
+      "name": "webmcp-mcp-bridge",
+      "description": "Integrate WebMCP client-side tools with backend MCP servers and UCP endpoints — bridge browser-based agent interactions with server-to-server protocols. Use when connecting front-end WebMCP to existing backend API infrastructure.",
+      "path": ".agent/skills/webmcp-mcp-bridge/SKILL.md"
+    },
+    {
+      "name": "webmcp-polyfill",
+      "description": "Set up and use the MCP-B polyfill — vanilla JS and React packages that implement navigator.modelContext for browsers without native WebMCP. Use when developing for browsers that don't yet support WebMCP natively.",
+      "path": ".agent/skills/webmcp-polyfill/SKILL.md"
+    },
+    {
+      "name": "webmcp-register-tool",
+      "description": "Implement the WebMCP Imperative API — register tools via navigator.modelContext.registerTool() with proper schemas, execute callbacks, and lifecycle management. Use when building dynamic tool registration in JavaScript.",
+      "path": ".agent/skills/webmcp-register-tool/SKILL.md"
+    },
+    {
+      "name": "webmcp-security",
+      "description": "Implement WebMCP security best practices — permission model, data minimization, honest descriptions, input validation, fingerprinting prevention, and fraud mitigation. Use when auditing or hardening WebMCP tool implementations.",
+      "path": ".agent/skills/webmcp-security/SKILL.md"
+    },
+    {
+      "name": "webmcp-setup",
+      "description": "Set up a WebMCP project — enable Chrome flags, install MCP-B polyfill, scaffold tool registration, and configure development environment. Use when starting a new WebMCP-enabled website from scratch.",
+      "path": ".agent/skills/webmcp-setup/SKILL.md"
+    },
+    {
+      "name": "webmcp-testing",
+      "description": "Test WebMCP tools with AI agents — Chrome DevTools integration, agent testing workflows, tool discovery verification, and end-to-end commerce flow testing. Use when validating that tools work correctly with real AI agents.",
+      "path": ".agent/skills/webmcp-testing/SKILL.md"
+    },
+    {
+      "name": "webmcp-tool-annotations",
+      "description": "Implement WebMCP tool annotations — readOnlyHint, destructiveHint, idempotentHint safety hints that inform browser permission prompts and agent behavior. Use when marking tools with appropriate safety metadata.",
+      "path": ".agent/skills/webmcp-tool-annotations/SKILL.md"
+    },
+    {
+      "name": "webmcp-tool-schemas",
+      "description": "Design JSON Schemas for WebMCP tool inputs and outputs — proper types, constraints, nested objects, and agent-friendly documentation. Use when defining or refining tool schemas for agent consumption.",
+      "path": ".agent/skills/webmcp-tool-schemas/SKILL.md"
+    },
+    {
+      "name": "webmcp-user-interaction",
+      "description": "Implement human-in-the-loop flows with requestUserInteraction() — confirmation dialogs, approval workflows, and user prompts during tool execution. Use when building tools that require user consent before performing actions.",
+      "path": ".agent/skills/webmcp-user-interaction/SKILL.md"
+    }
+  ]
+}

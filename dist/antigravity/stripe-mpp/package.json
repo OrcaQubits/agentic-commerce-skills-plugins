@@ -1,0 +1,96 @@
+{
+  "name": "stripe-mpp",
+  "displayName": "Stripe Mpp",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for implementing the Machine Payments Protocol (MPP) — the open standard co-authored by Stripe and Tempo Labs for HTTP 402-based machine-to-machine payments, enabling AI agents to pay for API calls, data, and services autonomously.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "mpp",
+    "machine-payments",
+    "stripe",
+    "tempo",
+    "http-402",
+    "agent-payments",
+    "micropayments",
+    "mppx",
+    "shared-payment-token",
+    "service-discovery",
+    "pay-per-call",
+    "streaming-payments",
+    "agentic-commerce"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "mpp-charge-flow",
+      "description": "Implement MPP one-time charge payment flows — per-request payment gates for API monetization, data access, and file downloads. Use when building pay-per-call APIs or protecting individual resources with HTTP 402 charges.",
+      "path": ".agent/skills/mpp-charge-flow/SKILL.md"
+    },
+    {
+      "name": "mpp-client-fetch",
+      "description": "Implement MPP client-side payment handling with mppx.fetch(). Use when building AI agents or automated clients that consume 402-protected APIs, handling the transparent challenge-response payment flow.",
+      "path": ".agent/skills/mpp-client-fetch/SKILL.md"
+    },
+    {
+      "name": "mpp-conformance",
+      "description": "Validate MPP implementations against the specification — verify HTTP 402 challenge-response compliance, header formats, payment method correctness, service discovery, and production readiness. Use when auditing an MPP integration or preparing for production launch.",
+      "path": ".agent/skills/mpp-conformance/SKILL.md"
+    },
+    {
+      "name": "mpp-dev-patterns",
+      "description": "Cross-cutting MPP development patterns — security, replay protection, HMAC challenge binding, receipt validation, error handling, retry logic, TLS requirements, and monitoring. Use when designing architecture or solving production concerns.",
+      "path": ".agent/skills/mpp-dev-patterns/SKILL.md"
+    },
+    {
+      "name": "mpp-proxy",
+      "description": "Implement MPP payment proxies — wrap existing APIs with HTTP 402 payment gates without modifying the upstream service. Use when monetizing third-party APIs, adding payment layers to existing services, or building API marketplaces.",
+      "path": ".agent/skills/mpp-proxy/SKILL.md"
+    },
+    {
+      "name": "mpp-server-middleware",
+      "description": "Implement MPP server-side middleware for Hono, Express, Next.js, and Elysia. Use when protecting API routes with HTTP 402 payment gates, configuring payment methods, or setting up the Mppx server instance.",
+      "path": ".agent/skills/mpp-server-middleware/SKILL.md"
+    },
+    {
+      "name": "mpp-service-discovery",
+      "description": "Implement MPP service discovery — OpenAPI documents with x-payment-info extensions, x-service-info metadata, and llms.txt for autonomous agent discovery. Use when publishing paid API metadata for AI agents to find and pay for your services.",
+      "path": ".agent/skills/mpp-service-discovery/SKILL.md"
+    },
+    {
+      "name": "mpp-session-flow",
+      "description": "Implement MPP session-based streaming payment flows — authorize-once pay-as-you-go patterns for continuous data feeds, per-token billing, and micropayment aggregation. Use when building streaming APIs or services that charge incrementally.",
+      "path": ".agent/skills/mpp-session-flow/SKILL.md"
+    },
+    {
+      "name": "mpp-setup",
+      "description": "Scaffold an MPP project — install mppx SDK, configure payment methods, set up server middleware, and create a basic paid API endpoint. Use when starting a new MPP machine payments project from scratch.",
+      "path": ".agent/skills/mpp-setup/SKILL.md"
+    },
+    {
+      "name": "mpp-spt-lifecycle",
+      "description": "Implement Shared Payment Token (SPT) lifecycle management for MPP — creation, usage, deactivation, webhook events, and reconciliation. Use when building the fiat/card payment flow within MPP using Stripe SPTs.",
+      "path": ".agent/skills/mpp-spt-lifecycle/SKILL.md"
+    },
+    {
+      "name": "mpp-stripe-method",
+      "description": "Configure Stripe as an MPP payment method — card and wallet payments via Shared Payment Tokens (SPTs), integrating MPP's HTTP 402 flow with Stripe's payment infrastructure. Use when enabling fiat/card payments for machine-to-machine transactions.",
+      "path": ".agent/skills/mpp-stripe-method/SKILL.md"
+    },
+    {
+      "name": "mpp-tempo-method",
+      "description": "Configure Tempo blockchain as an MPP payment method — USDC stablecoin payments with sub-second finality, 100,000+ TPS, and no gas volatility. Use when setting up crypto-native payment rails for machine payments.",
+      "path": ".agent/skills/mpp-tempo-method/SKILL.md"
+    }
+  ]
+}

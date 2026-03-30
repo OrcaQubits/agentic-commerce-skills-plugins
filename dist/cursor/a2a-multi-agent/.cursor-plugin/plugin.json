@@ -1,0 +1,21 @@
+{
+  "name": "a2a-multi-agent",
+  "version": "1.0.0",
+  "description": "Expert A2A (Agent-to-Agent) protocol knowledge for building multi-agent systems — Agent Cards, task lifecycle, streaming, push notifications, authentication, and framework integrations.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "a2a",
+    "agent-to-agent",
+    "multi-agent",
+    "google",
+    "json-rpc",
+    "agent-card",
+    "task-lifecycle",
+    "streaming",
+    "push-notifications"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "acp-agentic-commerce",
+  "name": "Acp Agentic Commerce",
+  "description": "Expert subagent and skills for implementing the Agentic Commerce Protocol (ACP) — the open standard by OpenAI and Stripe for AI-agent-mediated commerce.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/acp-affiliate-attribution",
+    "skills/acp-capability-negotiation",
+    "skills/acp-checkout-mcp",
+    "skills/acp-checkout-rest",
+    "skills/acp-conformance",
+    "skills/acp-delegated-payment",
+    "skills/acp-dev-patterns",
+    "skills/acp-discount-extension",
+    "skills/acp-extensions-authoring",
+    "skills/acp-fulfillment",
+    "skills/acp-intent-traces",
+    "skills/acp-orders-webhooks",
+    "skills/acp-payment-handlers",
+    "skills/acp-product-feed",
+    "skills/acp-setup"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

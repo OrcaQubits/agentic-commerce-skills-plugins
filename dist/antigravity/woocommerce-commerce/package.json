@@ -1,0 +1,133 @@
+{
+  "name": "woocommerce-commerce",
+  "displayName": "Woocommerce Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for WooCommerce development — plugin/extension creation, hooks/filters, REST API, checkout blocks, payment gateways, shipping methods, HPOS, catalog, admin UI, testing, deployment, and PHP 8.x patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "woocommerce",
+    "wordpress",
+    "ecommerce",
+    "php",
+    "plugin-development",
+    "rest-api",
+    "gutenberg",
+    "blocks",
+    "checkout",
+    "payment-gateways"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "php-modern",
+      "description": "Write modern PHP 8.x code — typed properties, enums, readonly classes, match expressions, named arguments, union/intersection types, fibers, attributes, and constructor promotion. Use when writing PHP for WooCommerce or any PHP 8.x project.",
+      "path": ".agent/skills/php-modern/SKILL.md"
+    },
+    {
+      "name": "php-patterns",
+      "description": "Apply PHP design patterns — Singleton, Factory, Strategy, Observer, Repository, Decorator, and Dependency Injection in PHP. Use when structuring WooCommerce extension code or implementing complex business logic.",
+      "path": ".agent/skills/php-patterns/SKILL.md"
+    },
+    {
+      "name": "php-testing",
+      "description": "Write PHP tests with PHPUnit — unit tests, mocking, data providers, assertions, test doubles, and TDD workflow. Use when writing tests for WooCommerce extensions or PHP projects.",
+      "path": ".agent/skills/php-testing/SKILL.md"
+    },
+    {
+      "name": "woo-admin",
+      "description": "Build WooCommerce admin interfaces — settings pages, admin menus, product data tabs/panels, order meta boxes, WooCommerce Admin (React analytics), and reports. Use when creating admin-facing configuration or display pages.",
+      "path": ".agent/skills/woo-admin/SKILL.md"
+    },
+    {
+      "name": "woo-api",
+      "description": "Build and consume WooCommerce REST API v3 endpoints — authentication, custom endpoints, extending existing resources, webhooks, and batch operations. Use when creating custom API endpoints or integrating external systems with WooCommerce.",
+      "path": ".agent/skills/woo-api/SKILL.md"
+    },
+    {
+      "name": "woo-blocks",
+      "description": "Build WooCommerce Blocks — Gutenberg block integration, block-based cart/checkout extensions, Store API, and the @woocommerce/blocks-checkout package. Use when extending the block editor for WooCommerce or customizing block-based checkout/cart.",
+      "path": ".agent/skills/woo-blocks/SKILL.md"
+    },
+    {
+      "name": "woo-catalog",
+      "description": "Work with WooCommerce catalog — product types, categories, tags, attributes, product queries, search, related products, and product visibility. Use when managing products programmatically or customizing the catalog display.",
+      "path": ".agent/skills/woo-catalog/SKILL.md"
+    },
+    {
+      "name": "woo-checkout",
+      "description": "Customize WooCommerce checkout — classic and block-based checkout, custom fields, validation, order processing, and checkout extensibility. Use when modifying the checkout flow, adding custom checkout fields, or integrating checkout extensions.",
+      "path": ".agent/skills/woo-checkout/SKILL.md"
+    },
+    {
+      "name": "woo-custom-fields",
+      "description": "Work with WooCommerce product attributes, custom meta fields, taxonomies, custom product tabs, and variation data. Use when adding custom data to products, orders, or customers.",
+      "path": ".agent/skills/woo-custom-fields/SKILL.md"
+    },
+    {
+      "name": "woo-data-stores",
+      "description": "Work with WooCommerce CRUD data stores — WC_Product, WC_Order, WC_Customer, WC_Coupon data objects, custom data stores, HPOS migration, and getters/setters. Use when creating or modifying WooCommerce data objects or implementing custom data stores.",
+      "path": ".agent/skills/woo-data-stores/SKILL.md"
+    },
+    {
+      "name": "woo-deploy",
+      "description": "Deploy WooCommerce — WP-CLI automation, database migrations, zero-downtime updates, staging workflows, environment configuration, and CI/CD patterns. Use when deploying WooCommerce stores or setting up deployment pipelines.",
+      "path": ".agent/skills/woo-deploy/SKILL.md"
+    },
+    {
+      "name": "woo-frontend",
+      "description": "Customize WooCommerce frontend — template overrides, theme integration, shortcodes, hooks for product/cart/checkout display, and WooCommerce block themes. Use when modifying the storefront appearance or building WooCommerce themes.",
+      "path": ".agent/skills/woo-frontend/SKILL.md"
+    },
+    {
+      "name": "woo-hooks-filters",
+      "description": "Master the WordPress hook system for WooCommerce — actions, filters, hook priorities, WooCommerce-specific hooks, and extensibility patterns. Use when adding functionality via hooks or understanding the WooCommerce execution flow.",
+      "path": ".agent/skills/woo-hooks-filters/SKILL.md"
+    },
+    {
+      "name": "woo-payments",
+      "description": "Build WooCommerce payment gateways — WC_Payment_Gateway, direct/redirect/hosted integrations, tokenization, subscriptions support, refunds, and PCI compliance. Use when creating custom payment method integrations.",
+      "path": ".agent/skills/woo-payments/SKILL.md"
+    },
+    {
+      "name": "woo-performance",
+      "description": "Optimize WooCommerce performance — object caching, transients, HPOS, database optimization, Action Scheduler, lazy loading, and query optimization. Use when improving store performance or diagnosing slowness.",
+      "path": ".agent/skills/woo-performance/SKILL.md"
+    },
+    {
+      "name": "woo-plugin-dev",
+      "description": "Create WooCommerce extensions/plugins — file structure, main plugin file, activation/deactivation hooks, custom database tables, autoloading, and WordPress plugin API. Use when building new WooCommerce extensions or structuring plugin code.",
+      "path": ".agent/skills/woo-plugin-dev/SKILL.md"
+    },
+    {
+      "name": "woo-security",
+      "description": "Implement WooCommerce security — nonces, capabilities, input sanitization, output escaping, data validation, PCI compliance considerations, and WordPress security best practices. Use when hardening a WooCommerce store or reviewing security posture.",
+      "path": ".agent/skills/woo-security/SKILL.md"
+    },
+    {
+      "name": "woo-setup",
+      "description": "Install WooCommerce, configure the development stack, and set up a local dev environment with WP-CLI, Docker, or wp-env. Use when setting up a new WooCommerce project or development environment.",
+      "path": ".agent/skills/woo-setup/SKILL.md"
+    },
+    {
+      "name": "woo-shipping",
+      "description": "Build WooCommerce shipping methods — WC_Shipping_Method, shipping zones, shipping classes, rate calculation, tracking, and integration with carriers. Use when creating custom shipping integrations or configuring shipping logic.",
+      "path": ".agent/skills/woo-shipping/SKILL.md"
+    },
+    {
+      "name": "woo-testing",
+      "description": "Test WooCommerce extensions — PHPUnit unit/integration tests, WP test suite, WooCommerce test helpers, E2E with Playwright, and WP-CLI test scaffolding. Use when writing tests for WooCommerce plugins or setting up a test environment.",
+      "path": ".agent/skills/woo-testing/SKILL.md"
+    }
+  ]
+}

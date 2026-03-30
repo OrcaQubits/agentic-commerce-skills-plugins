@@ -1,0 +1,33 @@
+{
+  "id": "bigcommerce-commerce",
+  "name": "Bigcommerce Commerce",
+  "description": "Expert subagent and skills for BigCommerce development — Stencil themes, REST/GraphQL APIs, single-click apps, checkout SDK, payment integrations, headless with Catalyst/Next.js, multi-channel, webhooks, and Node.js/JavaScript patterns.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/bc-api-graphql",
+    "skills/bc-api-rest",
+    "skills/bc-app-dev",
+    "skills/bc-catalog",
+    "skills/bc-channels",
+    "skills/bc-checkout",
+    "skills/bc-customers",
+    "skills/bc-headless",
+    "skills/bc-orders",
+    "skills/bc-payments",
+    "skills/bc-performance",
+    "skills/bc-security",
+    "skills/bc-setup",
+    "skills/bc-stencil",
+    "skills/bc-testing",
+    "skills/bc-webhooks",
+    "skills/bc-widgets",
+    "skills/js-modern",
+    "skills/nextjs-patterns",
+    "skills/node-backend"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

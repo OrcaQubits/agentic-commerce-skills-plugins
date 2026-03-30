@@ -26,5 +26,5 @@ __pycache__/
 node_modules/
 vendor/
 
-# Generated platform output
-dist/
+# Generated platform output is tracked (crawled by other tools)
+# dist/

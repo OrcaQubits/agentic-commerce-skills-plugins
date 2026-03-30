@@ -1,0 +1,34 @@
+{
+  "id": "saleor-commerce",
+  "name": "Saleor Commerce",
+  "description": "Expert subagent and skills for Saleor commerce development — GraphQL-only API with Graphene-Django, App development with Next.js SDK, webhooks (async/sync with subscription payloads), Dashboard extensions with App Bridge and MacawUI, Next.js storefronts, channels, catalog with typed attributes, transaction payment flow, and Python/Django/GraphQL/Next.js patterns.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/graphql-dev",
+    "skills/nextjs-react",
+    "skills/python-django",
+    "skills/saleor-apps",
+    "skills/saleor-attributes",
+    "skills/saleor-catalog",
+    "skills/saleor-channels",
+    "skills/saleor-checkout",
+    "skills/saleor-customers",
+    "skills/saleor-dashboard",
+    "skills/saleor-deploy",
+    "skills/saleor-graphql",
+    "skills/saleor-orders",
+    "skills/saleor-payments",
+    "skills/saleor-promotions",
+    "skills/saleor-security",
+    "skills/saleor-setup",
+    "skills/saleor-shipping",
+    "skills/saleor-storefront",
+    "skills/saleor-testing",
+    "skills/saleor-webhooks"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

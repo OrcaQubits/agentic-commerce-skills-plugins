@@ -1,0 +1,22 @@
+{
+  "name": "magento2-commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Magento 2 Open Source development — module creation, DI, plugins, EAV, APIs, checkout, catalog, admin UI, testing, deployment, and PHP 8.x patterns.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "magento",
+    "magento2",
+    "adobe-commerce",
+    "ecommerce",
+    "php",
+    "module-development",
+    "eav",
+    "graphql",
+    "rest-api",
+    "checkout"
+  ],
+  "license": "MIT"
+}

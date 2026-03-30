@@ -1,0 +1,141 @@
+{
+  "name": "saleor-commerce",
+  "displayName": "Saleor Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Saleor commerce development — GraphQL-only API with Graphene-Django, App development with Next.js SDK, webhooks (async/sync with subscription payloads), Dashboard extensions with App Bridge and MacawUI, Next.js storefronts, channels, catalog with typed attributes, transaction payment flow, and Python/Django/GraphQL/Next.js patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "saleor",
+    "headless-commerce",
+    "ecommerce",
+    "graphql",
+    "python",
+    "django",
+    "postgresql",
+    "nextjs",
+    "typescript",
+    "celery",
+    "apps",
+    "webhooks",
+    "open-source"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "graphql-dev",
+      "description": "Write GraphQL queries, mutations, and subscriptions — fragments, code generation, TypedDocumentNode, variables, error handling, and client setup. Use when writing GraphQL code for Saleor.",
+      "path": ".agent/skills/graphql-dev/SKILL.md"
+    },
+    {
+      "name": "nextjs-react",
+      "description": "Build Next.js and React applications for Saleor — App Router, server and client components, GraphQL client integration, MacawUI in Apps, and Tailwind CSS. Use when building Saleor storefronts or Apps with Next.js.",
+      "path": ".agent/skills/nextjs-react/SKILL.md"
+    },
+    {
+      "name": "python-django",
+      "description": "Write Python and Django code for Saleor — Django ORM patterns, signals, Celery tasks, type hints, migrations, management commands, and async views. Use when writing Python/Django in Saleor projects.",
+      "path": ".agent/skills/python-django/SKILL.md"
+    },
+    {
+      "name": "saleor-apps",
+      "description": "Develop Saleor Apps — App manifest, saleor-app-sdk, Next.js template, permissions, token exchange, APL, App Bridge, and lifecycle management. Use when building Saleor App extensions.",
+      "path": ".agent/skills/saleor-apps/SKILL.md"
+    },
+    {
+      "name": "saleor-attributes",
+      "description": "Work with Saleor's typed attribute system — attribute types, product types, page types, variant selection attributes, and attribute-based filtering. Use when defining product schemas.",
+      "path": ".agent/skills/saleor-attributes/SKILL.md"
+    },
+    {
+      "name": "saleor-catalog",
+      "description": "Manage the Saleor catalog — products, variants, product types, categories, collections, media, and warehouse stock. Use when working with Saleor product data.",
+      "path": ".agent/skills/saleor-catalog/SKILL.md"
+    },
+    {
+      "name": "saleor-channels",
+      "description": "Configure Saleor channels — multi-currency, multi-region, per-channel pricing, warehouse allocation, and multi-brand setups. Use when managing multi-channel commerce.",
+      "path": ".agent/skills/saleor-channels/SKILL.md"
+    },
+    {
+      "name": "saleor-checkout",
+      "description": "Implement the Saleor checkout flow — checkout creation, line items, shipping/billing addresses, delivery methods, payment, and completion. Use when building checkout experiences.",
+      "path": ".agent/skills/saleor-checkout/SKILL.md"
+    },
+    {
+      "name": "saleor-customers",
+      "description": "Manage Saleor customers and staff — customer accounts, registration, addresses, staff users, permission groups, and authentication. Use when working with user management.",
+      "path": ".agent/skills/saleor-customers/SKILL.md"
+    },
+    {
+      "name": "saleor-dashboard",
+      "description": "Extend the Saleor Dashboard — mounting points, App Bridge actions, MacawUI components, iframe extensions, and custom views. Use when building Dashboard extensions.",
+      "path": ".agent/skills/saleor-dashboard/SKILL.md"
+    },
+    {
+      "name": "saleor-deploy",
+      "description": "Deploy Saleor to production — Docker setup, Saleor Cloud, environment variables, Celery workers, S3 media storage, database management, and scaling. Use when deploying Saleor applications.",
+      "path": ".agent/skills/saleor-deploy/SKILL.md"
+    },
+    {
+      "name": "saleor-graphql",
+      "description": "Work with the Saleor GraphQL API — queries, mutations, subscriptions, cursor pagination, filters, error handling, GraphQL Playground, and code generation. Use when building against the Saleor API.",
+      "path": ".agent/skills/saleor-graphql/SKILL.md"
+    },
+    {
+      "name": "saleor-orders",
+      "description": "Manage the Saleor order lifecycle — order creation, fulfillments, returns, refunds, draft orders, and order events. Use when working with Saleor orders.",
+      "path": ".agent/skills/saleor-orders/SKILL.md"
+    },
+    {
+      "name": "saleor-payments",
+      "description": "Implement Saleor payment processing — transaction-based payment flow, payment Apps, sync webhook events, Stripe/Adyen patterns, and refunds. Use when building payment integrations.",
+      "path": ".agent/skills/saleor-payments/SKILL.md"
+    },
+    {
+      "name": "saleor-promotions",
+      "description": "Configure Saleor promotions — catalog promotions, order promotions, vouchers, manual discounts, gift cards, and discount stacking. Use when setting up pricing rules.",
+      "path": ".agent/skills/saleor-promotions/SKILL.md"
+    },
+    {
+      "name": "saleor-security",
+      "description": "Secure Saleor applications — JWT authentication, OIDC integration, App tokens, permission model, rate limiting, CORS, and security headers. Use when configuring Saleor security.",
+      "path": ".agent/skills/saleor-security/SKILL.md"
+    },
+    {
+      "name": "saleor-setup",
+      "description": "Set up a Saleor development environment — saleor-platform Docker Compose, CLI, PostgreSQL/Redis prerequisites, manage.py commands, environment variables, project structure. Use when starting a new Saleor project.",
+      "path": ".agent/skills/saleor-setup/SKILL.md"
+    },
+    {
+      "name": "saleor-shipping",
+      "description": "Configure Saleor shipping — shipping zones, methods (price/weight-based), custom shipping Apps, warehouse-based allocation, and click-and-collect. Use when setting up delivery options.",
+      "path": ".agent/skills/saleor-shipping/SKILL.md"
+    },
+    {
+      "name": "saleor-storefront",
+      "description": "Build Next.js storefronts for Saleor — GraphQL client setup, channel routing, Tailwind CSS, server components, checkout flow, and SEO. Use when developing Saleor storefronts.",
+      "path": ".agent/skills/saleor-storefront/SKILL.md"
+    },
+    {
+      "name": "saleor-testing",
+      "description": "Test Saleor applications — pytest setup, Django test client, GraphQL test patterns, App testing, factory_boy fixtures, and webhook testing. Use when writing tests for Saleor projects.",
+      "path": ".agent/skills/saleor-testing/SKILL.md"
+    },
+    {
+      "name": "saleor-webhooks",
+      "description": "Configure Saleor webhooks — async and sync events, subscription payloads, JWS/HMAC signature verification, retry policy, and event types. Use when building webhook-driven integrations.",
+      "path": ".agent/skills/saleor-webhooks/SKILL.md"
+    }
+  ]
+}

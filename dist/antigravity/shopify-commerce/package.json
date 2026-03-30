@@ -1,0 +1,138 @@
+{
+  "name": "shopify-commerce",
+  "displayName": "Shopify Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Shopify development — GraphQL Admin and Storefront APIs, Liquid templating, Online Store 2.0 themes, Hydrogen/Remix headless storefronts, Shopify Functions, checkout UI extensions, Polaris components, app development with App Bridge, webhooks, and JavaScript/TypeScript/React patterns.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "shopify",
+    "ecommerce",
+    "graphql",
+    "liquid",
+    "hydrogen",
+    "remix",
+    "polaris",
+    "shopify-functions",
+    "headless",
+    "checkout-extensions"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "js-modern",
+      "description": "Write modern JavaScript and TypeScript — ES6+ features, async/await, modules, destructuring, optional chaining, TypeScript types, and modern tooling. Use when writing JavaScript/TypeScript for Shopify themes, apps, Functions, or Hydrogen storefronts.",
+      "path": ".agent/skills/js-modern/SKILL.md"
+    },
+    {
+      "name": "node-backend",
+      "description": "Build Node.js backends for Shopify apps — Remix server, @shopify/shopify-app-remix, session storage, OAuth handling, API proxy, webhook processing, and deployment. Use when building the server-side component of Shopify apps.",
+      "path": ".agent/skills/node-backend/SKILL.md"
+    },
+    {
+      "name": "react-patterns",
+      "description": "Build React applications with Remix — loaders, actions, hooks, Server/Client Components, nested routes, error boundaries, form handling, and streaming SSR. Use when building Shopify Hydrogen storefronts or Remix-based apps.",
+      "path": ".agent/skills/react-patterns/SKILL.md"
+    },
+    {
+      "name": "shopify-api-graphql",
+      "description": "Use Shopify GraphQL APIs — Admin API for server-side CRUD, Storefront API for client-side queries, versioning, cost-based rate limiting, bulk operations, pagination. Use when integrating with Shopify data.",
+      "path": ".agent/skills/shopify-api-graphql/SKILL.md"
+    },
+    {
+      "name": "shopify-api-rest",
+      "description": "\"MIGRATION SKILL: Shopify REST Admin API — endpoint patterns, authentication, rate limits, and REST-to-GraphQL migration guide. The REST Admin API is deprecated (October 2024). Use this skill only for maintaining legacy integrations or planning migration to GraphQL.\"",
+      "path": ".agent/skills/shopify-api-rest/SKILL.md"
+    },
+    {
+      "name": "shopify-app-dev",
+      "description": "Build Shopify apps — app types, Remix template, App Bridge, session tokens, OAuth flow, app extensions, embedded admin apps. Use when developing Shopify apps or integrations.",
+      "path": ".agent/skills/shopify-app-dev/SKILL.md"
+    },
+    {
+      "name": "shopify-catalog",
+      "description": "Manage Shopify catalog — Product, Variant, and Option models, collections, metafields and metaobjects, inventory management, product taxonomy, bulk operations, and media. Use when working with Shopify product data.",
+      "path": ".agent/skills/shopify-catalog/SKILL.md"
+    },
+    {
+      "name": "shopify-checkout-ui",
+      "description": "Build Shopify checkout UI extensions — extension targets, UI primitives, Preact/Remote DOM rendering, checkout APIs, metafield access, post-purchase extensions, and thank-you page customization. Use when customizing Shopify checkout.",
+      "path": ".agent/skills/shopify-checkout-ui/SKILL.md"
+    },
+    {
+      "name": "shopify-customers",
+      "description": "Manage Shopify customers — Customer Account API, new vs classic accounts, Multipass SSO, customer segmentation, B2B company accounts, metafields, and marketing consent. Use when working with Shopify customer data.",
+      "path": ".agent/skills/shopify-customers/SKILL.md"
+    },
+    {
+      "name": "shopify-functions",
+      "description": "Build Shopify Functions — serverless WebAssembly extensions for discounts, delivery customization, payment customization, cart validation, cart transforms, and order routing. Use when extending Shopify's backend logic.",
+      "path": ".agent/skills/shopify-functions/SKILL.md"
+    },
+    {
+      "name": "shopify-hydrogen",
+      "description": "Build headless Shopify storefronts with Hydrogen — Remix-based framework, Oxygen deployment, storefront.query(), caching strategies, cart, customer accounts, SEO, and analytics. Use when building custom Shopify storefronts.",
+      "path": ".agent/skills/shopify-hydrogen/SKILL.md"
+    },
+    {
+      "name": "shopify-liquid",
+      "description": "Write Shopify Liquid templates — objects, tags, filters, global objects, section schema, Online Store 2.0 JSON templates, and Liquid best practices. Use when customizing Shopify theme templates.",
+      "path": ".agent/skills/shopify-liquid/SKILL.md"
+    },
+    {
+      "name": "shopify-orders",
+      "description": "Manage Shopify orders — order lifecycle, FulfillmentOrder model, returns and refunds, draft orders, order editing, transactions, metafields, and risk analysis. Use when working with Shopify order processing.",
+      "path": ".agent/skills/shopify-orders/SKILL.md"
+    },
+    {
+      "name": "shopify-payments",
+      "description": "Integrate Shopify payments — Shopify Payments (Stripe-powered), Payment Apps API, payment session flow, Billing API for app charges, refund processing, and PCI compliance. Use when working with Shopify payment processing.",
+      "path": ".agent/skills/shopify-payments/SKILL.md"
+    },
+    {
+      "name": "shopify-performance",
+      "description": "Optimize Shopify performance — Liquid rendering, asset optimization, CDN strategies, Core Web Vitals, Hydrogen caching, image optimization, preloading, and lazy loading. Use when improving Shopify store speed.",
+      "path": ".agent/skills/shopify-performance/SKILL.md"
+    },
+    {
+      "name": "shopify-polaris",
+      "description": "Build Shopify app UIs with Polaris — component categories, Web Components transition, React legacy components, App Design Guidelines, accessibility, @shopify/draggable, and design tokens. Use when building Shopify admin app interfaces.",
+      "path": ".agent/skills/shopify-polaris/SKILL.md"
+    },
+    {
+      "name": "shopify-security",
+      "description": "Secure Shopify applications — HMAC webhook verification, session token validation, OAuth scope management, Content Security Policy, GDPR mandatory webhooks, input validation, and secure coding practices. Use when implementing Shopify security features.",
+      "path": ".agent/skills/shopify-security/SKILL.md"
+    },
+    {
+      "name": "shopify-setup",
+      "description": "Set up a Shopify development environment — Shopify CLI installation, Partner account, development stores, environment variables, project structures for themes, apps, and Hydrogen. Use when starting a new Shopify project.",
+      "path": ".agent/skills/shopify-setup/SKILL.md"
+    },
+    {
+      "name": "shopify-testing",
+      "description": "Test Shopify applications — app testing with Vitest and Playwright, theme testing with Theme Check, Function testing, webhook testing, extension testing, and CI/CD pipelines. Use when writing tests for Shopify projects.",
+      "path": ".agent/skills/shopify-testing/SKILL.md"
+    },
+    {
+      "name": "shopify-themes",
+      "description": "Develop Shopify themes — file structure, Online Store 2.0, sections and blocks, settings schema, Dawn reference theme, Theme Check linting, asset pipeline, and theme deployment. Use when building or customizing Shopify themes.",
+      "path": ".agent/skills/shopify-themes/SKILL.md"
+    },
+    {
+      "name": "shopify-webhooks",
+      "description": "Implement Shopify webhooks — subscription methods (HTTP, EventBridge, Pub/Sub, SQS), HMAC verification, mandatory GDPR webhooks, delivery methods, retry policy, and idempotency. Use when building event-driven Shopify integrations.",
+      "path": ".agent/skills/shopify-webhooks/SKILL.md"
+    }
+  ]
+}

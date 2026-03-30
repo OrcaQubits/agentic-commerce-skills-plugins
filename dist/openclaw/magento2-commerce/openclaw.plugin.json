@@ -1,0 +1,32 @@
+{
+  "id": "magento2-commerce",
+  "name": "Magento2 Commerce",
+  "description": "Expert subagent and skills for Magento 2 Open Source development — module creation, DI, plugins, EAV, APIs, checkout, catalog, admin UI, testing, deployment, and PHP 8.x patterns.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/magento-admin-ui",
+    "skills/magento-api",
+    "skills/magento-catalog",
+    "skills/magento-checkout",
+    "skills/magento-deploy",
+    "skills/magento-di",
+    "skills/magento-eav-attributes",
+    "skills/magento-events-cron",
+    "skills/magento-frontend",
+    "skills/magento-module-dev",
+    "skills/magento-performance",
+    "skills/magento-plugins-interceptors",
+    "skills/magento-security",
+    "skills/magento-service-contracts",
+    "skills/magento-setup",
+    "skills/magento-testing",
+    "skills/php-modern",
+    "skills/php-patterns",
+    "skills/php-testing"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ucp-agentic-commerce",
+  "name": "Ucp Agentic Commerce",
+  "description": "Universal Commerce Protocol (UCP) expert for building agentic commerce implementations. Covers the full protocol — discovery, checkout, orders, payments, fulfillment, discounts, identity linking, AP2 mandates — across REST, MCP, A2A, and Embedded bindings.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/ucp-ap2-mandates",
+    "skills/ucp-buyer-consent",
+    "skills/ucp-checkout-a2a",
+    "skills/ucp-checkout-mcp",
+    "skills/ucp-checkout-rest",
+    "skills/ucp-conformance",
+    "skills/ucp-dev-patterns",
+    "skills/ucp-discount",
+    "skills/ucp-embedded-checkout",
+    "skills/ucp-fulfillment",
+    "skills/ucp-identity-linking",
+    "skills/ucp-orders-webhooks",
+    "skills/ucp-payment-handlers",
+    "skills/ucp-schema-authoring",
+    "skills/ucp-setup"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

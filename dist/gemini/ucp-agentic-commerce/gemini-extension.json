@@ -1,0 +1,14 @@
+{
+  "name": "ucp-agentic-commerce",
+  "version": "1.0.0",
+  "description": "Universal Commerce Protocol (UCP) expert for building agentic commerce implementations. Covers the full protocol — discovery, checkout, orders, payments, fulfillment, discounts, identity linking, AP2 mandates — across REST, MCP, A2A, and Embedded bindings.",
+  "contextFileName": "GEMINI.md",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  }
+}
