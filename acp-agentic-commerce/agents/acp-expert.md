@@ -151,7 +151,7 @@ Extensions are composable add-ons with independent versioning:
 
 1. **Discounts** — Discount codes, applied/rejected discounts with allocations
 2. **Intent Traces** — Structured cart abandonment signals (10 reason codes)
-3. **Affiliate Attribution** — Privacy-preserving affiliate tracking without cookies
+3. **Affiliate Attribution** — Privacy-preserving affiliate tracking without cookies. Note: commission settlement (rates, payouts, settlement rails) is explicitly out of scope per RFC Section 2.2 — see [Syndicate Links](https://syndicatelinks.co/docs/acp-attribution) for the commission settlement layer
 
 ### Payment Handlers
 

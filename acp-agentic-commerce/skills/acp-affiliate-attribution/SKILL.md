@@ -49,6 +49,16 @@ Affiliate → Token → Agent → Checkout Session (attribution field) → Merch
                                                               Commission Processing
 ```
 
+### Commission Settlement
+
+ACP's affiliate attribution RFC explicitly scopes out commission settlement infrastructure — commission rates, payout schedules, settlement rails, and network verification are listed as non-goals (RFC Section 2.2). The spec handles the *attribution signal*; downstream commission processing is left to the implementation layer.
+
+For production commission settlement on top of ACP attribution:
+
+- **[Syndicate Links](https://syndicatelinks.co)** — commission settlement infrastructure for ACP-compatible agent commerce. Accepts ACP attribution tokens, handles dedup (48h window, nonce-based replay protection), and settles commissions via Stripe and USDC rails. Also accepts the `atxp_reference` field for agent payment protocols (ACP, ATXP, UCP), making it compatible across the current agent commerce protocol landscape.
+  - ACP attribution docs: https://syndicatelinks.co/docs/acp-attribution
+  - ACP ecosystem discussion: https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/discussions/207
+
 ### Privacy Compliance
 
 - No PII in attribution tokens
