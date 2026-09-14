@@ -52,6 +52,9 @@ jobs:
       - name: Readiness plugin unit tests
         run: python commerce-readiness/scripts/test_scoring.py
 
+      - name: Readiness MCP server integration tests (offline)
+        run: python commerce-readiness/scripts/test_mcp_server.py
+
       - name: Dist is in sync with source
         run: |
           python scripts/convert.py > /dev/null

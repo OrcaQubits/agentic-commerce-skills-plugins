@@ -55,7 +55,9 @@ commerce-readiness/
 │   ├── probe_payments.py             #   r5 — handlers, delegate_payment, AP2 signal, HTTP 402
 │   ├── probe_trust.py                #   r6 — OAuth discovery, signing keys, TLS, error shape
 │   ├── readiness_audit.py            #   runner: parallel probes → READINESS.md + score.json
-│   └── test_scoring.py               #   offline unit tests (scoring, surfaces, parsers) — no network
+│   ├── mcp_server.py                 #   MCP endpoint exposing the audit as callable tools
+│   ├── test_scoring.py               #   offline unit tests (scoring, surfaces, parsers) — no network
+│   └── test_mcp_server.py            #   offline MCP integration tests (fixture storefront, SSRF, deep refusal)
 └── evals/readiness.json              # Behavior evals incl. refusal cases
 ```
 
@@ -100,6 +102,52 @@ Quick-check https://competitor.com — can agents even see them?
 Turn report/score.json into a fix plan; our stack is Next.js + Medusa.
 Fix the ACP discovery gap from the audit, then re-probe.
 ```
+
+## Serve the audit as an MCP endpoint
+
+Any MCP client — Claude, ChatGPT, Gemini, another agent — can call the
+audit as a tool. The server is the same stdlib-only Python as the probes:
+
+```bash
+python scripts/mcp_server.py --host 0.0.0.0 --port 8765 --path /mcp
+```
+
+```bash
+curl -sS -X POST localhost:8765/mcp -H 'content-type: application/json' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"readiness_quick_check","arguments":{"url":"https://shop.example.com"}}}'
+```
+
+Tools: **`readiness_audit`** (url, modules?, deep?) and
+**`readiness_quick_check`** (url) — results arrive as `structuredContent`
+(the score.json payload) plus a one-line text summary. Written against the
+`2026-07-28` stateless MCP revision; also answers handshake-era
+`initialize` so older clients work.
+
+**Safe by default, because it fetches caller-supplied URLs from wherever
+it runs:**
+
+- **SSRF guard** — targets resolving to loopback/private/link-local/
+  metadata ranges are refused (`MCP_ALLOW_PRIVATE=1` overrides, for local
+  testing only)
+- **Deep mode refused** unless the operator sets `READINESS_ALLOW_DEEP=1`
+  — a public endpoint must not let anonymous callers aim checkout-creating
+  probes at third parties
+- **Bounded concurrency** (`MAX_CONCURRENT_AUDITS`, default 4); put rate
+  limiting and TLS on the fronting proxy
+
+Behind nginx, this is the location block (adjust the upstream):
+
+```nginx
+location = /mcp {
+    limit_req zone=web_limit burst=20 nodelay;
+    proxy_pass http://readiness-mcp:8765/mcp;
+    proxy_set_header Host $host;
+    proxy_read_timeout 120s;   # a full shallow audit can take ~60s
+}
+```
+
+The endpoint passes this plugin's own r4 sub-check ("MCP endpoint answers
+tools/list") — the audit and the server dogfood each other.
 
 ## Standalone CLI (no Claude required)
 
