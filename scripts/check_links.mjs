@@ -58,6 +58,9 @@ for (const f of files) {
     // strip trailing punctuation that belongs to the prose, not the URL
     const url = m.replace(/[).,:;`"'>\]*]+$/, '');
     if (url.length < 12 || SKIP_URL.test(url)) continue;
+    // A dotless hostname (docker/k8s service names like readiness-mcp:8765)
+    // is internal infrastructure in an example, never public documentation.
+    try { if (!new URL(url).hostname.includes('.')) continue; } catch { continue; }
     if (!seen.has(url)) seen.set(url, new Set());
     seen.get(url).add(path.relative(ROOT, f).split(path.sep).join('/'));
   }
