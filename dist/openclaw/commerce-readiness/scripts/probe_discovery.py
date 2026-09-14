@@ -80,11 +80,18 @@ def probe(origin, host, deep=False):
     feed_ok, feed_ev = False, []
     for path in ("/feeds/products.xml", "/products.tsv", "/product-feed.xml"):
         f = fetch(origin + path)
-        if f["status"] == 200 and len(f["body"]) >= 1024:
+        ct = f["headers"].get("content-type", "")
+        # Guard against SPA catch-alls: a real feed is XML/TSV, never the
+        # site's index page served as text/html for every unknown path.
+        is_feed = (f["status"] == 200 and len(f["body"]) >= 1024
+                   and "text/html" not in ct
+                   and not f["body"].lstrip()[:15].lower().startswith("<!doctype html"))
+        if is_feed:
             feed_ok = True
-            feed_ev.append("{} 200 ({} bytes)".format(path, len(f["body"])))
+            feed_ev.append("{} 200 ct={} ({} bytes)".format(
+                path, ct.split(";")[0], len(f["body"])))
             break
-        feed_ev.append("{} {}".format(path, f["status"]))
+        feed_ev.append("{} {} ct={}".format(path, f["status"], ct.split(";")[0] or "-"))
     checks.append(check(
         "product feed served (feeds/products.xml | products.tsv)",
         feed_ok, 1, "; ".join(feed_ev),
