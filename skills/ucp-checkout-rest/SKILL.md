@@ -1,10 +1,7 @@
 ---
 name: ucp-checkout-rest
-description: >
-  Implement UCP Checkout over the REST binding — create, get, update, complete,
-  and cancel checkout sessions with proper headers, idempotency, status
-  transitions, and error handling. Use when building REST-based UCP checkout
-  endpoints or clients.
+description: Implement UCP Checkout over the REST binding — create, get, update, complete, and cancel checkout sessions with proper headers, idempotency, status transitions, and error handling. Use when building REST-based UCP checkout endpoints or clients.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Checkout — REST Binding
@@ -13,7 +10,7 @@ description: >
 
 **Fetch live spec**: Web-search `site:ucp.dev specification checkout-rest` and fetch the page for the exact current endpoint shapes, required headers, request/response schemas, and status codes.
 
-Also fetch https://ucp.dev/specification/reference/ for all data type definitions (Buyer, LineItem, Total, Message, etc.).
+Also fetch https://ucp.dev/latest/specification/reference/ for all data type definitions (Buyer, LineItem, Total, Message, etc.).
 
 ## Conceptual Architecture
 

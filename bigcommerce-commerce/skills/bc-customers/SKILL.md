@@ -10,7 +10,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 **Fetch live docs**:
 1. Web-search `site:developer.bigcommerce.com rest customers` for Customers API reference
-2. Fetch `https://developer.bigcommerce.com/docs/start/authentication/customer-login` for Customer Login API
+2. Fetch `https://docs.bigcommerce.com/developer/docs/storefront/guides/customer-authentication/customer-login` for Customer Login API
 3. Web-search `bigcommerce customer groups api` for customer group management
 
 ## Customer API (V3)

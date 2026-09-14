@@ -9,16 +9,19 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Web-search `acp agentic commerce protocol MCP server implementation` for MCP binding guidance
-2. Fetch `https://developers.openai.com/commerce/specs/checkout/` for checkout operation semantics
-3. Web-search `site:github.com agentic-commerce-protocol MCP` for any official MCP examples
-4. Fetch MCP SDK docs: web-search `site:github.com modelcontextprotocol python-sdk` or `typescript-sdk` for current SDK
+1. Fetch `https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/releases` for the current spec version.
+2. **Fetch the official OpenRPC document** — `spec/<version>/openrpc/openrpc.agentic_checkout.json` in the repo. Since the `2026-04-17` release there is a machine-readable JSON-RPC description of the checkout binding; **use it rather than hand-deriving tool names**. The table below predates it.
+3. Fetch `https://developers.openai.com/commerce/specs/checkout/` for checkout operation semantics.
+4. Fetch `https://modelcontextprotocol.io/specification/` — it redirects to the current MCP revision. Confirm the transport model before writing server code; MCP's core changed shape between revisions (the stateless core removed the `initialize` handshake and `Mcp-Session-Id`), so a server written against an older revision will not match a current client.
+5. Fetch MCP SDK docs: web-search `site:github.com modelcontextprotocol python-sdk` or `typescript-sdk` for the current SDK.
 
 ## Conceptual Architecture
 
 ### What MCP Binding Means
 
 ACP's REST checkout operations can be exposed as **MCP tools** via an MCP server. This allows AI agents that use tool-calling (Claude, ChatGPT, Gemini) to invoke checkout operations directly as tools rather than making raw HTTP calls.
+
+Since `2026-04-17` this mapping is **specified, not improvised** — the OpenRPC document is the source of truth for method names and parameter shapes. Treat the mapping below as orientation and the OpenRPC document as normative.
 
 ### Mapping REST to MCP Tools
 

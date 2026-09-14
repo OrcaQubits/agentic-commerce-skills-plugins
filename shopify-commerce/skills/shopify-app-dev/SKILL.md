@@ -128,7 +128,10 @@ scopes = "read_products,write_products,read_orders"
 redirect_urls = ["https://your-app.com/auth/callback"]
 
 [webhooks]
-api_version = "2025-01"  # Update to latest stable version
+api_version = "<latest-stable>"  # e.g. 2026-07 — Shopify ships a new stable version quarterly
+#                                (2026-01 / 2026-04 / 2026-07 / 2026-10) and supports each for ~12 months.
+#                                Resolve the current one from https://shopify.dev/docs/api/usage/versioning
+#                                before writing this file. Never copy a version literal from an example.
 ```
 
 > **Fetch live docs**: Web-search `site:shopify.dev shopify.app.toml configuration` for current TOML fields — new sections are added for extensions, app proxy, POS, etc.

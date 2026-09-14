@@ -14,7 +14,7 @@ Always fetch the latest official documentation BEFORE building React components:
 2. Web-search: "Salesforce Commerce SDK React hooks 2026"
 3. Web-search: "Salesforce Retail React App reference architecture 2026"
 4. Web-fetch: `https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/getting-started.html`
-5. Web-fetch: `https://developer.salesforce.com/docs/commerce/commerce-sdk-react/guide/getting-started.html`
+5. Web-fetch: `https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/pwa-kit-overview.html`
 6. Web-fetch: `https://github.com/SalesforceCommerceCloud/pwa-kit`
 
 Verify PWA Kit version, available hooks, getProps API, and routing patterns against current documentation before writing any component code.

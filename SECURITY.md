@@ -39,7 +39,7 @@ Since these plugins generate code via Claude Code rather than executing applicat
 
 ### Out of Scope
 
-- Vulnerabilities in Claude Code itself (report to [Anthropic](https://www.anthropic.com/responsible-disclosure))
+- Vulnerabilities in Claude Code itself (report to [Anthropic](https://www.anthropic.com/responsible-disclosure-policy))
 - Vulnerabilities in the underlying protocols (UCP, ACP, AP2, A2A, WebMCP) — report to their respective maintainers
 - Vulnerabilities in commerce platforms (Magento, BigCommerce, WooCommerce) — report to their respective security teams
 

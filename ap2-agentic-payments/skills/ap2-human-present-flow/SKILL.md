@@ -1,6 +1,6 @@
 ---
 name: ap2-human-present-flow
-description: Implement the AP2 human-present transaction flow — the checkout process where the user is actively present to confirm cart details and payment method selection. The primary VDC in this flow is the Cart Mandate. Use when building interactive agentic checkout with user in the loop.
+description: Implement the AP2 human-present transaction flow — the checkout process where the user is actively present to confirm cart details and payment method selection. The primary VDC in this flow is the Checkout Mandate. Use when building interactive agentic checkout with user in the loop.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
@@ -9,10 +9,10 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the human-present flow specification
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the human-present flow specification
 2. Web-search `site:github.com google-agentic-commerce AP2 samples human-present` for reference implementations
-3. Fetch `https://github.com/google-agentic-commerce/AP2/blob/main/samples/python/scenarios/a2a/human-present/cards/README.md` for the card payment sample
-4. Fetch `https://ap2-protocol.org/topics/core-concepts/` for flow overview
+3. Fetch `https://github.com/google-agentic-commerce/AP2/tree/main/code/samples` for the card payment sample
+4. Fetch `https://ap2-protocol.org/overview/` for flow overview
 
 ## Conceptual Architecture
 
@@ -22,7 +22,7 @@ In a human-present flow, the **user is actively engaged** throughout the transac
 
 ### The Human-Present Transaction Flow
 
-The official AP2 specification describes approximately **11 high-level steps** for the human-present flow. The primary VDC in this flow is the **Cart Mandate**.
+The official AP2 specification describes approximately **11 high-level steps** for the human-present flow. The primary VDC in this flow is the **Checkout Mandate**.
 
 ```
 Phase 1: Shopping Intent
@@ -32,14 +32,14 @@ Phase 1: Shopping Intent
 Phase 2: Product Discovery
   3. SA → CP:                  Queries Credentials Provider for available payment methods
   4. SA → Merchant:            Presents shopping intent
-  5. Merchant → SA:            Creates and signs Cart Mandate(s) with product offers
+  5. Merchant → SA:            Creates and signs Checkout Mandate(s) with product offers
 
 Phase 3: User Confirmation
   6. SA → User:                Displays final cart + payment options
   7. User → SA:                Reviews cart, selects payment method, confirms on trusted device surface
 
 Phase 4: Payment Processing
-  8. SA → Merchant:            Sends confirmed Cart Mandate + user attestation
+  8. SA → Merchant:            Sends confirmed Checkout Mandate + user attestation
   9. Merchant → MPP:           Submits payment for processing
   10. MPP:                     Constructs Payment Mandate and requests credentials from CP
 

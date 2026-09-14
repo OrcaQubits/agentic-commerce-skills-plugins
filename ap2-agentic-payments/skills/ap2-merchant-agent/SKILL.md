@@ -9,9 +9,9 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for Merchant Endpoint responsibilities
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for Merchant Endpoint responsibilities
 2. Web-search `site:github.com google-agentic-commerce AP2 samples roles merchant_agent` for reference implementation
-3. Web-search `site:github.com google-agentic-commerce AP2 merchant cart mandate` for Cart Mandate creation
+3. Web-search `site:github.com google-agentic-commerce AP2 merchant cart mandate` for Checkout Mandate creation
 4. Fetch SDK docs for merchant-side agent patterns
 
 ## Conceptual Architecture
@@ -22,8 +22,8 @@ The Merchant Agent (ME) **represents the seller** in AP2 transactions:
 
 1. **Receives Intent Mandates** from Shopping Agents
 2. **Searches product catalog** for matching items
-3. **Creates Cart Mandates** with specific product offers, prices, and totals
-4. **Signs Cart Mandates** with the merchant entity's signature
+3. **Creates Checkout Mandates** with specific product offers, prices, and totals
+4. **Signs Checkout Mandates** with the merchant entity's signature
 5. **Handles clarification requests** when intent is ambiguous
 6. **Supports the payment flow** by forwarding to Payment Processor
 
@@ -43,12 +43,12 @@ The Merchant Agent's Agent Card advertises:
 - Determine if the intent can be fulfilled within constraints
 - Decide whether to proceed, request clarification, or reject
 
-#### Cart Mandate Creation
+#### Checkout Mandate Creation
 - Select matching products from catalog
 - Calculate prices, taxes, shipping, and totals
-- Build the Cart Mandate with W3C Payment Request API structure
+- Build the Checkout Mandate with W3C Payment Request API structure
 - Include all line items with individual pricing
-- Sign the Cart Mandate with the merchant entity's key
+- Sign the Checkout Mandate with the merchant entity's key
 
 #### Merchant Signature
 The merchant signature is critical:
@@ -75,7 +75,7 @@ The Merchant Agent needs access to:
 
 ### Payment Method Advertisement
 
-Cart Mandates include supported payment methods:
+Checkout Mandates include supported payment methods:
 ```json
 "method_data": [
   {
@@ -89,19 +89,19 @@ Cart Mandates include supported payment methods:
 
 A Shopping Agent may contact multiple merchants:
 - Each merchant independently evaluates the Intent Mandate
-- Each returns their own Cart Mandate
+- Each returns their own Checkout Mandate
 - The Shopping Agent compares offers on behalf of the user
 - The merchant should respond quickly to be competitive
 
 ### Best Practices
 
-- Sign Cart Mandates at the entity level, not the agent level
+- Sign Checkout Mandates at the entity level, not the agent level
 - Include all items with clear descriptions and prices
 - Respond to Intent Mandates promptly — the Shopping Agent may be comparing merchants
 - Handle out-of-stock gracefully with alternatives or clear messaging
 - Implement proper key management for merchant signing keys
 - Validate incoming Intent Mandates for authenticity
 - Keep catalog data fresh — stale prices cause disputes
-- Log all Cart Mandate creation for audit trail
+- Log all Checkout Mandate creation for audit trail
 
-Fetch the specification for exact Merchant Agent requirements, Cart Mandate creation process, and signing formats before implementing.
+Fetch the specification for exact Merchant Agent requirements, Checkout Mandate creation process, and signing formats before implementing.

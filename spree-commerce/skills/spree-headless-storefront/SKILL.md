@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Fetch https://github.com/spree/storefront (README) for current setup and customization.
 2. Fetch https://spreecommerce.org/docs/developer/storefront/nextjs/quickstart for the quickstart.
 3. Fetch the Next.js 16 docs for App Router / Server Actions patterns the storefront uses.
-4. Cross-reference https://github.com/spree/sdk for SDK usage.
+4. Cross-reference https://spreecommerce.org/docs/developer/sdk/quickstart for SDK usage.
 5. Check the v5.4 announcement for the storefront's release context.
 
 ## Conceptual Architecture

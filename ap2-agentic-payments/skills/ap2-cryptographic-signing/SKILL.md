@@ -9,8 +9,8 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for cryptographic signing requirements
-2. Fetch `https://ap2-protocol.org/topics/privacy-and-security/` for security architecture
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for cryptographic signing requirements
+2. Fetch `https://ap2-protocol.org/ap2/security_and_privacy_considerations/` for security architecture
 3. Web-search `site:github.com google-agentic-commerce AP2 signature mandate` for signing implementations
 4. Web-search `ap2 protocol VDC signing cryptographic hardware-backed` for community guides
 
@@ -39,27 +39,21 @@ AP2 supports **ECDSA** with the following algorithm/curve combinations:
 
 Before signing, JSON payloads are canonicalized using **JCS (RFC 8785)** to produce a deterministic byte representation. This ensures that logically equivalent JSON objects produce the same signature regardless of key ordering or whitespace.
 
-### Detached JWS for Merchant Authorization
+### Merchant authorization envelope
 
-The `merchant_authorization` field on Cart Mandates uses **Detached JWS** format:
-```
-<base64url-header>..<base64url-signature>
-```
-Note the **double dots** — the payload is omitted from the JWS because it is the JCS-canonicalized CartContents, which the verifier already possesses.
+> **Version-sensitive.** The exact envelope for the merchant's signature has changed across AP2 releases — earlier releases used a detached JWS over canonicalized cart contents; current releases carry a merchant-signed checkout JWT plus a checkout hash inside the mandate. **Fetch `https://ap2-protocol.org/ap2/checkout_mandate/` and implement what it says.** Everything below is the durable shape, not a schema.
 
-### JWT Header and Payload Requirements
+The durable pattern, whatever the envelope:
 
-**JWT header** MUST include:
-- `alg` — The signing algorithm (ES256, ES384, or ES512)
-- `kid` — Key identifier for the signing key
+- The merchant signs a **canonical** representation of the checkout, so serialization differences cannot change what was signed.
+- A **hash** identifies the specific checkout and ties the signature to it.
+- The verifier can reconstruct what was signed from data it already holds, rather than trusting a payload the agent supplies.
 
-**JWT payload** for merchant_authorization includes:
-- `iss` — Issuer (merchant identifier)
-- `aud` — Audience
-- `iat` — Issued-at timestamp
-- `exp` — Expiration timestamp
-- `jti` — Unique JWT identifier
-- `cart_hash` — Hash of the canonicalized cart contents
+**Header claims** must carry, at minimum:
+- the signing algorithm
+- a key identifier — the verifier has to know *which* key signed, and key rotation depends on this
+
+**Payload claims** typically carry issuer, audience, issued-at, expiry, a unique identifier, and the checkout hash. Confirm the exact claim names and the permitted algorithms against the live spec before implementing verification.
 
 ### Two Types of Signatures
 
@@ -77,11 +71,13 @@ Note the **double dots** — the payload is omitted from the JWS because it is t
 
 ### What Gets Signed
 
-| VDC | Signed By | What's Covered |
-|-----|-----------|---------------|
-| Cart Mandate | Merchant + User | Exact items, prices, totals, payment methods |
-| Intent Mandate | User | Shopping constraints, categories, intent, TTL |
+| Mandate | Signed by | What's covered |
+|---------|-----------|----------------|
+| Checkout Mandate (closed) | Merchant + User | Exact items, prices, totals, payment methods |
+| Checkout Mandate (open) | User, then Agent on binding | Shopping constraints (allowed merchants, line items), expiry |
 | Payment Mandate | User | Payment method selection, transaction amount |
+
+The open form is where the former "Intent Mandate" lives — the user signs the constraints, the agent later signs the binding to a real transaction, and **both signatures are retained** as the authorization chain.
 
 ### Trusted Device Surface
 

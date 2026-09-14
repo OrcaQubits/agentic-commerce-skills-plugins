@@ -1,10 +1,8 @@
 ---
 name: ucp-conformance
-description: >
-  Run and write UCP conformance tests — validate a UCP implementation against
-  the official test suite covering checkout lifecycle, orders, fulfillment,
-  payments, idempotency, webhooks, and security. Use when testing or validating
-  a UCP implementation.
+description: Run and write UCP conformance tests — validate a UCP implementation against the official test suite covering checkout lifecycle, orders, fulfillment, payments, idempotency, webhooks, and security. Use when testing or validating a UCP implementation.
+disable-model-invocation: true
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Conformance Testing

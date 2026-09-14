@@ -1,19 +1,18 @@
 ---
 name: ucp-schema-authoring
-description: >
-  Author custom UCP schemas and extensions — create capability schemas,
-  extension schemas, and type definitions using JSON Schema 2020-12 composition.
-  Use when extending UCP with custom capabilities or building domain-specific
-  extensions.
+description: Author custom UCP schemas and extensions — create capability schemas, extension schemas, and type definitions using JSON Schema 2020-12 composition. Use when extending UCP with custom capabilities or building domain-specific extensions.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Schema Authoring
 
 ## Before writing code
 
-**Fetch live spec**: Web-search `site:ucp.dev documentation schema-authoring` and fetch the page for the exact schema metadata requirements, category rules, and composition patterns.
+**Fetch live spec**: Web-search `site:ucp.dev specification schema` and fetch the relevant pages for the exact schema metadata requirements, category rules, and composition patterns.
 
-Also fetch https://ucp.dev/specification/reference/ for the base type schemas you'll reference.
+Also fetch:
+- https://ucp.dev/latest/specification/reference/ — the base type schemas you will reference
+- https://ucp.dev/latest/specification/overview/ — the current service/capability layout, which determines the namespaces available to extend
 
 ## Conceptual Architecture
 
@@ -43,10 +42,10 @@ Extensions compose with their parent capability using JSON Schema `allOf`:
   "title": "My Extension",
   "description": "Adds X to checkout",
   "name": "com.example.my_extension",
-  "version": "2026-01-11",
+  "version": "<spec-dated-version>",
   "extends": "dev.ucp.shopping.checkout",
   "allOf": [
-    { "$ref": "https://ucp.dev/schemas/shopping/checkout.json" },
+    { "$ref": "https://ucp.dev/latest/schemas/shopping/checkout.json" },
     {
       "properties": {
         "my_field": { "type": "object" }
@@ -56,13 +55,27 @@ Extensions compose with their parent capability using JSON Schema `allOf`:
 }
 ```
 
+### Services and the namespace tree
+
+UCP organizes capabilities into **services** — verticals that own an API surface. The official tree is reverse-DNS under `dev.ucp`:
+
+| Service | Namespace | Holds |
+|---------|-----------|-------|
+| Shopping | `dev.ucp.shopping.*` | Checkout, Cart, Catalog, Order, and shopping extensions |
+| Common | `dev.ucp.common.*` | Identity Linking, Location, and cross-vertical extensions |
+| Payment | `dev.ucp.payment.*` / `dev.ucp.common.payment.*` | Payment handlers and payment extensions |
+
+Fetch the overview page for the current tree before choosing what to extend — services and capabilities are added between spec versions, and a capability you intend to extend may have moved or may not have existed when this skill was written.
+
 ### Namespace Governance
 
-- `dev.ucp.*` — Governed by ucp.dev (official standard)
-- `com.example.*` — Governed by example.com (your organization)
-- `com.shopify.*` — Governed by shopify.com
+- `dev.ucp.*` — governed by ucp.dev (official standard). **Never author into this namespace.**
+- `com.example.*` — governed by example.com (your organization)
+- `com.shopify.*` — governed by shopify.com
 
 Use your organization's reverse-domain name for custom extensions.
+
+**Namespace authority binding.** Later spec versions add verification that a party actually holds authority over the reverse-DNS namespace it publishes under — you are expected to be able to demonstrate control of the domain your namespace derives from. There are also ordering and reservation rules for namespaces. Fetch the live spec for the current binding mechanism and reserve your namespace before shipping schemas that use it; retrofitting a namespace change after publication breaks every consumer.
 
 ### Schema Resolution Sequence
 

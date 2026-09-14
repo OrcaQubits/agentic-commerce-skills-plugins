@@ -180,12 +180,12 @@ Hooks require Python in PATH.
 | Resource | URL |
 |----------|-----|
 | WebMCP Specification (W3C) | https://webmachinelearning.github.io/webmcp/ |
-| Chrome Developer Blog | https://developer.chrome.com/blog/webmcp |
-| Chrome Early Preview Program | https://developer.chrome.com/blog/webmcp-epp |
-| WebMCP Explainer (GitHub) | https://github.com/nicolo-ribaudo/webmcp-explainer |
-| MCP-B Polyfill (GitHub) | https://github.com/nicolo-ribaudo/mcp-b |
+| Chrome Developer Blog | https://developer.chrome.com/docs/ai/webmcp |
+| Chrome Early Preview Program | https://developer.chrome.com/docs/ai/webmcp |
+| WebMCP Explainer (GitHub) | https://github.com/webmachinelearning/webmcp |
+| MCP-B Polyfill (GitHub) | https://github.com/MiguelsPizza/WebMCP |
 | W3C Web ML Community Group | https://www.w3.org/community/webmachinelearning/ |
-| Chrome Platform Status | https://chromestatus.com/feature/webmcp |
+| Chrome Platform Status | https://chromestatus.com/features |
 
 ## Standards Context
 

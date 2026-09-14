@@ -246,7 +246,7 @@ Hooks require Python in Path.
 | saleor-platform | https://github.com/saleor/saleor-platform |
 | App SDK (GitHub) | https://github.com/saleor/app-sdk |
 | MacawUI (GitHub) | https://github.com/saleor/macaw-ui |
-| Saleor CLI | https://docs.saleor.io/cli |
+| Saleor CLI | https://github.com/saleor/cli |
 | Saleor Cloud | https://cloud.saleor.io/ |
 | Python Docs | https://docs.python.org/3/ |
 | Django Docs | https://docs.djangoproject.com/ |

@@ -1,18 +1,22 @@
 ---
 name: ap2-intent-mandate
-description: Implement the AP2 Intent Mandate — the human-not-present VDC that pre-authorizes agent purchases within defined constraints. Use when building autonomous agent shopping with user-signed intent, TTL, and constraint enforcement.
+description: Pre-authorize agent purchases within user-defined constraints for human-not-present flows — the AP2 Intent Mandate concept, now expressed as an open Checkout Mandate carrying allowed-merchant and line-item constraints. Use when building autonomous agent shopping with user-signed intent, expiry, and constraint enforcement.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
-# AP2 Intent Mandate
+# AP2 Intent Mandate → open-mandate constraints
+
+> **Restructured.** "Intent Mandate" was the name for the human-not-present credential in early AP2 releases. The **concept** — a user authorizing a *shape* of purchase in advance, which an agent later resolves into a concrete transaction — is intact and central. The **structure** moved: it is now expressed through the Agent Authorization Framework as an **open mandate** carrying constraints, which the agent later binds into a **closed** Checkout Mandate.
+>
+> Read `ap2-agent-authorization` first. Treat every concrete field name below as historical illustration, not as the current schema.
 
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the Intent Mandate schema
-2. Web-search `site:github.com google-agentic-commerce AP2 intent mandate` for type definitions and samples
-3. Fetch `https://ap2-protocol.org/topics/core-concepts/` for Intent Mandate conceptual details
-4. Web-search `ap2 protocol intent mandate human-not-present autonomous` for implementation guides
+1. Fetch `https://ap2-protocol.org/ap2/agent_authorization/` for the open/closed mandate model — this is where the intent concept now lives.
+2. Fetch `https://ap2-protocol.org/ap2/checkout_mandate/` for the open-form constraints (allowed merchants, line items).
+3. Fetch `https://ap2-protocol.org/glossary/` to confirm current terminology before writing any type name.
+4. Web-search `site:github.com google-agentic-commerce AP2 code sdk mandate` for the current type definitions.
 
 ## Conceptual Architecture
 
@@ -33,7 +37,9 @@ The **User** signs the Intent Mandate before going offline:
 
 ### Intent Mandate Contents
 
-The spec describes several conceptual properties for the Intent Mandate (payer/payee identities, authorized payment method categories, risk payload, shopping intent, etc.). The actual **V0.1 implementation** uses the following `IntentMandate` Python type fields:
+The spec describes several conceptual properties for the Intent Mandate (payer/payee identities, authorized payment method categories, risk payload, shopping intent, etc.).
+
+**The field list below is historical, not authoritative.** It documents the early `IntentMandate` type, which the open-mandate model has since superseded — a type by that name may not exist in the release you are targeting at all. It is kept here because it shows the *kinds* of constraint the concept has always carried, which is what you need to reason about. Read the actual types from `code/` in the AP2 repo before writing anything. Historically present:
 
 - **`user_cart_confirmation_required`** (`bool`) — Whether the user must confirm the cart before purchase
 - **`natural_language_description`** (`str`) — The user's actual words / shopping intent, captured for accountability
@@ -44,23 +50,25 @@ The spec describes several conceptual properties for the Intent Mandate (payer/p
 
 Note: Use `intent_expiry` (an ISO 8601 timestamp) rather than a generic "TTL" concept.
 
-Additional conceptual fields described in the specification (but not necessarily present in V0.1 types) include:
+Additional conceptual fields described in the specification (present or absent depending on the release you target) include:
 - Payer/payee identities
 - Authorized payment method categories
 - Risk payload for fraud assessment
 - Decision criteria (price range, brand preferences, quality requirements)
 - User device signature (cryptographic proof of authorization)
 
-### How It Differs from Cart Mandate
+### Open vs closed — the distinction that replaced "Intent vs Cart"
 
-| Aspect | Cart Mandate | Intent Mandate |
-|--------|-------------|----------------|
+| Aspect | Closed mandate | Open mandate |
+|--------|----------------|--------------|
 | **Scenario** | Human-present | Human-not-present |
-| **Created by** | Merchant | Shopping Agent |
-| **Specificity** | Exact items, prices, totals | Categories, constraints, intent |
-| **Payment method** | Specific tokenized method | Authorized categories |
-| **User presence** | User present at signing | User signs before leaving |
-| **Expiration** | Transaction-scoped | `intent_expiry` (ISO 8601 timestamp) |
+| **Bound to a transaction** | Yes, via Key Binding JWT | No — carries constraints instead |
+| **Specificity** | Exact items, prices, totals | Allowed merchants, acceptable line items |
+| **User presence** | User approves the actual transaction | User approves the constraints, then leaves |
+| **Who signs last** | User | Agent, binding the closed mandate to a real transaction |
+| **Evidence at dispute** | The signed transaction | The full chain: user-signed constraints + agent-signed binding |
+
+The old "Cart Mandate vs Intent Mandate" framing maps onto this directly — but the objects are not interchangeable with their predecessors, so port the *reasoning*, never the field names.
 
 ### Intent Mandate Flow
 
@@ -88,7 +96,7 @@ The Intent Mandate defines boundaries the agent must stay within:
 ### Merchant Escalation
 
 The merchant can escalate a human-not-present flow to human-present:
-- Request user select from specific SKU options → becomes Cart Mandate flow
+- Request user select from specific SKU options → becomes Checkout Mandate flow
 - Ask clarification questions → updates Intent Mandate
 - Force user confirmation → full human-present authorization required
 

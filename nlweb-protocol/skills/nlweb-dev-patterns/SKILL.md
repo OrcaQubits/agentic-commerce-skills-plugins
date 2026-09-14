@@ -6,6 +6,12 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 # NLWeb Development Patterns
 
+> **Config layout changed upstream.** NLWeb replaced the single `site_types.xml` with two files in `config/`:
+> **`sites.xml`** (site name → `itemType` list + description) and **`tools.xml`** (per-site / per-type tool
+> definitions, prompts and examples, scoped by `<Site id="…">` / `<Item>` blocks). Older guidance — including any
+> `site_type` / `extends` inheritance syntax — describes the retired file. **Fetch `config/sites.xml` and
+> `config/tools.xml` from the live repo before editing anything.**
+
 ## Before writing code
 
 **Fetch live docs**:
@@ -87,7 +93,7 @@ When `/ask` returns a bad answer, the bug is in one of these call sites:
 | Call site | Symptom | Fix |
 |-----------|---------|-----|
 | Decontextualize | Query rewritten wrong; off-topic results | Pre-compute `decontextualized_query`, log the prompt's output |
-| Type detection | Wrong handler invoked | Pass `itemType` explicitly, or check `site_types.xml` |
+| Type detection | Wrong handler invoked | Pass `itemType` explicitly, or check `tools.xml` |
 | Tool selection | Right type, wrong tool | Adjust tool descriptions; set `tool_selection_enabled: false` to bypass |
 | Ranking | Top results are off | Check embedding alignment first; then try `scorer=nlwebscorer` |
 | Summarize / generate | Final answer is poor | Improve Schema.org source data; bump model tier |

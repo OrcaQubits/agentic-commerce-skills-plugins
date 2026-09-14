@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Web-search `site:docs.medusajs.com testing` for official testing guide and setup
 2. Web-search `site:docs.medusajs.com medusaIntegrationTestRunner` for integration test utilities
 3. Web-search `site:docs.medusajs.com unit test module` for module unit testing patterns
-4. Fetch `https://docs.medusajs.com/resources/medusa-testing` and review test runner configuration
+4. Fetch `https://docs.medusajs.com/learn/debugging-and-testing` and review test runner configuration
 5. Web-search `medusajs v2 jest test workflow 2026` for latest workflow testing patterns
 
 ## Test Architecture

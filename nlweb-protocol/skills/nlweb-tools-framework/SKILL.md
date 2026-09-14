@@ -6,11 +6,17 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 # NLWeb Tools Framework
 
+> **Config layout changed upstream.** NLWeb replaced the single `site_types.xml` with two files in `config/`:
+> **`sites.xml`** (site name → `itemType` list + description) and **`tools.xml`** (per-site / per-type tool
+> definitions, prompts and examples, scoped by `<Site id="…">` / `<Item>` blocks). Older guidance — including any
+> `site_type` / `extends` inheritance syntax — describes the retired file. **Fetch `config/sites.xml` and
+> `config/tools.xml` from the live repo before editing anything.**
+
 ## Before writing code
 
 **Fetch live docs**:
 1. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/docs/tools.md for the canonical tools framework reference.
-2. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/site_types.xml for the **per-type tool inheritance tree**.
+2. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/sites.xml for the **per-type tool inheritance tree**.
 3. Read `AskAgent/python/core/router.py::ToolSelector` for how routing actually picks a tool.
 4. Read existing handlers in `AskAgent/python/methods/`: `generate_answer.py`, `item_details.py`, `compare_items.py`, `ensemble_tool.py`, `recipe_substitution.py`, `accompaniment.py`.
 5. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-prompts.md for the `<returnStruc>` JSON contract that handlers must satisfy.
@@ -31,7 +37,7 @@ When NLWeb's docs say "tools framework," they mean (1).
 For every `/ask` request:
 
 1. `ToolSelector` (`core/router.py`) inspects the decontextualized query + detected Schema.org type.
-2. It consults `site_types.xml` / `tools.xml` for the candidate tools for that type.
+2. It consults `tools.xml` / `tools.xml` for the candidate tools for that type.
 3. It makes an LLM call (with a strict `<returnStruc>` JSON output schema) asking "which tool fits?"
 4. The selected handler in `methods/<tool>.py` is invoked.
 5. The handler runs retrieval + ranking + any tool-specific logic, then emits results.
@@ -68,9 +74,9 @@ Every LLM call NLWeb makes is paired with a `<returnStruc>` block in `prompts.xm
 
 This is **mixed-mode programming** in action — the LLM output is parsed as JSON and drives Python control flow. Handlers themselves use `<returnStruc>` for their own LLM calls (rank results, generate summary, extract key fields).
 
-### Tool Inheritance via site_types.xml
+### Tool Inheritance via tools.xml
 
-`site_types.xml` maps Schema.org `@type` values to allowed tools, with inheritance:
+`tools.xml` maps Schema.org `@type` values to allowed tools, with inheritance:
 
 ```xml
 <site_type name="Recipe" extends="CreativeWork">
@@ -127,7 +133,7 @@ class YourToolHandler:
 
 Register the tool:
 1. Add to `tools.xml` (or `config_tools.yaml` if that's where the registry lives in current code).
-2. Add the tool name to relevant `site_type` entries in `site_types.xml`.
+2. Add the tool name to relevant `site_type` entries in `tools.xml`.
 3. Add a `<promptString>` entry in `prompts.xml` if your tool needs an LLM call with a `<returnStruc>`.
 
 ### When to Build a Custom Tool vs Use Built-Ins
@@ -161,7 +167,7 @@ curl 'http://localhost:8000/ask?query=test&site=X&streaming=false&forced_tool=yo
 
 If multiple tools could fit a query, `ToolSelector` picks one. To bias selection:
 - Make your tool's description more specific
-- Adjust `site_types.xml` to put your tool earlier in the list for relevant types
+- Adjust `tools.xml` to put your tool earlier in the list for relevant types
 - Increase the `<returnStruc>` `confidence` threshold in `prompts.xml`
 
 ### Common Pitfalls
@@ -169,6 +175,6 @@ If multiple tools could fit a query, `ToolSelector` picks one. To bias selection
 - **Tool registered but never picked** — its `<promptString>` description is too vague; the router can't tell when to use it.
 - **Tool runs but returns nothing** — handler is using the wrong retriever or filtering too aggressively.
 - **LLM returns invalid JSON** — `<returnStruc>` is too complex or the model tier is too low; bump to `high` for that call.
-- **Inheritance not applying** — `site_types.xml` `extends` attribute typo'd or the parent type not defined.
+- **Inheritance not applying** — `tools.xml` `extends` attribute typo'd or the parent type not defined.
 
-Always cross-reference `methods/` and `site_types.xml` in the live repo — both move fast.
+Always cross-reference `methods/` and `tools.xml` in the live repo — both move fast.

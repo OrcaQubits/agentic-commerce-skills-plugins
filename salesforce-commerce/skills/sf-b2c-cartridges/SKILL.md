@@ -18,7 +18,7 @@ Build B2C Commerce cartridges following Salesforce Commerce Cloud architecture p
    - "Salesforce Commerce Cloud cartridge overlay documentation"
 
 2. **Web-fetch** official sources:
-   - https://github.com/SalesforceCommerceCloud/storefront-reference-architecture (SFRA GitHub repo)
+   - https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/api-doc.html (SFRA GitHub repo)
    - Salesforce B2C Commerce cartridge development documentation
    - SFCC LINK marketplace certification requirements
 

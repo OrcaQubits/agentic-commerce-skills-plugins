@@ -14,7 +14,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 3. Web-search `site:github.com saleor storefront` for the official Saleor storefront template source
 4. Web-search `site:github.com saleor macaw-ui` for MacawUI component library reference
 5. Web-search `saleor app template Next.js saleor-app-sdk` for App development patterns
-6. Fetch `https://docs.saleor.io/docs/developer/app-store/apps/overview` for App architecture
+6. Fetch `https://docs.saleor.io/developer/app-store/overview` for App architecture
 
 ## Next.js App Router Conventions
 

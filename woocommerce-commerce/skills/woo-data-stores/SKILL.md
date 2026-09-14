@@ -95,6 +95,14 @@ HPOS moves order data from `wp_posts`/`wp_postmeta` to dedicated tables:
 - **Authoritative: Custom tables** — custom tables are the source of truth
 - **Authoritative: Posts** — legacy mode, posts are source of truth
 
+### Sync-on-read is off by default
+
+**This is the failure mode to design against.** WooCommerce disabled HPOS *sync on read* by default in the 10.7 release cycle. Code that writes order data straight into `wp_postmeta` and expects it to appear in HPOS **now fails silently** — no error, no warning, just data that is never read back.
+
+The practical consequence: legacy order writes are not merely discouraged any more, they are broken. Auditing a plugin for direct `wp_postmeta` order writes is no longer a tidiness exercise, it is a correctness fix.
+
+Confirm the current default and the exact release in the live docs — fetch `https://developer.woocommerce.com/docs/features/orders/high-performance-order-storage/` — but write code as though sync is off regardless of version. It is the safe assumption in every direction.
+
 ### Declaring HPOS Compatibility
 
 ```php
@@ -111,9 +119,10 @@ add_action( 'before_woocommerce_init', function() {
 
 - **DO**: Use `$order->get_meta()`, `$order->update_meta_data()`, `$order->save()`
 - **DO**: Use `wc_get_orders()` with proper args for querying
-- **DON'T**: Use `get_post_meta()`, `update_post_meta()` on orders
+- **DON'T**: Use `get_post_meta()`, `update_post_meta()` on orders — with sync-on-read off, these writes are simply lost
 - **DON'T**: Use `WP_Query` to query orders directly
 - **DON'T**: Assume `$order->get_id()` is a `wp_posts` ID
+- **DON'T**: Rely on a legacy write "still working because sync is on" — the default flipped, and it will not flip back
 
 ## Querying
 

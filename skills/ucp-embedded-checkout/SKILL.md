@@ -1,10 +1,7 @@
 ---
 name: ucp-embedded-checkout
-description: >
-  Implement UCP Embedded Checkout Protocol — iframe/webview-based checkout UI
-  for human escalation using JSON-RPC 2.0 over postMessage. Use when the
-  checkout status is requires_escalation and the buyer needs a merchant-hosted
-  UI.
+description: Implement UCP Embedded Checkout Protocol — iframe/webview-based checkout UI for human escalation using JSON-RPC 2.0 over postMessage. Use when the checkout status is requires_escalation and the buyer needs a merchant-hosted UI.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Embedded Checkout Protocol (EP)

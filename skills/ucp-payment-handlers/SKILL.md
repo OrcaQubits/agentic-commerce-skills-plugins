@@ -1,9 +1,7 @@
 ---
 name: ucp-payment-handlers
-description: >
-  Implement UCP payment handlers — configure Google Pay, Shop Pay, or custom
-  payment methods with tokenization, credential flow, and instrument schemas.
-  Use when integrating payment processing into a UCP checkout.
+description: Implement UCP payment handlers — configure Google Pay, Shop Pay, or custom payment methods with tokenization, credential flow, and instrument schemas. Use when integrating payment processing into a UCP checkout.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Payment Handlers
@@ -13,8 +11,8 @@ description: >
 **Fetch live docs**:
 - Google Pay handler: https://developers.google.com/merchant/ucp/guides/google-pay-payment-handler
 - Shop Pay handler: Web-search `site:shopify.dev UCP Shop Pay payment handler`
-- Payment architecture: https://ucp.dev/specification/overview/ (payment section)
-- Reference types: https://ucp.dev/specification/reference/ (credential and instrument schemas)
+- Payment architecture: https://ucp.dev/latest/specification/overview/ (payment section)
+- Reference types: https://ucp.dev/latest/specification/reference/ (credential and instrument schemas)
 
 ## Conceptual Architecture
 

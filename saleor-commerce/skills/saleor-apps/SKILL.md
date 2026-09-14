@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/extending/apps/overview` for Apps architecture
+1. Fetch `https://docs.saleor.io/developer/extending/apps/overview` for Apps architecture
 2. Web-search `site:docs.saleor.io saleor app manifest structure` for manifest reference
 3. Web-search `site:docs.saleor.io saleor-app-sdk token exchange APL` for SDK utilities
 4. Web-search `site:github.com saleor/saleor-app-template` for latest Next.js App template

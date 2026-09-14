@@ -13,7 +13,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Web-fetch: `https://github.com/SalesforceCommerceCloud/sfcc-ci` for sfcc-ci CLI commands
 2. Web-search: "site:developer.salesforce.com sf cli getting started 2026" for sf CLI setup
 3. Web-search: "site:developer.salesforce.com SFRA getting started 2026" for SFRA project setup
-4. Web-fetch: `https://github.com/SalesforceCommerceCloud/storefront-reference-architecture` for SFRA reference
+4. Web-fetch: `https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/api-doc.html` for SFRA reference
 5. Web-search: "site:developer.salesforce.com commerce cloud b2c b2b documentation 2026"
 
 ## Conceptual Architecture

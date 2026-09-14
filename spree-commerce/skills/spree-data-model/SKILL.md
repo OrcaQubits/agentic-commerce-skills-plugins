@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Fetch https://spreecommerce.org/docs/developer/core-concepts/architecture for the current model graph.
 2. Fetch https://spreecommerce.org/docs/developer/core-concepts/orders for the Order/LineItem/Payment/Shipment graph and state.
 3. Fetch https://spreecommerce.org/docs/developer/core-concepts/metafields for Metafield (v5+).
-4. Fetch https://spreecommerce.org/docs/use-case/multi-store/model for `Store` and `Market`.
+4. Fetch https://spreecommerce.org/docs/developer/core-concepts/stores for `Store` and `Market`.
 5. Inspect the live `spree` gem source on GitHub for current column names — Spree adds columns between minors.
 
 ## Conceptual Architecture

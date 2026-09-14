@@ -9,8 +9,8 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.adobe.com/commerce/php/development/components/add-admin-grid/` for admin grid tutorial
-2. Fetch `https://developer.adobe.com/commerce/php/tutorials/backend/create-access-control-list-rule/` for ACL tutorial
+1. Fetch `https://developer.adobe.com/commerce/php/development/components/` for admin grid tutorial
+2. Fetch `https://developer.adobe.com/commerce/php/development/` for ACL tutorial
 3. Web-search `site:developer.adobe.com commerce php development components ui-components` for UI component reference
 
 ## Admin Grids (UI Component Listings)

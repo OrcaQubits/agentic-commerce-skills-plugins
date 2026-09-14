@@ -1,17 +1,23 @@
 ---
 name: nlweb-prompts-customization
-description: Customize NLWeb's LLM prompts and per-Schema.org-type behavior via `prompts.xml` and `site_types.xml` — covers the `<promptString>` template format, `<returnStruc>` JSON schemas, prompt inheritance, decontextualization/ranking/generate templates, per-site overrides, and pitfalls of editing prompts in place. Use when tuning answer quality, supporting a new domain, or localizing prompts.
+description: Customize NLWeb's LLM prompts and per-Schema.org-type behavior via `prompts.xml` and `tools.xml` — covers the `<promptString>` template format, `<returnStruc>` JSON schemas, prompt inheritance, decontextualization/ranking/generate templates, per-site overrides, and pitfalls of editing prompts in place. Use when tuning answer quality, supporting a new domain, or localizing prompts.
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # NLWeb Prompts Customization
+
+> **Config layout changed upstream.** NLWeb replaced the single `site_types.xml` with two files in `config/`:
+> **`sites.xml`** (site name → `itemType` list + description) and **`tools.xml`** (per-site / per-type tool
+> definitions, prompts and examples, scoped by `<Site id="…">` / `<Item>` blocks). Older guidance — including any
+> `site_type` / `extends` inheritance syntax — describes the retired file. **Fetch `config/sites.xml` and
+> `config/tools.xml` from the live repo before editing anything.**
 
 ## Before writing code
 
 **Fetch live docs**:
 1. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-prompts.md for the prompts framework reference.
 2. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/prompts.xml for the **canonical prompt templates currently shipped** — these change between releases.
-3. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/site_types.xml for per-type prompt inheritance.
+3. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/sites.xml for per-type prompt inheritance.
 4. Inspect `AskAgent/python/core/prompts.py` to see how prompts are loaded and parameterized.
 5. Cross-reference with handlers in `methods/` to see which prompt each LLM call site uses.
 
@@ -22,7 +28,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 | File | Purpose |
 |------|---------|
 | `prompts.xml` | Defines `<promptString>` templates and their `<returnStruc>` JSON output contracts |
-| `site_types.xml` | Maps Schema.org `@type` → tool list + per-type prompt overrides, with inheritance |
+| `tools.xml` | Maps Schema.org `@type` → tool list + per-type prompt overrides, with inheritance |
 
 ### The `<promptString>` Template
 
@@ -52,7 +58,7 @@ The exact tag names may differ — verify the live `prompts.xml`. The pattern: h
 
 ### Per-Type Prompt Inheritance
 
-`site_types.xml` uses `extends` to inherit prompts up a type hierarchy:
+`tools.xml` uses `extends` to inherit prompts up a type hierarchy:
 
 ```xml
 <site_type name="Recipe" extends="CreativeWork">
@@ -95,7 +101,7 @@ Prompts are plain text — translate them to localize. NLWeb doesn't have first-
 
 To add prompts for a new Schema.org type (or a custom type):
 
-1. Add `<site_type name="YourType" extends="..."/>` in `site_types.xml`.
+1. Add `<site_type name="YourType" extends="..."/>` in `tools.xml`.
 2. Add `<promptString>` entries with names like `rank_results_yourtype`, `generate_answer_yourtype` in `prompts.xml`.
 3. Reference them via `<prompt name="rank_results" override="rank_results_yourtype"/>` in the site_type.
 4. Restart; verify by query.
@@ -143,4 +149,4 @@ A single `/ask` invocation may use 3-5 different prompts (decontextualize, selec
 
 Prompts are config — version them in git alongside your other config files. When upgrading NLWeb, diff the upstream `prompts.xml` against yours to catch new prompts you should adopt.
 
-Always re-fetch `prompts.xml` and `site_types.xml` from the live repo before customizing — XML attribute names and prompt template syntax evolve.
+Always re-fetch `prompts.xml` and `tools.xml` from the live repo before customizing — XML attribute names and prompt template syntax evolve.

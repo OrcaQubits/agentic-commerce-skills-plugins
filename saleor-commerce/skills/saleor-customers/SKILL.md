@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Web-search `site:docs.saleor.io customers accounts registration` for customer account model and registration flow
 2. Web-search `site:docs.saleor.io staff users permissions groups` for staff management and permission system
 3. Web-search `site:docs.saleor.io authentication JWT tokens` for authentication flow and token handling
-4. Fetch `https://docs.saleor.io/docs/developer/users` and review User model, addresses, and account operations
+4. Fetch `https://docs.saleor.io/developer/users/overview` and review User model, addresses, and account operations
 5. Web-search `site:docs.saleor.io permission groups MANAGE_PRODUCTS MANAGE_ORDERS` for the full list of available permissions
 
 ## Customer Model

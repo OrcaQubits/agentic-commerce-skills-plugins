@@ -244,7 +244,7 @@ Hooks require Python in PATH.
 | JS SDK Reference | https://docs.medusajs.com/resources/references/js-sdk |
 | Medusa GitHub | https://github.com/medusajs/medusa |
 | Next.js Starter | https://github.com/medusajs/nextjs-starter-medusa |
-| CLI Reference | https://docs.medusajs.com/learn/fundamentals/cli |
+| CLI Reference | https://docs.medusajs.com/resources/medusa-cli |
 | Commerce Modules | https://docs.medusajs.com/resources/commerce-modules |
 | Medusa UI (GitHub) | https://github.com/medusajs/ui |
 | TypeScript Docs | https://www.typescriptlang.org/docs/ |

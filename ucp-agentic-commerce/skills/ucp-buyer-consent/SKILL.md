@@ -9,10 +9,10 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ucp.dev/specification/buyer-consent/` for the canonical Buyer Consent extension spec
+1. Fetch `https://ucp.dev/latest/specification/shopping/extensions/buyer-consent/` for the canonical Buyer Consent extension spec
 2. Web-search `site:ucp.dev buyer consent` for related pages and examples
 3. Web-search `site:github.com Universal-Commerce-Protocol buyer consent` for SDK support and samples
-4. Fetch `https://ucp.dev/specification/overview/` for how extensions integrate with the core spec
+4. Fetch `https://ucp.dev/latest/specification/overview/` for how extensions integrate with the core spec
 
 ## Conceptual Architecture
 

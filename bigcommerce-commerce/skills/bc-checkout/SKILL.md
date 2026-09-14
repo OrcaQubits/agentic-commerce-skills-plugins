@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/storefront/cart-checkout/checkout-sdk` for Checkout SDK
+1. Fetch `https://docs.bigcommerce.com/developer/docs/admin/checkout-and-cart/checkout-sdk/overview` for Checkout SDK
 2. Web-search `site:developer.bigcommerce.com checkout api` for Checkout API reference
 3. Web-search `bigcommerce embedded checkout headless` for embedded checkout patterns
 

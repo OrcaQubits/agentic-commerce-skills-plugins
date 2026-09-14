@@ -9,10 +9,10 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for Payment Processor responsibilities
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for Payment Processor responsibilities
 2. Web-search `site:github.com google-agentic-commerce AP2 samples roles merchant_payment_processor` for reference implementation
 3. Web-search `site:github.com google-agentic-commerce AP2 payment processor authorization` for authorization flow
-4. Fetch `https://ap2-protocol.org/topics/core-concepts/` for MPP role details
+4. Fetch `https://ap2-protocol.org/overview/` for MPP role details
 
 ## Conceptual Architecture
 
@@ -56,7 +56,7 @@ When the network/issuer requires additional verification:
 - The MPP triggers a redirect to a trusted user surface
 - User completes the challenge
 - MPP retries authorization with challenge response
-- V0.1 supports redirect challenges
+- Redirect challenges are the baseline; confirm the full challenge set against your target release
 
 #### Receipt Generation
 After successful authorization:

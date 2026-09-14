@@ -27,6 +27,8 @@ acp-agentic-commerce/
 │   ├── acp-product-feed/SKILL.md                # Product feed generation & push
 │   ├── acp-checkout-rest/SKILL.md               # REST checkout — 5 operations
 │   ├── acp-checkout-mcp/SKILL.md                # MCP binding for checkout
+│   ├── acp-cart/SKILL.md                  # Cart API (pre-checkout)
+│   ├── acp-delegate-authentication/SKILL.md # Delegated 3DS authentication
 │   ├── acp-delegated-payment/SKILL.md           # SharedPaymentToken & Stripe SPT
 │   ├── acp-payment-handlers/SKILL.md            # Pluggable payment handlers
 │   ├── acp-orders-webhooks/SKILL.md             # Order lifecycle & HMAC webhooks
@@ -110,6 +112,8 @@ The subagent has `WebSearch` and `WebFetch` in its tool list. Before writing imp
 | **acp-product-feed** | auto | Auto + manual | Feed generation (CSV/JSON/XML), field mapping, push to endpoint |
 | **acp-checkout-rest** | auto | Auto + manual | REST checkout — create, update, retrieve, complete, cancel |
 | **acp-checkout-mcp** | auto | Auto + manual | MCP server binding for checkout operations |
+| **acp-cart** | auto | Auto + manual | Cart API — pre-checkout item collection, full-replacement update |
+| **acp-delegate-authentication** | auto | Auto + manual | Delegated 3DS2 — fingerprint, challenge, session statuses |
 | **acp-delegated-payment** | auto | Auto + manual | SPT provisioning, Stripe integration, 3DS flow |
 | **acp-payment-handlers** | auto | Auto + manual | Pluggable handlers — tokenized cards, gift cards, points |
 | **acp-orders-webhooks** | auto | Auto + manual | Order lifecycle, HMAC webhook signing/verification |

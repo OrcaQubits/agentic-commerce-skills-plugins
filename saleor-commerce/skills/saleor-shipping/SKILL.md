@@ -12,7 +12,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Web-search `site:docs.saleor.io shipping zones methods configuration` for shipping zone and method setup
 2. Web-search `site:docs.saleor.io warehouse allocation shipping` for warehouse-based stock allocation strategies
 3. Web-search `site:docs.saleor.io shipping app SHIPPING_LIST_METHODS_FOR_CHECKOUT` for custom shipping App patterns
-4. Fetch `https://docs.saleor.io/docs/developer/shipping` and review shipping zone, method, and pricing models
+4. Fetch `https://docs.saleor.io/developer/shipping/shipping-zone` and review shipping zone, method, and pricing models
 5. Web-search `site:docs.saleor.io click and collect warehouse pickup` for local pickup configuration
 
 ## Shipping Zones

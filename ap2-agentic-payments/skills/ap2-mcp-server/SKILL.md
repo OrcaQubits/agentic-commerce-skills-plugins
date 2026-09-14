@@ -9,9 +9,9 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for MCP server references
-2. Fetch `https://ap2-protocol.org/topics/ap2-a2a-and-mcp/` for MCP integration details
-3. Fetch `https://ap2-protocol.org/roadmap/` to check MCP server availability status
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for MCP server references
+2. Fetch `https://ap2-protocol.org/ap2/implementation_considerations/` for MCP integration details
+3. Fetch `https://github.com/google-agentic-commerce/AP2/releases` to check MCP server availability status
 4. Web-search `site:github.com google-agentic-commerce AP2 MCP server` for MCP implementations
 
 ## Conceptual Architecture
@@ -42,11 +42,12 @@ The AP2 MCP server exposes payment-related tools that agents can call:
 
 ### Roadmap Status
 
-The AP2 roadmap includes:
-- **V0.1**: A2A extension (primary), MCP server v0.1
-- **V1.x**: MCP-based implementation sequence diagrams, expanded MCP support
+AP2's primary binding has been the **A2A extension**, with MCP support arriving alongside it and expanding over time. Since the protocol moved to the FIDO Alliance for community governance, the roadmap is set there rather than in a single vendor repo.
 
-Check the latest roadmap and GitHub for current MCP server availability.
+**Resolve the current state before building** — do not assume the split above still holds:
+- Check the AP2 repo's `CHANGELOG.md` and `code/` for what the MCP surface actually exposes today.
+- Check FIDO Alliance working-group output (Agentic Authentication TWG, Payments TWG) for where the standard is heading.
+- Confirm which binding — A2A extension or MCP — is the supported path for your integration.
 
 ### MCP Tool Patterns for Payments
 
@@ -58,7 +59,7 @@ Hypothetical AP2 MCP tools:
 |------|-------------|
 | `list_payment_methods` | Get available payment methods for a user |
 | `create_intent_mandate` | Build an Intent Mandate from shopping parameters |
-| `create_cart_mandate` | Build a Cart Mandate from product/price details |
+| `create_cart_mandate` | Build a Checkout Mandate from product/price details |
 | `validate_mandate` | Verify mandate signatures and contents |
 | `process_payment` | Submit a payment for processing |
 | `get_transaction_status` | Check payment processing status |

@@ -1,9 +1,7 @@
 ---
 name: ucp-discount
-description: >
-  Implement the UCP Discount extension — discount code application, validation,
-  allocation tracking, and error handling. Use when adding promo code or
-  discount logic to a UCP checkout.
+description: Implement the UCP Discount extension — discount code application, validation, allocation tracking, and error handling. Use when adding promo code or discount logic to a UCP checkout.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Discount Extension

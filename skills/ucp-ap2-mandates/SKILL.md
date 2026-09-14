@@ -1,10 +1,7 @@
 ---
 name: ucp-ap2-mandates
-description: >
-  Implement UCP AP2 Mandates extension — cryptographic payment mandates for
-  fully autonomous agent commerce using SD-JWT credentials, merchant
-  authorization signatures, and the Agent Payments Protocol. Use when building
-  autonomous agent payment flows without human-in-the-loop.
+description: Implement UCP AP2 Mandates extension — cryptographic payment mandates for fully autonomous agent commerce using SD-JWT credentials, merchant authorization signatures, and the Agent Payments Protocol. Use when building autonomous agent payment flows without human-in-the-loop.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP AP2 Mandates Extension
@@ -13,7 +10,7 @@ description: >
 
 **Fetch live spec**:
 - Web-search `site:ucp.dev specification ap2-mandates` for the extension schema
-- Fetch https://ucp.dev/2026-01-23/documentation/ucp-and-ap2/ for the conceptual relationship
+- Fetch https://ucp.dev/latest/specification/payment/extensions/ap2-mandates/ for the conceptual relationship
 - Web-search `site:ap2-protocol.org` for the AP2 protocol specification
 
 ## Conceptual Architecture

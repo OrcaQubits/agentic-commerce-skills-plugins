@@ -1,9 +1,7 @@
 ---
 name: ucp-fulfillment
-description: >
-  Implement the UCP Fulfillment extension — shipping and pickup methods,
-  destinations, fulfillment groups, selectable options, and estimated delivery.
-  Use when adding shipping/pickup logic to a UCP checkout.
+description: Implement the UCP Fulfillment extension — shipping and pickup methods, destinations, fulfillment groups, selectable options, and estimated delivery. Use when adding shipping/pickup logic to a UCP checkout.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Fulfillment Extension

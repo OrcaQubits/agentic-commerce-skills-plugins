@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/getting-started/architecture` for architecture overview
+1. Fetch `https://docs.saleor.io/setup/architecture` for architecture overview
 2. Web-search `site:docs.saleor.io saleor-platform docker compose setup` for Docker-based quickstart
 3. Web-search `site:docs.saleor.io saleor CLI installation` for CLI tooling and commands
 4. Web-search `site:docs.saleor.io environment variables configuration` for .env reference

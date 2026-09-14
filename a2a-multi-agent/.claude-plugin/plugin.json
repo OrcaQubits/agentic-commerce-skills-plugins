@@ -6,11 +6,7 @@
     "name": "Rohit Bajaj, Julekha Khatun",
     "url": "https://orcaqubits-ai.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins",
-    "directory": "a2a-multi-agent"
-  },
+  "repository": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins",
   "homepage": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins/tree/main/a2a-multi-agent",
   "keywords": [
     "a2a",

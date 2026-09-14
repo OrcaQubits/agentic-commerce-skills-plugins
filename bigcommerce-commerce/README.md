@@ -198,18 +198,18 @@ Hooks require Python in PATH.
 
 | Resource | URL |
 |----------|-----|
-| BigCommerce Dev Center | https://developer.bigcommerce.com/ |
-| API Reference | https://developer.bigcommerce.com/docs/rest |
-| GraphQL Storefront API | https://developer.bigcommerce.com/docs/storefront/graphql |
-| Stencil Docs | https://developer.bigcommerce.com/docs/storefront/stencil |
-| Apps Guide | https://developer.bigcommerce.com/docs/integrations/apps |
-| Checkout SDK | https://developer.bigcommerce.com/docs/storefront/cart-checkout/checkout-sdk |
-| Webhooks | https://developer.bigcommerce.com/docs/integrations/webhooks |
-| Multi-Storefront | https://developer.bigcommerce.com/docs/storefront/multi-storefront |
+| BigCommerce Dev Center | https://docs.bigcommerce.com/developer/docs/overview/quick-start |
+| API Reference | https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts |
+| GraphQL Storefront API | https://docs.bigcommerce.com/developer/docs/storefront/guides/graphql-storefront-api/overview |
+| Stencil Docs | https://docs.bigcommerce.com/developer/docs/storefront/stencil/overview |
+| Apps Guide | https://docs.bigcommerce.com/developer/docs/integrations/apps/introduction |
+| Checkout SDK | https://docs.bigcommerce.com/developer/docs/admin/checkout-and-cart/checkout-sdk/overview |
+| Webhooks | https://docs.bigcommerce.com/developer/docs/integrations/webhooks/overview |
+| Multi-Storefront | https://docs.bigcommerce.com/developer/docs/admin/multi-storefront/overview |
 | Catalyst | https://www.catalyst.dev/ |
 | Catalyst GitHub | https://github.com/bigcommerce/catalyst |
 | BigCommerce GitHub | https://github.com/bigcommerce |
-| BigDesign | https://developer.bigcommerce.com/big-design |
+| BigDesign | https://bigcommerce.github.io/big-design/ |
 | Next.js Docs | https://nextjs.org/docs |
 | MDN JavaScript | https://developer.mozilla.org/en-US/docs/Web/JavaScript |
 | TypeScript Docs | https://www.typescriptlang.org/docs/ |

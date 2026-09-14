@@ -9,8 +9,8 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the VDC framework specification
-2. Fetch `https://ap2-protocol.org/topics/core-concepts/` for VDC conceptual overview
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the VDC framework specification
+2. Fetch `https://ap2-protocol.org/overview/` for VDC conceptual overview
 3. Web-search `site:github.com google-agentic-commerce AP2 src/ap2/types mandate` for VDC type definitions
 4. Web-search `ap2 protocol verifiable digital credentials VDC` for community guides
 
@@ -30,11 +30,18 @@ AP2 VDCs use the **SD-JWT with Key Binding (+kb)** format, enabling selective di
 
 JSON payloads are canonicalized using **JCS (RFC 8785)** before signing to ensure deterministic serialization.
 
-### Three VDC Types in AP2
+### Mandate types in AP2
 
-1. **Cart Mandate** — Human-present authorization for a specific cart/transaction
-2. **Intent Mandate** — Human-not-present pre-authorization with constraints
-3. **Payment Mandate** — Payment ecosystem visibility into agentic transaction context
+Current releases define **two core mandate types**, each of which can be **open** (constrained, unbound) or **closed** (bound to a specific transaction) — see `ap2-agent-authorization`:
+
+1. **Checkout Mandate** — authorizes completing a specific checkout. *Formerly called the Cart Mandate.*
+2. **Payment Mandate** — authorizes payment for that checkout, and gives the payment ecosystem visibility into the agentic context.
+
+The earlier three-type model (Cart / Intent / Payment) folded the human-not-present case into the **open form** of the Checkout Mandate rather than keeping it as a separate credential. Confirm the current type list against the live spec and glossary — this is exactly the sort of thing that moves between releases.
+
+### Extension points
+
+The framework exposes extension points for mandate constraints, checkout objects, payment instruments, and VDC formats, so ecosystems can extend AP2 without forking it.
 
 ### VDC Lifecycle
 
@@ -68,7 +75,7 @@ AP2 VDCs align with W3C standards:
 - **W3C Payment Request API** — Mandate details follow Payment Request structure
 - **W3C Verifiable Credentials** — Mandates are expressed as W3C Verifiable Credentials
 
-Cart Mandates receive both **merchant authorization** (a detached JWS JWT) and **user signature** (hardware-backed device key), forming a dual-authorization model.
+Checkout Mandates receive both **merchant authorization** (a detached JWS JWT) and **user signature** (hardware-backed device key), forming a dual-authorization model.
 
 ### Verification Process
 

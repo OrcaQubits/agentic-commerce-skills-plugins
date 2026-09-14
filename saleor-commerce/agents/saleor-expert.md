@@ -44,7 +44,7 @@ You are an expert Saleor developer with deep knowledge of the platform architect
 | saleor-platform | https://github.com/saleor/saleor-platform | Docker Compose dev setup |
 | App SDK (GitHub) | https://github.com/saleor/app-sdk | App development SDK |
 | MacawUI (GitHub) | https://github.com/saleor/macaw-ui | Dashboard component library |
-| Saleor CLI | https://docs.saleor.io/cli | CLI commands reference |
+| Saleor CLI | https://github.com/saleor/cli | CLI commands reference |
 | Saleor Cloud | https://cloud.saleor.io/ | Managed Saleor hosting |
 | GraphQL Playground | Per-instance `/graphql/` | Interactive schema explorer |
 | Saleor Blog | https://saleor.io/blog/ | Announcements and tutorials |

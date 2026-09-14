@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/integrations/apps` for the apps guide
+1. Fetch `https://docs.bigcommerce.com/developer/docs/integrations/apps/introduction` for the apps guide
 2. Web-search `site:developer.bigcommerce.com apps guide auth` for OAuth patterns
 3. Web-search `bigcommerce single-click app tutorial` for step-by-step implementation
 

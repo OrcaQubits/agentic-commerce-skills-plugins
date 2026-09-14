@@ -218,7 +218,7 @@ Both protocols use Stripe SPTs — they are complementary, serving different use
 | Rust SDK | https://mpp.dev/overview |
 | Sample Code | https://github.com/stripe-samples/machine-payments |
 | MPP Services Directory | https://mpp.dev/services |
-| Service Discovery Spec | https://paymentauth.org/draft-payment-discovery-00.html |
+| Service Discovery Spec | https://paymentauth.org/ |
 | Cloudflare MPP | https://developers.cloudflare.com/agents/agentic-payments/mpp/ |
 | Visa Card Spec for MPP | https://corporate.visa.com/en/sites/visa-perspectives/innovation/visa-card-specification-sdk-for-machine-payments-protocol.html |
 | Claude Code Plugins Docs | https://code.claude.com/docs/en/plugins |

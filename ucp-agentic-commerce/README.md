@@ -28,14 +28,22 @@ ucp-agentic-commerce/
 │   ├── ucp-checkout-mcp/SKILL.md         # Checkout — MCP binding
 │   ├── ucp-checkout-a2a/SKILL.md         # Checkout — A2A binding
 │   ├── ucp-embedded-checkout/SKILL.md    # Embedded Checkout Protocol (iframe)
+│   ├── ucp-cart/SKILL.md                 # Cart capability (pre-checkout collection)
+│   ├── ucp-catalog/SKILL.md              # Catalog capability (search + lookup)
+│   ├── ucp-permalink/SKILL.md            # Permalink — browser-addressable intent URLs
+│   ├── ucp-location/SKILL.md             # Location capability (stores, pickup, serves)
 │   ├── ucp-orders-webhooks/SKILL.md      # Orders & webhook signatures
 │   ├── ucp-fulfillment/SKILL.md          # Fulfillment extension
 │   ├── ucp-discount/SKILL.md             # Discount extension
 │   ├── ucp-payment-handlers/SKILL.md     # Payment handlers (Google Pay, etc.)
+│   ├── ucp-payment-authentication/SKILL.md # Payment Auth ext — device data, 3DS
+│   ├── ucp-payment-terms/SKILL.md        # Payment Terms ext — when payment is due
+│   ├── ucp-split-payments/SKILL.md       # Split Payments ext — multiple instruments
 │   ├── ucp-identity-linking/SKILL.md     # OAuth 2.0 identity linking
 │   ├── ucp-ap2-mandates/SKILL.md         # AP2 cryptographic payment mandates
 │   ├── ucp-schema-authoring/SKILL.md     # Custom schema & extension authoring
 │   ├── ucp-buyer-consent/SKILL.md        # Buyer Consent extension (GDPR/CCPA)
+│   ├── ucp-loyalty/SKILL.md              # Loyalty ext — memberships, tiers, rewards
 │   ├── ucp-conformance/SKILL.md          # Conformance test suite
 │   └── ucp-dev-patterns/SKILL.md         # Architecture & cross-cutting patterns
 └── README.md
@@ -105,19 +113,27 @@ The subagent has `WebSearch` and `WebFetch` in its tool list. Before writing imp
 
 | Skill | Command | Invocation | Description |
 |---|---|---|---|
-| **ucp-setup** | `/ucp-agentic-commerce:ucp-setup` | Manual | Scaffold project, install SDK, create discovery profile |
+| **ucp-setup** | auto | Auto + manual | Scaffold project, install SDK, create discovery profile |
 | **ucp-checkout-rest** | auto | Auto + manual | REST binding — endpoints, headers, status machine, errors |
 | **ucp-checkout-mcp** | auto | Auto + manual | MCP binding — 5 tools, JSON-RPC, Shopify integration |
 | **ucp-checkout-a2a** | auto | Auto + manual | A2A binding — Agent Cards, DataParts, message structure |
 | **ucp-embedded-checkout** | auto | Auto + manual | Embedded Protocol — iframe postMessage, human escalation |
+| **ucp-cart** | auto | Auto + manual | Cart capability — CRUD item collection, conversion to checkout |
+| **ucp-catalog** | auto | Auto + manual | Catalog capability — Search and Lookup, Product vs Variant |
+| **ucp-permalink** | auto | Auto + manual | Browser-addressable intent URLs, item encoding, 303 resolution |
+| **ucp-location** | auto | Auto + manual | Locations — distance vs serves, hours, amenities, item availability |
 | **ucp-orders-webhooks** | auto | Auto + manual | Order lifecycle, webhook delivery, JWT signatures |
 | **ucp-fulfillment** | auto | Auto + manual | Shipping/pickup methods, groups, options, destinations |
 | **ucp-discount** | auto | Auto + manual | Discount codes, allocations, error codes |
 | **ucp-payment-handlers** | auto | Auto + manual | Google Pay, Shop Pay, trust triangle, credential flow |
+| **ucp-payment-authentication** | auto | Auto + manual | Device data collection, 3DS challenge, ready/done handshake |
+| **ucp-payment-terms** | auto | Auto + manual | Payment terms and schedules, recalculation rule |
+| **ucp-split-payments** | auto | Auto + manual | Multiple instruments, allocation order, atomic completion |
 | **ucp-identity-linking** | auto | Auto + manual | OAuth 2.0 account linking, UCP scopes |
 | **ucp-ap2-mandates** | auto | Auto + manual | SD-JWT mandates, merchant authorization, 7-step flow |
 | **ucp-schema-authoring** | auto | Auto + manual | Custom capabilities/extensions, JSON Schema composition |
 | **ucp-buyer-consent** | auto | Auto + manual | GDPR/CCPA consent collection, privacy compliance |
+| **ucp-loyalty** | auto | Auto + manual | Memberships, tiers, benefits, eligibility claims |
 | **ucp-conformance** | `/ucp-agentic-commerce:ucp-conformance` | Manual | Run official test suite against your implementation |
 | **ucp-dev-patterns** | auto | Auto + manual | Negotiation, idempotency, error loops, multi-binding arch |
 
@@ -170,8 +186,8 @@ incomplete → requires_escalation → ready_for_complete → complete_in_progre
 | Resource | URL |
 |----------|-----|
 | UCP Website | https://ucp.dev |
-| Specification (latest) | https://ucp.dev/2026-01-23/ |
-| Playground | https://ucp.dev/playground/ |
+| Specification (latest) | https://ucp.dev/latest/specification/overview/ |
+| Playground | https://ucp.dev/latest/specification/shopping/playground/ |
 | GitHub Organization | https://github.com/Universal-Commerce-Protocol |
 | Python SDK | https://github.com/Universal-Commerce-Protocol/python-sdk |
 | JS/TS SDK | https://github.com/Universal-Commerce-Protocol/js-sdk |

@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/rest-catalog` for Catalog API reference
+1. Fetch `https://docs.bigcommerce.com/developer/api-reference/rest/admin/catalog/brands` for Catalog API reference
 2. Web-search `site:developer.bigcommerce.com catalog products variants options` for product data model
 3. Web-search `bigcommerce product options vs modifiers` for variant architecture
 

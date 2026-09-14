@@ -1,10 +1,7 @@
 ---
 name: ucp-checkout-mcp
-description: >
-  Implement UCP Checkout over the MCP (Model Context Protocol) binding — expose
-  checkout operations as MCP tools for AI agents. Use when building an MCP
-  server that AI agents like Claude or Gemini can call for commerce, or when
-  integrating with Shopify's MCP endpoint.
+description: Implement UCP Checkout over the MCP (Model Context Protocol) binding — expose checkout operations as MCP tools for AI agents. Use when building an MCP server that AI agents like Claude or Gemini can call for commerce, or when integrating with Shopify's MCP endpoint.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Checkout — MCP Binding

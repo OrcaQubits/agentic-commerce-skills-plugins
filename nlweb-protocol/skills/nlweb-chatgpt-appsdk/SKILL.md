@@ -80,9 +80,17 @@ The widget lives in the Node.js project and is bundled into a single HTML file s
 
 Existing clients still hit `:8000/ask`; only ChatGPT clients hit `:8100/ask`. They share the same backend data and config.
 
-### MCP Protocol Version Compatibility
+### MCP Protocol Revision Compatibility
 
-The Node.js MCP server uses the same protocol version (`2024-11-05`) as NLWeb's Python `/mcp`. Pin to this; ChatGPT updates its Apps SDK runtime frequently — re-test on every OpenAI release.
+The Node.js MCP server must advertise the **same** MCP revision as NLWeb's Python `/mcp` — mismatched revisions are the usual cause of a ChatGPT app that connects but lists no tools.
+
+Do not hard-code the revision. Resolve all three and reconcile them:
+
+1. The current spec revision — fetch https://modelcontextprotocol.io/specification/ (redirects to the live one).
+2. What the installed NLWeb Python `/mcp` advertises.
+3. What the ChatGPT Apps SDK runtime currently accepts.
+
+Take the oldest revision all three support. ChatGPT updates its Apps SDK runtime frequently — re-test on every OpenAI release, and re-check the revision rather than assuming it held.
 
 ### ChatGPT App Approval
 

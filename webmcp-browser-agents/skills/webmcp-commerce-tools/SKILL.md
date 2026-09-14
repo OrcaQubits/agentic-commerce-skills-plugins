@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.chrome.com/blog/webmcp` for commerce-related examples and guidance
+1. Fetch `https://developer.chrome.com/docs/ai/webmcp` for commerce-related examples and guidance
 2. Web-search `webmcp agentic commerce e-commerce tools examples` for community implementations
 3. Web-search `webmcp shopping agent checkout cart tools` for commerce workflow patterns
 4. Web-search `site:github.com webmcp commerce` for open-source commerce tool implementations

@@ -31,7 +31,7 @@ nlweb-protocol/
 │   ├── nlweb-retrieval-backends/SKILL.md    # Qdrant/Azure AI Search/Snowflake/etc.
 │   ├── nlweb-llm-providers/SKILL.md         # OpenAI/Azure/Anthropic/Gemini/Ollama/etc.
 │   ├── nlweb-tools-framework/SKILL.md       # methods/ handlers, ToolSelector, returnStruc
-│   ├── nlweb-prompts-customization/SKILL.md # prompts.xml + site_types.xml inheritance
+│   ├── nlweb-prompts-customization/SKILL.md # prompts.xml + tools.xml inheritance
 │   ├── nlweb-deployment/SKILL.md            # Azure / Snowflake / Cloudflare / Docker
 │   ├── nlweb-auth-multitenancy/SKILL.md     # OAuth + per-tenant isolation
 │   ├── nlweb-chatgpt-appsdk/SKILL.md        # ChatGPT Apps SDK + Node.js MCP server
@@ -107,7 +107,7 @@ The subagent has `WebSearch` and `WebFetch` in its tool list. Before writing imp
 | **nlweb-ask-endpoint** | Auto + manual | `/ask` REST contract, SSE streaming, modes (list/summarize/generate), in-stream NLWS headers |
 | **nlweb-mcp-server** | Auto + manual | `/mcp` JSON-RPC 2.0 interface, `ask` / `list_sites` / `who` tools, ChatGPT/Claude wiring |
 | **nlweb-data-loading** | Auto + manual | `db_load.py` for RSS/JSON-LD/CSV/URL ingest, site partitioning, delete + reload |
-| **nlweb-schema-org-grounding** | Auto + manual | Authoring Schema.org JSON-LD, `site_types.xml`, per-type tools |
+| **nlweb-schema-org-grounding** | Auto + manual | Authoring Schema.org JSON-LD, `tools.xml`, per-type tools |
 | **nlweb-retrieval-backends** | Auto + manual | All 12 backends, the single-write/parallel-read pattern, embedding-dim matching |
 | **nlweb-llm-providers** | Auto + manual | 10+ providers, high/low tier model selection, ModelRouter, embedding alignment |
 | **nlweb-tools-framework** | Auto + manual | Custom handlers in `methods/`, ToolSelector, `<returnStruc>` JSON contracts |
@@ -176,7 +176,6 @@ NLWeb is **to MCP/A2A what HTML is to HTTP** — the data layer that makes the a
 | Tools framework | https://github.com/nlweb-ai/NLWeb/blob/main/docs/tools.md |
 | Providers | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-providers.md |
 | Release notes | https://github.com/nlweb-ai/NLWeb/tree/main/docs/release_notes |
-| Spec | https://nlweb.ai/spec |
 | Cloudflare hosted | https://developers.cloudflare.com/ai-search/how-to/nlweb/ |
 | MS Tech Community announcement | https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/the-future-of-ai-optimize-your-site-for-agents---its-cool-to-be-a-tool/4434189 |
 | WordPress plugin | https://github.com/nlweb-ai/NLWeb/tree/main/code/wordpress/nlweb |

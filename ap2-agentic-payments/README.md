@@ -25,7 +25,8 @@ ap2-agentic-payments/
 ├── skills/
 │   ├── ap2-setup/SKILL.md                     # Project scaffolding & SDK install
 │   ├── ap2-vdc-framework/SKILL.md             # Verifiable Digital Credentials framework
-│   ├── ap2-cart-mandate/SKILL.md              # Cart Mandate (human-present)
+│   ├── ap2-checkout-mandate/SKILL.md              # Checkout Mandate (human-present)
+│   ├── ap2-agent-authorization/SKILL.md       # Agent Authorization Framework
 │   ├── ap2-intent-mandate/SKILL.md            # Intent Mandate (human-not-present)
 │   ├── ap2-payment-mandate/SKILL.md           # Payment Mandate (network visibility)
 │   ├── ap2-human-present-flow/SKILL.md        # Human-present 20-step transaction flow
@@ -82,7 +83,7 @@ Build an AP2 Shopping Agent that handles card payments
 ```
 
 ```
-Implement a Merchant Agent with Cart Mandate creation and signing
+Implement a Merchant Agent with Checkout Mandate creation and signing
 ```
 
 ```
@@ -110,7 +111,8 @@ The subagent has `WebSearch` and `WebFetch` in its tool list. Before writing imp
 |---|---|---|
 | **ap2-setup** | Auto + manual | Scaffold project, install SDK, configure roles |
 | **ap2-vdc-framework** | Auto + manual | Verifiable Digital Credentials architecture |
-| **ap2-cart-mandate** | Auto + manual | Cart Mandate — human-present authorization |
+| **ap2-checkout-mandate** | Auto + manual | Checkout Mandate — human-present authorization |
+| **ap2-agent-authorization** | auto | Auto + manual | Open vs closed mandates, two-phase delegation, authorization chain |
 | **ap2-intent-mandate** | Auto + manual | Intent Mandate — human-not-present pre-auth |
 | **ap2-payment-mandate** | Auto + manual | Payment Mandate — network/issuer visibility |
 | **ap2-human-present-flow** | Auto + manual | 20-step interactive transaction flow |
@@ -162,7 +164,7 @@ Hooks require Python in PATH.
 
 | Mandate | Scenario | Created By | Signed By |
 |---------|----------|-----------|-----------|
-| **Cart Mandate** | Human-present | Merchant | Merchant + User |
+| **Checkout Mandate** | Human-present | Merchant | Merchant + User |
 | **Intent Mandate** | Human-not-present | Shopping Agent | User |
 | **Payment Mandate** | All transactions | Shopping Agent | User |
 
@@ -170,7 +172,7 @@ Hooks require Python in PATH.
 
 **Human-Present** (20 steps):
 ```
-User → SA → Merchant → Cart Mandate → User confirms → Payment → Receipt
+User → SA → Merchant → Checkout Mandate → User confirms → Payment → Receipt
 ```
 
 **Human-Not-Present**:
@@ -194,7 +196,7 @@ MCP (Agent-to-Tool/Data Access)
 |----------|-------------|
 | **A2A** | AP2 extends A2A for payment-specific communication |
 | **MCP** | AP2 MCP servers provide payment tools to agents |
-| **UCP** | UCP operationalizes AP2 (Checkout = Cart Mandate) |
+| **UCP** | UCP operationalizes AP2 (Checkout = Checkout Mandate) |
 | **x402** | Complementary crypto payment method AP2 can support |
 
 ## Official References
@@ -202,12 +204,12 @@ MCP (Agent-to-Tool/Data Access)
 | Resource | URL |
 |----------|-----|
 | AP2 Website | https://ap2-protocol.org |
-| Specification | https://ap2-protocol.org/specification/ |
-| Core Concepts | https://ap2-protocol.org/topics/core-concepts/ |
-| Privacy & Security | https://ap2-protocol.org/topics/privacy-and-security/ |
-| Roadmap | https://ap2-protocol.org/roadmap/ |
+| Specification | https://ap2-protocol.org/ap2/specification/ |
+| Core Concepts | https://ap2-protocol.org/overview/ |
+| Privacy & Security | https://ap2-protocol.org/ap2/security_and_privacy_considerations/ |
+| Roadmap | https://github.com/google-agentic-commerce/AP2/releases |
 | GitHub Repository | https://github.com/google-agentic-commerce/AP2 |
-| Python Samples | https://github.com/google-agentic-commerce/AP2/tree/main/samples/python |
+| Python Samples | https://github.com/google-agentic-commerce/AP2/tree/main/code/samples |
 | Google ADK | https://google.github.io/adk-docs/ |
 | x402 Integration | https://github.com/google-agentic-commerce/a2a-x402 |
 | Google Cloud Blog | https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol |

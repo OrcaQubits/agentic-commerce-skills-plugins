@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://paymentauth.org/draft-payment-discovery-00.html` for the canonical service discovery specification
+1. Fetch `https://paymentauth.org/` for the canonical service discovery specification
 2. Web-search `mpp service discovery openapi x-payment-info llms.txt` for implementation examples
 3. Web-search `site:mpp.dev directory` for the MPP payments directory and listing requirements
 4. Fetch `https://mpp.dev/overview` for discovery-related documentation

@@ -1,9 +1,7 @@
 ---
 name: ucp-identity-linking
-description: >
-  Implement UCP Identity Linking — OAuth 2.0 authorization code flow for
-  linking buyer accounts between platforms and merchants, enabling personalized
-  checkout experiences. Use when implementing account linking or SSO for UCP.
+description: Implement UCP Identity Linking — OAuth 2.0 authorization code flow for linking buyer accounts between platforms and merchants, enabling personalized checkout experiences. Use when implementing account linking or SSO for UCP.
+allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
 # UCP Identity Linking

@@ -12,9 +12,9 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Web-search `site:docs.saleor.io promotions catalog order rules` for promotion types and rule configuration
 2. Web-search `site:docs.saleor.io vouchers voucher codes` for voucher creation and usage patterns
 3. Web-search `site:docs.saleor.io gift cards` for gift card creation, activation, and redemption
-4. Fetch `https://docs.saleor.io/docs/developer/discounts` and review the promotion model, rules, and conditions
+4. Fetch `https://docs.saleor.io/developer/discounts/overview` and review the promotion model, rules, and conditions
 5. Web-search `site:docs.saleor.io manual discount order staff` for staff-applied manual discounts
-6. Fetch `https://docs.saleor.io/docs/developer/gift-cards` and review gift card as product and as payment method
+6. Fetch `https://docs.saleor.io/developer/gift-cards` and review gift card as product and as payment method
 
 ## Promotion Types
 

@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/storefront/graphql` for GraphQL overview
+1. Fetch `https://docs.bigcommerce.com/developer/docs/storefront/guides/graphql-storefront-api/overview` for GraphQL overview
 2. Web-search `site:developer.bigcommerce.com graphql storefront api reference` for schema reference
 3. Web-search `bigcommerce graphql storefront token` for token creation
 

@@ -9,11 +9,13 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.chrome.com/blog/webmcp` for the latest Chrome WebMCP announcement and API overview
-2. Web-search `site:github.com mcp-b polyfill README` for the MCP-B polyfill installation and quickstart
-3. Web-search `webmcp chrome canary flag enable` for current browser flag names and version requirements
-4. Fetch the MCP-B npm page for the latest package version numbers
-5. Web-search `site:chromestatus.com webmcp` for feature status and milestones
+1. Fetch `https://webmachinelearning.github.io/webmcp/` — the **W3C Community Group draft report**, which is the normative spec for `navigator.modelContext`. Start here, not with vendor docs.
+2. Fetch `https://developer.chrome.com/docs/ai/webmcp` for Chrome's implementation notes and API overview.
+3. Web-search `site:github.com mcp-b polyfill README` for polyfill installation and quickstart.
+4. Web-search `webmcp chrome flag enable` for current browser flag names and version requirements — these change per milestone.
+5. Web-search `site:chromestatus.com webmcp` for feature status and shipping milestones.
+
+**Standards status**: WebMCP is a **W3C Community Group Draft Report** hosted by the Web Machine Learning CG — it is *not* a W3C Standard and is *not* on the W3C Standards Track. Chrome is the reference implementation; other engines have participated in discussion without shipping. Plan for the API surface to move, keep the polyfill path viable, and re-check browser support rather than assuming it broadened.
 
 ## Conceptual Architecture
 

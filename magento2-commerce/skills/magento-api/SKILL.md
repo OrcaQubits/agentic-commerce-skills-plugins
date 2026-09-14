@@ -11,7 +11,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 **Fetch live docs**:
 1. Fetch `https://developer.adobe.com/commerce/webapi/` for Web API overview
 2. Fetch `https://developer.adobe.com/commerce/webapi/graphql/develop/` for GraphQL development guide
-3. Fetch `https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token/` for authentication
+3. Fetch `https://developer.adobe.com/commerce/webapi/get-started/` for authentication
 4. Web-search `site:developer.adobe.com commerce php development components web-api` for webapi.xml reference
 
 ## REST API

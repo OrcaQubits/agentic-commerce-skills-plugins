@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for Shopping Agent responsibilities
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for Shopping Agent responsibilities
 2. Web-search `site:github.com google-agentic-commerce AP2 samples roles shopping_agent` for reference implementation
 3. Web-search `site:github.com google-agentic-commerce AP2 samples python src roles` for source code structure
 4. Fetch SDK docs for agent framework classes (Google ADK)
@@ -23,7 +23,7 @@ The Shopping Agent (SA) is the **primary orchestrator** of AP2 transactions. It 
 1. **Receives user intent** — Understands what the user wants to buy
 2. **Creates Intent Mandates** — Formalizes user intent into structured mandates
 3. **Discovers merchants** — Finds merchants that can fulfill the intent
-4. **Negotiates with merchants** — Presents mandates, receives Cart Mandates
+4. **Negotiates with merchants** — Presents mandates, receives Checkout Mandates
 5. **Coordinates with Credentials Provider** — Gets payment methods, handles tokenization
 6. **Manages user interaction** — Presents options, collects confirmations
 7. **Orchestrates the full flow** — Drives the human-present transaction flow
@@ -49,7 +49,7 @@ The Shopping Agent's Agent Card declares:
 #### Merchant Interaction
 - Discover merchant agents (via Agent Cards or registry)
 - Present Intent Mandate to relevant merchants
-- Receive and evaluate Cart Mandates
+- Receive and evaluate Checkout Mandates
 - Handle merchant clarification requests
 - Support multi-merchant scenarios (compare offers)
 

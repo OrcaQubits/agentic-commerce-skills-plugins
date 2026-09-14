@@ -6,11 +6,17 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 # NLWeb Schema.org Grounding
 
+> **Config layout changed upstream.** NLWeb replaced the single `site_types.xml` with two files in `config/`:
+> **`sites.xml`** (site name → `itemType` list + description) and **`tools.xml`** (per-site / per-type tool
+> definitions, prompts and examples, scoped by `<Site id="…">` / `<Item>` blocks). Older guidance — including any
+> `site_type` / `extends` inheritance syntax — describes the retired file. **Fetch `config/sites.xml` and
+> `config/tools.xml` from the live repo before editing anything.**
+
 ## Before writing code
 
 **Fetch live references**:
 1. Fetch https://schema.org/ for the canonical Schema.org vocabulary.
-2. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/site_types.xml in the live repo for the **exact list of supported Schema.org types** and the tool inheritance tree per type.
+2. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/config/sites.xml in the live repo for the **exact list of supported Schema.org types** and the tool inheritance tree per type.
 3. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-prompts.md for how per-type prompts and `<returnStruc>` shapes work.
 4. Web-search `schema.org JSON-LD validator` — Google's Rich Results Test is a quick way to validate before ingest.
 5. Check `AskAgent/python/methods/recipe_substitution.py`, `accompaniment.py`, `compare_items.py` for examples of how type-specific tools consume the `schema_object`.
@@ -25,7 +31,7 @@ R.V. Guha (NLWeb's author) co-created Schema.org for exactly this reason — the
 
 ### Schema.org Types NLWeb Knows About
 
-`site_types.xml` enumerates the types with per-type tool / prompt overrides. Common types (verify the live file):
+`tools.xml` enumerates the types with per-type tool / prompt overrides. Common types (verify the live file):
 
 | Type | Use Case | Type-Specific Tools |
 |------|----------|---------------------|
@@ -104,7 +110,7 @@ The fewer fields populated, the worse the result quality — especially for `mod
 
 ### Per-Type Prompt and Tool Inheritance
 
-`site_types.xml` defines a tree:
+`tools.xml` defines a tree:
 - Root prompts apply to all types
 - Per-type overrides specialize ranking, summarization, and tool selection
 
@@ -117,7 +123,7 @@ This is **mixed-mode programming** in action — small, type-aware LLM calls dri
 Before ingest:
 1. Visit a representative page and view source — look for `<script type="application/ld+json">`.
 2. Validate with Google's Rich Results Test or Schema.org validator.
-3. Confirm the `@type` is one NLWeb's `site_types.xml` knows about — if not, results still work but use default prompts.
+3. Confirm the `@type` is one NLWeb's `tools.xml` knows about — if not, results still work but use default prompts.
 
 ### Authoring JSON-LD for NLWeb
 
@@ -140,7 +146,7 @@ If `schema_object` is missing key fields, fix the source HTML — not NLWeb's co
 ### Adding a New Schema.org Type
 
 If you want a custom domain (say, `Podcast` episodes) with type-specific tools:
-1. Add a `<site_type>` entry in `site_types.xml` referencing your `@type` value.
+1. Add a `<site_type>` entry in `tools.xml` referencing your `@type` value.
 2. Define type-specific prompts in `prompts.xml` (or inherit defaults).
 3. Optionally write a handler in `methods/` (see `nlweb-tools-framework`).
 4. Reload and re-test.

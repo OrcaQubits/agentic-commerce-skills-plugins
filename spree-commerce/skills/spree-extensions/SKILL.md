@@ -10,7 +10,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 **Fetch live docs**:
 1. Fetch https://spreecommerce.org/docs/developer/customization/decorators for the modern `prepend` pattern.
-2. Fetch https://spreecommerce.org/docs/developer/customization/v4/deface to confirm Deface deprecation status.
+2. Fetch https://spreecommerce.org/docs/developer/customization/decorators to confirm Deface deprecation status.
 3. Inspect any official Spree extension gem (`spree_stripe`, `spree_klaviyo`) for current engine scaffolding.
 4. Check the v5.2 announcement for the generator suite added then.
 5. Verify the current `Spree::Dependencies` registry by reading `lib/spree/dependencies.rb` in the live gem.

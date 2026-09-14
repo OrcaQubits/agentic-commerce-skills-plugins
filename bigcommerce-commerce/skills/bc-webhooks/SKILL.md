@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/integrations/webhooks` for webhooks guide
+1. Fetch `https://docs.bigcommerce.com/developer/docs/integrations/webhooks/overview` for webhooks guide
 2. Web-search `site:developer.bigcommerce.com webhooks events reference` for event topics
 3. Web-search `bigcommerce webhook payload format` for payload structure
 

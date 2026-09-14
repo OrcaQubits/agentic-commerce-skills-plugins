@@ -8,7 +8,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 ## Before writing code
 
-**Fetch live reference**: Web-search `site:ucp.dev specification reference` for the latest data model definitions and enum values. Also check https://ucp.dev/2026-01-23/documentation/core-concepts/ for architectural guidance.
+**Fetch live reference**: Web-search `site:ucp.dev specification reference` for the latest data model definitions and enum values. Also check https://ucp.dev/latest/specification/overview/ for architectural guidance.
 
 ## Pattern: Capability Negotiation
 
@@ -108,7 +108,7 @@ The key: **all bindings share the same core business logic**. The binding layer 
 1. **Unit tests**: Test negotiation logic, total calculations, error message generation
 2. **Integration tests**: Test each binding independently against your core logic
 3. **Conformance tests**: Run the official suite from https://github.com/Universal-Commerce-Protocol/conformance
-4. **Playground validation**: Use https://ucp.dev/playground/ for interactive flow testing
+4. **Playground validation**: Use https://ucp.dev/latest/specification/shopping/playground/ for interactive flow testing
 5. **End-to-end**: Test full flows including payment handler integration
 
 ## Ecosystem References

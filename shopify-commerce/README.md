@@ -221,7 +221,7 @@ Hooks require Python in PATH.
 | Hydrogen Docs | https://shopify.dev/docs/storefronts/headless/hydrogen |
 | Shopify Functions | https://shopify.dev/docs/apps/build/functions |
 | Checkout Extensions | https://shopify.dev/docs/apps/build/checkout |
-| App Bridge | https://shopify.dev/docs/apps/build/app-bridge |
+| App Bridge | https://shopify.dev/docs/api/app-bridge |
 | Polaris | https://polaris.shopify.com/ |
 | Shopify CLI | https://shopify.dev/docs/api/shopify-cli |
 | Dawn (GitHub) | https://github.com/Shopify/dawn |

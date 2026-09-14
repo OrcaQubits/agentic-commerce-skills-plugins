@@ -9,10 +9,10 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the Payment Mandate schema
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the Payment Mandate schema
 2. Web-search `site:github.com google-agentic-commerce AP2 payment mandate` for type definitions
 3. Web-search `site:github.com google-agentic-commerce AP2 src/ap2/types payment` for Python types
-4. Fetch `https://ap2-protocol.org/topics/core-concepts/` for Payment Mandate conceptual details
+4. Fetch `https://ap2-protocol.org/overview/` for Payment Mandate conceptual details
 
 ## Conceptual Architecture
 
@@ -74,7 +74,7 @@ The **Merchant Payment Processor (MPP)** constructs the Payment Mandate from the
 
 ```
 1. User authorizes purchase on trusted device surface
-2. Shopping Agent sends Cart Mandate + user attestation to Merchant
+2. Shopping Agent sends Checkout Mandate + user attestation to Merchant
 3. Merchant submits payment to Merchant Payment Processor (MPP)
 4. MPP constructs the Payment Mandate from the transaction context
 5. MPP requests payment credentials from Credentials Provider (CP)
@@ -94,7 +94,7 @@ The Payment Mandate includes a tokenized payment method (DPAN — Digitized Prim
 
 ### Relationship to Cart/Intent Mandates
 
-- **Cart Mandate** → authorizes what's being purchased (user → merchant)
+- **Checkout Mandate** → authorizes what's being purchased (user → merchant)
 - **Intent Mandate** → authorizes the shopping scope (user → agent)
 - **Payment Mandate** → authorizes the payment (user → payment ecosystem)
 

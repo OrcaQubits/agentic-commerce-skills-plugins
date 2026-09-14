@@ -212,15 +212,15 @@ Hooks require Python in PATH.
 | B2C Commerce Docs | https://developer.salesforce.com/docs/commerce/b2c-commerce/overview |
 | SFRA Guide | https://developer.salesforce.com/docs/commerce/sfra/overview |
 | SCAPI Reference | https://developer.salesforce.com/docs/commerce/commerce-api/overview |
-| OCAPI Reference | https://developer.salesforce.com/docs/commerce/b2c-commerce/references/ocapi |
+| OCAPI Reference | https://developer.salesforce.com/docs/commerce/b2c-commerce/references |
 | PWA Kit Docs | https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/overview |
 | Commerce SDK (GitHub) | https://github.com/SalesforceCommerceCloud/commerce-sdk |
 | PWA Kit (GitHub) | https://github.com/SalesforceCommerceCloud/pwa-kit |
-| SFRA (GitHub) | https://github.com/SalesforceCommerceCloud/storefront-reference-architecture |
+| SFRA (GitHub) | https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/api-doc.html |
 | B2B Commerce Dev Guide | https://developer.salesforce.com/docs/atlas.en-us.b2b_comm_lex_dev.meta/b2b_comm_lex_dev |
 | LWC Dev Guide | https://developer.salesforce.com/docs/platform/lwc/guide |
 | Apex Dev Guide | https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode |
-| Einstein Commerce | https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/einstein-recommendations.html |
+| Einstein Commerce | https://developer.salesforce.com/docs/commerce/einstein-api/overview |
 | sfcc-ci (GitHub) | https://github.com/SalesforceCommerceCloud/sfcc-ci |
 | Salesforce CLI Ref | https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference |
 | Trailhead Commerce | https://trailhead.salesforce.com/content/learn/trails/develop-for-commerce-cloud |

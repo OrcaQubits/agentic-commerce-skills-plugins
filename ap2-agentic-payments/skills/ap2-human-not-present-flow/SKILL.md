@@ -9,10 +9,10 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the human-not-present flow specification
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the human-not-present flow specification
 2. Web-search `site:github.com google-agentic-commerce AP2 human-not-present intent mandate` for samples
-3. Fetch `https://ap2-protocol.org/topics/core-concepts/` for flow overview
-4. Fetch `https://ap2-protocol.org/roadmap/` and the latest spec to confirm the current support level for human-not-present (Intent Mandate) flows in the version you're targeting
+3. Fetch `https://ap2-protocol.org/overview/` for flow overview
+4. Fetch `https://github.com/google-agentic-commerce/AP2/releases` and the latest spec to confirm the current support level for human-not-present (Intent Mandate) flows in the version you're targeting
 
 ## Conceptual Architecture
 
@@ -40,10 +40,10 @@ Phase 2: Autonomous Shopping (User Absent)
   8. Merchant:         Evaluates whether they can fulfill within constraints
   9. If uncertain →    Merchant may force user confirmation (escalate)
   10. If needs info →  Merchant asks clarification (update Intent Mandate)
-  11. If can fulfill → Merchant creates Cart Mandate with offer
+  11. If can fulfill → Merchant creates Checkout Mandate with offer
 
 Phase 3: Authorization (May Require User)
-  12. SA:              Evaluates Cart Mandate against Intent Mandate constraints
+  12. SA:              Evaluates Checkout Mandate against Intent Mandate constraints
   13. If within bounds → SA proceeds with payment
   14. If outside bounds → SA rejects or escalates to user
   15. Payment processing (similar to human-present Phase 4-6)
@@ -54,7 +54,7 @@ Phase 3: Authorization (May Require User)
 | Aspect | Human-Present | Human-Not-Present |
 |--------|--------------|-------------------|
 | **User involvement** | Throughout | Only at start (signing) |
-| **Primary VDC** | Cart Mandate | Intent Mandate |
+| **Primary VDC** | Checkout Mandate | Intent Mandate |
 | **Specificity** | Exact items | Categories + constraints |
 | **Agent autonomy** | Low (user confirms) | High (agent decides within bounds) |
 | **Risk level** | Lower | Higher (needs more safeguards) |
@@ -63,7 +63,7 @@ Phase 3: Authorization (May Require User)
 
 The merchant can escalate from human-not-present to human-present:
 
-1. **SKU Selection Required** — Merchant has multiple matching products, needs user to choose → becomes human-present Cart Mandate flow
+1. **SKU Selection Required** — Merchant has multiple matching products, needs user to choose → becomes human-present Checkout Mandate flow
 2. **Clarification Questions** — Merchant needs more information about requirements → Shopping Agent may auto-respond from Intent Mandate or ask user
 3. **Force User Confirmation** — Merchant uncertain about matching, requires explicit human approval → full human-present authorization
 

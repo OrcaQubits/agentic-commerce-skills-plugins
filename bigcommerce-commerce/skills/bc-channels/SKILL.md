@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/storefront/multi-storefront` for multi-storefront guide
+1. Fetch `https://docs.bigcommerce.com/developer/docs/admin/multi-storefront/overview` for multi-storefront guide
 2. Web-search `site:developer.bigcommerce.com channels api` for Channels API reference
 3. Web-search `bigcommerce multi-storefront setup` for configuration patterns
 

@@ -12,9 +12,9 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Web-search `site:docs.saleor.io orders order lifecycle status` for order model and state transitions
 2. Web-search `site:docs.saleor.io fulfillments order fulfillment` for fulfillment creation and tracking
 3. Web-search `site:docs.saleor.io returns refunds order` for return and refund workflows
-4. Fetch `https://docs.saleor.io/docs/developer/orders` and review order statuses, events, and mutations
+4. Fetch `https://docs.saleor.io/developer/order/overview` and review order statuses, events, and mutations
 5. Web-search `site:docs.saleor.io draft orders` for draft order creation and completion patterns
-6. Fetch `https://docs.saleor.io/docs/developer/fulfillment` and review fulfillment line items and tracking
+6. Fetch `https://docs.saleor.io/developer/order/order-fulfillment` and review fulfillment line items and tracking
 
 ## Order Status and States
 

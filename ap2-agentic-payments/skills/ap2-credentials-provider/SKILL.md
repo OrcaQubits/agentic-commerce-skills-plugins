@@ -9,10 +9,10 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for Credentials Provider responsibilities
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for Credentials Provider responsibilities
 2. Web-search `site:github.com google-agentic-commerce AP2 samples roles credentials_provider` for reference implementation
 3. Web-search `site:github.com google-agentic-commerce AP2 credentials provider tokenization DPAN` for tokenization details
-4. Fetch `https://ap2-protocol.org/topics/privacy-and-security/` for security requirements
+4. Fetch `https://ap2-protocol.org/ap2/security_and_privacy_considerations/` for security requirements
 
 ## Conceptual Architecture
 

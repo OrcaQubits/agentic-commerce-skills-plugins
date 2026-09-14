@@ -9,7 +9,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/channels` for channels overview
+1. Fetch `https://docs.saleor.io/developer/channels/overview` for channels overview
 2. Web-search `site:docs.saleor.io channel configuration currency countries` for channel setup reference
 3. Web-search `site:docs.saleor.io per-channel pricing product` for channel-aware pricing
 4. Web-search `site:docs.saleor.io warehouse allocation channels` for warehouse-channel mapping
