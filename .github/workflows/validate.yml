@@ -1,0 +1,63 @@
+name: Validate manifests and generated output
+
+# Issue #6 sat open for five weeks describing a total install failure —
+# every plugin's manifest failed Claude Code's schema, and nothing in CI
+# would have caught it. This workflow closes that class:
+#
+#   validate_manifests.mjs  source manifests: Claude plugin.json field types
+#                           (repository MUST be a string — issue #6),
+#                           marketplace registration (unregistered plugins
+#                           ship no dist bundles), hook interpreter fallback
+#                           (PR #5 + Windows hardening), Codex dist manifests
+#   validate.py             generated dist/ output for all five platforms:
+#                           structure, frontmatter leaks, event names, TOML
+#   validate-cursor.mjs     dist/cursor against Cursor's OFFICIAL schemas,
+#                           fetched live — so upstream schema drift fails CI
+#                           here instead of at their marketplace gate
+#   test_scoring.py         commerce-readiness offline unit tests (scoring,
+#                           surface guards, parsers — no network)
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  manifests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Source + dist manifest schemas
+        run: node scripts/validate_manifests.mjs
+
+      - name: Generated dist output (all platforms)
+        run: python scripts/validate.py
+
+      - name: Cursor official schemas (live)
+        run: |
+          npm install --no-save ajv ajv-formats
+          node scripts/validate-cursor.mjs
+
+      - name: Readiness plugin unit tests
+        run: python commerce-readiness/scripts/test_scoring.py
+
+      - name: Dist is in sync with source
+        run: |
+          python scripts/convert.py > /dev/null
+          if ! git diff --quiet -- dist; then
+            echo "::error::dist/ is stale — run scripts/convert.py and commit the result"
+            git diff --stat -- dist | tail -20
+            exit 1
+          fi
+          echo "dist/ matches a fresh conversion"
