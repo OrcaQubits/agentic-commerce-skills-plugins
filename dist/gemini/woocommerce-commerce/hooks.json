@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"${extensionPath}${/}/scripts/check_woo_commands.py\"",
+            "command": "python3 \"${extensionPath}${/}/scripts/check_woo_commands.py\"",
             "timeout": 10000
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"${extensionPath}${/}/scripts/check_secrets.py\"",
+            "command": "python3 \"${extensionPath}${/}/scripts/check_secrets.py\"",
             "timeout": 30000
           }
         ]

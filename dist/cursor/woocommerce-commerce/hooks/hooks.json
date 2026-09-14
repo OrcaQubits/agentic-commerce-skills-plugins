@@ -4,7 +4,7 @@
     "preToolUse": [
       {
         "matcher": "Bash",
-        "command": "python \"${CURSOR_PLUGIN_ROOT}/scripts/check_woo_commands.py\"",
+        "command": "python3 \"${CURSOR_PLUGIN_ROOT}/scripts/check_woo_commands.py\"",
         "type": "command",
         "timeout": 10
       }
@@ -12,7 +12,7 @@
     "postToolUse": [
       {
         "matcher": "Write|Edit",
-        "command": "python \"${CURSOR_PLUGIN_ROOT}/scripts/check_secrets.py\"",
+        "command": "python3 \"${CURSOR_PLUGIN_ROOT}/scripts/check_secrets.py\"",
         "type": "command",
         "timeout": 30
       }
