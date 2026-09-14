@@ -27,7 +27,8 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
 from lib.probe import (fetch, get_json, check, evidence, run_cli,
-                       ucp_endpoints, surface_answers)
+                       ucp_endpoints, surface_answers, catchall_baseline,
+                       distinct_surface)
 
 ACP_STATUSES = {"not_ready_for_payment", "ready_for_payment", "completed", "canceled"}
 UCP_STATUSES = {"incomplete", "ready_for_complete", "completed", "canceled"}
@@ -53,6 +54,10 @@ def _acp_error_shaped(d):
 def probe(origin, host, deep=False):
     checks = []
     ucp_doc, acp_doc = _discovery(origin)
+    # Calibrate against the catch-all: many SPA/nginx setups answer EVERY
+    # unknown path identically (405, 200-html, 307). A surface must differ
+    # from that baseline to count as evidence.
+    baseline = catchall_baseline(origin)
 
     # ---------------- ACP checkout ----------------
     acp_base = (acp_doc.get("api_base_url") or origin).rstrip("/")
@@ -65,14 +70,14 @@ def probe(origin, host, deep=False):
              + opt["headers"].get("access-control-allow-methods", "")).upper()
     # surface_answers guards against SPA catch-alls that 200-html every path
     acp_surface = "POST" in allow or (
-        surface_answers(opt)
+        distinct_surface(opt, baseline)
         and opt["status"] in (200, 204, 400, 401, 405, 415, 422))
     checks.append(check(
         "ACP /checkout_sessions surface answers (OPTIONS)",
         acp_surface, 1,
-        "OPTIONS {} ct={} allow={!r}".format(
+        "OPTIONS {} ct={} allow={!r} (catchall baseline: {})".format(
             opt["status"], opt["headers"].get("content-type", "-").split(";")[0],
-            allow.strip() or "-"),
+            allow.strip() or "-", baseline["status"]),
         fix_skill="acp-agentic-commerce:acp-checkout-rest",
     ))
 
@@ -137,7 +142,7 @@ def probe(origin, host, deep=False):
               + uopt["headers"].get("access-control-allow-methods", "")).upper()
     checks.append(check(
         "UCP /checkout-sessions surface answers (OPTIONS)",
-        surface_answers(uopt), 1,
+        distinct_surface(uopt, baseline), 1,
         "OPTIONS {} ct={} allow={!r}".format(
             uopt["status"], uopt["headers"].get("content-type", "-").split(";")[0],
             uallow.strip() or "-"),
@@ -215,7 +220,7 @@ def probe(origin, host, deep=False):
                   and ("results" in ask["body"][:2000] or "answer" in ask["body"][:2000]))
     else:
         ask = fetch(origin + "/ask", method="OPTIONS")
-        ask_ok = surface_answers(ask)
+        ask_ok = distinct_surface(ask, baseline)
     checks.append(check(
         "NLWeb /ask endpoint answers", ask_ok, 1, evidence(ask),
         fix_skill="nlweb-protocol:nlweb-ask-endpoint",

@@ -174,6 +174,39 @@ def surface_answers(resp):
     return True
 
 
+CANARY_PATH = "/__readiness_canary_404__"
+
+
+def catchall_baseline(origin, method="OPTIONS"):
+    """The site's response to a path that certainly does not exist.
+
+    SPA servers and nginx catch-alls answer *every* unknown path the same
+    way (200 index.html, 405 on OPTIONS, a 307 to a router...). A status
+    that matches this baseline is the wallpaper, not an API surface.
+    """
+    return fetch(origin + CANARY_PATH, method=method)
+
+
+def distinct_surface(resp, baseline):
+    """surface_answers + must be distinguishable from the catch-all.
+
+    A response proves a *distinct* surface when it differs from the
+    baseline in status, or carries API-shaped signals the baseline lacks
+    (an Allow header, a non-HTML content-type).
+    """
+    if not surface_answers(resp):
+        return False
+    if resp["status"] != baseline["status"]:
+        return True
+    if resp["headers"].get("allow") and not baseline["headers"].get("allow"):
+        return True
+    ct = resp["headers"].get("content-type", "")
+    bct = baseline["headers"].get("content-type", "")
+    if "json" in ct and "json" not in bct:
+        return True
+    return False
+
+
 def evidence(resp, max_len=160):
     """One-line verbatim evidence string for a response."""
     if resp["error"]:

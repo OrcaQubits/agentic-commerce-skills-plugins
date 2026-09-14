@@ -2,7 +2,8 @@
 """Synthetic tests for scoring paths that can't be exercised against live sites."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib.probe import surface_answers, ucp_endpoints, origin_of, extract_jsonld
+from lib.probe import (surface_answers, ucp_endpoints, origin_of, extract_jsonld,
+                       distinct_surface)
 import readiness_audit as ra
 
 fails = []
@@ -21,6 +22,21 @@ ok(surface_answers({"status": 200, "headers": {"content-type": "application/json
 ok(surface_answers({"status": 405, "headers": {"content-type": "text/html"}}), "405 (even html) -> yes")
 ok(surface_answers({"status": 401, "headers": {}}), "401 -> yes")
 ok(not surface_answers({"status": 307, "headers": {"content-type": "text/plain"}}), "307 router fallback -> no")
+
+# --- distinct_surface: catch-all baseline calibration ---
+mk = lambda st, hdrs={}: {"status": st, "headers": hdrs}
+base405 = mk(405, {"content-type": "text/html"})
+ok(not distinct_surface(mk(405, {"content-type": "text/html"}), base405),
+   "405 identical to catchall 405 -> no (the orcaqubits nginx case)")
+ok(distinct_surface(mk(401), base405), "401 vs 405 baseline -> yes (differs)")
+ok(distinct_surface(mk(405, {"allow": "POST, OPTIONS", "content-type": "text/html"}), base405),
+   "405 with Allow header baseline lacks -> yes")
+ok(distinct_surface(mk(405, {"content-type": "application/json"}), base405),
+   "405 json vs html baseline -> yes")
+ok(not distinct_surface(mk(200, {"content-type": "text/html"}), mk(404)),
+   "200-html never a surface even against 404 baseline")
+ok(not distinct_surface(mk(307, {"content-type": "text/plain"}), mk(404)),
+   "3xx never a surface regardless of baseline")
 
 # --- ucp_endpoints both shapes ---
 canonical = {"services": {"dev.ucp.shopping": [

@@ -22,7 +22,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
-from lib.probe import fetch, get_json, check, evidence, run_cli, surface_answers
+from lib.probe import (fetch, get_json, check, evidence, run_cli,
+                       catchall_baseline, distinct_surface)
 
 
 def probe(origin, host, deep=False):
@@ -77,7 +78,7 @@ def probe(origin, host, deep=False):
             or (isinstance(d, dict) and bool(d.get("type")) and bool(d.get("message")))
     else:
         dp = fetch(dp_path, method="OPTIONS")
-        dp_ok = surface_answers(dp)  # rejects SPA catch-all 200-html
+        dp_ok = distinct_surface(dp, catchall_baseline(acp_base))
     checks.append(check(
         "ACP delegate_payment surface answers",
         dp_ok, 2, evidence(dp),
