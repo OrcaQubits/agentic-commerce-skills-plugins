@@ -111,7 +111,7 @@ This is independent of the marketplace flow above.
 | `keywords` | array — surfaced in marketplace search |
 | `author` | `{name, email?}` — author metadata |
 | `homepage` | URL — surfaced in marketplace UI |
-| `repository` | `{type, url}` — Git source location |
+| `repository` | string — Git source URL |
 | `hooks` | path to `./hooks/hooks.json` |
 | `interface.displayName` | human-readable name |
 | `interface.shortDescription` | tile/card subtitle |

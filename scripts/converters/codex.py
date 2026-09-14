@@ -154,10 +154,15 @@ def generate_codex_plugin_manifest(plugin_json_path: Path) -> dict:
     elif isinstance(src_author, str):
         manifest["author"] = {"name": src_author}
 
-    manifest["repository"] = {
-        "type": "git",
-        "url": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins",
-    }
+    # Codex's plugin.json spec types `repository` as a plain URL string
+    # (see plugin-json-spec.md in openai/codex) — not the npm-style object.
+    # Same class of failure as OrcaQubits/agentic-commerce-skills-plugins#6
+    # on the Claude side: an object here fails manifest validation.
+    manifest["repository"] = (
+        data["repository"]
+        if isinstance(data.get("repository"), str)
+        else "https://github.com/OrcaQubits/agentic-commerce-skills-plugins"
+    )
 
     plugin_dir = plugin_json_path.parent.parent
     if (plugin_dir / "hooks" / "hooks.json").is_file():
