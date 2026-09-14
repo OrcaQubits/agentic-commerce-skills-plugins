@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/storefront` for storefront development guide
+1. Fetch `https://docs.saleor.io/quickstart/storefront` for storefront development guide
 2. Web-search `site:docs.saleor.io storefront GraphQL client setup` for client configuration
 3. Web-search `site:github.com saleor/storefront nextjs` for latest storefront starter source
 4. Web-search `site:docs.saleor.io checkout flow storefront` for checkout integration

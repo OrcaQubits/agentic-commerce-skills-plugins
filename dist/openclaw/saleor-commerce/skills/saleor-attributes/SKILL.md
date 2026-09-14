@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/products` for product and attribute overview
+1. Fetch `https://docs.saleor.io/developer/products/overview` for product and attribute overview
 2. Web-search `site:docs.saleor.io attribute types DROPDOWN MULTISELECT NUMERIC` for attribute type reference
 3. Web-search `site:docs.saleor.io product type attributes variant selection` for product type configuration
 4. Web-search `site:docs.saleor.io attribute filtering products` for attribute-based filtering

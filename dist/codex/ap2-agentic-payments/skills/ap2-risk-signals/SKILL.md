@@ -12,8 +12,8 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for risk payload specification
-2. Fetch `https://ap2-protocol.org/topics/privacy-and-security/` for risk considerations
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for risk payload specification
+2. Fetch `https://ap2-protocol.org/ap2/security_and_privacy_considerations/` for risk considerations
 3. Web-search `ap2 protocol risk signals fraud agentic payments` for risk framework details
 4. Web-search `site:github.com google-agentic-commerce AP2 risk` for implementation references
 
@@ -45,7 +45,7 @@ The following are additional AI-specific risk considerations relevant to agentic
 
 ### Risk Payload
 
-The risk payload is an **open-ended field structure** in V0.1:
+The risk payload is an **open-ended field structure** — deliberately unconstrained so the ecosystem can converge on conventions. Check the release you target for any fields that have since been formalised:
 - Intentionally flexible for industry-specific risk signals
 - Allows Credentials Providers, Merchants, and Networks to pass custom risk data
 - Each actor contributes their own risk assessment signals
@@ -79,12 +79,12 @@ The risk payload is an **open-ended field structure** in V0.1:
 
 AP2 defines trust establishment phases:
 
-**Short-term (V0.1)**:
+**Short-term (early releases)**:
 - Manually curated allowlists per entity
 - Known partner relationships
 - Pre-configured trust
 
-**Long-term (future)**:
+**Long-term (direction of travel)**:
 - Real-time trust via HTTPS certificate validation
 - DNS ownership verification
 - mTLS (mutual TLS) for strong identity

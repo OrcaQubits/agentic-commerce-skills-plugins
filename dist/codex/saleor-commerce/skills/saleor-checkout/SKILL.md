@@ -14,9 +14,9 @@ description: >
 1. Web-search `site:docs.saleor.io checkout flow steps` for the end-to-end checkout process
 2. Web-search `site:docs.saleor.io checkout mutations graphql` for checkout creation and update mutations
 3. Web-search `site:docs.saleor.io transaction payment checkout` for the transaction-based payment flow
-4. Fetch `https://docs.saleor.io/docs/developer/checkout` and review checkout lifecycle and required fields
+4. Fetch `https://docs.saleor.io/developer/checkout/overview` and review checkout lifecycle and required fields
 5. Web-search `site:docs.saleor.io delivery methods shipping checkout` for shipping method selection
-6. Fetch `https://docs.saleor.io/docs/developer/payments` and review payment initialization and completion
+6. Fetch `https://docs.saleor.io/developer/payments/overview` and review payment initialization and completion
 
 ## Checkout Flow Steps
 

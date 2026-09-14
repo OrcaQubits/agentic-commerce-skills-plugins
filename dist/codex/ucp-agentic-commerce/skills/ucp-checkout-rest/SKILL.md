@@ -13,7 +13,7 @@ description: >
 
 **Fetch live spec**: Web-search `site:ucp.dev specification checkout-rest` and fetch the page for the exact current endpoint shapes, required headers, request/response schemas, and status codes.
 
-Also fetch https://ucp.dev/specification/reference/ for all data type definitions (Buyer, LineItem, Total, Message, etc.).
+Also fetch https://ucp.dev/latest/specification/reference/ for all data type definitions (Buyer, LineItem, Total, Message, etc.).
 
 ## Conceptual Architecture
 

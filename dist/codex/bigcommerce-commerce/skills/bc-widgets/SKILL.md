@@ -12,7 +12,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/storefront/widgets` for Widget SDK
+1. Fetch `https://docs.bigcommerce.com/developer/docs/admin/widgets-and-scripts/overview` for Widget SDK
 2. Web-search `site:developer.bigcommerce.com scripts api` for Script Manager API
 3. Web-search `bigcommerce page builder widgets custom` for custom widget patterns
 

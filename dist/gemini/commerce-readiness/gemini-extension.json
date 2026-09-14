@@ -1,0 +1,14 @@
+{
+  "name": "commerce-readiness",
+  "version": "1.0.0",
+  "description": "Agentic commerce readiness audit — executable probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data, checkout transactability, payment surfaces, and trust, then map every gap to the marketplace skill that closes it.",
+  "contextFileName": "GEMINI.md",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  }
+}

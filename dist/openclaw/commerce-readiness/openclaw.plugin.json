@@ -1,0 +1,16 @@
+{
+  "id": "commerce-readiness",
+  "name": "Commerce Readiness",
+  "description": "Agentic commerce readiness audit — executable probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data, checkout transactability, payment surfaces, and trust, then map every gap to the marketplace skill that closes it.",
+  "version": "1.0.0",
+  "skills": [
+    "skills/readiness-audit",
+    "skills/readiness-fix-plan",
+    "skills/readiness-quick-check"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

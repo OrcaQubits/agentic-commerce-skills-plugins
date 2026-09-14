@@ -28,13 +28,13 @@ You are an expert in WebMCP (Web Model Context Protocol) and browser-based agent
 | Resource | URL | Use For |
 |----------|-----|---------|
 | WebMCP Specification (W3C) | https://webmachinelearning.github.io/webmcp/ | Canonical spec reference |
-| Chrome Developer Blog — WebMCP | https://developer.chrome.com/blog/webmcp | Chrome team announcements, API overview |
-| Chrome Early Preview Program | https://developer.chrome.com/blog/webmcp-epp | EPP details, testing instructions |
-| WebMCP Explainer (GitHub) | https://github.com/nicolo-ribaudo/webmcp-explainer | Design rationale and examples |
-| MCP-B Polyfill (GitHub) | https://github.com/nicolo-ribaudo/mcp-b | Browser polyfill packages (vanilla + React) |
+| Chrome Developer Blog — WebMCP | https://developer.chrome.com/docs/ai/webmcp | Chrome team announcements, API overview |
+| Chrome Early Preview Program | https://developer.chrome.com/docs/ai/webmcp | EPP details, testing instructions |
+| WebMCP Explainer (GitHub) | https://github.com/webmachinelearning/webmcp | Design rationale and examples |
+| MCP-B Polyfill (GitHub) | https://github.com/MiguelsPizza/WebMCP | Browser polyfill packages (vanilla + React) |
 | MCP-B npm packages | https://www.npmjs.com/search?q=mcp-b | Polyfill installation and versions |
 | W3C Web Machine Learning CG | https://www.w3.org/community/webmachinelearning/ | Standards group and discussions |
-| Chrome Platform Status | https://chromestatus.com/feature/webmcp | Feature flag status and milestones |
+| Chrome Platform Status | https://chromestatus.com/features | Feature flag status and milestones |
 | Google AI / Gemini API | https://ai.google.dev/ | Agent integration with Google AI |
 
 ### Search Patterns

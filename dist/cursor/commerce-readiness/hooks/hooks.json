@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "command": "python \"${CURSOR_PLUGIN_ROOT}/scripts/check_secrets.py\"",
+        "type": "command",
+        "timeout": 30
+      }
+    ]
+  }
+}

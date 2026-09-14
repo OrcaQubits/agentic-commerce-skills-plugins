@@ -38,7 +38,7 @@ The profile declares:
 - Payment handlers (accepted payment methods with configuration)
 - Signing keys (EC P-256 public keys for webhook signatures)
 
-**Fetch** https://ucp.dev/specification/overview/ and https://developers.google.com/merchant/ucp/guides/ucp-profile for the exact current schema before generating the profile.
+**Fetch** https://ucp.dev/latest/specification/overview/ and https://developers.google.com/merchant/ucp/guides/ucp-profile for the exact current schema before generating the profile.
 
 ### 4. Project structure (Business server)
 ```
@@ -77,5 +77,5 @@ my-ucp-server/
 - Use `.env` + `.gitignore` for all secrets
 
 ### 6. Verify setup
-- Serve the discovery profile and validate its JSON against the schema from https://ucp.dev/specification/reference/
-- Use the UCP Playground at https://ucp.dev/playground/ to test discovery step
+- Serve the discovery profile and validate its JSON against the schema from https://ucp.dev/latest/specification/reference/
+- Use the UCP Playground at https://ucp.dev/latest/specification/shopping/playground/ to test discovery step

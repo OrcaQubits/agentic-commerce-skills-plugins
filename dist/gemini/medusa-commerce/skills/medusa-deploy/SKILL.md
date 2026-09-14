@@ -13,7 +13,7 @@ description: >
 **Fetch live docs**:
 1. Web-search `site:docs.medusajs.com deployment production` for production deployment guides
 2. Web-search `site:docs.medusajs.com medusa build` for build process details
-3. Fetch `https://docs.medusajs.com/learn/fundamentals/cli` for CLI command reference
+3. Fetch `https://docs.medusajs.com/resources/medusa-cli` for CLI command reference
 4. Web-search `site:docs.medusajs.com environment variables configuration` for env var reference
 5. Web-search `site:docs.medusajs.com redis cache events` for Redis caching and event bus setup
 

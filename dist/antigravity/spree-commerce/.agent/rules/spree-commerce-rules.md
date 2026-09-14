@@ -30,7 +30,7 @@ Spree is actively evolving — v5.0 (Apr 2025) brought a complete admin rewrite 
 | Metafields | https://spreecommerce.org/docs/developer/core-concepts/metafields | Custom data on any model |
 | Translations | https://spreecommerce.org/docs/developer/core-concepts/translations | i18n, Translations Center |
 | Decorators (modern) | https://spreecommerce.org/docs/developer/customization/decorators | `prepend` pattern, generators |
-| Deface (legacy v4) | https://spreecommerce.org/docs/developer/customization/v4/deface | Deprecated view override engine |
+| Deface (legacy v4) | https://spreecommerce.org/docs/developer/customization/decorators | Deprecated view override engine |
 | Admin Navigation | https://spreecommerce.org/docs/developer/admin/navigation | `Spree.admin.navigation` API |
 | API reference index | https://spreecommerce.org/docs/api-reference | Store API + Admin API v3 |
 | Next.js storefront quickstart | https://spreecommerce.org/docs/developer/storefront/nextjs/quickstart | Headless frontend |
@@ -39,7 +39,7 @@ Spree is actively evolving — v5.0 (Apr 2025) brought a complete admin rewrite 
 | Testing tutorial | https://spreecommerce.org/docs/developer/tutorial/testing | RSpec/FactoryBot/Capybara |
 | Deployment (database) | https://spreecommerce.org/docs/developer/deployment/database | PG/MySQL/Redis |
 | Upgrade guide | https://spreecommerce.org/docs/developer/upgrades/quickstart | Version-to-version migration |
-| Multi-store use case | https://spreecommerce.org/docs/use-case/multi-store/model | One backend, many stores |
+| Multi-store use case | https://spreecommerce.org/docs/developer/core-concepts/stores | One backend, many stores |
 | Marketplace use case | https://spreecommerce.org/docs/use-case/marketplace/model | Multi-vendor |
 | B2B use case | https://spreecommerce.org/docs/use-case/b2b/b2b-commerce-model | B2B catalog/pricing |
 | Multi-tenant use case | https://spreecommerce.org/docs/use-case/multi-tenant/multi-tenant-model | SaaS pattern |

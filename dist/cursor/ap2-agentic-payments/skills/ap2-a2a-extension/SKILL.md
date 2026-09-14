@@ -12,8 +12,8 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the A2A extension specification
-2. Fetch `https://ap2-protocol.org/topics/ap2-a2a-and-mcp/` for protocol integration details
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the A2A extension specification
+2. Fetch `https://ap2-protocol.org/ap2/implementation_considerations/` for protocol integration details
 3. Web-search `site:github.com google-agentic-commerce AP2 a2a extension` for reference implementation
 4. Web-search `site:github.com google-agentic-commerce AP2 samples a2a` for A2A-based samples
 
@@ -64,7 +64,7 @@ AP2 agents declare payment support in their Agent Card:
 
 AP2 mandates are transmitted as **DataParts** within A2A messages:
 - Intent Mandate → DataPart in message from Shopping Agent to Merchant
-- Cart Mandate → DataPart in response from Merchant to Shopping Agent
+- Checkout Mandate → DataPart in response from Merchant to Shopping Agent
 - Payment Mandate → DataPart in payment flow messages
 
 #### A2A Tasks for Payment Flows
@@ -121,7 +121,7 @@ Shopping Agents discover AP2-capable merchants by:
 The reference samples include a `watch.log` that captures:
 - Raw HTTP data (methods, URLs, request/response bodies)
 - A2A message data (instructions and DataParts)
-- AP2 protocol data (IntentMandate, CartMandate, PaymentMandate objects)
+- AP2 protocol data (IntentMandate, CheckoutMandate, PaymentMandate objects)
 
 This is valuable for debugging the A2A ↔ AP2 integration.
 

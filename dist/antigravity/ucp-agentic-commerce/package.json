@@ -41,6 +41,16 @@
       "path": ".agent/skills/ucp-buyer-consent/SKILL.md"
     },
     {
+      "name": "ucp-cart",
+      "description": "Implement the UCP Cart capability (`dev.ucp.shopping.cart`) — a lightweight CRUD surface for collecting line items before purchase intent exists, and its conversion into a Checkout session. Use when building pre-checkout item collection, shareable carts, or cart-recovery flows over REST, MCP, or Embedded bindings.",
+      "path": ".agent/skills/ucp-cart/SKILL.md"
+    },
+    {
+      "name": "ucp-catalog",
+      "description": "Implement the UCP Catalog capability (`dev.ucp.shopping.catalog`) — free-text product Search and identifier-based Lookup, the Product/Variant data model, media, ratings, and quantity units. Use when exposing product discovery to agents or consuming a business catalog before cart and checkout.",
+      "path": ".agent/skills/ucp-catalog/SKILL.md"
+    },
+    {
       "name": "ucp-checkout-a2a",
       "description": "Implement UCP Checkout over the A2A (Agent-to-Agent) binding — enable autonomous agent-to-agent commerce using Agent Cards and structured message parts. Use when building agent-to-agent commerce flows.",
       "path": ".agent/skills/ucp-checkout-a2a/SKILL.md"
@@ -86,14 +96,39 @@
       "path": ".agent/skills/ucp-identity-linking/SKILL.md"
     },
     {
+      "name": "ucp-location",
+      "description": "Implement the UCP Location capability (`dev.ucp.common.location`) — Search and Lookup for physical locations (stores, restaurants, lockers) with spatial relations, operating hours, amenities, and item availability. Use when building local pickup discovery, store finders, or fulfillment-area verification.",
+      "path": ".agent/skills/ucp-location/SKILL.md"
+    },
+    {
+      "name": "ucp-loyalty",
+      "description": "Implement the UCP Loyalty extension — memberships, tiers, benefits, and rewards surfaced across catalog, cart, and checkout, with reverse-DNS program namespaces, `context.eligibility` claims, and provisional vs verified membership. Use when adding member pricing, tier recognition, or rewards forecasting to a UCP flow.",
+      "path": ".agent/skills/ucp-loyalty/SKILL.md"
+    },
+    {
       "name": "ucp-orders-webhooks",
       "description": "Implement UCP Order capability and webhook delivery — post-purchase order management with fulfillment tracking, adjustments (refunds/returns), and cryptographically signed webhook notifications. Use when building order management or webhook infrastructure.",
       "path": ".agent/skills/ucp-orders-webhooks/SKILL.md"
     },
     {
+      "name": "ucp-payment-authentication",
+      "description": "Implement the UCP Payment Authentication extension (`dev.ucp.common.payment.authentication`) — browser-surface actions for device data collection and 3DS challenge during a payment attempt, including the ready/done handshake and origin validation. Use when adding 3-D Secure or strong customer authentication to a UCP checkout.",
+      "path": ".agent/skills/ucp-payment-authentication/SKILL.md"
+    },
+    {
       "name": "ucp-payment-handlers",
       "description": "Implement UCP payment handlers — configure Google Pay, Shop Pay, or custom payment methods with tokenization, credential flow, and instrument schemas. Use when integrating payment processing into a UCP checkout.",
       "path": ".agent/skills/ucp-payment-handlers/SKILL.md"
+    },
+    {
+      "name": "ucp-payment-terms",
+      "description": "Implement the UCP Payment Terms extension (`dev.ucp.common.payment.terms`) — offering the buyer a choice of when payment is due via payment terms and schedules (pay now, deposit plus balance, deferred). Use when building split-timing payment options into a UCP checkout.",
+      "path": ".agent/skills/ucp-payment-terms/SKILL.md"
+    },
+    {
+      "name": "ucp-permalink",
+      "description": "Implement the UCP Permalink capability — browser-addressable shopping intent URLs that initialize cart/checkout state via a compact item path and UCP field-path query parameters, then redirect the buyer. Use when building campaign links, QR/social buy links, buyer prefill, or store-pickup deep links.",
+      "path": ".agent/skills/ucp-permalink/SKILL.md"
     },
     {
       "name": "ucp-schema-authoring",
@@ -104,6 +139,11 @@
       "name": "ucp-setup",
       "description": "Set up a UCP project — scaffold a merchant server or platform client with discovery profile, SDK installation, and project structure. Use when starting a new UCP implementation.",
       "path": ".agent/skills/ucp-setup/SKILL.md"
+    },
+    {
+      "name": "ucp-split-payments",
+      "description": "Implement the UCP Split Payments extension (`dev.ucp.common.payment.split_payments`) — paying a single checkout with multiple instruments, specified vs open amounts, allocation order, `allowed_combinations` config, and atomic completion. Use when supporting gift cards plus a card, or any multi-instrument checkout.",
+      "path": ".agent/skills/ucp-split-payments/SKILL.md"
     }
   ]
 }

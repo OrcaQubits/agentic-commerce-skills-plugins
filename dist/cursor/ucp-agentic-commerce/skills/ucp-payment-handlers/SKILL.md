@@ -13,8 +13,8 @@ description: >
 **Fetch live docs**:
 - Google Pay handler: https://developers.google.com/merchant/ucp/guides/google-pay-payment-handler
 - Shop Pay handler: Web-search `site:shopify.dev UCP Shop Pay payment handler`
-- Payment architecture: https://ucp.dev/specification/overview/ (payment section)
-- Reference types: https://ucp.dev/specification/reference/ (credential and instrument schemas)
+- Payment architecture: https://ucp.dev/latest/specification/overview/ (payment section)
+- Reference types: https://ucp.dev/latest/specification/reference/ (credential and instrument schemas)
 
 ## Conceptual Architecture
 

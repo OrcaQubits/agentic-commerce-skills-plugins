@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.adobe.com/commerce/php/development/build/component-file-structure/` for module structure
+1. Fetch `https://developer.adobe.com/commerce/php/development/` for module structure
 2. Fetch `https://developer.adobe.com/commerce/php/development/` for development overview
 3. Web-search `site:developer.adobe.com commerce php development build` for build guides
 

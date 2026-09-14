@@ -11,8 +11,8 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.adobe.com/commerce/php/development/components/web-api/services/` for service contract guide
-2. Fetch `https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/` for SearchCriteria patterns
+1. Fetch `https://developer.adobe.com/commerce/webapi/rest/` for service contract guide
+2. Fetch `https://developer.adobe.com/commerce/php/development/components/` for SearchCriteria patterns
 3. Web-search `site:developer.adobe.com commerce php development components service-contracts` for additional reference
 
 ## Conceptual Architecture

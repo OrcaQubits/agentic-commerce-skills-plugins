@@ -13,7 +13,7 @@ description: >
 
 **Fetch live spec**:
 - Web-search `site:ucp.dev specification ap2-mandates` for the extension schema
-- Fetch https://ucp.dev/2026-01-23/documentation/ucp-and-ap2/ for the conceptual relationship
+- Fetch https://ucp.dev/latest/specification/payment/extensions/ap2-mandates/ for the conceptual relationship
 - Web-search `site:ap2-protocol.org` for the AP2 protocol specification
 
 ## Conceptual Architecture

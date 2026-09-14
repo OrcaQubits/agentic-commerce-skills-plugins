@@ -11,9 +11,9 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for challenge flow specification
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for challenge flow specification
 2. Web-search `site:github.com google-agentic-commerce AP2 challenge OTP 3DS step-up` for implementation examples
-3. Fetch `https://ap2-protocol.org/topics/privacy-and-security/` for security context
+3. Fetch `https://ap2-protocol.org/ap2/security_and_privacy_considerations/` for security context
 4. Web-search `ap2 protocol 3DS2 OTP challenge redirect` for integration details
 
 ## Conceptual Architecture
@@ -30,12 +30,16 @@ Any ecosystem participant may trigger a challenge:
 - **Merchant** — Requires confirmation for unusual orders
 - **Credentials Provider** — Requires step-up for new payment methods
 
-### V0.1 Supported Challenge Types
+### Supported Challenge Types
 
-AP2 V0.1 supports **redirect challenges**:
-- **3DS2 (3D Secure 2.0)** — Card network strong customer authentication
-- **OTP (One-Time Password)** — SMS/email/app verification codes
-- User is redirected to a trusted surface (not the agent) for resolution
+The challenge catalogue has grown across AP2 releases, so **verify the supported set against the version you are targeting** before implementing — fetch the live spec rather than relying on the list below.
+
+The durable pattern is the **redirect challenge**: the user is sent to a trusted surface — never the agent — to resolve the challenge, and control returns with a result the processor can verify. Challenge types built on that pattern include:
+
+- **3DS2 (3D Secure 2.0)** — card network strong customer authentication
+- **OTP (One-Time Password)** — SMS / email / app verification codes
+
+Newer releases add challenge kinds beyond redirect and tighten the human-present vs human-not-present rules around them; treat the two above as the baseline, not the ceiling.
 
 ### Challenge Flow
 

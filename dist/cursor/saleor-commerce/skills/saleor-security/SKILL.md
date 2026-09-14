@@ -15,7 +15,7 @@ description: >
 2. Web-search `site:docs.saleor.io apps permissions` for App token authentication and permission model
 3. Web-search `site:docs.saleor.io OIDC OpenID Connect` for OIDC integration configuration
 4. Web-search `saleor webhook payload signature JWS verification` for webhook signature verification
-5. Fetch `https://docs.saleor.io/docs/developer/app-store/apps/overview` for App authentication patterns
+5. Fetch `https://docs.saleor.io/developer/app-store/overview` for App authentication patterns
 6. Web-search `saleor CORS security headers production` for CORS and header configuration
 
 ## JWT Authentication Flow

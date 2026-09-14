@@ -70,12 +70,12 @@
     },
     {
       "name": "nlweb-mcp-server",
-      "description": "Expose NLWeb as an MCP (Model Context Protocol) server — JSON-RPC 2.0 endpoint at /mcp, the `ask` / `list_sites` / `who` tools, MCP protocol version 2024-11-05, and integration with ChatGPT, Claude, Gemini, and other agent clients. Use when wiring NLWeb to an AI agent via MCP or building an MCP client that consumes an NLWeb site.",
+      "description": "Expose NLWeb as an MCP (Model Context Protocol) server — JSON-RPC 2.0 endpoint at /mcp, the `ask` / `list_sites` / `who` tools, protocol revision negotiation, and integration with ChatGPT, Claude, Gemini, and other agent clients. Use when wiring NLWeb to an AI agent via MCP or building an MCP client that consumes an NLWeb site.",
       "path": ".agent/skills/nlweb-mcp-server/SKILL.md"
     },
     {
       "name": "nlweb-prompts-customization",
-      "description": "Customize NLWeb's LLM prompts and per-Schema.org-type behavior via `prompts.xml` and `site_types.xml` — covers the `<promptString>` template format, `<returnStruc>` JSON schemas, prompt inheritance, decontextualization/ranking/generate templates, per-site overrides, and pitfalls of editing prompts in place. Use when tuning answer quality, supporting a new domain, or localizing prompts.",
+      "description": "Customize NLWeb's LLM prompts and per-Schema.org-type behavior via `prompts.xml` and `tools.xml` — covers the `<promptString>` template format, `<returnStruc>` JSON schemas, prompt inheritance, decontextualization/ranking/generate templates, per-site overrides, and pitfalls of editing prompts in place. Use when tuning answer quality, supporting a new domain, or localizing prompts.",
       "path": ".agent/skills/nlweb-prompts-customization/SKILL.md"
     },
     {

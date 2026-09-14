@@ -15,7 +15,7 @@ description: >
 2. Web-search `site:the-guild.dev graphql-codegen` for GraphQL Code Generator configuration and plugins
 3. Web-search `site:graphql.org learn` for GraphQL specification fundamentals
 4. Web-search `saleor GraphQL TypedDocumentNode urql` for typed client patterns
-5. Fetch `https://docs.saleor.io/docs/developer/api-conventions` for Saleor-specific GraphQL conventions
+5. Fetch `https://docs.saleor.io/api-usage/overview` for Saleor-specific GraphQL conventions
 
 ## GraphQL Fundamentals
 

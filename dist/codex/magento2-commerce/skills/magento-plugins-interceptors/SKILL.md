@@ -10,7 +10,7 @@ description: >
 
 ## Before writing code
 
-**Fetch live docs**: Fetch `https://developer.adobe.com/commerce/php/development/components/plugins/` for the official plugins guide with exact method signatures and limitations.
+**Fetch live docs**: Fetch `https://developer.adobe.com/commerce/php/development/components/` for the official plugins guide with exact method signatures and limitations.
 
 ## Conceptual Architecture
 

@@ -10,6 +10,12 @@ description: >
 
 # NLWeb Setup
 
+> **Config layout changed upstream.** NLWeb replaced the single `site_types.xml` with two files in `config/`:
+> **`sites.xml`** (site name → `itemType` list + description) and **`tools.xml`** (per-site / per-type tool
+> definitions, prompts and examples, scoped by `<Site id="…">` / `<Item>` blocks). Older guidance — including any
+> `site_type` / `extends` inheritance syntax — describes the retired file. **Fetch `config/sites.xml` and
+> `config/tools.xml` from the live repo before editing anything.**
+
 ## Before writing code
 
 **Fetch live docs first**:
@@ -66,7 +72,7 @@ NLWeb/                                 # cloned repo
 │   ├── config_oauth.yaml
 │   ├── config_storage.yaml
 │   ├── config_tools.yaml
-│   ├── site_types.xml
+│   ├── tools.xml
 │   └── prompts.xml
 ├── data/db/                           # qdrant_local file store
 ├── .env                               # YOUR credentials (gitignored)

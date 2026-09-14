@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/extending/apps/extending-dashboard-with-apps` for Dashboard extension guide
+1. Fetch `https://docs.saleor.io/developer/extending/apps/extending-dashboard-with-apps` for Dashboard extension guide
 2. Web-search `site:docs.saleor.io app bridge actions dispatch notification` for App Bridge API
 3. Web-search `site:docs.saleor.io dashboard mounting points extensions` for extension points reference
 4. Web-search `site:github.com saleor/macaw-ui components` for MacawUI component library

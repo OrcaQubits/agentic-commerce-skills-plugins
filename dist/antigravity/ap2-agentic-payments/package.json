@@ -34,14 +34,19 @@
       "path": ".agent/skills/ap2-a2a-extension/SKILL.md"
     },
     {
-      "name": "ap2-cart-mandate",
-      "description": "Implement the AP2 Cart Mandate — the human-present VDC that binds user authorization to a specific transaction with merchant-signed product offers and user-signed confirmation. Use when building cart creation, signing, and verification for human-present checkout flows.",
-      "path": ".agent/skills/ap2-cart-mandate/SKILL.md"
+      "name": "ap2-agent-authorization",
+      "description": "Implement the AP2 Agent Authorization Framework — open vs closed mandates, the two-phase delegation/authorization process, the cryptographic authorization chain, Key Binding JWTs, and human-present vs human-not-present signing. Use when designing how a user authorizes an agent to act, before touching any specific mandate type.",
+      "path": ".agent/skills/ap2-agent-authorization/SKILL.md"
     },
     {
       "name": "ap2-challenge-stepup",
       "description": "Implement AP2 challenge and step-up flows — 3DS2, OTP verification, redirect challenges, and trusted surface interactions. Use when building additional authentication steps during agentic payment processing.",
       "path": ".agent/skills/ap2-challenge-stepup/SKILL.md"
+    },
+    {
+      "name": "ap2-checkout-mandate",
+      "description": "Implement the AP2 Checkout Mandate — the credential authorizing completion of a checkout, in its open (constrained) and closed (merchant-verified) forms, with merchant-signed checkout payloads, checkout hashes, and user confirmation on a trusted surface. Formerly called the Cart Mandate. Use when building cart/checkout authorization, signing, and verification.",
+      "path": ".agent/skills/ap2-checkout-mandate/SKILL.md"
     },
     {
       "name": "ap2-credentials-provider",
@@ -70,12 +75,12 @@
     },
     {
       "name": "ap2-human-present-flow",
-      "description": "Implement the AP2 human-present transaction flow — the checkout process where the user is actively present to confirm cart details and payment method selection. The primary VDC in this flow is the Cart Mandate. Use when building interactive agentic checkout with user in the loop.",
+      "description": "Implement the AP2 human-present transaction flow — the checkout process where the user is actively present to confirm cart details and payment method selection. The primary VDC in this flow is the Checkout Mandate. Use when building interactive agentic checkout with user in the loop.",
       "path": ".agent/skills/ap2-human-present-flow/SKILL.md"
     },
     {
       "name": "ap2-intent-mandate",
-      "description": "Implement the AP2 Intent Mandate — the human-not-present VDC that pre-authorizes agent purchases within defined constraints. Use when building autonomous agent shopping with user-signed intent, TTL, and constraint enforcement.",
+      "description": "Pre-authorize agent purchases within user-defined constraints for human-not-present flows — the AP2 Intent Mandate concept, now expressed as an open Checkout Mandate carrying allowed-merchant and line-item constraints. Use when building autonomous agent shopping with user-signed intent, expiry, and constraint enforcement.",
       "path": ".agent/skills/ap2-intent-mandate/SKILL.md"
     },
     {

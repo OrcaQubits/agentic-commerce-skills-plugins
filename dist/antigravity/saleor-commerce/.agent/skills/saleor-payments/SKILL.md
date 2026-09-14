@@ -14,9 +14,9 @@ description: >
 1. Web-search `site:docs.saleor.io transaction payment flow` for the transaction-based payment model
 2. Web-search `site:docs.saleor.io payment app sync webhooks` for payment App implementation patterns
 3. Web-search `site:docs.saleor.io transaction events CHARGE_REQUESTED` for transaction event types
-4. Fetch `https://docs.saleor.io/docs/developer/payments` and review the full payment lifecycle
+4. Fetch `https://docs.saleor.io/developer/payments/overview` and review the full payment lifecycle
 5. Web-search `site:docs.saleor.io refund transactionRequestAction` for refund processing flow
-6. Fetch `https://docs.saleor.io/docs/developer/app-store/apps/stripe` and review Stripe App integration patterns
+6. Fetch `https://docs.saleor.io/developer/app-store/apps/stripe/overview` and review Stripe App integration patterns
 
 ## Transaction Payment Flow
 

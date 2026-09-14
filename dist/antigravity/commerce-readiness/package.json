@@ -1,0 +1,52 @@
+{
+  "name": "commerce-readiness",
+  "displayName": "Commerce Readiness",
+  "version": "1.0.0",
+  "description": "Agentic commerce readiness audit — executable probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data, checkout transactability, payment surfaces, and trust, then map every gap to the marketplace skill that closes it.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "agentic-commerce",
+    "readiness",
+    "audit",
+    "gap-analysis",
+    "ucp",
+    "acp",
+    "ap2",
+    "a2a",
+    "mcp",
+    "nlweb",
+    "structured-data",
+    "checkout",
+    "payments",
+    "ecommerce"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "readiness-audit",
+      "description": "Run the full agentic commerce readiness audit against a live site — six probe modules (Reachable, Discoverable, Comprehensible, Transactable, Payable, Trustworthy), weighted scoring, and a report that maps every gap to the marketplace skill that closes it. Use when a user asks \"is my store agent-ready\", \"audit my site for agentic commerce\", or \"what do I need for ACP/UCP/agents to buy from us\".",
+      "path": ".agent/skills/readiness-audit/SKILL.md"
+    },
+    {
+      "name": "readiness-fix-plan",
+      "description": "Turn an existing readiness audit (report/score.json) into a sequenced, stack-aware fix plan — each gap mapped to the marketplace skill that closes it, ordered by dependency and priority, with effort estimates. Use after readiness-audit when the user says \"make me a plan\", \"what do we fix first\", or wants issues for their tracker.",
+      "path": ".agent/skills/readiness-fix-plan/SKILL.md"
+    },
+    {
+      "name": "readiness-quick-check",
+      "description": "Sixty-second agentic commerce triage — probe just agent access (r1) and protocol discovery (r2) to answer \"can agents reach us, and can they tell we do commerce?\". Use for a first look, a sales call, or checking a competitor before committing to the full readiness-audit.",
+      "path": ".agent/skills/readiness-quick-check/SKILL.md"
+    }
+  ]
+}

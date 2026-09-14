@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/extending/webhooks/overview` for webhook overview
+1. Fetch `https://docs.saleor.io/developer/extending/webhooks/overview` for webhook overview
 2. Web-search `site:docs.saleor.io async sync webhook events list` for event type reference
 3. Web-search `site:docs.saleor.io webhook subscription payload` for subscription query syntax
 4. Web-search `site:docs.saleor.io webhook payload signature JWS verification` for signature verification

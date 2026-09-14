@@ -22,7 +22,7 @@ description: >
    - Apex governor limits (latest release notes)
    - Test class requirements and best practices
 4. Web-fetch: `https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/`
-5. Web-fetch: `https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-cart-calculate.html`
+5. Web-fetch: `https://developer.salesforce.com/docs/commerce/salesforce-commerce/overview`
 
 **Why this matters:** Salesforce releases three times per year (Spring, Summer, Winter). Commerce APIs, CartExtension interfaces, and governor limits change. Live docs prevent using deprecated patterns.
 

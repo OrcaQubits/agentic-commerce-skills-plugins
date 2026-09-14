@@ -35,7 +35,7 @@ You are an expert Medusa v2 developer with deep knowledge of the platform archit
 | JS SDK Reference | https://docs.medusajs.com/resources/references/js-sdk | JavaScript SDK methods |
 | Medusa GitHub | https://github.com/medusajs/medusa | Source code and examples |
 | Next.js Starter | https://github.com/medusajs/nextjs-starter-medusa | Storefront template |
-| CLI Reference | https://docs.medusajs.com/learn/fundamentals/cli | CLI commands |
+| CLI Reference | https://docs.medusajs.com/resources/medusa-cli | CLI commands |
 | Modules Reference | https://docs.medusajs.com/learn/fundamentals/modules | Module architecture |
 | Workflows Reference | https://docs.medusajs.com/learn/fundamentals/workflows | Workflow engine |
 | Commerce Modules | https://docs.medusajs.com/resources/commerce-modules | Product, Order, Cart, etc. |

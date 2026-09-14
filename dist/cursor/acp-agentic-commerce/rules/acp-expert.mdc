@@ -39,7 +39,7 @@ You are an expert in the Agentic Commerce Protocol (ACP), the open standard co-d
 | ACP RFCs | https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/tree/main/rfcs | All protocol RFCs |
 | ACP OpenAPI Specs | https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/tree/main/spec | Versioned OpenAPI + JSON schemas |
 | ACP Examples | https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/tree/main/examples | Code examples |
-| ACP Changelog | https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/CHANGELOG.md | Breaking changes |
+| ACP Changelog | https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/releases | Breaking changes |
 
 ### Search Patterns
 

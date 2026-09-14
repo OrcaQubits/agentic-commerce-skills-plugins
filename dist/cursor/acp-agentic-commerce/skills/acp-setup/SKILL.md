@@ -4,7 +4,6 @@ description: >
   Scaffold an ACP merchant server project — install dependencies, import
   OpenAPI specs and JSON schemas, configure environment, and create initial
   endpoint stubs. Use when starting a new ACP implementation from scratch.
-disable-model-invocation: true
 ---
 
 # ACP Project Setup

@@ -12,9 +12,9 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the latest protocol details
-2. Fetch `https://ap2-protocol.org/topics/ap2-and-ucp/` for UCP integration patterns
-3. Fetch `https://ap2-protocol.org/topics/ap2-and-x402/` for x402 crypto integration
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the latest protocol details
+2. Fetch `https://ap2-protocol.org/overview/` for UCP integration patterns
+3. Fetch `https://ap2-protocol.org/overview/` for x402 crypto integration
 4. Web-search `site:github.com google-agentic-commerce AP2 samples` for reference architectures
 
 ## Conceptual Architecture
@@ -70,7 +70,7 @@ The standard AP2 architecture involves four agents communicating via A2A:
 
 UCP (Universal Commerce Protocol) operationalizes AP2:
 - UCP's **Checkout object** maps to a commerce-level checkout flow
-- UCP's `checkout_mandate` is distinct from (but related to) AP2's **Cart Mandate** — `checkout_mandate` is a UCP-specific concept that wraps the commerce checkout authorization, while AP2's Cart Mandate is the cryptographically signed VDC binding user consent to specific transaction terms
+- UCP's `checkout_mandate` is distinct from (but related to) AP2's **Checkout Mandate** — `checkout_mandate` is a UCP-specific concept that wraps the commerce checkout authorization, while AP2's Checkout Mandate is the cryptographically signed VDC binding user consent to specific transaction terms
 - UCP's `/complete_checkout` API = AP2's payment authorization step
 - **PaymentMandate** (constructed by the MPP) proves payment authorization for the network/issuer
 
@@ -109,7 +109,7 @@ The protocol doesn't mandate a specific framework — only A2A compliance.
 
 Shopping Agents can query multiple merchants:
 1. Send Intent Mandate to Merchant A, B, C in parallel
-2. Receive Cart Mandates from each
+2. Receive Checkout Mandates from each
 3. Compare offers (price, shipping, availability)
 4. Present best options to user
 5. User selects preferred offer

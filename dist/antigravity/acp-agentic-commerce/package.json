@@ -40,6 +40,11 @@
       "path": ".agent/skills/acp-capability-negotiation/SKILL.md"
     },
     {
+      "name": "acp-cart",
+      "description": "Implement the ACP Cart API — the pre-checkout REST surface for collecting line items without payment configuration, covering create, retrieve, full-replacement update, and cancel, plus estimated totals, `continue_url`, and expiry. Use when building ACP cart sessions ahead of an agentic checkout.",
+      "path": ".agent/skills/acp-cart/SKILL.md"
+    },
+    {
       "name": "acp-checkout-mcp",
       "description": "Implement ACP checkout as an MCP server, exposing checkout operations as MCP tools. Use when building an MCP-based commerce server for AI agents that use tool-calling to complete purchases.",
       "path": ".agent/skills/acp-checkout-mcp/SKILL.md"
@@ -53,6 +58,11 @@
       "name": "acp-conformance",
       "description": "Validate an ACP implementation against the protocol specification — schema validation, flow testing, error handling, idempotency, security checks, and production readiness. Use when preparing for launch or certifying compliance.",
       "path": ".agent/skills/acp-conformance/SKILL.md"
+    },
+    {
+      "name": "acp-delegate-authentication",
+      "description": "Implement the ACP Delegate Authentication API — delegating 3D Secure (3DS2) consumer authentication to merchant-specified providers, covering session creation, fingerprint and challenge actions, the authenticate call, and status handling. Use when adding strong customer authentication or 3DS to an ACP checkout.",
+      "path": ".agent/skills/acp-delegate-authentication/SKILL.md"
     },
     {
       "name": "acp-delegated-payment",

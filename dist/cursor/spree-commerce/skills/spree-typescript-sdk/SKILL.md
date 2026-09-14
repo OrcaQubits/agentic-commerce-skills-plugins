@@ -16,7 +16,7 @@ description: >
 
 **Fetch live docs**:
 1. Fetch https://spreecommerce.org/docs/developer/sdk/quickstart for the SDK's current API surface.
-2. Inspect the SDK's source / README on GitHub (likely under https://github.com/spree/sdk or as part of the `storefront` repo) for resource names and parameter shapes.
+2. Inspect the SDK's source / README on GitHub (likely under https://spreecommerce.org/docs/developer/sdk/quickstart or as part of the `storefront` repo) for resource names and parameter shapes.
 3. Check the npm registry page for `@spree/sdk` for the current version aligned to your Spree backend release.
 4. Read the v5.4 announcement (https://spreecommerce.org/announcing-spree-commerce-5-4/) for the SDK's release context.
 5. For the Next.js usage pattern, fetch https://spreecommerce.org/docs/developer/storefront/nextjs/quickstart.

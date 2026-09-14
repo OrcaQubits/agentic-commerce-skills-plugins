@@ -33,7 +33,7 @@ NLWeb is an actively evolving project. Releases are tracked as dated markdown fi
 | Retrieval (multi-store) | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-retrieval.md | Parallel multi-backend reads |
 | Tools framework | https://github.com/nlweb-ai/NLWeb/blob/main/docs/tools.md | search/details/compare/ensemble + custom tools |
 | Data loader | https://github.com/nlweb-ai/NLWeb/blob/main/docs/tools-database-load.md | `db_load.py` — RSS/JSON-LD/CSV/URL ingest |
-| Prompts (XML) | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-prompts.md | `site_types.xml` / `prompts.xml` |
+| Prompts (XML) | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-prompts.md | `sites.xml` / `prompts.xml` / `tools.xml` |
 | Memory / state | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-memory.md | Conversation context + persistence |
 | Headers (NLWS) | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-headers.md | License/data-retention/rate-limit in-stream messages |
 | ChatGPT integration | https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-chatgpt-integration.md | MCP + OpenAI Apps SDK widget |
@@ -44,7 +44,6 @@ NLWeb is an actively evolving project. Releases are tracked as dated markdown fi
 | Per-backend setup pages | `docs/setup-*.md` | Postgres, Qdrant, Milvus, Elasticsearch, OpenSearch, Ollama, HuggingFace |
 | OAuth setup | https://github.com/nlweb-ai/NLWeb/blob/main/docs/setup-oauth.md | GitHub/Google/Microsoft/Facebook |
 | Release notes | https://github.com/nlweb-ai/NLWeb/tree/main/docs/release_notes | Versioned changelogs |
-| Spec page | https://nlweb.ai/spec | Protocol-level spec |
 | Cloudflare hosted | https://developers.cloudflare.com/ai-search/how-to/nlweb/ | Cloudflare deployment story |
 | Microsoft Tech Community blog | https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/the-future-of-ai-optimize-your-site-for-agents---its-cool-to-be-a-tool/4434189 | Vision and partner ecosystem |
 | WordPress plugin | https://github.com/nlweb-ai/NLWeb/tree/main/code/wordpress/nlweb | Drop-in for WP sites |
@@ -58,7 +57,7 @@ NLWeb is an actively evolving project. Releases are tracked as dated markdown fi
 - `nlweb mcp jsonrpc tools/list ask list_sites who` — MCP interface
 - `nlweb config_retrieval.yaml write_endpoint` — retrieval config precedence
 - `nlweb db_load.py rss json-ld site` — data ingestion
-- `nlweb site_types.xml prompts.xml inheritance` — prompt customization
+- `nlweb tools.xml prompts.xml inheritance` — prompt customization
 - `nlweb release notes` — latest release date and changes
 - `nlweb NLWebScorer modernbert gam` — neural reranker
 
@@ -105,7 +104,7 @@ NLWeb's defining philosophy: dozens of **small, precise LLM calls**, each with a
 
 ## Configuration Model
 
-8 YAML configs in top-level `config/` + 2 XML files (`site_types.xml`, `prompts.xml`). Key files:
+8 YAML configs in top-level `config/` + 2 XML files (`tools.xml`, `prompts.xml`). Key files:
 
 | File | Purpose |
 |------|---------|
@@ -117,7 +116,7 @@ NLWeb's defining philosophy: dozens of **small, precise LLM calls**, each with a
 | `config_oauth.yaml` | OAuth providers (GitHub/Google/Microsoft/Facebook) |
 | `config_storage.yaml` | Conversation persistence backend |
 | `config_tools.yaml` | Tools enabled per Schema.org type |
-| `site_types.xml` | Per-Schema.org-type tool + prompt inheritance |
+| `tools.xml` | Per-Schema.org-type tool + prompt inheritance |
 | `prompts.xml` | `<promptString>` templates (decontextualize, rank, generate, etc.) |
 
 **Precedence**: env vars override YAML defaults. In `mode: development`, query-string params can override config — **forbidden in production**.
@@ -182,7 +181,7 @@ Reads run in **parallel** across all `enabled: true` backends with URL deduplica
 
 **Methods**: `POST /mcp`, `GET /mcp`, `POST /mcp/{path}`, `GET /mcp/health`. Always JSON-RPC 2.0. SSE only when an inner tool is invoked with `streaming: true`.
 
-**MCP protocol version**: `2024-11-05` (pin to this). Server identifies as `nlweb-mcp-server`.
+**MCP protocol revision**: resolve it, never hard-code it. Fetch https://modelcontextprotocol.io/specification/ (redirects to the current revision) and cross-check what the installed NLWeb build advertises; target the older of the two. The transport changed shape across revisions — the stateless core dropped the `initialize` / `notifications/initialized` handshake and the `Mcp-Session-Id` header — so confirm which model applies before writing client or server code. Server identifies as `nlweb-mcp-server`.
 
 **Tools exposed**:
 
@@ -228,7 +227,7 @@ When helping the user implement NLWeb:
 4. **Web-search the latest release notes** (`docs/release_notes/`) before writing code — config keys and CLI flags change.
 5. **Start with data**: Schema.org JSON-LD or RSS is the input — confirm the source format before configuring `db_load`.
 6. **Verify provider config** against `docs/nlweb-providers.md` — embedding models must match between ingest and query.
-7. **Pin the MCP protocol version** to `2024-11-05` until verified otherwise.
+7. **Resolve the MCP protocol revision** from the live spec and the installed build — never carry one forward from memory or an older example.
 8. **Cite the release date** you coded against in comments.
 9. **Never hardcode** a config key, JSON-RPC method, or CLI flag without confirming it in the live repo.
 

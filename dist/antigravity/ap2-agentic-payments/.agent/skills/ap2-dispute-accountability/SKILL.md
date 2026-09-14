@@ -12,8 +12,8 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://ap2-protocol.org/specification/` for the accountability model
-2. Fetch `https://ap2-protocol.org/topics/core-concepts/` for dispute resolution details
+1. Fetch `https://ap2-protocol.org/ap2/specification/` for the accountability model
+2. Fetch `https://ap2-protocol.org/overview/` for dispute resolution details
 3. Web-search `ap2 protocol dispute accountability liability mandate evidence` for accountability framework
 4. Web-search `ap2 protocol chargeback fraud resolution` for dispute handling patterns
 
@@ -33,12 +33,12 @@ AP2's VDC-based accountability model provides **cryptographic evidence** for eve
 | Scenario | Key Evidence | Accountability |
 |----------|-------------|---------------|
 | **First-party misuse** | User-signed Cart/Intent Mandate | User — signature proves authorization |
-| **Agent mispick (user approved cart)** | Cart Mandate shows item, user signed | User — they approved the specific cart |
+| **Agent mispick (user approved cart)** | Checkout Mandate shows item, user signed | User — they approved the specific cart |
 | **Agent mispick (unapproved)** | Intent Mandate vs cart discrepancy | Shopping Agent/Platform — exceeded intent |
 | **Merchant non-fulfillment** | Valid mandate + payment confirmation vs absent delivery | Merchant — committed via signature |
 | **Account takeover** | Authentication signals during session | CP/User — depends on auth strength evidence |
 | **Man-in-the-middle** | Digital signature verification | Attack prevented — signatures invalid if tampered |
-| **Price discrepancy** | Merchant-signed Cart Mandate vs charged amount | Merchant — signed specific prices |
+| **Price discrepancy** | Merchant-signed Checkout Mandate vs charged amount | Merchant — signed specific prices |
 | **Unauthorized transaction** | Absence of user signature on mandate | Platform/Agent — no valid user authorization |
 
 ### Evidence Chain
@@ -46,7 +46,7 @@ AP2's VDC-based accountability model provides **cryptographic evidence** for eve
 For every transaction, AP2 preserves:
 1. **User's original intent** — Natural language captured in Intent Mandate
 2. **User's authorization** — Cryptographic signature on the mandate
-3. **Merchant's commitment** — Merchant entity signature on Cart Mandate
+3. **Merchant's commitment** — Merchant entity signature on Checkout Mandate
 4. **Payment authorization** — Payment Mandate with user signature
 5. **Challenge completion** — Records of 3DS/OTP challenges
 6. **Transaction receipt** — Payment confirmation from MPP
@@ -83,11 +83,11 @@ When a chargeback is filed:
 
 **AI Agent Fraud Prevention:**
 - Intent Mandate captures user's exact words → agent can't claim different intent
-- Cart Mandate requires user signature → agent can't forge approval
+- Checkout Mandate requires user signature → agent can't forge approval
 - Payment Mandate requires device attestation → agent can't self-authorize
 
 **Merchant Fraud Prevention:**
-- Merchant signs Cart Mandate → can't deny offered prices/products
+- Merchant signs Checkout Mandate → can't deny offered prices/products
 - Payment receipt confirms delivery obligation
 - Fulfillment tracking compared against commitment
 

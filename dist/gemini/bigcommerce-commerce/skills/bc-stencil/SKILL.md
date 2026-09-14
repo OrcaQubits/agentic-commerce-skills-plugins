@@ -11,8 +11,8 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/storefront/stencil` for Stencil overview
-2. Fetch `https://developer.bigcommerce.com/docs/storefront/stencil/themes/context/object-reference` for theme object reference
+1. Fetch `https://docs.bigcommerce.com/developer/docs/storefront/stencil/overview` for Stencil overview
+2. Fetch `https://docs.bigcommerce.com/developer/docs/storefront/stencil/themes/context/object-reference/elements` for theme object reference
 3. Web-search `site:developer.bigcommerce.com stencil handlebars helpers` for Handlebars helper reference
 
 ## Architecture

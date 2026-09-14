@@ -2,8 +2,8 @@
 name: nlweb-mcp-server
 description: >
   Expose NLWeb as an MCP (Model Context Protocol) server — JSON-RPC 2.0
-  endpoint at /mcp, the `ask` / `list_sites` / `who` tools, MCP protocol version
-  2024-11-05, and integration with ChatGPT, Claude, Gemini, and other agent
+  endpoint at /mcp, the `ask` / `list_sites` / `who` tools, protocol revision
+  negotiation, and integration with ChatGPT, Claude, Gemini, and other agent
   clients. Use when wiring NLWeb to an AI agent via MCP or building an MCP
   client that consumes an NLWeb site.
 ---
@@ -16,7 +16,7 @@ description: >
 1. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-rest-api.md (covers `/mcp` route alongside `/ask`).
 2. Read `AskAgent/python/webserver/mcp_wrapper.py` in the live repo for the **exact JSON-RPC method list and tool schemas** — these change between releases.
 3. Fetch https://github.com/nlweb-ai/NLWeb/blob/main/docs/nlweb-chatgpt-integration.md for the ChatGPT-specific wiring.
-4. Cross-reference with the MCP specification at https://modelcontextprotocol.io for transport rules.
+4. Fetch https://modelcontextprotocol.io/specification/ — it redirects to the **current** revision. Read the transport rules and the changelog there; never assume a revision from memory.
 5. Web-search the latest release notes for any MCP-related changes — the wrapper file's own docstring warns "Backwards compatibility is not guaranteed."
 
 ## Conceptual Architecture
@@ -33,19 +33,31 @@ NLWeb is **already an MCP server** out of the box — same code, second binding.
 | `/mcp/{path}` | POST, GET | Path-scoped variant |
 | `/mcp/health` | GET | Liveness check |
 
-### MCP Protocol Version
+### MCP Protocol Revision
 
-NLWeb identifies itself with MCP protocol version `2024-11-05` and server name `nlweb-mcp-server`. **Pin to this protocol version** in clients until you verify a newer one is supported.
+NLWeb advertises a dated MCP revision (e.g. `2026-07-28`) and the server name `nlweb-mcp-server`. **Never hard-code a revision string** — the one your build ships is whatever the installed NLWeb release advertises, and the one your client should send is whatever the spec currently defines.
 
-### JSON-RPC Methods Supported
+Resolve it at implementation time:
+
+1. Fetch https://modelcontextprotocol.io/specification/ for the current revision.
+2. Read the installed NLWeb's `mcp_wrapper.py` for the revision *it* advertises.
+3. If they differ, target the older of the two and note the gap — MCP revisions are not silently backward-compatible.
+
+The transport has changed shape across revisions. The `2026-07-28` core is **stateless**: the `initialize` / `notifications/initialized` handshake and the `Mcp-Session-Id` header were removed from Streamable HTTP. Code written against a handshake-era revision will not match a stateless server, and vice versa — so confirm which model applies before writing client code.
+
+### JSON-RPC Methods
+
+`tools/list` and `tools/call` are stable across revisions and are the two you will actually use. Whether a handshake precedes them is revision-dependent:
 
 | Method | Direction | Notes |
 |--------|-----------|-------|
-| `initialize` | client → server | Handshake; returns server capabilities |
-| `initialized` | client → server | Notification; no response |
 | `tools/list` | client → server | Returns the tool definitions |
 | `tools/call` | client → server | Invoke a tool |
 | `notifications/cancelled` | client → server | Cancel an in-flight tool call |
+| `initialize` | client → server | Handshake — **removed in the stateless core**; present only on handshake-era revisions |
+| `initialized` | client → server | Notification paired with `initialize`; same caveat |
+
+Confirm the method list against the running server's `tools/list` response and the revision you resolved above.
 
 (`prompts/list` and `prompts/get` appear in some docs but are not in `mcp_wrapper.py` at the time of writing — verify.)
 
@@ -139,8 +151,10 @@ async def mcp_call(url, method, params=None):
         r = await c.post(url, json=payload, timeout=60)
         return r.json()
 
-# Handshake
-await mcp_call("http://localhost:8000/mcp", "initialize", {"protocolVersion": "2024-11-05"})
+# Handshake — ONLY on handshake-era revisions. The stateless core (2026-07-28+)
+# removed `initialize` entirely; skip this call there and go straight to tools/list.
+# MCP_REVISION must come from the live spec, not from memory. See "MCP Protocol Revision".
+await mcp_call("http://localhost:8000/mcp", "initialize", {"protocolVersion": MCP_REVISION})
 
 # Discover tools
 tools = await mcp_call("http://localhost:8000/mcp", "tools/list")

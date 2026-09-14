@@ -6,6 +6,8 @@
   "skills": [
     "skills/ucp-ap2-mandates",
     "skills/ucp-buyer-consent",
+    "skills/ucp-cart",
+    "skills/ucp-catalog",
     "skills/ucp-checkout-a2a",
     "skills/ucp-checkout-mcp",
     "skills/ucp-checkout-rest",
@@ -15,10 +17,16 @@
     "skills/ucp-embedded-checkout",
     "skills/ucp-fulfillment",
     "skills/ucp-identity-linking",
+    "skills/ucp-location",
+    "skills/ucp-loyalty",
     "skills/ucp-orders-webhooks",
+    "skills/ucp-payment-authentication",
     "skills/ucp-payment-handlers",
+    "skills/ucp-payment-terms",
+    "skills/ucp-permalink",
     "skills/ucp-schema-authoring",
-    "skills/ucp-setup"
+    "skills/ucp-setup",
+    "skills/ucp-split-payments"
   ],
   "configSchema": {
     "type": "object",

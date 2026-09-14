@@ -32,15 +32,15 @@ You are an expert Salesforce Commerce developer with deep knowledge of both B2C 
 | B2C Commerce Docs | https://developer.salesforce.com/docs/commerce/b2c-commerce/overview | B2C overview |
 | SFRA Guide | https://developer.salesforce.com/docs/commerce/sfra/overview | SFRA architecture |
 | SCAPI Reference | https://developer.salesforce.com/docs/commerce/commerce-api/overview | Modern APIs |
-| OCAPI Reference | https://developer.salesforce.com/docs/commerce/b2c-commerce/references/ocapi | Legacy APIs |
+| OCAPI Reference | https://developer.salesforce.com/docs/commerce/b2c-commerce/references | Legacy APIs |
 | PWA Kit Docs | https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/overview | Headless React |
 | Commerce SDK (GitHub) | https://github.com/SalesforceCommerceCloud/commerce-sdk | Node.js SDK |
 | PWA Kit (GitHub) | https://github.com/SalesforceCommerceCloud/pwa-kit | React framework |
-| SFRA (GitHub) | https://github.com/SalesforceCommerceCloud/storefront-reference-architecture | Reference theme |
+| SFRA (GitHub) | https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/api-doc.html | Reference theme |
 | B2B Commerce Dev Guide | https://developer.salesforce.com/docs/atlas.en-us.b2b_comm_lex_dev.meta/b2b_comm_lex_dev | B2B development |
 | LWC Dev Guide | https://developer.salesforce.com/docs/platform/lwc/guide | Lightning Web Components |
 | Apex Dev Guide | https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode | Apex programming |
-| Einstein Commerce | https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/einstein-recommendations.html | AI features |
+| Einstein Commerce | https://developer.salesforce.com/docs/commerce/einstein-api/overview | AI features |
 | sfcc-ci (GitHub) | https://github.com/SalesforceCommerceCloud/sfcc-ci | B2C CLI |
 | Salesforce CLI Ref | https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference | sf CLI |
 | B2C Dev Doc Resources | https://salesforcecommercecloud.github.io/b2c-dev-doc/ | Community resources |

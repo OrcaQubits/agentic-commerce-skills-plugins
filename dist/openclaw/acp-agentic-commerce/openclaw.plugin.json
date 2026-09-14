@@ -6,9 +6,11 @@
   "skills": [
     "skills/acp-affiliate-attribution",
     "skills/acp-capability-negotiation",
+    "skills/acp-cart",
     "skills/acp-checkout-mcp",
     "skills/acp-checkout-rest",
     "skills/acp-conformance",
+    "skills/acp-delegate-authentication",
     "skills/acp-delegated-payment",
     "skills/acp-dev-patterns",
     "skills/acp-discount-extension",

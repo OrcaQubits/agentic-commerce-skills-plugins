@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/rest` for REST API overview
+1. Fetch `https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts` for REST API overview
 2. Web-search `site:developer.bigcommerce.com rest-management` for Management API reference
 3. Web-search `bigcommerce api v3 rate limits pagination` for rate limit details
 
@@ -178,7 +178,7 @@ Some V3 endpoints support batch operations:
 {
   "status": 422,
   "title": "Unprocessable Entity",
-  "type": "https://developer.bigcommerce.com/api-docs/getting-started/api-status-codes",
+  "type": "https://docs.bigcommerce.com/developer/api-reference/rest/overview",
   "errors": {
     "name": "Product name is required"
   }

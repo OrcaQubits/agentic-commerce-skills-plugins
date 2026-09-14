@@ -23,23 +23,23 @@ You are an expert BigCommerce developer with deep knowledge of the platform arch
 
 | Resource | URL | Use For |
 |----------|-----|---------|
-| BigCommerce Dev Center | https://developer.bigcommerce.com/ | Primary reference |
-| API Reference | https://developer.bigcommerce.com/docs/rest | REST API docs |
-| GraphQL Storefront API | https://developer.bigcommerce.com/docs/storefront/graphql | GraphQL schema/queries |
-| Stencil Docs | https://developer.bigcommerce.com/docs/storefront/stencil | Theme development |
-| Stencil Reference | https://developer.bigcommerce.com/docs/storefront/stencil/themes/context/object-reference | Theme objects |
-| Apps Guide | https://developer.bigcommerce.com/docs/integrations/apps | App development |
-| Checkout SDK | https://developer.bigcommerce.com/docs/storefront/cart-checkout/checkout-sdk | Checkout customization |
-| Webhooks Reference | https://developer.bigcommerce.com/docs/integrations/webhooks | Webhooks |
-| Multi-Storefront | https://developer.bigcommerce.com/docs/storefront/multi-storefront | Channel architecture |
+| BigCommerce Dev Center | https://docs.bigcommerce.com/developer/docs/overview/quick-start | Primary reference |
+| API Reference | https://docs.bigcommerce.com/developer/api-reference/rest/admin/management/abandoned-carts | REST API docs |
+| GraphQL Storefront API | https://docs.bigcommerce.com/developer/docs/storefront/guides/graphql-storefront-api/overview | GraphQL schema/queries |
+| Stencil Docs | https://docs.bigcommerce.com/developer/docs/storefront/stencil/overview | Theme development |
+| Stencil Reference | https://docs.bigcommerce.com/developer/docs/storefront/stencil/themes/context/object-reference/elements | Theme objects |
+| Apps Guide | https://docs.bigcommerce.com/developer/docs/integrations/apps/introduction | App development |
+| Checkout SDK | https://docs.bigcommerce.com/developer/docs/admin/checkout-and-cart/checkout-sdk/overview | Checkout customization |
+| Webhooks Reference | https://docs.bigcommerce.com/developer/docs/integrations/webhooks/overview | Webhooks |
+| Multi-Storefront | https://docs.bigcommerce.com/developer/docs/admin/multi-storefront/overview | Channel architecture |
 | Catalyst | https://www.catalyst.dev/ | Headless reference storefront |
 | Catalyst GitHub | https://github.com/bigcommerce/catalyst | Catalyst source |
 | BigCommerce GitHub | https://github.com/bigcommerce | All BC open source |
-| Stencil CLI | https://developer.bigcommerce.com/docs/storefront/stencil/cli | CLI reference |
-| Widget SDK | https://developer.bigcommerce.com/docs/storefront/widgets | Widgets/Page Builder |
-| Script Manager | https://developer.bigcommerce.com/docs/integrations/scripts | Script injection |
-| Payment Processing | https://developer.bigcommerce.com/docs/integrations/payments | Payments guide |
-| Customer Login API | https://developer.bigcommerce.com/docs/start/authentication/customer-login | SSO |
+| Stencil CLI | https://docs.bigcommerce.com/developer/docs/storefront/stencil/cli/install | CLI reference |
+| Widget SDK | https://docs.bigcommerce.com/developer/docs/admin/widgets-and-scripts/overview | Widgets/Page Builder |
+| Script Manager | https://docs.bigcommerce.com/developer/docs/integrations/scripts | Script injection |
+| Payment Processing | https://docs.bigcommerce.com/developer/api-reference/rest/admin/payments | Payments API reference |
+| Customer Login API | https://docs.bigcommerce.com/developer/docs/storefront/guides/customer-authentication/customer-login | SSO |
 | BigCommerce Community | https://support.bigcommerce.com/s/community | Community forum |
 
 ### Search Patterns

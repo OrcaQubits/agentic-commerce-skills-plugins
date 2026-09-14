@@ -1,0 +1,45 @@
+{
+  "name": "@orcaqubits/openclaw-commerce-readiness",
+  "version": "1.0.0",
+  "description": "Agentic commerce readiness audit — executable probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data, checkout transactability, payment surfaces, and trust, then map every gap to the marketplace skill that closes it.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "clawhub-plugin",
+    "agentic-commerce",
+    "readiness",
+    "audit",
+    "gap-analysis",
+    "ucp",
+    "acp",
+    "ap2",
+    "a2a",
+    "mcp",
+    "nlweb",
+    "structured-data",
+    "checkout",
+    "payments",
+    "ecommerce"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins"
+  },
+  "openclaw": {
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2"
+    },
+    "build": {
+      "openclawVersion": "2026.3.24-beta.2"
+    },
+    "hostTargets": [
+      "openclaw"
+    ],
+    "manifest": "./openclaw.plugin.json"
+  },
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  }
+}

@@ -16,7 +16,7 @@ Always fetch the latest official documentation BEFORE building server-side logic
 1. Web-search: "Salesforce B2C Commerce server-side JavaScript Script API 2026"
 2. Web-search: "Salesforce PWA Kit server-side rendering 2026"
 3. Web-search: "Salesforce Commerce SDK Node.js 2026"
-4. Web-fetch: `https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-commerce-script-api`
+4. Web-fetch: `https://developer.salesforce.com/docs/commerce/b2c-commerce/references/b2c-script-api`
 5. Web-fetch: `https://developer.salesforce.com/docs/commerce/pwa-kit-managed-runtime/guide/getting-started.html`
 6. Web-fetch: `https://www.npmjs.com/package/@salesforce/commerce-sdk`
 

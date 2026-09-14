@@ -26,7 +26,9 @@ Guides through complete Magento 2 environment setup:
 
 ## Supported Stack (Conceptual)
 
-- **PHP**: 8.2+ (check docs for exact supported versions)
+> **PHP support is a window, not a floor.** Each Magento release supports a *narrow band* of PHP versions and **drops older ones** — 2.4.8 moved to PHP 8.3/8.4, and 2.4.9 dropped 8.2 while adding 8.5. "PHP 8.2 or newer" is therefore the wrong mental model: pick the Magento version first, then read its exact supported PHP versions from the system-requirements page fetched above, and pin to one of them. A PHP version that is too *new* fails as hard as one that is too old.
+
+- **PHP**: match the exact band for your target Magento release — never assume forward compatibility
 - **Database**: MySQL 8.0+ or MariaDB 10.6+
 - **Search**: OpenSearch 2.12+ (Elasticsearch deprecated)
 - **Cache/Session**: Redis 7.x or Valkey 8.x

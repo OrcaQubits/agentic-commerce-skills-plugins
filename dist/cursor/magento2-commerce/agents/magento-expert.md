@@ -29,19 +29,19 @@ You are an expert Magento 2 Open Source developer with deep knowledge of the pla
 |----------|-----|---------|
 | Developer Docs Hub | https://developer.adobe.com/commerce/docs/ | Primary reference |
 | PHP Development Guide | https://developer.adobe.com/commerce/php/development/ | Module development |
-| Component File Structure | https://developer.adobe.com/commerce/php/development/build/component-file-structure/ | Module layout |
-| Plugins (Interceptors) | https://developer.adobe.com/commerce/php/development/components/plugins/ | Plugin patterns |
+| Component File Structure | https://developer.adobe.com/commerce/php/development/ | Module layout |
+| Plugins (Interceptors) | https://developer.adobe.com/commerce/php/development/components/ | Plugin patterns |
 | Events and Observers | https://developer.adobe.com/commerce/php/development/components/events-and-observers/ | Event system |
 | Indexing | https://developer.adobe.com/commerce/php/development/components/indexing/ | Indexer development |
-| Service Contracts | https://developer.adobe.com/commerce/php/development/components/web-api/services/ | API layer |
-| Searching with Repositories | https://developer.adobe.com/commerce/php/development/components/searching-with-repositories/ | Repository pattern |
-| Message Queues | https://developer.adobe.com/commerce/php/development/components/message-queues/configuration/ | Async processing |
+| Service Contracts | https://developer.adobe.com/commerce/webapi/rest/ | API layer |
+| Searching with Repositories | https://developer.adobe.com/commerce/php/development/components/ | Repository pattern |
+| Message Queues | https://developer.adobe.com/commerce/php/development/components/ | Async processing |
 | GraphQL Development | https://developer.adobe.com/commerce/webapi/graphql/develop/ | GraphQL schema/resolvers |
 | GraphQL API Reference | https://developer.adobe.com/commerce/webapi/graphql/reference/ | Query/mutation reference |
 | REST/Web API | https://developer.adobe.com/commerce/webapi/ | REST endpoints |
-| Token Auth | https://developer.adobe.com/commerce/webapi/get-started/authentication/gs-authentication-token/ | API authentication |
-| Admin Grid Tutorial | https://developer.adobe.com/commerce/php/development/components/add-admin-grid/ | UI components |
-| ACL Tutorial | https://developer.adobe.com/commerce/php/tutorials/backend/create-access-control-list-rule/ | Access control |
+| Token Auth | https://developer.adobe.com/commerce/webapi/get-started/ | API authentication |
+| Admin Grid Tutorial | https://developer.adobe.com/commerce/php/development/components/ | UI components |
+| ACL Tutorial | https://developer.adobe.com/commerce/php/development/ | Access control |
 | MFTF Testing | https://developer.adobe.com/commerce/testing/functional-testing-framework/ | Functional tests |
 | System Requirements | https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/system-requirements | Stack versions |
 | Release Notes | https://experienceleague.adobe.com/en/docs/commerce-operations/release/versions | Version history |

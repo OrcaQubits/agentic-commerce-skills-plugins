@@ -14,9 +14,9 @@ description: >
 1. Web-search `site:docs.saleor.io products variants product types` for product model and GraphQL operations
 2. Web-search `site:docs.saleor.io categories collections` for category tree and collection management
 3. Web-search `site:docs.saleor.io warehouse stock allocation` for inventory and warehouse operations
-4. Fetch `https://docs.saleor.io/docs/developer/products` and review Product, ProductType, and ProductVariant schemas
+4. Fetch `https://docs.saleor.io/developer/products/overview` and review Product, ProductType, and ProductVariant schemas
 5. Web-search `site:docs.saleor.io product media images` for media upload and assignment patterns
-6. Fetch `https://docs.saleor.io/docs/developer/channels` and review channel-aware product visibility
+6. Fetch `https://docs.saleor.io/developer/channels/overview` and review channel-aware product visibility
 
 ## Product Hierarchy
 

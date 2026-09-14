@@ -11,7 +11,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/` for the developer center overview
+1. Fetch `https://docs.bigcommerce.com/developer/docs/overview/quick-start` for the developer center overview
 2. Web-search `site:developer.bigcommerce.com stencil cli getting started` for Stencil CLI setup
 3. Web-search `bigcommerce sandbox store trial` for sandbox/dev store options
 

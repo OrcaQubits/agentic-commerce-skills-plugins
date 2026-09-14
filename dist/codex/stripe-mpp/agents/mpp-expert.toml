@@ -38,7 +38,7 @@ You are an expert in the Machine Payments Protocol (MPP), the open standard co-a
 | GitHub: machine-payments | https://github.com/stripe-samples/machine-payments | Official Stripe sample code |
 | Tempo Blockchain Docs | https://tempo.xyz/ | Tempo chain details, USDC contracts |
 | MPP Services Directory | https://mpp.dev/services | 100+ integrated services catalog |
-| Service Discovery Spec | https://paymentauth.org/draft-payment-discovery-00.html | OpenAPI x-payment-info extensions |
+| Service Discovery Spec | https://paymentauth.org/ | OpenAPI x-payment-info extensions |
 | Cloudflare MPP Docs | https://developers.cloudflare.com/agents/agentic-payments/mpp/ | Cloudflare Workers integration |
 | Visa Card Spec for MPP | https://corporate.visa.com/en/sites/visa-perspectives/innovation/visa-card-specification-sdk-for-machine-payments-protocol.html | Visa card payment method specification and SDK |
 

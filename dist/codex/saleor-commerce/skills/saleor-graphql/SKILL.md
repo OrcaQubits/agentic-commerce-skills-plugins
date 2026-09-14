@@ -11,12 +11,12 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://docs.saleor.io/docs/developer/api-reference` for API reference overview
+1. Fetch `https://docs.saleor.io/api-reference/` for API reference overview
 2. Web-search `site:docs.saleor.io GraphQL queries mutations examples` for query patterns
 3. Web-search `site:docs.saleor.io cursor pagination first after` for pagination reference
 4. Web-search `site:docs.saleor.io authentication JWT token` for auth token handling
 5. Web-search `site:docs.saleor.io GraphQL error handling` for mutation error patterns
-6. Fetch `https://docs.saleor.io/docs/developer/api-conventions` for API conventions
+6. Fetch `https://docs.saleor.io/api-usage/overview` for API conventions
 
 ## GraphQL-First Architecture
 

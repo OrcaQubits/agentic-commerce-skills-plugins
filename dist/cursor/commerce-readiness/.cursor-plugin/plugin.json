@@ -1,0 +1,27 @@
+{
+  "name": "commerce-readiness",
+  "version": "1.0.0",
+  "description": "Agentic commerce readiness audit — executable probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data, checkout transactability, payment surfaces, and trust, then map every gap to the marketplace skill that closes it.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun"
+  },
+  "homepage": "https://orcaqubits-ai.com",
+  "keywords": [
+    "agentic-commerce",
+    "readiness",
+    "audit",
+    "gap-analysis",
+    "ucp",
+    "acp",
+    "ap2",
+    "a2a",
+    "mcp",
+    "nlweb",
+    "structured-data",
+    "checkout",
+    "payments",
+    "ecommerce"
+  ],
+  "license": "MIT",
+  "hooks": "./hooks/hooks.json"
+}

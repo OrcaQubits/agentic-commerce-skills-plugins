@@ -14,7 +14,7 @@ description: >
 1. Fetch `https://ap2-protocol.org/` for the latest protocol overview
 2. Fetch `https://github.com/google-agentic-commerce/AP2` for the current README and installation instructions
 3. Web-search `site:github.com google-agentic-commerce AP2 samples python` for the sample project structure
-4. Fetch `https://github.com/google-agentic-commerce/AP2/tree/main/samples/python` for Python sample layout
+4. Fetch `https://github.com/google-agentic-commerce/AP2/tree/main/code/samples` for Python sample layout
 
 ## Conceptual Architecture
 

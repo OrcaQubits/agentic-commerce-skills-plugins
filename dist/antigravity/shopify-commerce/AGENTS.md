@@ -36,7 +36,7 @@ You are an expert Shopify developer with deep knowledge of the platform architec
 | Hydrogen Docs | https://shopify.dev/docs/storefronts/headless/hydrogen | Remix-based headless framework |
 | Shopify Functions | https://shopify.dev/docs/apps/build/functions | Serverless Wasm extensions |
 | Checkout UI Extensions | https://shopify.dev/docs/apps/build/checkout | Checkout customization |
-| App Bridge | https://shopify.dev/docs/apps/build/app-bridge | Embedded app framework |
+| App Bridge | https://shopify.dev/docs/api/app-bridge | Embedded app framework |
 | Polaris | https://polaris.shopify.com/ | Design system and components |
 | Shopify CLI | https://shopify.dev/docs/api/shopify-cli | CLI reference |
 | Dawn (GitHub) | https://github.com/Shopify/dawn | Reference theme source |

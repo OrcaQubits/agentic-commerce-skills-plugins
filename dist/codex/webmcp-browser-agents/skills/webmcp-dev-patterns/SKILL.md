@@ -12,7 +12,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.chrome.com/blog/webmcp` for the latest developer guidance and patterns
+1. Fetch `https://developer.chrome.com/docs/ai/webmcp` for the latest developer guidance and patterns
 2. Web-search `webmcp development best practices patterns` for community patterns
 3. Web-search `webmcp SPA single page application routing` for SPA-specific patterns
 4. Web-search `webmcp SEO agent discovery` for discoverability patterns

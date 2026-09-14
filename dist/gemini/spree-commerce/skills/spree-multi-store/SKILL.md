@@ -15,7 +15,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch https://spreecommerce.org/docs/use-case/multi-store/model for the multi-store data model.
+1. Fetch https://spreecommerce.org/docs/developer/core-concepts/stores for the multi-store data model.
 2. Fetch https://spreecommerce.org/docs/use-case/marketplace/model for the marketplace use case (Enterprise).
 3. Fetch https://spreecommerce.org/docs/use-case/multi-tenant/multi-tenant-model for SaaS-style isolation.
 4. Check the v5.4 announcement for the `Market` model details (https://spreecommerce.org/announcing-spree-commerce-5-4/).

@@ -19,21 +19,21 @@ UCP is an actively evolving protocol with date-based versioning (e.g., `2026-01-
 
 | Resource | URL | Use For |
 |----------|-----|---------|
-| Spec overview | https://ucp.dev/2026-01-23/specification/overview/ | Architecture, versioning, negotiation |
-| Core concepts | https://ucp.dev/2026-01-23/documentation/core-concepts/ | Roles, layers, namespaces |
-| REST binding | https://ucp.dev/specification/checkout-rest/ | REST endpoint shapes, headers, status codes |
-| MCP binding | https://ucp.dev/specification/checkout-mcp/ | MCP tool definitions, JSON-RPC mapping |
-| A2A binding | https://ucp.dev/specification/checkout-a2a/ | Agent-to-Agent message structure |
-| Embedded checkout | https://ucp.dev/specification/checkout-embedded/ | iframe/postMessage protocol |
-| Order capability | https://ucp.dev/specification/order/ | Order model, webhooks, signatures |
-| Fulfillment ext | https://ucp.dev/specification/fulfillment/ | Shipping/pickup methods, groups, options |
-| Discount ext | https://ucp.dev/specification/discount/ | Discount codes, allocations |
-| Buyer consent ext | https://ucp.dev/specification/buyer-consent/ | GDPR/CCPA consent fields |
-| AP2 mandates ext | https://ucp.dev/specification/ap2-mandates/ | Cryptographic payment mandates |
-| Identity linking | https://ucp.dev/specification/identity-linking/ | OAuth 2.0 flows, scopes |
-| Reference (types) | https://ucp.dev/specification/reference/ | All data models and enums |
+| Spec overview | https://ucp.dev/latest/specification/overview/ | Architecture, versioning, negotiation |
+| Core concepts | https://ucp.dev/latest/specification/overview/ | Roles, layers, namespaces |
+| REST binding | https://ucp.dev/latest/specification/shopping/checkout/rest/ | REST endpoint shapes, headers, status codes |
+| MCP binding | https://ucp.dev/latest/specification/shopping/checkout/mcp/ | MCP tool definitions, JSON-RPC mapping |
+| A2A binding | https://ucp.dev/latest/specification/shopping/checkout/a2a/ | Agent-to-Agent message structure |
+| Embedded checkout | https://ucp.dev/latest/specification/shopping/checkout/embedded/ | iframe/postMessage protocol |
+| Order capability | https://ucp.dev/latest/specification/shopping/order/ | Order model, webhooks, signatures |
+| Fulfillment ext | https://ucp.dev/latest/specification/shopping/extensions/fulfillment/ | Shipping/pickup methods, groups, options |
+| Discount ext | https://ucp.dev/latest/specification/shopping/extensions/discount/ | Discount codes, allocations |
+| Buyer consent ext | https://ucp.dev/latest/specification/shopping/extensions/buyer-consent/ | GDPR/CCPA consent fields |
+| AP2 mandates ext | https://ucp.dev/latest/specification/payment/extensions/ap2-mandates/ | Cryptographic payment mandates |
+| Identity linking | https://ucp.dev/latest/specification/common/identity-linking/ | OAuth 2.0 flows, scopes |
+| Reference (types) | https://ucp.dev/latest/specification/reference/ | All data models and enums |
 | Schema authoring | https://ucp.dev/documentation/schema-authoring/ | Custom extension schemas |
-| Playground | https://ucp.dev/playground/ | Interactive 8-step flow simulator |
+| Playground | https://ucp.dev/latest/specification/shopping/playground/ | Interactive 8-step flow simulator |
 | Python SDK (GitHub) | https://github.com/Universal-Commerce-Protocol/python-sdk | Pydantic models |
 | JS SDK (GitHub) | https://github.com/Universal-Commerce-Protocol/js-sdk | TypeScript types + Zod schemas |
 | Samples (GitHub) | https://github.com/Universal-Commerce-Protocol/samples | FastAPI server, Node/Hono server, A2A agent |

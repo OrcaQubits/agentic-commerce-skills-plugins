@@ -37,7 +37,7 @@ You are an expert WooCommerce developer with deep knowledge of the platform arch
 | WP-CLI Commands | https://developer.wordpress.org/cli/commands/ | CLI reference |
 | WordPress Coding Standards | https://developer.wordpress.org/coding-standards/ | Coding style guide |
 | WooCommerce Extension Guidelines | https://developer.woocommerce.com/docs/extension-guidelines/ | Extension best practices |
-| WooCommerce Blocks | https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce-blocks | Blocks source |
+| WooCommerce Blocks | https://github.com/woocommerce/woocommerce/tree/trunk/plugins/woocommerce | Blocks source |
 | Action Scheduler | https://actionscheduler.org/ | Background jobs |
 | WordPress Stack Exchange | https://wordpress.stackexchange.com/ | Community Q&A |
 

@@ -5,8 +5,9 @@
   "version": "1.0.0",
   "skills": [
     "skills/ap2-a2a-extension",
-    "skills/ap2-cart-mandate",
+    "skills/ap2-agent-authorization",
     "skills/ap2-challenge-stepup",
+    "skills/ap2-checkout-mandate",
     "skills/ap2-credentials-provider",
     "skills/ap2-cryptographic-signing",
     "skills/ap2-dev-patterns",

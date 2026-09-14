@@ -12,7 +12,7 @@ description: >
 
 **Fetch live spec**: Web-search `site:ucp.dev specification checkout-a2a` and fetch the page for the exact message structure, DataPart keys, and Agent Card format.
 
-Also review Google's A2A protocol spec for the underlying transport: https://google.github.io/A2A/
+Also review Google's A2A protocol spec for the underlying transport: https://a2a-protocol.org/latest/specification/
 
 ## Conceptual Architecture
 

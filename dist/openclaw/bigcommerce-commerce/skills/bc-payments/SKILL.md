@@ -12,7 +12,7 @@ description: >
 ## Before writing code
 
 **Fetch live docs**:
-1. Fetch `https://developer.bigcommerce.com/docs/integrations/payments` for payments guide
+1. Fetch `https://docs.bigcommerce.com/developer/api-reference/rest/admin/payments` for the Payments API reference
 2. Web-search `site:developer.bigcommerce.com payments processing api` for Payment Processing API
 3. Web-search `bigcommerce payment methods api configuration` for payment method management
 
