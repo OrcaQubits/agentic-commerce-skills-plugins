@@ -5,7 +5,7 @@
     "url": "https://orcaqubits-ai.com"
   },
   "metadata": {
-    "description": "Agentic Commerce Claude Code Plugins — UCP, ACP, A2A, AP2, MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, and Spree",
+    "description": "Agentic Commerce Claude Code Plugins — Commerce Readiness audit plus UCP, ACP, A2A, AP2, MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, and Spree",
     "version": "1.0.0"
   },
   "plugins": [
@@ -144,6 +144,16 @@
       "description": "NLWeb (Natural Language Web) — Microsoft's open framework (R.V. Guha) for making any site agent-accessible via Schema.org + MCP, with /ask + /mcp endpoints, mixed-mode programming, pluggable LLM and retrieval providers (Azure AI Search, Qdrant, Snowflake Cortex, Cloudflare AutoRAG, etc.), and ChatGPT Apps SDK integration",
       "version": "1.0.0",
       "source": "./nlweb-protocol",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      }
+    },
+    {
+      "name": "commerce-readiness",
+      "description": "Agentic Commerce Readiness Audit — executable stdlib-Python probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data (Product/ProductGroup JSON-LD), checkout transactability (ACP/UCP REST, MCP tools/list, NLWeb /ask), payment surfaces (handlers, delegate_payment, AP2, HTTP 402), and trust (OAuth, signing keys, TLS), mapping every gap to the marketplace skill that closes it",
+      "version": "1.0.0",
+      "source": "./commerce-readiness",
       "author": {
         "name": "Rohit Bajaj, Julekha Khatun",
         "url": "https://orcaqubits-ai.com"

@@ -10,7 +10,7 @@ This guide explains how to convert and install the agentic commerce plugins for 
 > /plugins
 > ```
 >
-> All 15 plugins (UCP, ACP, AP2, A2A, Stripe MPP, WebMCP, NLWeb, Magento, Shopify, Saleor, Medusa, BigCommerce, WooCommerce, Salesforce Commerce, Spree) surface in the `/plugins` browser. See [PUBLISH-CODEX.md](./PUBLISH-CODEX.md) for the publishing model and the optional [openai/skills](https://github.com/openai/skills) curated-catalog path.
+> All 16 plugins (Commerce Readiness, UCP, ACP, AP2, A2A, Stripe MPP, WebMCP, NLWeb, Magento, Shopify, Saleor, Medusa, BigCommerce, WooCommerce, Salesforce Commerce, Spree) surface in the `/plugins` browser. See [PUBLISH-CODEX.md](./PUBLISH-CODEX.md) for the publishing model and the optional [openai/skills](https://github.com/openai/skills) curated-catalog path.
 
 ## Prerequisites
 

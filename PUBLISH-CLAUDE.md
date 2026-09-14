@@ -25,7 +25,7 @@ Anthropic reviews each submission against quality/security standards. After revi
 
 ---
 
-## What our 15 plugins look like to a reviewer
+## What our 16 plugins look like to a reviewer
 
 The audit is clean as of commit `5cc2155+`:
 

@@ -1,6 +1,6 @@
 # Publishing to Cursor
 
-Cursor (as of 2.6, May 2026) has **three distinct publishing surfaces** for AI plugins. This repo is configured to use all three; the recommended primary path for this monorepo is the **Team Marketplace** because it supports all 15 plugins in one import without requiring Anysphere review.
+Cursor (as of 2.6, May 2026) has **three distinct publishing surfaces** for AI plugins. This repo is configured to use all three; the recommended primary path for this monorepo is the **Team Marketplace** because it supports all 16 plugins in one import without requiring Anysphere review.
 
 | Surface | Best for | Audience | Approval needed |
 |---------|----------|----------|-----------------|
@@ -24,7 +24,7 @@ The repo is wired for direct Cursor consumption:
 ```
 agentic-commerce-skills-plugins/
 ├── .cursor-plugin/
-│   └── marketplace.json         # Team Marketplace manifest — enumerates 15 plugins
+│   └── marketplace.json         # Team Marketplace manifest — enumerates 16 plugins
 ├── dist/cursor/<plugin>/
 │   ├── .cursor-plugin/
 │   │   └── plugin.json          # Per-plugin manifest (schema-validated)
@@ -47,7 +47,7 @@ The root `.cursor-plugin/marketplace.json` is what Cursor's Team Marketplace imp
 
 1. In Cursor: **Settings → Plugins → Team Marketplaces → Import**
 2. Paste `https://github.com/OrcaQubits/agentic-commerce-skills-plugins`
-3. Cursor parses the root `.cursor-plugin/marketplace.json` and surfaces all 15 plugins
+3. Cursor parses the root `.cursor-plugin/marketplace.json` and surfaces all 16 plugins
 4. Admin assigns plugins to **Access Groups** (e.g., "Engineering", "Commerce-team")
 5. Members in those groups see the plugins in the Cursor Plugin browser and install with one click
 

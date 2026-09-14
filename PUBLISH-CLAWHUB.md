@@ -4,7 +4,7 @@ This guide walks through publishing every plugin in this repo to the [ClawHub](h
 
 ## What gets published
 
-The repo ships **15 plugins**, each with a Spree-style bundle of skills + agent context + hook scripts. ClawHub supports two publishing granularities and we use **both**:
+The repo ships **16 plugins**, each with a Spree-style bundle of skills + agent context + hook scripts. ClawHub supports two publishing granularities and we use **both**:
 
 | Path | Granularity | What users install |
 |------|-------------|--------------------|
@@ -75,7 +75,7 @@ python scripts/publish-clawhub.py --owner my-org
 
 ## Publishing
 
-Use the helper script `scripts/publish-clawhub.py`. It loops over the 15 plugins, runs `clawhub package publish` for each, and (optionally) runs `clawhub sync` for individual skills.
+Use the helper script `scripts/publish-clawhub.py`. It loops over the 16 plugins, runs `clawhub package publish` for each, and (optionally) runs `clawhub sync` for individual skills.
 
 ### Dry run first (recommended)
 
@@ -178,7 +178,7 @@ ClawHub creates a new immutable semantic-version release each time.
 
 ClawHub enforces server-side rate limits that affect publish strategy:
 
-- **Bundle plugins**: no per-hour cap observed; all 15 plugins in this repo publish in a single run.
+- **Bundle plugins**: no per-hour cap observed; all 16 plugins in this repo publish in a single run.
 - **Individual skills (`clawhub sync`)**: **max 5 new skills per hour, per user**. With ~290 skills across all plugins, exhaustive per-skill publishing would take ~58 hours.
 
 **Recommended strategy**: publish bundle plugins (`--mode plugins`) as the primary install path. Users get all skills automatically when they install a bundle. Use per-skill `sync` only for the most prominent skills you want individually discoverable in catalog search.

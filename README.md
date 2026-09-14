@@ -14,10 +14,36 @@ Built natively for Claude Code, with cross-platform conversion support for Gemin
 
 Learn more about Claude Code plugins in the [official plugins documentation](https://code.claude.com/docs/en/plugins). For other platforms, see [Multi-Platform Support](#multi-platform-support).
 
+## Start Here: Am I Agent-Ready?
+
+Before implementing any protocol, measure where you stand. The
+[commerce-readiness](./commerce-readiness) plugin ships **executable,
+zero-dependency Python probes** that score any live site on the six layers
+of agentic commerce readiness — and map every gap to the skill in this
+repo that closes it:
+
+```bash
+python commerce-readiness/scripts/readiness_audit.py https://your-store.com --out report/
+```
+
+| Module | Question |
+|--------|----------|
+| r1 Reachable | Can an agent's fetcher get past your WAF at all? |
+| r2 Discoverable | Can it find your UCP / ACP / A2A discovery docs, llms.txt, feed? |
+| r3 Comprehensible | Does your product page carry JSON-LD an agent can price from? |
+| r4 Transactable | Do your checkout surfaces (ACP, UCP, MCP, NLWeb) answer? |
+| r5 Payable | Payment handlers, delegated payment, AP2 mandates, HTTP 402? |
+| r6 Trustworthy | OAuth discovery, webhook signing keys, TLS, structured errors? |
+
+The report's **"Your gaps → the skills that close them"** table is the map
+into the rest of this marketplace: the audit finds the gap, the protocol or
+platform plugin implements the fix, the probe re-run proves it closed.
+
 ## Plugins in This Directory
 
 | Name | Description | Contents |
 |------|-------------|----------|
+| [commerce-readiness](./commerce-readiness) | **Agentic Commerce Readiness Audit** — executable stdlib-Python probes scoring a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data (Product/ProductGroup JSON-LD), checkout transactability (ACP/UCP REST, MCP `tools/list`, NLWeb `/ask`), payment surfaces (handlers, delegate_payment, AP2, HTTP 402), and trust (OAuth, signing keys, TLS). Weighted Pass/Partial/Fail scoring, evidence-only rules, and a gap→skill map into this marketplace. | **Agent:** `readiness-expert` — audit orchestration with evidence discipline<br>**Skills (3):** readiness-audit (full six-module audit), readiness-quick-check (60-second r1+r2 triage), readiness-fix-plan (score.json → sequenced, stack-aware plan)<br>**Scripts (7):** six standalone probes + a parallel runner writing `READINESS.md` + `score.json`, pure stdlib, `--deep` opt-in for POST probes<br>**Rubrics (6):** weighted sub-checks with fix mapping in `audit/`<br>**Hooks:** Async secret detection on code writes |
 | [ucp-agentic-commerce](./ucp-agentic-commerce) | Expert in the **Universal Commerce Protocol (UCP)** — the open standard co-developed by Google and Shopify for agentic commerce. Covers checkout (REST, MCP, A2A, Embedded), fulfillment, discounts, payment handlers, identity linking, AP2 mandates, and conformance testing. | **Agent:** `ucp-expert` — full UCP protocol knowledge with live doc fetching<br>**Skills (15):** Setup, REST/MCP/A2A/Embedded checkout, orders, fulfillment, discounts, payments, identity, AP2 mandates, schema authoring, buyer consent, conformance, dev patterns<br>**Hooks:** Async secret detection on code writes |
 | [acp-agentic-commerce](./acp-agentic-commerce) | Expert in the **Agentic Commerce Protocol (ACP)** — the open standard co-developed by OpenAI and Stripe for AI-agent-mediated commerce. Covers checkout sessions, delegated payments (SharedPaymentTokens), product feeds, extensions, capability negotiation, and webhooks. | **Agent:** `acp-expert` — full ACP protocol knowledge with live doc fetching<br>**Skills (15):** Setup, product feed, REST/MCP checkout, delegated payment, payment handlers, orders, fulfillment, discounts, capabilities, extensions, intent traces, attribution, conformance, dev patterns<br>**Hooks:** Async Stripe/payment secret detection on code writes |
 | [ap2-agentic-payments](./ap2-agentic-payments) | Expert in **AP2 (Agent Payments Protocol)** — Google's open protocol for secure, verifiable payments in agentic commerce. Covers Verifiable Digital Credentials (VDCs), Cart/Intent/Payment Mandates, cryptographic signing, role-based architecture, challenge/step-up flows, and dispute accountability. | **Agent:** `ap2-expert` — full AP2 protocol knowledge with live doc fetching<br>**Skills (18):** Setup, VDC framework, 3 mandate types, human-present/not-present flows, 4 role implementations, cryptographic signing, challenge/step-up, risk signals, A2A extension, MCP server, disputes, dev patterns<br>**Hooks:** Async PCI data and payment secret detection on code writes |
@@ -68,7 +94,7 @@ If these plugins are published to a marketplace, install them with the Claude Co
    ```shell
    /ucp-agentic-commerce:ucp-setup
    /acp-agentic-commerce:acp-checkout-rest
-   /ap2-agentic-payments:ap2-cart-mandate
+   /ap2-agentic-payments:ap2-checkout-mandate
    /stripe-mpp:mpp-setup
    ```
 
@@ -273,7 +299,7 @@ The conversion script (`scripts/convert.py`) reads the canonical Claude Code sou
 | Stripe Machine Payments | https://docs.stripe.com/payments/machine |
 | A2A Specification | https://a2a-protocol.org |
 | WebMCP Specification (W3C) | https://webmachinelearning.github.io/webmcp/ |
-| WebMCP Chrome Blog | https://developer.chrome.com/blog/webmcp |
+| WebMCP Chrome Blog | https://developer.chrome.com/docs/ai/webmcp |
 | Salesforce Commerce Dev Docs | https://developer.salesforce.com/docs/commerce/b2c-commerce/overview |
 | Magento Developer Docs | https://developer.adobe.com/commerce/docs/ |
 | Claude Code Plugins Docs | https://code.claude.com/docs/en/plugins |

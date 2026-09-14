@@ -20,7 +20,7 @@ This is structurally similar to Claude Code's marketplace model — which is int
 agentic-commerce-skills-plugins/
 ├── .agents/
 │   └── plugins/
-│       └── marketplace.json         # Codex marketplace manifest — 15 plugins enumerated
+│       └── marketplace.json         # Codex marketplace manifest — 16 plugins enumerated
 ├── dist/codex/<plugin>/
 │   ├── .codex-plugin/
 │   │   └── plugin.json              # Per-plugin manifest (name, version, interface, hooks)
@@ -51,7 +51,7 @@ codex
 /plugins
 ```
 
-The TUI surfaces all 15 plugins. Pick one to install — Codex caches it under `~/.codex/plugins/cache/agentic-commerce/<plugin-name>/<version>/` and activates its skills, subagents, and hooks.
+The TUI surfaces all 16 plugins. Pick one to install — Codex caches it under `~/.codex/plugins/cache/agentic-commerce/<plugin-name>/<version>/` and activates its skills, subagents, and hooks.
 
 ### Optional flags
 

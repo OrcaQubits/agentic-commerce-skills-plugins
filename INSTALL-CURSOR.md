@@ -2,7 +2,7 @@
 
 This guide explains how to convert and install the agentic commerce plugins for [Cursor](https://cursor.com) (2.5+), which has a native plugin system with support for rules, skills, agents, hooks, and MCP servers.
 
-> **For Cursor Teams/Enterprise admins**: this repo is pre-configured as a **Team Marketplace** (Cursor 2.6+). In Cursor, go to *Settings → Plugins → Team Marketplaces → Import* and paste `https://github.com/OrcaQubits/agentic-commerce-skills-plugins`. All 15 plugins surface in your team's plugin browser. See [PUBLISH-CURSOR.md](./PUBLISH-CURSOR.md) for the publishing model and the other two paths (public marketplace + cursor.directory).
+> **For Cursor Teams/Enterprise admins**: this repo is pre-configured as a **Team Marketplace** (Cursor 2.6+). In Cursor, go to *Settings → Plugins → Team Marketplaces → Import* and paste `https://github.com/OrcaQubits/agentic-commerce-skills-plugins`. All 16 plugins surface in your team's plugin browser. See [PUBLISH-CURSOR.md](./PUBLISH-CURSOR.md) for the publishing model and the other two paths (public marketplace + cursor.directory).
 
 ## Prerequisites
 

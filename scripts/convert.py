@@ -39,6 +39,34 @@ from converters.openclaw import convert_all_openclaw
 from converters.skills import convert_all_skills
 
 
+def copy_resource_dirs(plugin_dir: Path, out_dir: Path, output_root: Path,
+                       dry_run: bool = False) -> list[str]:
+    """Copy a plugin's executable/reference resource dirs verbatim.
+
+    Some plugins ship more than skills: standalone scripts (e.g.
+    commerce-readiness probes), audit rubrics, and eval suites. These are
+    platform-agnostic files the converted skills reference by relative
+    path, so every target gets a byte-identical copy.
+    """
+    import shutil
+
+    files: list[str] = []
+    for dirname in ("scripts", "audit", "evals"):
+        src = plugin_dir / dirname
+        if not src.is_dir():
+            continue
+        for path in sorted(src.rglob("*")):
+            if path.is_dir() or "__pycache__" in path.parts:
+                continue
+            rel = path.relative_to(plugin_dir)
+            dest = out_dir / rel
+            files.append(str(dest.relative_to(output_root)))
+            if not dry_run:
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(path, dest)
+    return files
+
+
 def load_marketplace(repo_root: Path) -> list[dict]:
     """Load the plugin list from .claude-plugin/marketplace.json."""
     marketplace_path = repo_root / ".claude-plugin" / "marketplace.json"
@@ -516,6 +544,10 @@ def main() -> None:
                 files = convert_plugin_antigravity(
                     plugin_dir, plugin_entry, output_root, dry_run=args.dry_run
                 )
+            files.extend(copy_resource_dirs(
+                plugin_dir, output_root / platform / name, output_root,
+                dry_run=args.dry_run,
+            ))
             all_files.extend(files)
 
             if not args.dry_run:
