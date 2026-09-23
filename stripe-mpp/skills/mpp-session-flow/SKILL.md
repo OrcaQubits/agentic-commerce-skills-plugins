@@ -1,6 +1,6 @@
 ---
 name: mpp-session-flow
-description: Implement MPP session-based streaming payment flows — authorize-once pay-as-you-go patterns for continuous data feeds, per-token billing, and micropayment aggregation. Use when building streaming APIs or services that charge incrementally.
+description: "Implement MPP session-based streaming payment flows — authorize-once pay-as-you-go patterns for continuous data feeds, per-token billing, and micropayment aggregation. Use when building streaming APIs or services that charge incrementally, implementing pay-per-use or metered billing, or adding usage-based pricing to an API."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
@@ -12,51 +12,12 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Fetch `https://www.npmjs.com/package/mppx` for the session middleware API and payment channel configuration
 2. Fetch `https://paymentauth.org/` for the canonical session intent specification
 3. Web-search `mpp session streaming micropayments payment channel` for session implementation patterns
-4. Web-search `site:mpp.dev session` for session-specific documentation
 
-## Conceptual Architecture
-
-### What Session Intent Is
-
-The session intent implements **streaming micropayments** — often described as **"OAuth for money"**. The agent authorizes a spending limit upfront, then streams micropayments continuously as it consumes resources:
+## Session Lifecycle
 
 ```
-1. Client opens session with spending cap
-2. Server creates payment channel
-3. Client makes requests — each deducts from the spending cap
-4. Micropayments stream at sub-cent costs, sub-millisecond latency
-5. Session closes — final settlement on-chain (single transaction)
+Open → Authorize → Active → Refill (optional) → Close → Settled
 ```
-
-### When to Use Session
-
-- **Per-token billing** — LLM inference charged per token generated
-- **Continuous data feeds** — Real-time market data, sensor streams
-- **Compute metering** — Pay for actual CPU/GPU seconds used
-- **Bandwidth metering** — Pay per KB transferred
-- **Any high-frequency, low-value access pattern**
-
-### Session vs Charge Comparison
-
-| Dimension | Charge | Session |
-|-----------|--------|---------|
-| Settlement | Per-request on-chain/card | Aggregated at session close |
-| Latency | Includes payment settlement per call | Sub-millisecond after session open |
-| Cost | One tx per request | One tx for entire session |
-| Pricing | Fixed per request | Variable, metered |
-| Use case | Infrequent, high-value calls | Frequent, low-value calls |
-
-### Server-Side Implementation
-
-```typescript
-// Protect a route with a session payment gate
-app.get('/api/stream', mppx.session({ maxAmount: '10000' }), async (c) => {
-  // Deducts from the session's spending cap
-  return c.json({ data: 'streaming content' });
-});
-```
-
-### Session Lifecycle
 
 1. **Open** — Client sends initial request; server returns 402 with session challenge
 2. **Authorize** — Client authorizes spending cap (e.g., 10,000 units)
@@ -65,38 +26,96 @@ app.get('/api/stream', mppx.session({ maxAmount: '10000' }), async (c) => {
 5. **Close** — Either party closes; final settlement happens on-chain
 6. **Settled** — Single on-chain transaction for the total consumed amount
 
-### Payment Channel
+## Server-Side Implementation
 
-Session payments use a **payment channel** — an off-chain mechanism where:
-- Funds are locked upfront in a channel
-- Each micropayment updates the channel state without on-chain transactions
-- Only the opening and closing transactions go on-chain
-- This enables thousands of sub-cent payments at sub-millisecond latency
+```typescript
+import { mppx } from "mppx";
 
-### Spending Cap Management
+// Protect a streaming endpoint with session-based payment
+app.get("/api/stream", mppx.session({ maxAmount: "10000" }), async (c) => {
+  return c.json({ data: "streaming content" });
+});
 
-- Agent sets the maximum they're willing to spend in the session
-- Server deducts from this cap per request/unit consumed
-- Agent can monitor remaining balance
-- If cap is exhausted, server returns 402 for a new session
-- Agent can proactively extend the cap
+// Metered endpoint — charge per unit consumed
+app.post("/api/inference", mppx.session({ maxAmount: "50000" }), async (c) => {
+  const result = await runInference(c.req.body);
+  const tokensUsed = result.usage.totalTokens;
+  await c.mpp.charge(tokensUsed);
+  return c.json({ result: result.output, charged: tokensUsed });
+});
+```
 
-### Metering Patterns
+## Client-Side Implementation
 
-| Pattern | Description |
-|---------|-------------|
-| Fixed per request | Each request costs a fixed amount |
-| Per-unit | Cost varies by units consumed (tokens, bytes, seconds) |
-| Time-based | Cost accrues per time interval |
-| Tiered | Rate decreases with volume (first 100 at $X, next 1000 at $Y) |
+```typescript
+import { MppClient } from "mppx/client";
 
-### Best Practices
+const client = new MppClient({ wallet: agentWallet });
+
+// Open a session with a spending cap
+const session = await client.openSession("https://api.example.com/api/stream", {
+  spendingCap: 10000,
+});
+
+// Make metered requests — each deducts from the cap
+const response = await session.fetch("/api/inference", {
+  method: "POST",
+  body: JSON.stringify({ prompt: "Hello" }),
+});
+
+// Monitor remaining balance
+console.log(`Remaining: ${session.remainingBalance}`);
+
+// Extend the cap before it runs out
+if (session.remainingBalance < 1000) {
+  await session.refill(5000);
+}
+
+// Close the session — triggers final settlement
+await session.close();
+```
+
+## Handling Cap Exhaustion
+
+```typescript
+// Server: return 402 when cap is exhausted
+app.use("/api/*", async (c, next) => {
+  try {
+    await next();
+  } catch (err) {
+    if (err.code === "CAP_EXHAUSTED") {
+      return c.json({ error: "spending_cap_exhausted", remaining: 0 }, 402);
+    }
+    throw err;
+  }
+});
+
+// Client: handle 402 by opening a new session
+async function fetchWithRetry(session, url, opts) {
+  const res = await session.fetch(url, opts);
+  if (res.status === 402) {
+    const newSession = await client.openSession(url, { spendingCap: 10000 });
+    return newSession.fetch(url, opts);
+  }
+  return res;
+}
+```
+
+## Verification Workflow
+
+1. Start server with session middleware enabled
+2. Open a session from the client — verify 402 challenge is returned, then authorization succeeds
+3. Make a metered request — verify balance decreases by the correct amount
+4. Exhaust the cap — verify server returns 402
+5. Refill or open a new session — verify requests resume
+6. Close the session — verify settlement transaction is recorded
+
+## Best Practices
 
 - Set reasonable default spending caps (not too high for safety, not too low for UX)
 - Implement cap exhaustion warnings before the cap runs out
 - Log metering data for billing reconciliation
 - Handle session interruptions gracefully (network drops, server restarts)
 - Implement session resumption where possible
-- Monitor session durations and spending patterns for pricing optimization
 
 Fetch the latest mppx SDK documentation and MPP specification for exact session API, payment channel mechanics, and configuration options before implementing.

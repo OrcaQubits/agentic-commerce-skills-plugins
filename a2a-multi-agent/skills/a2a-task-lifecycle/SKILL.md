@@ -1,6 +1,6 @@
 ---
 name: a2a-task-lifecycle
-description: Implement A2A task lifecycle management — task creation, state transitions, terminal states, history, and artifacts. Use when building task state machines, handling state transitions, or managing task persistence.
+description: "Implement A2A (Agent-to-Agent) task lifecycle management — task creation, state transitions, terminal states, history, and artifacts. Use when building task state machines, handling state transitions, managing task persistence, or implementing task status tracking in agent-to-agent workflows."
 allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 ---
 
@@ -12,24 +12,8 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 1. Fetch `https://a2a-protocol.org/latest/specification/` for the Task object schema and state machine
 2. Web-search `site:github.com a2aproject A2A task lifecycle states` for state transition rules
 3. Web-search `site:github.com a2aproject a2a-samples task` for task handling examples
-4. Fetch SDK docs for task-related classes and state management utilities
 
-## Conceptual Architecture
-
-### What a Task Is
-
-A Task is the **central unit of work** in A2A. It represents a request from a client agent to a server agent, tracks progress through well-defined states, accumulates messages and artifacts, and reaches a terminal state when complete.
-
-### Task Structure
-
-Key fields of a Task object:
-- **id** — Unique task identifier (set by client or server)
-- **status** — Current state object containing `state` enum and optional `message`
-- **messages** — Array of messages exchanged (if `stateTransitionHistory` enabled)
-- **artifacts** — Array of output artifacts produced by the agent
-- **metadata** — Optional key-value pairs for custom data
-
-### The 9 States
+## The 9 States
 
 | State | Terminal? | Description |
 |-------|-----------|-------------|
@@ -43,68 +27,118 @@ Key fields of a Task object:
 | `rejected` | Yes | Server refused the task |
 | `unknown` | — | Default/unknown state |
 
-### Valid State Transitions
+## Valid State Transitions
 
 ```
-submitted → working
+submitted → working → completed
+                    → failed
+                    → canceled
+                    → input-required → working (client provides input)
+                                     → canceled
+
 submitted → rejected
 submitted → canceled
 
-working → completed
-working → failed
-working → canceled
-working → input-required
-
-input-required → working (when client provides more input)
-input-required → canceled
-
-auth-required → working (when auth is provided)
+auth-required → working (auth provided)
 auth-required → canceled
 ```
 
-**Rules:**
-- Terminal states (`completed`, `failed`, `canceled`, `rejected`) are final — no transitions out
-- Only the server transitions the task state (except `canceled` which client can request)
-- `input-required` → `working` happens when the client sends a follow-up message
+**Rules:** Terminal states (`completed`, `failed`, `canceled`, `rejected`) are final — no transitions out. Only the server transitions state (except `canceled` which client can request).
 
-### Task Creation
+## Task State Machine Implementation
 
-Tasks are created implicitly when a client sends a message without a `taskId`:
-1. Client sends `message/send` or `message/stream` without `taskId`
-2. Server creates a new task, assigns an ID
-3. Task starts in `submitted` state
-4. Server may immediately transition to `working` or return `submitted`
+```typescript
+const TERMINAL_STATES = new Set(["completed", "failed", "canceled", "rejected"]);
 
-### Task Continuation
+const VALID_TRANSITIONS: Record<string, string[]> = {
+  submitted: ["working", "rejected", "canceled"],
+  working: ["completed", "failed", "canceled", "input-required"],
+  "input-required": ["working", "canceled"],
+  "auth-required": ["working", "canceled"],
+};
 
-When a client sends a message with an existing `taskId`:
-1. The message is appended to the task's history
-2. The server resumes processing
-3. State typically transitions from `input-required` back to `working`
+interface Task {
+  id: string;
+  status: { state: string; message?: string; timestamp: string };
+  messages: Message[];
+  artifacts: Artifact[];
+  metadata?: Record<string, unknown>;
+}
 
-### Artifacts
+function transitionTask(task: Task, newState: string, message?: string): Task {
+  if (TERMINAL_STATES.has(task.status.state)) {
+    throw new Error(`Cannot transition from terminal state: ${task.status.state}`);
+  }
+  const allowed = VALID_TRANSITIONS[task.status.state];
+  if (!allowed?.includes(newState)) {
+    throw new Error(`Invalid transition: ${task.status.state} → ${newState}`);
+  }
+  return {
+    ...task,
+    status: { state: newState, message, timestamp: new Date().toISOString() },
+  };
+}
+```
 
-Artifacts are the **outputs** of a task:
-- Produced during `working` state
+## Task Creation (message/send handler)
+
+```typescript
+import { randomUUID } from "crypto";
+
+async function handleMessageSend(request: {
+  taskId?: string;
+  message: Message;
+}): Promise<Task> {
+  let task: Task;
+
+  if (request.taskId) {
+    task = await taskStore.get(request.taskId);
+    if (!task) throw new Error(`Task not found: ${request.taskId}`);
+    task.messages.push(request.message);
+    task = transitionTask(task, "working");
+  } else {
+    task = {
+      id: randomUUID(),
+      status: { state: "submitted", timestamp: new Date().toISOString() },
+      messages: [request.message],
+      artifacts: [],
+    };
+  }
+
+  await taskStore.save(task);
+  task = transitionTask(task, "working", "Processing request");
+  await taskStore.save(task);
+
+  const result = await processTask(task);
+  task.artifacts.push(result.artifact);
+  task = transitionTask(task, "completed", "Done");
+  await taskStore.save(task);
+  return task;
+}
+```
+
+## Artifacts
+
+Artifacts are the outputs of a task, produced during `working` state:
 - Each artifact has `id`, `name`, optional `description`, and `parts`
 - Parts can be TextPart, FilePart, or DataPart
 - In streaming mode, artifacts are delivered incrementally via `TaskArtifactUpdateEvent`
-- Multiple artifacts can be produced per task
 
-### State Transition History
+## Verification Workflow
 
-If the agent declares `stateTransitionHistory: true` in its Agent Card:
-- The task object includes a complete history of all state transitions
-- Each transition records the state, timestamp, and optional message
-- Useful for auditing and debugging
+1. Create a task via `message/send` without `taskId` — verify task is created with `submitted` state
+2. Verify automatic transition to `working` — check status updates
+3. Attempt an invalid transition (e.g., `submitted` → `completed`) — verify error is thrown
+4. Complete a task — verify state is `completed` and artifacts are present
+5. Attempt to transition a completed task — verify error (terminal state)
+6. Test `input-required` flow: send a task that needs more input, provide follow-up, verify it resumes
 
-### Best Practices
+## Best Practices
 
 - Always validate state transitions — reject invalid ones with appropriate errors
-- Use task IDs that are globally unique (UUIDs recommended)
+- Use UUIDs for task IDs
 - Store task state durably for production (not just in-memory)
 - Set timeouts for tasks stuck in non-terminal states
-- Clean up old tasks to prevent unbounded storage growth
 - Include meaningful messages in status updates (not just the state enum)
 - Use artifacts for structured outputs, messages for conversational exchanges
 - Implement idempotency — handle duplicate messages for the same task gracefully
