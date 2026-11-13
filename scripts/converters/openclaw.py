@@ -1,33 +1,11 @@
-"""Convert Claude Code plugins to OpenClaw format.
+"""Convert plugins to OpenClaw content bundles.
 
-OpenClaw conventions (verified against docs.openclaw.ai, March 2026):
-  - Manifest:   openclaw.plugin.json (required: id, configSchema;
-                optional: name, description, version, skills)
-  - Context:    AGENTS.md (workspace-level operational rules file)
-  - Skills:     skills/<skill>/SKILL.md (name + description frontmatter)
-  - Sub-agents: Managed via agents.list[] in JSON config, not standalone files.
-                Agent expertise is delivered via AGENTS.md context.
-
-ClawHub publishing:
-  In addition to the runtime ``openclaw.plugin.json`` manifest, each plugin
-  ships with a ``package.json`` that is consumed by ``clawhub package
-  publish ./dist/openclaw/<plugin> --family bundle-plugin``.  The
-  ``openclaw.compat.pluginApi`` and ``openclaw.build.openclawVersion``
-  fields are mandatory for ClawHub uploads.
-
-Hooks:
-  OpenClaw hooks are TypeScript-based (HOOK.md + handler.ts) with events:
-    command:new, command:reset, command:stop, message:received,
-    message:transcribed, message:preprocessed, message:sent,
-    session:compact:before, session:compact:after, agent:bootstrap,
-    gateway:startup, tool_result_persist.
-  There are NO tool-level lifecycle hooks (no PostToolUse/PreToolUse).
-  Claude Code hook scripts CANNOT be ported and are copied as standalone
-  utilities (for git pre-commit or CI integration).
-
-Model mapping (provider/model format):
-  opus -> anthropic/claude-opus-4-6, sonnet -> anthropic/claude-sonnet-4-5,
-  haiku -> anthropic/claude-haiku-4-5
+The .claude-plugin/plugin.json marker selects OpenClaw's bundle loader. Do not
+emit openclaw.plugin.json: that selects the native JavaScript plugin loader.
+Skills and executable/reference resources stay together. Python hooks remain
+standalone utilities; no native hook enforcement is supplied by this converter.
+Package metadata supports a separate ClawHub publishing workflow and does not
+establish registry availability. See https://docs.openclaw.ai/plugins/bundles.
 """
 
 from __future__ import annotations
@@ -43,7 +21,7 @@ DEFAULT_PLUGIN_API = os.environ.get("CLAWHUB_PLUGIN_API", ">=2026.3.24-beta.2")
 DEFAULT_OPENCLAW_VERSION = os.environ.get("CLAWHUB_OPENCLAW_VERSION", "2026.3.24-beta.2")
 DEFAULT_REPO_URL = os.environ.get(
     "CLAWHUB_REPO_URL",
-    "https://github.com/OrcaQubits/agentic-commerce-claude-plugins",
+    "https://github.com/OrcaQubits/agentic-commerce-skills-plugins",
 )
 
 
@@ -82,7 +60,7 @@ def generate_clawhub_package_json(plugin_json_path: Path) -> dict:
             "compat": {"pluginApi": DEFAULT_PLUGIN_API},
             "build": {"openclawVersion": DEFAULT_OPENCLAW_VERSION},
             "hostTargets": ["openclaw"],
-            "manifest": "./openclaw.plugin.json",
+            "manifest": "./.claude-plugin/plugin.json",
         },
     }
 
@@ -105,31 +83,14 @@ node_modules/
 """
 
 
-def generate_openclaw_manifest(plugin_json_path: Path, skills_dir: Path | None = None) -> dict:
-    """Generate an openclaw.plugin.json dict from a Claude plugin.json.
-
-    The ``skills`` array is auto-populated by scanning *skills_dir* if provided,
-    otherwise from the source plugin's ``skills/`` directory.
-    """
+def generate_openclaw_manifest(plugin_json_path: Path) -> dict:
+    """Use OpenClaw's Claude content-bundle loader, without native-code markers."""
     with open(plugin_json_path, encoding="utf-8") as f:
         data = json.load(f)
 
-    # Discover skill directories
-    skill_refs: list[str] = []
-    scan_dir = skills_dir or plugin_json_path.parent.parent / "skills"
-    if scan_dir.is_dir():
-        for skill_dir in sorted(scan_dir.iterdir()):
-            if skill_dir.is_dir() and (skill_dir / "SKILL.md").is_file():
-                skill_refs.append(f"skills/{skill_dir.name}")
-
-    return {
-        "id": data.get("name", ""),
-        "name": data.get("name", "").replace("-", " ").title(),
-        "description": data.get("description", ""),
-        "version": data.get("version", "1.0.0"),
-        "skills": skill_refs,
-        "configSchema": {"type": "object", "properties": {}, "additionalProperties": False},
-    }
+    return {key: data[key] for key in
+            ("name", "version", "description", "author", "repository", "license", "keywords")
+            if key in data}
 
 
 def copy_hook_scripts(
@@ -164,10 +125,10 @@ def convert_all_openclaw(
     plugin_name: str,
     plugin_json_path: Path,
 ) -> list[Path]:
-    """Write openclaw.plugin.json, ClawHub package.json, .clawhubignore, and copy hook scripts.
+    """Write the bundle marker, ClawHub package.json, .clawhubignore, and copy hook scripts.
 
     Creates:
-      output_dir/openclaw.plugin.json  (runtime plugin manifest)
+      output_dir/.claude-plugin/plugin.json (content-bundle marker)
       output_dir/package.json          (ClawHub publish manifest — bundle-plugin family)
       output_dir/.clawhubignore        (publish-ignore patterns)
       output_dir/scripts/*.py          (hook scripts as standalone utilities)
@@ -177,10 +138,11 @@ def convert_all_openclaw(
     written: list[Path] = []
 
     if plugin_json_path.is_file():
-        # 1. openclaw.plugin.json — runtime manifest, skills auto-discovered
-        skills_dir = output_dir / "skills"
-        manifest = generate_openclaw_manifest(plugin_json_path, skills_dir=skills_dir)
-        out_path = output_dir / "openclaw.plugin.json"
+        # A native marker takes precedence over bundle detection and requires a
+        # JavaScript entry point. These packages contain skills, not native code.
+        (output_dir / "openclaw.plugin.json").unlink(missing_ok=True)
+        manifest = generate_openclaw_manifest(plugin_json_path)
+        out_path = output_dir / ".claude-plugin" / "plugin.json"
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(
             json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",

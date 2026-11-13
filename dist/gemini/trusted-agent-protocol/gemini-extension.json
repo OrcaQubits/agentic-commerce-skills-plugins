@@ -1,6 +1,6 @@
 {
   "name": "trusted-agent-protocol",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
   "contextFileName": "GEMINI.md",
   "author": {
@@ -9,6 +9,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+    "url": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins"
   }
 }

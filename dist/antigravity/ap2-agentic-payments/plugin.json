@@ -1,0 +1,24 @@
+{
+  "name": "ap2-agentic-payments",
+  "displayName": "Ap2 Agentic Payments",
+  "version": "1.0.0",
+  "description": "Expert AP2 (Agent Payments Protocol) knowledge for building agentic commerce payment modules — Verifiable Digital Credentials, mandates, cryptographic signing, transaction flows, and multi-agent payment orchestration.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "ap2",
+    "agent-payments",
+    "agentic-commerce",
+    "google",
+    "mandates",
+    "vdc",
+    "verifiable-credentials",
+    "payment",
+    "cryptographic-signing"
+  ],
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "repository": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins",
+  "license": "MIT"
+}

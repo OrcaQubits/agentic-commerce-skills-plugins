@@ -65,6 +65,7 @@ jobs:
       - name: Payment challenge and inventory regressions
         run: |
           python scripts/validate_inventory.py
+          python scripts/test_distribution_install.py
           python commerce-readiness/scripts/test_payments.py
           python x402-agentic-payments/scripts/test_conformance.py
 
@@ -90,6 +91,28 @@ jobs:
           fi
           echo "dist/ matches a fresh conversion"
 
+  openclaw-install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned OpenClaw CLI in temporary storage
+        run: npm install --prefix "$RUNNER_TEMP/openclaw-cli" --ignore-scripts --no-audit --no-fund openclaw@2026.11.3
+      - name: Native content-bundle discovery and installation
+        run: python scripts/test_openclaw_install.py --cli "$RUNNER_TEMP/openclaw-cli/node_modules/openclaw/openclaw.mjs"
+      - uses: actions/checkout@v4
+        with:
+          ref: v1.1.0
+          path: release-baseline
+      - name: Verify v1.1.0 source-bundle installation workaround
+        run: python scripts/test_openclaw_install.py --cli "$RUNNER_TEMP/openclaw-cli/node_modules/openclaw/openclaw.mjs" --bundle-root "$GITHUB_WORKSPACE/release-baseline"
+
   windows-resources:
     runs-on: windows-latest
     timeout-minutes: 10
@@ -102,6 +125,7 @@ jobs:
         run: |
           python -m pip install -r trusted-agent-protocol/scripts/requirements-verifier.txt
           python commerce-readiness/scripts/test_payments.py
+          python scripts/test_distribution_install.py
           python scripts/test_plugin_bundles.py
       - name: Git Bash hook interpreter fallback
         shell: bash

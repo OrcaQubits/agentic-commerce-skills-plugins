@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Agentic commerce skills/plugins for Cursor: UCP, ACP, A2A, AP2, Stripe MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, Spree, x402, Trusted Agent Protocol",
-    "version": "1.1.0"
+    "version": "1.1.1"
   },
   "plugins": [
     {

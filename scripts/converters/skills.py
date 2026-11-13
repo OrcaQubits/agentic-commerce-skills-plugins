@@ -81,4 +81,12 @@ def convert_all_skills(
         out_path.write_text(content, encoding="utf-8", newline="\n")
         written.append(out_path)
 
+        if platform == "antigravity":
+            # The native plugin installer discovers skills/; retain .agent/
+            # for existing workspace-copy consumers of earlier releases.
+            native_path = output_dir / "skills" / skill_dir.name / "SKILL.md"
+            native_path.parent.mkdir(parents=True, exist_ok=True)
+            native_path.write_text(content, encoding="utf-8", newline="\n")
+            written.append(native_path)
+
     return written

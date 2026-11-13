@@ -1,6 +1,6 @@
 {
   "name": "x402-agentic-payments",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration.",
   "author": {
     "name": "Rohit Bajaj, Julekha Khatun",

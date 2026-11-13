@@ -1,0 +1,28 @@
+{
+  "name": "medusa-commerce",
+  "displayName": "Medusa Commerce",
+  "version": "1.0.0",
+  "description": "Expert subagent and skills for Medusa v2 development — custom modules with DML data models, workflows with compensation, API routes, subscribers, admin dashboard extensions, Next.js storefronts, payment and fulfillment providers, and TypeScript/Node.js patterns.",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "headless-commerce",
+    "ecommerce",
+    "nodejs",
+    "typescript",
+    "postgresql",
+    "nextjs",
+    "mikroorm",
+    "rest-api",
+    "modules",
+    "workflows",
+    "open-source"
+  ],
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "repository": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins",
+  "license": "MIT"
+}

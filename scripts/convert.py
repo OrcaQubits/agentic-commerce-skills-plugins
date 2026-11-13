@@ -32,6 +32,7 @@ from converters.hooks import convert_all_hooks
 from converters.manifest import (
     convert_plugin_json,
     generate_antigravity_manifest,
+    generate_antigravity_plugin_manifest,
     write_antigravity_manifest,
     write_gemini_manifest,
 )
@@ -182,6 +183,13 @@ def convert_plugin_antigravity(
     if not dry_run:
         write_antigravity_manifest(ag_manifest, path)
 
+    native_manifest = out_dir / "plugin.json"
+    files.append(str(native_manifest.relative_to(output_root)))
+    if not dry_run:
+        write_antigravity_manifest(
+            generate_antigravity_plugin_manifest(plugin_dir, plugin_entry), native_manifest
+        )
+
     # 1. AGENTS.md + .agent/rules/<plugin>-rules.md
     if not dry_run:
         written = convert_agents_antigravity(plugin_dir, out_dir, name)
@@ -319,7 +327,7 @@ def convert_plugin_openclaw(
     """Convert a single plugin for OpenClaw.
 
     OpenClaw layout:
-      openclaw.plugin.json              # Plugin manifest (id, configSchema, skills)
+      .claude-plugin/plugin.json        # Content-bundle marker
       AGENTS.md                         # Agent expertise as context
       skills/<skill>/SKILL.md           # Skills (stripped frontmatter)
       scripts/*.py                      # Hook scripts as standalone utilities
@@ -362,7 +370,7 @@ def convert_plugin_openclaw(
                         )
                     )
 
-    # 3. openclaw.plugin.json + scripts/*.py
+    # 3. Content-bundle manifest + scripts/*.py
     plugin_json = plugin_dir / ".claude-plugin" / "plugin.json"
     if not dry_run:
         written = convert_all_openclaw(plugin_dir, out_dir, name, plugin_json)
@@ -370,7 +378,7 @@ def convert_plugin_openclaw(
     else:
         if plugin_json.is_file():
             files.append(
-                str((out_dir / "openclaw.plugin.json").relative_to(output_root))
+                str((out_dir / ".claude-plugin" / "plugin.json").relative_to(output_root))
             )
         scripts_dir = plugin_dir / "hooks" / "scripts"
         if scripts_dir.is_dir():

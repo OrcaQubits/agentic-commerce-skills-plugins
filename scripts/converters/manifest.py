@@ -6,7 +6,7 @@ import json
 import re
 from pathlib import Path
 
-REPO_URL = "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+REPO_URL = "https://github.com/OrcaQubits/agentic-commerce-skills-plugins"
 
 
 def convert_plugin_json(
@@ -139,3 +139,17 @@ def write_antigravity_manifest(manifest: dict, output_path: Path) -> None:
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
         f.write("\n")
+
+
+def generate_antigravity_plugin_manifest(plugin_dir: Path, plugin_entry: dict) -> dict:
+    """Native plugin marker; skills use the default plugin-root directory."""
+    legacy = generate_antigravity_manifest(plugin_dir, plugin_entry)
+    manifest = {key: legacy[key] for key in
+                ("name", "displayName", "version", "description", "author", "keywords")
+                if key in legacy}
+    manifest.update({
+        "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+        "repository": REPO_URL,
+        "license": "MIT",
+    })
+    return manifest

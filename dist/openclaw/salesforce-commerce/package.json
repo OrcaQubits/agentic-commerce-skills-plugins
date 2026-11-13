@@ -29,7 +29,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins"
+    "url": "https://github.com/OrcaQubits/agentic-commerce-skills-plugins"
   },
   "openclaw": {
     "compat": {
@@ -41,7 +41,7 @@
     "hostTargets": [
       "openclaw"
     ],
-    "manifest": "./openclaw.plugin.json"
+    "manifest": "./.claude-plugin/plugin.json"
   },
   "author": {
     "name": "Rohit Bajaj, Julekha Khatun",

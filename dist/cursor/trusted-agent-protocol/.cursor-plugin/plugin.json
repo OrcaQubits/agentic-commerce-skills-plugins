@@ -1,6 +1,6 @@
 {
   "name": "trusted-agent-protocol",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
   "author": {
     "name": "Rohit Bajaj, Julekha Khatun"

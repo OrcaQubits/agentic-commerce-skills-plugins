@@ -2,9 +2,11 @@
 
 This guide walks through publishing every plugin in this repo to the [ClawHub](https://docs.openclaw.ai/clawhub) marketplace so OpenClaw users can install them with one command.
 
+The x402 and Trusted Agent Protocol bundles are available from GitHub releases. A GitHub release does not publish their ClawHub packages; do not advertise a registry install until publication has been verified. See [the tested release installation routes](INSTALL-RELEASE.md#openclaw).
+
 ## What gets published
 
-The repo ships **16 plugins**, each with a Spree-style bundle of skills + agent context + hook scripts. ClawHub supports two publishing granularities and we use **both**:
+The repo ships **18 plugins**, each with a Spree-style bundle of skills + agent context + hook scripts. ClawHub supports two publishing granularities and we use **both**:
 
 | Path | Granularity | What users install |
 |------|-------------|--------------------|
@@ -49,7 +51,7 @@ End-users get to choose: install the whole platform plugin, or pick à la carte 
    dist/openclaw/<plugin>/
    ├── package.json              # ClawHub publish manifest (required)
    ├── .clawhubignore            # publish-ignore patterns
-   ├── openclaw.plugin.json      # OpenClaw runtime manifest
+   ├── .claude-plugin/plugin.json # OpenClaw content-bundle marker
    ├── AGENTS.md                 # Agent expertise as context
    ├── skills/<skill>/SKILL.md   # Each skill in its own folder
    └── scripts/*.py              # Hook scripts as standalone utilities
@@ -75,7 +77,7 @@ python scripts/publish-clawhub.py --owner my-org
 
 ## Publishing
 
-Use the helper script `scripts/publish-clawhub.py`. It loops over the 16 plugins, runs `clawhub package publish` for each, and (optionally) runs `clawhub sync` for individual skills.
+Use the helper script `scripts/publish-clawhub.py`. It loops over the registered plugins, runs `clawhub package publish` for each, and (optionally) runs `clawhub sync` for individual skills.
 
 ### Dry run first (recommended)
 

@@ -66,6 +66,8 @@ public signing key does not prove a working agent-signature verifier.
 
 ## Installation
 
+For x402 and Trusted Agent Protocol, see the [release installation guide](INSTALL-RELEASE.md) for all six platforms, release pins, and the v1.1.0 limitations. Install complete bundles to retain executable fixtures; skills-only installation is not equivalent.
+
 ### From a Marketplace (Recommended)
 
 If these plugins are published to a marketplace, install them with the Claude Code plugin manager:
@@ -73,10 +75,10 @@ If these plugins are published to a marketplace, install them with the Claude Co
 1. **Add the marketplace** (one-time setup):
 
    ```shell
-   /plugin marketplace add owner/agentic-commerce-claude-plugins
+   /plugin marketplace add OrcaQubits/agentic-commerce-skills-plugins
    ```
 
-   Replace `owner/agentic-commerce-claude-plugins` with the actual GitHub `owner/repo` path or Git URL where this repository is hosted.
+   For an exact release, append `#v1.1.1` to the repository source.
 
 2. **Browse available plugins**:
 
@@ -85,7 +87,7 @@ If these plugins are published to a marketplace, install them with the Claude Co
 3. **Install a plugin**:
 
    ```shell
-   /plugin install ucp-agentic-commerce@marketplace-name
+   /plugin install ucp-agentic-commerce@agentic-commerce
    ```
 
    Or use the interactive UI: select a plugin in the **Discover** tab, press Enter, and choose an installation scope:
@@ -114,58 +116,15 @@ If you have this repository cloned locally, you can load plugins directly:
 claude --plugin-dir "/path/to/agentic-commerce-claude-plugins/ucp-agentic-commerce"
 ```
 
-**Persistent** (add to `~/.claude/settings.json` for automatic loading):
+**Persistent** (register this checkout as a local marketplace):
 
-```json
-{
-  "enabledPlugins": {
-    "ucp-agentic-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/ucp-agentic-commerce"
-    },
-    "acp-agentic-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/acp-agentic-commerce"
-    },
-    "ap2-agentic-payments": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/ap2-agentic-payments"
-    },
-    "a2a-multi-agent": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/a2a-multi-agent"
-    },
-    "magento2-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/magento2-commerce"
-    },
-    "webmcp-browser-agents": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/webmcp-browser-agents"
-    },
-    "bigcommerce-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/bigcommerce-commerce"
-    },
-    "shopify-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/shopify-commerce"
-    },
-    "woocommerce-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/woocommerce-commerce"
-    },
-    "salesforce-commerce": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/salesforce-commerce"
-    },
-    "stripe-mpp": {
-      "type": "local",
-      "path": "/path/to/agentic-commerce-claude-plugins/stripe-mpp"
-    }
-  }
-}
+```shell
+claude plugin marketplace add .
+claude plugin install x402-agentic-payments@agentic-commerce
+claude plugin install trusted-agent-protocol@agentic-commerce
 ```
+
+The plugin manager records enabled plugins and installs complete cached copies. Do not put local path objects in `enabledPlugins`; use the marketplace installer.
 
 ### Verify Installation
 
@@ -176,19 +135,19 @@ Run `/plugin` inside Claude Code and check the **Installed** tab. You should see
 Disable a plugin without uninstalling:
 
 ```shell
-/plugin disable ucp-agentic-commerce@marketplace-name
+/plugin disable ucp-agentic-commerce@agentic-commerce
 ```
 
 Re-enable a disabled plugin:
 
 ```shell
-/plugin enable ucp-agentic-commerce@marketplace-name
+/plugin enable ucp-agentic-commerce@agentic-commerce
 ```
 
 Completely remove a plugin:
 
 ```shell
-/plugin uninstall ucp-agentic-commerce@marketplace-name
+/plugin uninstall ucp-agentic-commerce@agentic-commerce
 ```
 
 ## Design Philosophy

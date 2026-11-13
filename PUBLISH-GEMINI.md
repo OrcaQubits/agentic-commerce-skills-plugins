@@ -23,7 +23,7 @@ This repo is a monorepo of **15 commerce/agentic plugins**, but the gallery only
 
 - UCP is the umbrella protocol (Google + Shopify) tying together the other commerce protocols
 - Its skill set covers all four transport bindings (REST, MCP, A2A, Embedded)
-- It pairs well with the other 14 plugins as ecosystem context in the same install
+- It pairs well with the other 17 plugins as ecosystem context in the same install
 
 So at the **repo root** you'll find UCP's extension files, copied from `dist/gemini/ucp-agentic-commerce/`:
 
@@ -37,7 +37,7 @@ agentic-commerce-skills-plugins/
     └── check_secrets.py      # Hook implementation
 ```
 
-The other 14 plugins remain **fully installable via path** (see below) and continue to be available for Claude Code / Codex / Cursor / Antigravity / OpenClaw via the standard conversion + install flow.
+The other 17 plugins remain **fully installable via path** (see below) and continue to be available for Claude Code / Codex / Cursor / Antigravity / OpenClaw via the standard conversion + install flow.
 
 ## Install paths for end users
 
@@ -51,7 +51,7 @@ gemini extensions install https://github.com/OrcaQubits/agentic-commerce-skills-
 
 This installs UCP's manifest + GEMINI.md + 15 UCP skills + secret-detection hook.
 
-### 2. Other plugins (via `--path`)
+### 2. Other plugins (via local directory)
 
 For ACP, A2A, AP2, WebMCP, NLWeb, Stripe MPP, Magento, Shopify, Saleor, Medusa, BigCommerce, WooCommerce, Salesforce Commerce, or Spree:
 
@@ -60,8 +60,8 @@ git clone https://github.com/OrcaQubits/agentic-commerce-skills-plugins
 cd agentic-commerce-skills-plugins
 python scripts/convert.py --platform gemini
 
-gemini extensions install --path dist/gemini/spree-commerce
-gemini extensions install --path dist/gemini/acp-agentic-commerce
+gemini extensions install ./dist/gemini/spree-commerce
+gemini extensions install ./dist/gemini/acp-agentic-commerce
 # ... etc.
 ```
 
@@ -98,7 +98,7 @@ If the UCP plugin's source content changes (new skill, updated agent expertise, 
    ```
 7. **Wait ~24h** — the gallery crawler runs daily and will pick up the new release.
 
-Note: the root manifest's `repository.url` must point at `https://github.com/OrcaQubits/agentic-commerce-skills-plugins` (NOT `AgenticCommerce/...` which is the default placeholder some converter outputs use). Verify before pushing.
+Note: the root manifest's `repository.url` must point at `https://github.com/OrcaQubits/agentic-commerce-skills-plugins`. Verify before pushing.
 
 ## Initial gallery onboarding (one-time)
 

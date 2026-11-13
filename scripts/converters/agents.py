@@ -124,6 +124,12 @@ def convert_agents_antigravity(
         out.write_text(agents_md, encoding="utf-8", newline="\n")
         written.append(out)
 
+        # Native Antigravity plugins discover always-on rules here.
+        native_rule = output_dir / "rules" / "AGENTS.md"
+        native_rule.parent.mkdir(parents=True, exist_ok=True)
+        native_rule.write_text(agents_md, encoding="utf-8", newline="\n")
+        written.append(native_rule)
+
     # .agent/rules/<plugin>-rules.md
     rule = generate_plugin_rule(plugin_dir, plugin_name)
     if rule:

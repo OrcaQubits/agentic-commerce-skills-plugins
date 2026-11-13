@@ -9,7 +9,7 @@ Checks:
   5. Every SKILL.md has at least name + description in frontmatter.
   6. Antigravity .agent/ directories have expected structure.
   7. Codex .codex/agents/*.toml have correct fields and no Claude model leaks.
-  8. OpenClaw openclaw.plugin.json has required fields (id, configSchema) and no Claude model leaks.
+  8. OpenClaw bundles have a content marker and no shadowing native-code marker.
   9. Cursor .cursor-plugin/plugin.json has required fields, agents have model: inherit,
      rules/*.mdc have frontmatter, hooks use camelCase event names.
 """
@@ -288,6 +288,18 @@ def validate_antigravity(dist_dir: Path, result: ValidationResult) -> None:
         else:
             result.error(f"{plugin_dir.name}: missing package.json")
 
+        native = plugin_dir / "plugin.json"
+        if native.is_file():
+            native_data = validate_json_file(native, result)
+            if native_data and (plugin_dir / "skills").is_dir():
+                result.ok()
+            else:
+                result.error(f"{native}: missing native skills directory")
+        else:
+            result.error(f"{plugin_dir.name}: missing native Antigravity plugin.json")
+        if not (plugin_dir / "rules" / "AGENTS.md").is_file():
+            result.error(f"{plugin_dir.name}: missing native Antigravity rules/AGENTS.md")
+
         # AGENTS.md
         agents_md = plugin_dir / "AGENTS.md"
         if agents_md.is_file():
@@ -414,13 +426,13 @@ def validate_codex(dist_dir: Path, result: ValidationResult) -> None:
 
 
 def validate_openclaw_manifest(path: Path, result: ValidationResult) -> None:
-    """Validate an openclaw.plugin.json file."""
+    """Validate the Claude-format marker used by the OpenClaw bundle loader."""
     data = validate_json_file(path, result)
     if data is None:
         return
 
     # Required fields
-    required = {"id", "configSchema"}
+    required = {"name", "version", "description"}
     missing = required - set(data.keys())
     if missing:
         result.error(f"{path}: missing required fields: {missing}")
@@ -439,7 +451,7 @@ def validate_openclaw(dist_dir: Path, result: ValidationResult) -> None:
     """Validate the dist/openclaw/ tree.
 
     Expected OpenClaw layout per plugin:
-      openclaw.plugin.json              (plugin manifest)
+      .claude-plugin/plugin.json        (content-bundle marker)
       AGENTS.md                         (agent expertise as context)
       skills/<skill>/SKILL.md           (skills)
       scripts/*.py                      (standalone hook scripts)
@@ -460,12 +472,14 @@ def validate_openclaw(dist_dir: Path, result: ValidationResult) -> None:
         if not plugin_dir.is_dir():
             continue
 
-        # openclaw.plugin.json (required)
-        manifest = plugin_dir / "openclaw.plugin.json"
+        # Skill bundles must not be mistaken for native JavaScript plugins.
+        if (plugin_dir / "openclaw.plugin.json").exists():
+            result.error(f"{plugin_dir.name}: native marker shadows content-bundle detection")
+        manifest = plugin_dir / ".claude-plugin" / "plugin.json"
         if manifest.is_file():
             validate_openclaw_manifest(manifest, result)
         else:
-            result.error(f"{plugin_dir.name}: missing openclaw.plugin.json")
+            result.error(f"{plugin_dir.name}: missing .claude-plugin/plugin.json bundle marker")
 
         # AGENTS.md
         agents_md = plugin_dir / "AGENTS.md"

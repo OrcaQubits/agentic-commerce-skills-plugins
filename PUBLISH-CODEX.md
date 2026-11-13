@@ -2,11 +2,13 @@
 
 OpenAI Codex CLI shipped a first-class plugin marketplace system in **v0.128.0 (April 30, 2026)**. This repo is wired to be added as a Codex marketplace in one command.
 
+For current release-pinned installation commands, see [INSTALL-RELEASE.md](INSTALL-RELEASE.md#codex).
+
 ## What Codex's marketplace model looks like
 
 Per https://developers.openai.com/codex/plugins/build:
 
-- **No centralized OpenAI-hosted directory.** Anyone can publish.
+- **Repository marketplaces are separate from the curated public directory.** Publishing this Git repository makes it available through its own marketplace; public listing is a separate submission.
 - **A "marketplace" is a Git repo** containing `.agents/plugins/marketplace.json` at its root.
 - **Users register a marketplace** with `codex plugin marketplace add owner/repo`.
 - **Plugins are bundles** with `.codex-plugin/plugin.json` + `skills/` + `agents/` + `hooks/`.
@@ -20,7 +22,7 @@ This is structurally similar to Claude Code's marketplace model — which is int
 agentic-commerce-skills-plugins/
 ├── .agents/
 │   └── plugins/
-│       └── marketplace.json         # Codex marketplace manifest — 16 plugins enumerated
+│       └── marketplace.json         # Codex marketplace manifest — 18 plugins enumerated
 ├── dist/codex/<plugin>/
 │   ├── .codex-plugin/
 │   │   └── plugin.json              # Per-plugin manifest (name, version, interface, hooks)
@@ -51,7 +53,7 @@ codex
 /plugins
 ```
 
-The TUI surfaces all 16 plugins. Pick one to install — Codex caches it under `~/.codex/plugins/cache/agentic-commerce/<plugin-name>/<version>/` and activates its skills, subagents, and hooks.
+The TUI surfaces all 18 plugins. Pick one to install — Codex caches it under `~/.codex/plugins/cache/agentic-commerce/<plugin-name>/<version>/` and activates its skills, subagents, and hooks.
 
 ### Optional flags
 
