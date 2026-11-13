@@ -1,6 +1,6 @@
 {
   "name": "ucp-agentic-commerce",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Universal Commerce Protocol (UCP) expert for building agentic commerce implementations. Covers the full protocol — discovery, checkout, orders, payments, fulfillment, discounts, identity linking, AP2 mandates — across REST, MCP, A2A, and Embedded bindings. Part of a multi-plugin monorepo (ACP, AP2, A2A, WebMCP, NLWeb, Stripe MPP, Magento, Shopify, Saleor, Medusa, BigCommerce, WooCommerce, Salesforce Commerce, Spree) — install other plugins via path; see repo README.",
   "contextFileName": "GEMINI.md",
   "author": {

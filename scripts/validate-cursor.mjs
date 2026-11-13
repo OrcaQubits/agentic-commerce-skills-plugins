@@ -16,6 +16,7 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { fetchCursorSchema } from "./fetch-cursor-schema.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..");
@@ -33,22 +34,9 @@ try {
   process.exit(1);
 }
 
-const PLUGIN_SCHEMA_URL =
-  "https://raw.githubusercontent.com/cursor/plugins/main/schemas/plugin.schema.json";
-const MARKETPLACE_SCHEMA_URL =
-  "https://raw.githubusercontent.com/cursor/plugins/main/schemas/marketplace.schema.json";
-
-async function fetchSchema(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch ${url}: ${res.status}`);
-  }
-  return res.json();
-}
-
 console.log("Fetching official Cursor schemas...");
-const pluginSchema = await fetchSchema(PLUGIN_SCHEMA_URL);
-const marketplaceSchema = await fetchSchema(MARKETPLACE_SCHEMA_URL);
+const pluginSchema = await fetchCursorSchema("plugin.schema.json");
+const marketplaceSchema = await fetchCursorSchema("marketplace.schema.json");
 
 const ajv = new Ajv({ strict: false, allErrors: true });
 addFormats(ajv);

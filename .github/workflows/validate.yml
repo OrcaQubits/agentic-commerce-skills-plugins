@@ -23,6 +23,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   manifests:
     runs-on: ubuntu-latest
@@ -44,9 +47,16 @@ jobs:
       - name: Generated dist output (all platforms)
         run: python scripts/validate.py
 
+      - name: Live schema fetch regressions (offline)
+        run: node --test scripts/test-fetch-cursor-schema.mjs
+
+      - name: Cursor schema validator dependencies
+        run: npm install --no-save ajv ajv-formats
+
       - name: Cursor official schemas (live)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          npm install --no-save ajv ajv-formats
           node scripts/validate-cursor.mjs
 
       - name: Readiness plugin unit tests
