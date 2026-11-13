@@ -18,7 +18,7 @@ openclaw plugins install ./x402-agentic-payments
 openclaw plugins install ./trusted-agent-protocol
 ```
 
-Confirm both plugins and all 13 skills are visible. Keep their `scripts/`, `audit/`, and `evals/` directories intact. Advisory Python scripts are standalone utilities; the bundle does not provide OpenClaw-native hook enforcement.
+Review and accept OpenClaw's local-source trust prompt. Non-interactive installs require `--force` to acknowledge trust after reviewing the bundle; CI uses this only for this repository's known bundles in temporary profiles. Confirm both plugins and all 13 skills are visible. Keep their `scripts/`, `audit/`, and `evals/` directories intact. Advisory Python scripts are standalone utilities; the bundle does not provide OpenClaw-native hook enforcement.
 
 ## Registry discovery
 
