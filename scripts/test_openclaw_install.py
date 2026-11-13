@@ -30,7 +30,8 @@ def main():
         for plugin in PLUGINS:
             # Explicitly trust these reviewed repository bundles in the isolated
             # CI profile; the native CLI otherwise cancels non-interactive installs.
-            print(run("plugins", "install", str((args.bundle_root / plugin).resolve()), "--force"), flush=True)
+            print(run("plugins", "install", str((args.bundle_root / plugin).resolve()),
+                      "--force", "--accept-capabilities"), flush=True)
         installed = json.loads(run("plugins", "list", "--json"))
         entries = installed["plugins"] if isinstance(installed, dict) else installed
         for plugin in PLUGINS:

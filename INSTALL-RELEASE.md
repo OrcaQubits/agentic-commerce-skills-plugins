@@ -86,7 +86,7 @@ openclaw plugins list
 openclaw skills list
 ```
 
-Review and accept the local-source trust prompt. In a non-interactive environment, append `--force` only after reviewing the bundle to explicitly acknowledge that trust. These are content bundles detected through `.claude-plugin/plugin.json`. They contain no native JavaScript plugin entry point. Their Python advisory scripts are available as utilities; no automatic hook enforcement is claimed.
+Review and accept the local-source trust and capability-consent prompts. In a non-interactive environment, append `--force --accept-capabilities` only after reviewing the bundle to explicitly acknowledge both. These are content bundles detected through `.claude-plugin/plugin.json`. They contain no native JavaScript plugin entry point. Their Python advisory scripts are available as utilities; no automatic hook enforcement is claimed.
 
 For an unchanged v1.1.0 checkout, use its Claude-format source bundles instead:
 
