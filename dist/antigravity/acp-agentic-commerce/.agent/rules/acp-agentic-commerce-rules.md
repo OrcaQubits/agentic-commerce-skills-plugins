@@ -221,4 +221,3 @@ When asked to implement ACP features:
 6. **Add `API-Version` header** — ensure the version header matches the spec version you coded against
 7. **Add idempotency** — every POST must include `Idempotency-Key`
 8. **Cite sources** — add comments referencing which spec version and RFC the code was written against
-

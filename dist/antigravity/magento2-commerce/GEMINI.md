@@ -182,4 +182,3 @@ When asked to implement Magento features:
 4. **Write code** following Magento conventions — proper directory structure, XML configs, PHP interfaces
 5. **Follow coding standards** — PSR-12, Magento Coding Standard, strict typing
 6. **Cite sources** — add comments referencing which docs/core modules the code was modeled after
-

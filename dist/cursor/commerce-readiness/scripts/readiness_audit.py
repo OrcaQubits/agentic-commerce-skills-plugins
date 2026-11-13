@@ -70,11 +70,14 @@ def score_module(result, blocked=False):
     else:
         status = "fail"
     priority = result["impact"] * (6 - result["complexity"])
-    return {"id": result["id"], "module": result["module"],
+    scored_result = {"id": result["id"], "module": result["module"],
             "status": status, "points": got, "weight_total": total,
             "impact": result["impact"], "complexity": result["complexity"],
             "priority": priority, "checks": result["checks"],
             "skipped_deep": any(c["weight"] == 0 for c in result["checks"])}
+    if "payment_challenges" in result:
+        scored_result["payment_challenges"] = result["payment_challenges"]
+    return scored_result
 
 
 def gaps_of(mod):

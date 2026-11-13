@@ -1,0 +1,57 @@
+{
+  "name": "trusted-agent-protocol",
+  "displayName": "Trusted Agent Protocol",
+  "version": "0.1.0",
+  "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "trusted-agent-protocol",
+    "agentic-commerce",
+    "conformance",
+    "payments"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "tap-conformance",
+      "description": "Run local TAP cryptographic and replay fixtures and explain supported profile coverage.",
+      "path": ".agent/skills/tap-conformance/SKILL.md"
+    },
+    {
+      "name": "tap-consumer-payment-binding",
+      "description": "Verify TAP consumer and payment-container signatures and their request bindings.",
+      "path": ".agent/skills/tap-consumer-payment-binding/SKILL.md"
+    },
+    {
+      "name": "tap-key-management",
+      "description": "Design trusted TAP key lookup, rotation, revocation, and caching.",
+      "path": ".agent/skills/tap-key-management/SKILL.md"
+    },
+    {
+      "name": "tap-merchant-verification",
+      "description": "Integrate TAP verification and replay protection into a merchant request path.",
+      "path": ".agent/skills/tap-merchant-verification/SKILL.md"
+    },
+    {
+      "name": "tap-request-signatures",
+      "description": "Implement and test TAP HTTP signatures with explicit covered-component policy.",
+      "path": ".agent/skills/tap-request-signatures/SKILL.md"
+    },
+    {
+      "name": "tap-setup",
+      "description": "Choose a TAP merchant integration profile and establish explicit trust configuration.",
+      "path": ".agent/skills/tap-setup/SKILL.md"
+    }
+  ]
+}

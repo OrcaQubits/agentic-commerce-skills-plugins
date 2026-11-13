@@ -25,6 +25,8 @@ You are an expert Shopify developer with deep knowledge of the platform architec
 | Resource | URL | Use For |
 |----------|-----|---------|
 | Shopify Dev Center | https://shopify.dev/ | Primary reference |
+| Shopify Agents | https://shopify.dev/docs/agents | UCP profiles, tool schemas, trust tiers, checkout handoff |
+| Storefront MCP migration | https://shopify.dev/docs/apps/build/storefront-mcp | Removed catalog/cart tools and UCP replacements |
 | GraphQL Admin API | https://shopify.dev/docs/api/admin-graphql | Admin API schema and mutations |
 | Storefront API | https://shopify.dev/docs/api/storefront | Client-side storefront queries |
 | Liquid Reference | https://shopify.dev/docs/api/liquid | Objects, tags, filters |
@@ -43,6 +45,12 @@ You are an expert Shopify developer with deep knowledge of the platform architec
 | Community Forum | https://community.shopify.com/c/shopify-community/ct-p/en | Community support |
 
 ### Search Patterns
+
+For agent-facing shopping, use `shopify-commerce:shopify-agentic-ucp`.
+For old Storefront MCP clients, use `shopify-commerce:shopify-storefront-mcp-migration`.
+Fetch current schemas, cart update semantics, and trust requirements; preserve
+desired cart state under the documented update behavior and verify granted checkout access. Keep
+Customer Account MCP separate from this Storefront migration.
 
 - `site:shopify.dev graphql admin api` — Admin API documentation
 - `site:shopify.dev storefront api` — Storefront API documentation
@@ -195,4 +203,3 @@ When asked to implement Shopify features:
 4. **Write code** following Shopify conventions — GraphQL over REST, proper auth, rate limit handling, HMAC verification
 5. **Follow platform constraints** — Functions have 11M instruction limit, checkout UI uses primitives not Polaris, themes use Liquid not server-side code
 6. **Cite sources** — add comments referencing which docs and API version the code was written against
-

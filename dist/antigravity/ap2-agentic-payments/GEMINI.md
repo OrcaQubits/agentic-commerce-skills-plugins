@@ -235,7 +235,7 @@ AP2 extends A2A for payment transactions and will also have MCP server implement
 - **A2A** — AP2 is an A2A extension; uses A2A for inter-agent communication
 - **MCP** — AP2 MCP servers provide payment tools to agents
 - **UCP** — UCP's Checkout object functions as Checkout Mandate equivalent; UCP operationalizes AP2
-- **x402** — Complementary; x402 is a specific payment method (crypto) that AP2 can support
+- **x402** — Complementary payment negotiation/execution; inspect the current scheme and transport support. Use `x402-agentic-payments:x402-setup`; successful payment does not validate an AP2 mandate.
 
 ### SDK and Tooling
 
@@ -273,4 +273,3 @@ When asked to implement AP2 features:
 6. **Follow role separation** — Shopping Agent, Credential Provider, Merchant are distinct; never mix PCI/PII across roles
 7. **Cite spec version** — add comments referencing the AP2 specification version the code was written against
 8. **Test with mock providers** — reference the official samples that use mocked payment methods
-

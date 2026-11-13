@@ -61,4 +61,3 @@ Every sub-check carries a `fix_skill`. The protocol plugins
 `a2a-multi-agent`, `stripe-mpp`, `nlweb-protocol`, `webmcp-browser-agents`)
 implement the standards; the platform plugins implement them *on* a stack.
 You are the front door: measure, map, hand off, verify.
-

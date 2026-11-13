@@ -175,4 +175,3 @@ When asked to implement WooCommerce features:
 5. **Follow coding standards** — WordPress Coding Standards (WPCS), escaping all output, sanitizing all input, using nonces for form submissions
 6. **Ensure HPOS compatibility** — use CRUD methods, declare `custom_order_tables` support
 7. **Cite sources** — add comments referencing which docs/core files the code was modeled after
-

@@ -80,7 +80,7 @@ def generate_plugin_agents_md(plugin_dir: Path, plugin_name: str) -> str:
         sections.append(body.strip())
         sections.append("")
 
-    return "\n".join(sections) + "\n"
+    return "\n".join(sections).rstrip() + "\n"
 
 
 def generate_plugin_rule(plugin_dir: Path, plugin_name: str) -> str:
@@ -98,7 +98,7 @@ def generate_plugin_rule(plugin_dir: Path, plugin_name: str) -> str:
         sections.append(body.strip())
         sections.append("")
 
-    return "\n".join(sections) + "\n"
+    return "\n".join(sections).rstrip() + "\n"
 
 
 def convert_agents_antigravity(

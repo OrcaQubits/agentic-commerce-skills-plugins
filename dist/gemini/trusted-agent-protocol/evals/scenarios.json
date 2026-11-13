@@ -1,0 +1,66 @@
+{
+  "status": "runtime-smoke-tested",
+  "scenarios": [
+    {
+      "skill": "tap-setup",
+      "prompt": "A merchant wants to accept TAP agents but has no provider enrollment or production keys. Set up an honest local development path.",
+      "expected": [
+        "Profile decision, trust configuration, local proof of behavior, and production prerequisites.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "tap-request-signatures",
+      "prompt": "A valid authority/path signature is replayed with a different method. Explain the coverage gap and implement merchant-strict verification.",
+      "expected": [
+        "Profile-specific verification code, signed-field inventory, and tamper tests.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "tap-merchant-verification",
+      "prompt": "Six workers receive the same signed request concurrently. Ensure exactly one replay check succeeds.",
+      "expected": [
+        "Middleware integration, replay store semantics, failure behavior, and concurrency tests.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "tap-key-management",
+      "prompt": "A request supplies an HTTPS keyid pointing to an internal address. Reject network lookup and resolve only through configured trust.",
+      "expected": [
+        "Key lifecycle design, sanitized trust configuration, and rotation/outage tests.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "tap-consumer-payment-binding",
+      "prompt": "A payment container has a valid signature but belongs to a different request nonce. Reject its use for this checkout.",
+      "expected": [
+        "Provider-specific serialization decision, independent signature/binding checks, and substitution tests.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "tap-conformance",
+      "prompt": "Run the bundled TAP fixture and state whether it proves Visa approval or permission to charge a consumer.",
+      "expected": [
+        "Actual positive/negative results, replay behavior, and a precise coverage statement.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    }
+  ],
+  "agent": {
+    "name": "tap-expert",
+    "prompt": "Choose the appropriate skill for a failing integration and explain the evidence needed before claiming it works."
+  },
+  "evaluated_at": "2026-11-13",
+  "runtime": "Claude Code 2.1.280",
+  "evaluation_mode": "Read-only skill and expert invocation with official-reference fetching. Executable fixtures run separately; no live merchant or payment test."
+}

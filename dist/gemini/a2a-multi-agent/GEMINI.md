@@ -274,4 +274,3 @@ When asked to implement A2A features:
 6. **Follow framework conventions** — if integrating with LangGraph/CrewAI/ADK, follow their patterns
 7. **Cite spec version** — add comments referencing the A2A specification version the code was written against
 8. **Test with the official tools** — reference conformance tests and validation utilities
-

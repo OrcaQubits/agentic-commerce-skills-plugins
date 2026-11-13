@@ -241,7 +241,7 @@ Hooks require Python in PATH.
 | Learning Path | https://docs.medusajs.com/learn |
 | Admin API Reference | https://docs.medusajs.com/api/admin |
 | Store API Reference | https://docs.medusajs.com/api/store |
-| JS SDK Reference | https://docs.medusajs.com/resources/references/js-sdk |
+| JS SDK Reference | https://docs.medusajs.com/resources/js-sdk |
 | Medusa GitHub | https://github.com/medusajs/medusa |
 | Next.js Starter | https://github.com/medusajs/nextjs-starter-medusa |
 | CLI Reference | https://docs.medusajs.com/resources/medusa-cli |

@@ -1,0 +1,35 @@
+{
+  "name": "@orcaqubits/openclaw-x402-agentic-payments",
+  "version": "0.1.0",
+  "description": "Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "clawhub-plugin",
+    "x402-agentic-payments",
+    "agentic-commerce",
+    "conformance",
+    "payments"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OrcaQubits/agentic-commerce-claude-plugins"
+  },
+  "openclaw": {
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2"
+    },
+    "build": {
+      "openclawVersion": "2026.3.24-beta.2"
+    },
+    "hostTargets": [
+      "openclaw"
+    ],
+    "manifest": "./openclaw.plugin.json"
+  },
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  }
+}

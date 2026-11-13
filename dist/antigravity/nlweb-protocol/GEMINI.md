@@ -228,4 +228,3 @@ When helping the user implement NLWeb:
 7. **Resolve the MCP protocol revision** from the live spec and the installed build — never carry one forward from memory or an older example.
 8. **Cite the release date** you coded against in comments.
 9. **Never hardcode** a config key, JSON-RPC method, or CLI flag without confirming it in the live repo.
-

@@ -2,7 +2,7 @@
   "name": "agentic-commerce",
   "interface": {
     "displayName": "Agentic Commerce Skills & Plugins",
-    "description": "Expert agents, skills, and plugin bundles for the agentic commerce ecosystem: UCP, ACP, AP2, A2A, Stripe MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, Spree"
+    "description": "Expert agents, skills, and plugin bundles for the agentic commerce ecosystem: UCP, ACP, AP2, A2A, Stripe MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, Spree, x402, Trusted Agent Protocol"
   },
   "plugins": [
     {
@@ -188,6 +188,19 @@
       }
     },
     {
+      "name": "commerce-readiness",
+      "description": "Agentic Commerce Readiness Audit — executable stdlib-Python probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data (Product/ProductGroup JSON-LD), checkout transactability (ACP/UCP REST, MCP tools/list, NLWeb /ask), payment surfaces (handlers, delegate_payment, AP2, HTTP 402), and trust (OAuth, signing keys, TLS), mapping every gap to the marketplace skill that closes it",
+      "category": "Agentic Commerce",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "source": {
+        "source": "local",
+        "path": "./dist/codex/commerce-readiness"
+      }
+    },
+    {
       "name": "spree-commerce",
       "source": {
         "source": "local",
@@ -198,6 +211,32 @@
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
+      }
+    },
+    {
+      "name": "x402-agentic-payments",
+      "description": "Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration.",
+      "category": "Agentic Commerce",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "source": {
+        "source": "local",
+        "path": "./dist/codex/x402-agentic-payments"
+      }
+    },
+    {
+      "name": "trusted-agent-protocol",
+      "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
+      "category": "Agentic Commerce",
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "source": {
+        "source": "local",
+        "path": "./dist/codex/trusted-agent-protocol"
       }
     }
   ]

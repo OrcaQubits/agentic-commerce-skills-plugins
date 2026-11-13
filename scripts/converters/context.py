@@ -29,7 +29,7 @@ def generate_gemini_md(plugin_dir: Path, plugin_name: str, description: str) -> 
             sections.append(body.strip())
             sections.append("")
 
-    return "\n".join(sections) + "\n"
+    return "\n".join(sections).rstrip() + "\n"
 
 
 def generate_root_agents_md(
@@ -73,4 +73,4 @@ def generate_root_agents_md(
         f"and the skills in `{skills_dir}`.\n"
     )
 
-    return "\n".join(lines) + "\n"
+    return "\n".join(lines).rstrip() + "\n"

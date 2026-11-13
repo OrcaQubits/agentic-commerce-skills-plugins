@@ -4,7 +4,7 @@
     "name": "Rohit Bajaj, Julekha Khatun"
   },
   "metadata": {
-    "description": "Agentic commerce skills/plugins for Cursor: UCP, ACP, A2A, AP2, Stripe MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, Spree",
+    "description": "Agentic commerce skills/plugins for Cursor: UCP, ACP, A2A, AP2, Stripe MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, Spree, x402, Trusted Agent Protocol",
     "version": "1.0.0"
   },
   "plugins": [
@@ -79,9 +79,24 @@
       "description": "NLWeb (Natural Language Web) â€” Microsoft's open framework (R.V. Guha) for making any site agent-accessible via Schema.org + MCP, with /ask + /mcp endpoints, mixed-mode programming, pluggable LLM and retrieval providers (Azure AI Search, Qdrant, Snowflake Cortex, Cloudflare AutoRAG, etc.), and ChatGPT Apps SDK integration"
     },
     {
+      "name": "commerce-readiness",
+      "description": "Agentic Commerce Readiness Audit — executable stdlib-Python probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data (Product/ProductGroup JSON-LD), checkout transactability (ACP/UCP REST, MCP tools/list, NLWeb /ask), payment surfaces (handlers, delegate_payment, AP2, HTTP 402), and trust (OAuth, signing keys, TLS), mapping every gap to the marketplace skill that closes it",
+      "source": "dist/cursor/commerce-readiness"
+    },
+    {
       "name": "spree-commerce",
       "source": "dist/cursor/spree-commerce",
       "description": "Spree Commerce â€” open-source Rails e-commerce platform (BSD-3, since 2007, v5+) with consolidated `spree` umbrella gem, Tailwind/Hotwire Admin Dashboard, API v3 (flat JSON + OpenAPI 3.0) + legacy API v2, the @spree/sdk TypeScript SDK, Order/Payment/Shipment state machines, prepend-based decorators, Spree::Events bus + Webhooks 2.0, Promotions engine, Payment Sessions (Stripe/Adyen/PayPal), Multi-store + Markets + Marketplace, Next.js headless storefront, RSpec + spree_dev_tools, and PostgreSQL/Redis/Sidekiq/Docker deployment"
+    },
+    {
+      "name": "x402-agentic-payments",
+      "description": "Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration.",
+      "source": "dist/cursor/x402-agentic-payments"
+    },
+    {
+      "name": "trusted-agent-protocol",
+      "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
+      "source": "dist/cursor/trusted-agent-protocol"
     }
   ]
 }

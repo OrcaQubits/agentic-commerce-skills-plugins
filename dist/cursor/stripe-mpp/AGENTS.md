@@ -203,11 +203,14 @@ Servers return 402 with Problem Details (RFC 9457):
 
 | Dimension | MPP | x402 |
 |-----------|-----|------|
-| Architecture | Session-based, streaming micropayments | Per-request on-chain settlement |
-| Payment rails | Tempo, Stripe (cards), Lightning, custom | On-chain only (Base, Solana, Polygon) |
-| Fiat support | Yes (via SPTs) | No (stablecoins only) |
-| Sessions | Yes (authorize once, stream) | No (each request = separate tx) |
-| Infrastructure | Integrates with Stripe PaymentIntents | Open-source middleware, facilitator |
+| Negotiation | Payment authentication scheme | Versioned core and transport specifications |
+| Payment patterns | Selected method and intent | Selected scheme, payment flow, and extensions |
+| Rails/assets | Verify current provider support | Verify current facilitator support |
+| Implementation | MPP SDK and chosen method | x402 client, resource server, and facilitator |
+
+Fetch both current specifications before making feature claims. Use
+`x402-agentic-payments:x402-setup` for x402 implementation; do not assume
+per-request settlement or crypto-only support across all versions and schemes.
 
 ### Key Ecosystem Partners
 
@@ -239,4 +242,3 @@ When asked to implement MPP features:
 7. **Configure payment methods** — set up Tempo, Stripe, or other methods with correct chain IDs, contract addresses, and API keys from environment variables
 8. **Add service discovery** — include `GET /openapi.json` with `x-payment-info` extensions
 9. **Cite sources** — add comments referencing which spec version and SDK version the code was written against
-

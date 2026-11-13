@@ -1,0 +1,62 @@
+{
+  "name": "x402-agentic-payments",
+  "displayName": "X402 Agentic Payments",
+  "version": "0.1.0",
+  "description": "Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration.",
+  "publisher": "orcaqubits-ai",
+  "author": {
+    "name": "Rohit Bajaj, Julekha Khatun",
+    "url": "https://orcaqubits-ai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgenticCommerce/agentic-commerce-claude-plugins"
+  },
+  "keywords": [
+    "x402-agentic-payments",
+    "agentic-commerce",
+    "conformance",
+    "payments"
+  ],
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "skills": [
+    {
+      "name": "x402-conformance",
+      "description": "Run x402 wire, MCP, policy, and mocked SDK interoperability fixtures.",
+      "path": ".agent/skills/x402-conformance/SKILL.md"
+    },
+    {
+      "name": "x402-facilitators",
+      "description": "Integrate facilitator capabilities, verification, settlement, and reconciliation.",
+      "path": ".agent/skills/x402-facilitators/SKILL.md"
+    },
+    {
+      "name": "x402-http-payments",
+      "description": "Implement x402 HTTP payment challenges and paid-resource handling.",
+      "path": ".agent/skills/x402-http-payments/SKILL.md"
+    },
+    {
+      "name": "x402-mcp-integration",
+      "description": "Add x402 payment negotiation to MCP tools using the current MCP transport.",
+      "path": ".agent/skills/x402-mcp-integration/SKILL.md"
+    },
+    {
+      "name": "x402-migration",
+      "description": "Migrate legacy x402 v1 integrations to the supported v2 core and transports.",
+      "path": ".agent/skills/x402-migration/SKILL.md"
+    },
+    {
+      "name": "x402-setup",
+      "description": "Set up an x402 client, resource server, or facilitator integration.",
+      "path": ".agent/skills/x402-setup/SKILL.md"
+    },
+    {
+      "name": "x402-spend-policy",
+      "description": "Enforce explicit payment limits before constructing an x402 payment payload.",
+      "path": ".agent/skills/x402-spend-policy/SKILL.md"
+    }
+  ]
+}

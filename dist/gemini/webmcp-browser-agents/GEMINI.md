@@ -221,4 +221,3 @@ When asked to implement WebMCP features:
 8. **Add user interaction** — use `requestUserInteraction()` for sensitive actions
 9. **Test with agents** — verify tool discovery and invocation with AI agents (Gemini, Claude, etc.)
 10. **Cite spec version** — add comments referencing the WebMCP specification version the code was written against
-

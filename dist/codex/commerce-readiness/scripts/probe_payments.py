@@ -7,7 +7,7 @@ the payment surfaces the agentic payment stack defines:
 
   Payment handlers  declared in the UCP profile
   ACP               delegate_payment surface
-  MPP               HTTP 402 challenge with a Payment authentication scheme
+  MPP / x402        HTTP 402 with a structurally valid protocol challenge
   AP2               mandate support signalled in UCP profile extensions
 
 Default mode is GET/OPTIONS-only; `--deep` sends the discovery-shaped
@@ -24,6 +24,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
 from lib.probe import (fetch, get_json, check, evidence, run_cli,
                        catchall_baseline, distinct_surface)
+from lib.payment_challenges import classify_response
 
 
 def probe(origin, host, deep=False):
@@ -85,21 +86,26 @@ def probe(origin, host, deep=False):
         fix_skill="acp-agentic-commerce:acp-delegated-payment",
     ))
 
-    # --- MPP: an HTTP 402 challenge anywhere ------------------------------
-    # Look for a paid API surface that answers 402 with a Payment challenge.
-    mpp_ok, mpp_ev = False, []
+    # Observe only a bounded set of likely endpoints; never submit payment.
+    payment_ok, payment_ev, protocols, observed = False, [], set(), []
     for path in ("/api/paid", "/api/premium", "/paid", "/x402", "/api"):
         r = fetch(origin + path)
-        if r["status"] == 402:
-            www = r["headers"].get("www-authenticate", "")
-            mpp_ok = "payment" in www.lower() or bool(r["body"].strip())
-            mpp_ev.append("{} → 402 www-authenticate={!r}".format(path, www[:80]))
-            break
-        mpp_ev.append("{} {}".format(path, r["status"]))
+        classifications = classify_response(r["status"], r["headers"], r["body"])
+        for item in classifications:
+            observed.append(dict(item, path=path))
+            if item["status"] == "valid":
+                payment_ok = True
+            if item["protocol"] in ("mpp", "x402"):
+                protocols.add(item["protocol"])
+        payment_ev.append("{} {} {}".format(path, r["status"], ", ".join(
+            "{} {} ({})".format(i["protocol"], i["status"], i["detail"]) for i in classifications)))
+    fix = {"x402": "x402-agentic-payments:x402-http-payments",
+           "mpp": "stripe-mpp:mpp-server-middleware"}
     checks.append(check(
-        "HTTP 402 payment challenge surface (MPP)",
-        mpp_ok, 1, "; ".join(mpp_ev),
-        fix_skill="stripe-mpp:mpp-server-middleware",
+        "HTTP 402 payment challenge surface (MPP or x402)",
+        payment_ok, 1, "; ".join(payment_ev) + "; sampled paths only; payment execution unverified",
+        fix_skill=fix[next(iter(protocols))] if len(protocols) == 1 else
+                  "commerce-readiness:readiness-fix-plan",
     ))
 
     return {
@@ -108,6 +114,7 @@ def probe(origin, host, deep=False):
         "na_condition": "site does not transact (R4 fully N/A)",
         "deep": deep,
         "checks": checks,
+        "payment_challenges": observed,
     }
 
 

@@ -10,7 +10,7 @@ allowed-tools: Read, Write, Edit, Bash, Grep, Glob, WebSearch, WebFetch
 
 **Fetch live docs**:
 1. Web-search `site:docs.medusajs.com storefront nextjs` for Medusa storefront guides
-2. Fetch `https://docs.medusajs.com/resources/references/js-sdk` for JS SDK method reference
+2. Fetch `https://docs.medusajs.com/resources/js-sdk` for JS SDK method reference
 3. Web-search `site:nextjs.org docs app router` for latest Next.js 15 App Router conventions
 4. Web-search `site:docs.medusajs.com nextjs starter storefront` for starter template patterns
 5. Web-search `site:docs.medusajs.com publishable api key storefront` for API authentication setup

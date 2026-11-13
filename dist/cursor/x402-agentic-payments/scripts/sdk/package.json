@@ -1,0 +1,12 @@
+{
+  "name": "x402-plugin-offline-fixture",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "node fixture.mjs"},
+  "dependencies": {
+    "@x402/core": "2.31.0",
+    "@x402/evm": "2.31.0",
+    "viem": "2.57.19"
+  }
+}

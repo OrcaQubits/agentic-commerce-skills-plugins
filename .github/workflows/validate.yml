@@ -52,6 +52,21 @@ jobs:
       - name: Readiness plugin unit tests
         run: python commerce-readiness/scripts/test_scoring.py
 
+      - name: Payment challenge and inventory regressions
+        run: |
+          python scripts/validate_inventory.py
+          python commerce-readiness/scripts/test_payments.py
+          python x402-agentic-payments/scripts/test_conformance.py
+
+      - name: Pinned TAP verifier and installed bundle fixtures
+        run: |
+          python -m pip install -r trusted-agent-protocol/scripts/requirements-verifier.txt
+          python trusted-agent-protocol/scripts/test_conformance.py
+          python scripts/test_plugin_bundles.py
+
+      - name: Pinned x402 SDK fixture (mocked facilitator, no funds)
+        run: python x402-agentic-payments/scripts/run_sdk_fixture.py
+
       - name: Readiness MCP server integration tests (offline)
         run: python commerce-readiness/scripts/test_mcp_server.py
 
@@ -64,3 +79,22 @@ jobs:
             exit 1
           fi
           echo "dist/ matches a fresh conversion"
+
+  windows-resources:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Windows resource paths, crypto, replay, and advisory hooks
+        run: |
+          python -m pip install -r trusted-agent-protocol/scripts/requirements-verifier.txt
+          python commerce-readiness/scripts/test_payments.py
+          python scripts/test_plugin_bundles.py
+      - name: Git Bash hook interpreter fallback
+        shell: bash
+        run: |
+          export CLAUDE_PLUGIN_ROOT="$GITHUB_WORKSPACE/x402-agentic-payments"
+          printf '{}' | (python3 "$CLAUDE_PLUGIN_ROOT/hooks/scripts/check_secrets.py" || python "$CLAUDE_PLUGIN_ROOT/hooks/scripts/check_secrets.py")

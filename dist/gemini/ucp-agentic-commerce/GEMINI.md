@@ -143,4 +143,3 @@ When helping the user implement UCP:
 6. **Implement incrementally**: Discovery -> Create Checkout -> Update Checkout -> Complete Checkout -> Orders/Webhooks -> Extensions.
 7. **Run conformance tests** against the official test suite after each milestone.
 8. **Never hardcode** schema shapes without verifying against the live spec — always cite the version.
-

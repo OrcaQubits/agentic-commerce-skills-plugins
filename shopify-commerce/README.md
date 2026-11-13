@@ -24,6 +24,8 @@ shopify-commerce/
 │       ├── check_shopify_commands.py              # PreToolUse: block destructive Shopify CLI commands
 │       └── check_secrets.py                       # PostToolUse: detect hardcoded secrets
 ├── skills/
+│   ├── shopify-agentic-ucp/SKILL.md               # Agent profiles, UCP tools, checkout handoff
+│   ├── shopify-storefront-mcp-migration/SKILL.md  # Removed Storefront MCP to UCP migration
 │   ├── shopify-setup/SKILL.md                     # Environment setup, Shopify CLI, dev stores
 │   ├── shopify-app-dev/SKILL.md                   # App development, Remix template, App Bridge
 │   ├── shopify-api-graphql/SKILL.md               # GraphQL Admin + Storefront APIs
@@ -117,11 +119,13 @@ The subagent has `WebSearch` and `WebFetch` in its tool list. Before writing imp
 
 ## Available Skills
 
-### Shopify Skills (18)
+### Shopify Skills (20)
 
 | Skill | Command | Invocation | Description |
 |---|---|---|---|
 | **shopify-setup** | `/shopify-commerce:shopify-setup` | Manual | Shopify CLI, Partner account, dev stores, project structures |
+| **shopify-agentic-ucp** | auto | Auto + manual | Agent profiles, live UCP schemas, catalog/cart, checkout handoff |
+| **shopify-storefront-mcp-migration** | auto | Auto + manual | Storefront MCP to UCP migration and full-cart replacement semantics |
 | **shopify-app-dev** | auto | Auto + manual | Remix template, App Bridge, session tokens, OAuth, extensions |
 | **shopify-api-graphql** | auto | Auto + manual | Admin + Storefront APIs, versioning, rate limits, bulk ops |
 | **shopify-api-rest** | auto | Auto + manual | REST API (deprecated) — migration guide, endpoint mappings |

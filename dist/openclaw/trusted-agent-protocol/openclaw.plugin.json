@@ -1,0 +1,19 @@
+{
+  "id": "trusted-agent-protocol",
+  "name": "Trusted Agent Protocol",
+  "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
+  "version": "0.1.0",
+  "skills": [
+    "skills/tap-conformance",
+    "skills/tap-consumer-payment-binding",
+    "skills/tap-key-management",
+    "skills/tap-merchant-verification",
+    "skills/tap-request-signatures",
+    "skills/tap-setup"
+  ],
+  "configSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,12 @@
+# Pinned offline-verifier environment, resolved 2026-11-13 on Python 3.11.
+http-message-signatures==3.0.0
+cryptography==50.0.2
+requests==2.34.2
+http-sf==1.5.0
+cffi==2.1.1
+pycparser==3.12
+typing_extensions==4.16.0
+charset-normalizer==3.5.2
+idna==3.20
+urllib3==2.8.0
+certifi==2026.10.23

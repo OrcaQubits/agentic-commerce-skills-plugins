@@ -5,7 +5,7 @@
     "url": "https://orcaqubits-ai.com"
   },
   "metadata": {
-    "description": "Agentic Commerce Claude Code Plugins — Commerce Readiness audit plus UCP, ACP, A2A, AP2, MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, and Spree",
+    "description": "Agentic Commerce Claude Code Plugins — Commerce Readiness audit plus UCP, ACP, A2A, AP2, MPP, WebMCP, NLWeb, Magento 2, BigCommerce, Shopify, WooCommerce, Salesforce Commerce, Medusa, Saleor, and Spree, x402, and Trusted Agent Protocol",
     "version": "1.0.0"
   },
   "plugins": [
@@ -168,6 +168,26 @@
         "name": "Rohit Bajaj, Julekha Khatun",
         "url": "https://orcaqubits-ai.com"
       }
+    },
+    {
+      "name": "x402-agentic-payments",
+      "description": "Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      },
+      "source": "./x402-agentic-payments"
+    },
+    {
+      "name": "trusted-agent-protocol",
+      "description": "Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Rohit Bajaj, Julekha Khatun",
+        "url": "https://orcaqubits-ai.com"
+      },
+      "source": "./trusted-agent-protocol"
     }
   ]
 }

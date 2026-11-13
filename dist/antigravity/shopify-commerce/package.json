@@ -45,6 +45,11 @@
       "path": ".agent/skills/react-patterns/SKILL.md"
     },
     {
+      "name": "shopify-agentic-ucp",
+      "description": "Integrate Shopify UCP discovery, agent profiles, catalog/cart tools, and checkout handoff using the merchant's current schemas and trust tier.",
+      "path": ".agent/skills/shopify-agentic-ucp/SKILL.md"
+    },
+    {
       "name": "shopify-api-graphql",
       "description": "Use Shopify GraphQL APIs — Admin API for server-side CRUD, Storefront API for client-side queries, versioning, cost-based rate limiting, bulk operations, pagination. Use when integrating with Shopify data.",
       "path": ".agent/skills/shopify-api-graphql/SKILL.md"
@@ -118,6 +123,11 @@
       "name": "shopify-setup",
       "description": "Set up a Shopify development environment — Shopify CLI installation, Partner account, development stores, environment variables, project structures for themes, apps, and Hydrogen. Use when starting a new Shopify project.",
       "path": ".agent/skills/shopify-setup/SKILL.md"
+    },
+    {
+      "name": "shopify-storefront-mcp-migration",
+      "description": "Migrate removed Shopify Storefront MCP catalog/cart tools to UCP, including renamed tools, agent profiles, full-cart replacement semantics, and checkout handoff.",
+      "path": ".agent/skills/shopify-storefront-mcp-migration/SKILL.md"
     },
     {
       "name": "shopify-testing",

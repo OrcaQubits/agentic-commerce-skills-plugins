@@ -1,0 +1,18 @@
+{
+  "description": "Async detection of accidentally embedded payment/signing secrets",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/check_secrets.py\" || python \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/check_secrets.py\"",
+            "async": true,
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

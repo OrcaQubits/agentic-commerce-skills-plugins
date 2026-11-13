@@ -217,4 +217,3 @@ When asked to implement Salesforce Commerce features:
 4. **Write code** following platform conventions — cartridge overlay for B2C, Apex/LWC for B2B, proper auth (SLAS for B2C, OAuth for B2B)
 5. **Follow platform constraints** — B2C server-side JS has limited ES6 support and no async/await; B2B Apex has governor limits; PWA Kit has its own SSR lifecycle
 6. **Cite sources** — add comments referencing which docs and API version the code was written against
-

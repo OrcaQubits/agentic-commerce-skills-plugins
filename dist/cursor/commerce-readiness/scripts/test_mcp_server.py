@@ -9,6 +9,7 @@ compat, and health. No external network.
 Run: python scripts/test_mcp_server.py   (exit 0 = all pass)
 """
 import json
+import base64
 import os
 import sys
 import threading
@@ -47,6 +48,18 @@ class Fixture(BaseHTTPRequestHandler):
     }
 
     def do_GET(self):
+        if self.path == "/api/paid":
+            # An unrelated 402 must not hide the valid later endpoint.
+            self.send_response(402)
+            self.end_headers()
+            self.wfile.write(b"<html>payment needed</html>")
+            return
+        if self.path == "/x402":
+            from test_payments import DOC
+            self.send_response(402)
+            self.send_header("PAYMENT-REQUIRED", base64.b64encode(json.dumps(DOC).encode()).decode())
+            self.end_headers()
+            return
         route = self.ROUTES.get(self.path.split("?")[0])
         if route:
             ct, body = route
@@ -134,6 +147,20 @@ def main():
        "human summary in content[0]")
     ok(json.loads(res["content"][1]["text"]) == sc,
        "content[1] serializes structuredContent (back-compat rule)")
+
+    # --- payment metadata survives the same scoring path used by the CLI ----
+    st, j = rpc(port, {"jsonrpc": "2.0", "id": 30, "method": "tools/call",
+                       "params": {"name": "readiness_audit",
+                                  "arguments": {"url": target, "modules": ["r5"]}}})
+    payment = j["result"]["structuredContent"]["modules"][0]
+    import probe_payments
+    from readiness_audit import score_module
+    cli_payment = score_module(probe_payments.probe(target, "127.0.0.1"))
+    ok(payment == cli_payment, "MCP and CLI scoring preserve identical payment evidence")
+    ok(payment["weight_total"] == 6 and payment["checks"][-1]["pass"],
+       "valid later x402 challenge earns one point without changing R5 total")
+    ok(any(o.get("version") == 2 for o in payment.get("payment_challenges", [])),
+       "MCP structuredContent preserves protocol version observations")
 
     # --- deep refused ---------------------------------------------------------
     st, j = rpc(port, {"jsonrpc": "2.0", "id": 4, "method": "tools/call",

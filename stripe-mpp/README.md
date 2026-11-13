@@ -184,10 +184,12 @@ Server: 200 OK
 
 | Dimension | MPP | x402 |
 |-----------|-----|------|
-| Sessions | Yes (streaming) | No (per-request only) |
-| Fiat support | Yes (Stripe SPTs) | No (crypto only) |
-| Settlement | Sub-second (Tempo) | Varies by chain |
-| Best for | Enterprise, high-frequency, hybrid | Open, decentralized, indie |
+| Negotiation | Payment authentication scheme; method and intent | Versioned core envelope with transport-specific signaling |
+| Payment patterns | Depend on method/intent support | Depend on scheme, payment flow, and extensions |
+| Asset/rail support | Check the selected method/provider | Check the selected scheme/network/facilitator |
+| Integration guidance | This plugin | `x402-agentic-payments` |
+
+Fetch the [MPP specifications](https://paymentauth.org/) and [x402 specifications](https://github.com/x402-foundation/x402/tree/main/specs) before choosing an integration. Avoid assumptions that every x402 request settles separately or that a protocol-wide fiat/crypto label describes all current implementations.
 
 ### MPP vs ACP
 

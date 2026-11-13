@@ -1,0 +1,75 @@
+{
+  "status": "runtime-smoke-tested",
+  "scenarios": [
+    {
+      "skill": "x402-setup",
+      "prompt": "A developer needs a paid EVM API but has no funded wallet. Produce a local implementation and validation approach without spending.",
+      "expected": [
+        "Role diagram, pinned dependency/config changes, fixture commands, and remaining deployment prerequisites.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "x402-http-payments",
+      "prompt": "An HTML error page returns 402 before a valid paid endpoint. Diagnose it without reporting MPP or submitting a payment.",
+      "expected": [
+        "Middleware/client changes, supported transport/version statement, and positive/negative fixtures.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "x402-facilitators",
+      "prompt": "The facilitator times out after receiving a settle request. Explain and implement reconciliation without another automatic payment.",
+      "expected": [
+        "Capability checks, state transitions, redacted operational evidence, and failure-path tests.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "x402-mcp-integration",
+      "prompt": "A paid MCP tool has conflicting structuredContent and text challenges. Reject the ambiguity and show a valid fixture.",
+      "expected": [
+        "Tool integration, transport-specific fixtures, and a clear distinction between tool errors and JSON-RPC errors.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "x402-spend-policy",
+      "prompt": "Two simultaneous paid requests each fit a per-call limit but together exceed the daily budget. Design the atomic rejection path.",
+      "expected": [
+        "Policy model, enforcement point before signing, concurrency tests, and reconciliation behavior.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "x402-conformance",
+      "prompt": "Validate a captured 402 response and explain whether it proves that a payment will settle.",
+      "expected": [
+        "Commands, actual results, exact baseline versions, and explicit unsupported cases.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    },
+    {
+      "skill": "x402-migration",
+      "prompt": "A client still reads v1 body challenges and sends an old payment header. Produce a versioned migration with regression tests.",
+      "expected": [
+        "Migration map, compatibility policy, code changes, and rollout/rollback criteria.",
+        "Fetch official implementation references before proposing API calls.",
+        "Distinguish tested fixture behavior from production capability."
+      ]
+    }
+  ],
+  "agent": {
+    "name": "x402-expert",
+    "prompt": "Choose the appropriate skill for a failing integration and explain the evidence needed before claiming it works."
+  },
+  "evaluated_at": "2026-11-13",
+  "runtime": "Claude Code 2.1.280",
+  "evaluation_mode": "Read-only skill and expert invocation with official-reference fetching. Executable fixtures run separately; no live merchant or payment test."
+}

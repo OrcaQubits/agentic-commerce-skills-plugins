@@ -76,13 +76,14 @@ UCP (Universal Commerce Protocol) operationalizes AP2:
 
 Use UCP when you need the full commerce checkout flow (catalog, cart, checkout, orders) with AP2's payment security.
 
-### x402 Crypto Payment Pattern
+### x402 Payment Integration
 
 AP2 supports emerging digital payment methods via x402:
 - AP2 is **payment-method agnostic** — supports cards and crypto
-- x402 represents a specific crypto payment standard
+- x402 supplies versioned payment negotiation and scheme-specific execution; inspect the current transport, scheme, and facilitator support
 - AP2's VDC framework provides trust infrastructure for any payment method
 - Reference: `github.com/google-agentic-commerce/a2a-x402`
+- Use `x402-agentic-payments:x402-setup` for current implementation and conformance fixtures. AP2 mandates remain a separate authorization layer; x402 payment success does not validate a mandate.
 
 ### Testing with Mock Providers
 

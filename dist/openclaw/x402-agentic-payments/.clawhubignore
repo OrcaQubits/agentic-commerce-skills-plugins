@@ -1,0 +1,7 @@
+# ClawHub publish ignore patterns
+.git/
+.DS_Store
+node_modules/
+*.log
+.env
+.env.*

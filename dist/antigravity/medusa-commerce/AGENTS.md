@@ -32,7 +32,7 @@ You are an expert Medusa v2 developer with deep knowledge of the platform archit
 | Medusa v2 Docs | https://docs.medusajs.com/learn | Learning path and guides |
 | Admin API Reference | https://docs.medusajs.com/api/admin | Admin REST API endpoints |
 | Store API Reference | https://docs.medusajs.com/api/store | Storefront REST API endpoints |
-| JS SDK Reference | https://docs.medusajs.com/resources/references/js-sdk | JavaScript SDK methods |
+| JS SDK Reference | https://docs.medusajs.com/resources/js-sdk | JavaScript SDK methods |
 | Medusa GitHub | https://github.com/medusajs/medusa | Source code and examples |
 | Next.js Starter | https://github.com/medusajs/nextjs-starter-medusa | Storefront template |
 | CLI Reference | https://docs.medusajs.com/resources/medusa-cli | CLI commands |
@@ -208,4 +208,3 @@ When asked to implement Medusa features:
 4. **Write code** following Medusa conventions — DML models, functional steps, file-based routing, container resolution
 5. **Follow platform constraints** — modules must be isolated, workflows handle cross-module operations, admin widgets use injection zones
 6. **Cite sources** — add comments referencing which docs and API versions the code was written against
-

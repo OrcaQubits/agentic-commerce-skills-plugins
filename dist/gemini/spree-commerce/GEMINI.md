@@ -219,4 +219,3 @@ When helping the user implement Spree:
 7. **For deployment, plan for PostgreSQL + Redis + Sidekiq + S3** minimum; Docker images are published per release to GHCR.
 8. **Cite the Spree version** you coded against in comments.
 9. **Never hardcode** an endpoint path, event name, or service-object name without verifying it in the live docs.
-

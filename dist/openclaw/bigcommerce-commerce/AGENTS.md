@@ -169,4 +169,3 @@ When asked to implement BigCommerce features:
 4. **Write code** following BigCommerce conventions — API versioning, proper auth, rate limit handling
 5. **Follow platform guidelines** — Stencil best practices, app review requirements, API limits
 6. **Cite sources** — add comments referencing which docs the code was modeled after
-

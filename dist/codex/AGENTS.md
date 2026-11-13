@@ -22,8 +22,9 @@ This repository contains expert knowledge for agentic commerce protocols and pla
 | [nlweb-protocol](./nlweb-protocol/AGENTS.md) | NLWeb (Natural Language Web) — Microsoft's open framework (R.V. Guha) for making any site agent-accessible via Schema.org + MCP, with /ask + /mcp endpoints, mixed-mode programming, pluggable LLM and retrieval providers (Azure AI Search, Qdrant, Snowflake Cortex, Cloudflare AutoRAG, etc.), and ChatGPT Apps SDK integration |
 | [commerce-readiness](./commerce-readiness/AGENTS.md) | Agentic Commerce Readiness Audit — executable stdlib-Python probes that score a live site on agent access, protocol discovery (UCP/ACP/A2A), catalog structured data (Product/ProductGroup JSON-LD), checkout transactability (ACP/UCP REST, MCP tools/list, NLWeb /ask), payment surfaces (handlers, delegate_payment, AP2, HTTP 402), and trust (OAuth, signing keys, TLS), mapping every gap to the marketplace skill that closes it |
 | [spree-commerce](./spree-commerce/AGENTS.md) | Spree Commerce — open-source Rails e-commerce platform (BSD-3, since 2007, v5+) with consolidated `spree` umbrella gem, Tailwind/Hotwire Admin Dashboard, API v3 (flat JSON + OpenAPI 3.0) + legacy API v2, the @spree/sdk TypeScript SDK, Order/Payment/Shipment state machines, prepend-based decorators, Spree::Events bus + Webhooks 2.0, Promotions engine, Payment Sessions (Stripe/Adyen/PayPal), Multi-store + Markets + Marketplace, Next.js headless storefront, RSpec + spree_dev_tools, and PostgreSQL/Redis/Sidekiq/Docker deployment |
+| [x402-agentic-payments](./x402-agentic-payments/AGENTS.md) | Implement and test x402 payment negotiation, facilitator integration, paid MCP tools, spending controls, and v1-to-v2 migration. |
+| [trusted-agent-protocol](./trusted-agent-protocol/AGENTS.md) | Implement TAP merchant recognition, HTTP request signatures, trusted key management, consumer/payment binding checks, and offline cryptographic fixtures. |
 
 ## How to Use
 
 Copy or symlink the plugin directories you need into your project. Your AI dev tool will automatically pick up the AGENTS.md files and the skills in `.agents/skills/`.
-

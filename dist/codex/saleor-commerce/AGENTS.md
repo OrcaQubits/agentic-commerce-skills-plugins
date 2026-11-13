@@ -186,4 +186,3 @@ When asked to implement Saleor features:
 4. **Write code** following Saleor conventions — GraphQL operations, App manifest, webhook subscription payloads, channel-aware queries
 5. **Follow platform constraints** — Apps are standalone web apps (not monolithic plugins), all API access is via GraphQL, webhooks use subscription payloads for data selection
 6. **Cite sources** — add comments referencing which docs and API versions the code was written against
-
